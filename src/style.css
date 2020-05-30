@@ -1,0 +1,11 @@
+body {
+  max-width: 650px;
+}
+.tag {
+  line-height: 1.6;
+}
+
+iframe {
+  float: right;
+  margin: -2em;
+}

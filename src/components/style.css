@@ -1,0 +1,47 @@
+#print-area {
+  margin-top: 2em;
+  padding: 1em;
+}
+.details {
+  display: flex;
+  padding: 1em;
+}
+.details .text{
+  margin: 0;
+}
+.details .text * {
+  margin: 0 1em;
+}
+.details .text input {
+  background-color: #fff;
+  border: solid 1px #ddd;
+  font-size: 1.4em;
+  font-weight: bold;
+  line-height: 2;
+}
+.print-btn {
+  padding-top: 2em;
+}
+.print-btn button {
+  color: #fff;
+  height: 50px;
+  width: 180px;
+  background-color: #0074d9;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #print-area, #print-area * {
+    visibility: visible;
+  }
+  #print-area input {
+    border: none;
+  }
+  #print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

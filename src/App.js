@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Card from './components/Card';
+import './style.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <h1>WiFi Card</h1>
+
+      <p className="tag">
+        Print a simple card with your WiFi login details. Tape it to the fridge, keep it in your wallet, etc.
+      </p>
+
+      <p className="tag">
+        Your information is never sent to the server.
+        View the <a href="https://github.com/bndw/wifi-details">source code</a>.
+      </p>
+
+      <Card />
+
     </div>
   );
 }
