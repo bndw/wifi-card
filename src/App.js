@@ -13,8 +13,9 @@ function App() {
       </p>
 
       <p className="tag">
-        Your information is never sent to the server.
-        View the <a href="https://github.com/bndw/wifi-details">source code</a>.
+        Your WiFi information is never sent to the server.
+        No tracking, analytics, or fingerprinting are used on this website.
+        View the <a href="https://github.com/bndw/wifi-card">source code</a>.
       </p>
 
       <Card />
