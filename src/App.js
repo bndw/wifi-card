@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
 
-      <h1>WiFi Card</h1>
+      <h1><span role="img" aria-label="antenna-bars">📶</span>&nbsp; WiFi Login Card</h1>
 
       <p className="tag">
         Print a simple card with your WiFi login details. Tape it to the fridge, keep it in your wallet, etc.
