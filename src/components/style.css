@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
 #print-area {
   margin-top: 2em;
   padding: 1em;
@@ -15,6 +17,7 @@
 .details .text input {
   background-color: #fff;
   border: solid 1px #ddd;
+  font-family: 'Source Code Pro', serif;
   font-size: 1.4em;
   font-weight: bold;
   line-height: 2;
