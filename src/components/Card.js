@@ -7,8 +7,26 @@ const Card = () => {
   const [password, setPassword] = useState('');
   const [qrvalue, setQrvalue] = useState('');
 
+  const escape = (v) => {
+    const needsEscape = ['"', ';', ',', ':', '\\'];
+    
+    let escaped = '';
+    for (let i = 0; i < v.length; i++) {
+      let c = v[i];
+      if (needsEscape.includes(c)) {
+        c = '\\' + c;
+      }
+      escaped += c;
+    }
+
+    return escaped;
+  }
+
   useEffect(() => {
-    setQrvalue(`WIFI:T:WPA;S:${ssid};P:${password};;`);
+    let _ssid = escape(ssid),
+        _password = escape(password);
+
+    setQrvalue(`WIFI:T:WPA;S:${_ssid};P:${_password};;`);
   }, [ssid, password]);
 
   return (
