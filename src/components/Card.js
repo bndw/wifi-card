@@ -42,9 +42,9 @@ const Card = () => {
 
           <div className="text">
             <label>Network name</label>
-            <input id="ssid" type="text" maxlength="32" placeholder="WiFi Network name" value={ssid} onChange={event => setSsid(event.target.value)} />
+            <input id="ssid" type="text" maxLength="32" placeholder="WiFi Network name" value={ssid} onChange={event => setSsid(event.target.value)} />
             <label>Password</label>
-            <input id="password" type="text" maxlength="64" placeholder="Password" value={password} onChange={event => setPassword(event.target.value)} />
+            <input id="password" type="text" maxLength="64" placeholder="Password" value={password} onChange={event => setPassword(event.target.value)} />
           </div>
         </div>
 

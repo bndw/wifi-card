@@ -12,6 +12,7 @@ build:
 
 .PHONY: dev
 dev:
+	yarn
 	yarn start
 
 .PHONY: run
