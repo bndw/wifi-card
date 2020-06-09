@@ -13,10 +13,16 @@ It looks like this:
 Run the latest Docker image on http://localhost:8080
 
 ```
-docker run --rm -p 8080:80 bndw/wifi-card:latest
+make run
 ```
 
-Or run the live-reload server on http://localhost:8080
+Build the Docker image
+
+```
+make build
+```
+
+Run the live-reload server on http://localhost:8080
 
 ```
 make dev
