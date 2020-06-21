@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/bndw/wifi-card.svg?style=svg)](https://circleci.com/gh/bndw/wifi-card)
 
-# 📶  WiFi Login Card
+# 📶  WiFi Card
 
 Print a simple card with your WiFi login details. Tape it to the fridge, keep it in your wallet, etc.
 
