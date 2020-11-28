@@ -7,6 +7,14 @@ jobs:
       - checkout
       - setup_remote_docker
       - run: make build
+
+  build_and_publish:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: make build
       - run: make publish
 
 workflows:
@@ -14,6 +22,10 @@ workflows:
   build:
     jobs:
       - build:
+          filters:
+            branches:
+              ignore: master
+      - build_and_publish:
           filters:
             branches:
               only: master
