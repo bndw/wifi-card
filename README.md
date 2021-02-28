@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/bndw/wifi-card.svg?style=svg)](https://circleci.com/gh/bndw/wifi-card)
+![ci](https://github.com/bndw/wifi-card/workflows/ci/badge.svg)
 
 # 📶  WiFi Card
 
