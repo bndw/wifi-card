@@ -24,6 +24,14 @@ export const Card = () => {
     return escaped;
   };
 
+  const onPrint = () => {
+    if (network.password.length < 8) {
+      alert('Password must be atleast 8 characters');
+    } else {
+      window.print();
+    }
+  };
+
   useEffect(() => {
     const ssid = escape(network.ssid);
     const password = escape(network.password);
@@ -73,7 +81,7 @@ export const Card = () => {
         </p>
       </fieldset>
       <div className="print-btn">
-        <button onClick={window.print}>Print</button>
+        <button onClick={onPrint}>Print</button>
       </div>
     </div>
   );
