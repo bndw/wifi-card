@@ -8,7 +8,7 @@
   display: flex;
   padding: 1em;
 }
-.details .text{
+.details .text {
   margin: 0;
 }
 .details .text * {
@@ -36,7 +36,8 @@
   body * {
     visibility: hidden;
   }
-  #print-area, #print-area * {
+  #print-area,
+  #print-area * {
     visibility: visible;
   }
   #print-area input {
