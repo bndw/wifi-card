@@ -35,5 +35,8 @@
   "main": "index.js",
   "repository": "git@github.com:bndw/wifi-card.git",
   "author": "bndw <ben@bdw.to>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "2.3.2"
+  }
 }

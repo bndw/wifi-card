@@ -1,6 +1,6 @@
 ![ci](https://github.com/bndw/wifi-card/workflows/ci/badge.svg)
 
-# 📶  WiFi Card
+# 📶 WiFi Card
 
 Print a simple card with your WiFi login details. Tape it to the fridge, keep it in your wallet, etc.
 
