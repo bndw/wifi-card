@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import QRCode from 'qrcode.react';
+import { useEffect, useState } from 'react';
 import './style.css';
 
 export const Card = () => {
@@ -51,7 +51,7 @@ export const Card = () => {
 
           <div className="text">
             <label>Network name</label>
-            <input
+            <textarea
               id="ssid"
               type="text"
               maxLength="32"
@@ -60,7 +60,7 @@ export const Card = () => {
               onChange={(e) => setNetwork({ ...network, ssid: e.target.value })}
             />
             <label>Password</label>
-            <input
+            <textarea
               id="password"
               type="text"
               maxLength="63"
