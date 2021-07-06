@@ -14,13 +14,15 @@
 .details .text * {
   margin: 0 1em;
 }
-.details .text input {
+.details .text textarea {
   background-color: #fff;
   border: solid 1px #ddd;
   font-family: 'Source Code Pro', serif;
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-weight: bold;
-  line-height: 2;
+  height: 3em;
+  overflow: hidden;
+  resize: none;
 }
 .print-btn {
   padding-top: 2em;
