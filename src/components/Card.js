@@ -71,6 +71,10 @@ export const Card = () => {
               type="text"
               maxLength="32"
               placeholder="WiFi Network name"
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="none"
+              spellCheck="false"
               value={network.ssid}
               onChange={(e) => setNetwork({ ...network, ssid: e.target.value })}
             />
@@ -84,6 +88,10 @@ export const Card = () => {
               }}
               maxLength="63"
               placeholder="Password"
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="none"
+              spellCheck="false"
               value={network.password}
               onChange={(e) =>
                 setNetwork({ ...network, password: e.target.value })
