@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 import './style.css';
 
 export const Card = () => {
+  const [qrvalue, setQrvalue] = useState('');
   const [network, setNetwork] = useState({
     ssid: '',
     password: '',
   });
-  const [qrvalue, setQrvalue] = useState('');
+  const [portrait, setPortrait] = useState(false);
 
   const escape = (v) => {
     const needsEscape = ['"', ';', ',', ':', '\\'];
@@ -40,16 +41,16 @@ export const Card = () => {
 
   return (
     <div>
-      <fieldset id="print-area">
-        <legend></legend>
+      <fieldset id="print-area" style={{ width: portrait ? '350px' : '100%' }}>
+        <h1 style={{ textAlign: portrait ? 'center' : 'left' }}>WiFi Login</h1>
 
-        <h1>WiFi Login</h1>
-        <hr />
-
-        <div className="details">
+        <div
+          className="details"
+          style={{ flexDirection: portrait ? 'column' : 'row' }}
+        >
           <QRCode className="qrcode" value={qrvalue} size={175} />
 
-          <div className="text">
+          <div className="inputs">
             <label>Network name</label>
             <textarea
               id="ssid"
@@ -63,6 +64,10 @@ export const Card = () => {
             <textarea
               id="password"
               type="text"
+              style={{
+                height:
+                  portrait && network.password.length > 40 ? '5em' : 'auto',
+              }}
               maxLength="63"
               placeholder="Password"
               value={network.password}
@@ -80,8 +85,14 @@ export const Card = () => {
           Point your phone's camera at the QR Code to connect automatically
         </p>
       </fieldset>
-      <div className="print-btn">
-        <button onClick={onPrint}>Print</button>
+
+      <div className="buttons">
+        <button id="rotate" onClick={() => setPortrait(!portrait)}>
+          Rotate
+        </button>
+        <button id="print" onClick={onPrint}>
+          Print
+        </button>
       </div>
     </div>
   );
