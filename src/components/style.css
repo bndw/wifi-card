@@ -61,4 +61,7 @@ button#rotate {
     left: 0;
     top: 0;
   }
+  .hide-password, #hide-password-checkbox {
+    display: none;
+  }
 }
