@@ -1,8 +1,9 @@
 import QRCode from 'qrcode.react';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './style.css';
 
 export const Card = () => {
+  const firstLoad = useRef(true);
   const [qrvalue, setQrvalue] = useState('');
   const [network, setNetwork] = useState({
     ssid: '',
@@ -34,6 +35,11 @@ export const Card = () => {
   };
 
   useEffect(() => {
+    if (firstLoad.current && window.innerWidth < 500) {
+      firstLoad.current = false;
+      setPortrait(true);
+    }
+
     const ssid = escape(network.ssid);
     const password = escape(network.password);
     setQrvalue(`WIFI:T:WPA;S:${ssid};P:${password};;`);
@@ -41,7 +47,10 @@ export const Card = () => {
 
   return (
     <div>
-      <fieldset id="print-area" style={{ width: portrait ? '350px' : '100%' }}>
+      <fieldset
+        id="print-area"
+        style={{ maxWidth: portrait ? '350px' : '100%' }}
+      >
         <h1 style={{ textAlign: portrait ? 'center' : 'left' }}>WiFi Login</h1>
 
         <div
