@@ -5,6 +5,7 @@ import './style.css';
 export const Card = () => {
   const firstLoad = useRef(true);
   const [qrvalue, setQrvalue] = useState('');
+  const [hidePassword, setHidePassword] = useState(false);
   const [network, setNetwork] = useState({
     ssid: '',
     password: '',
@@ -78,7 +79,7 @@ export const Card = () => {
               value={network.ssid}
               onChange={(e) => setNetwork({ ...network, ssid: e.target.value })}
             />
-            <label>Password</label>
+            <label className={hidePassword ? 'hide-password' : ''}>Password</label>
             <textarea
               id="password"
               type="text"
@@ -86,6 +87,7 @@ export const Card = () => {
                 height:
                   portrait && network.password.length > 40 ? '5em' : 'auto',
               }}
+              className={hidePassword ? 'hide-password' : ''}
               maxLength="63"
               placeholder="Password"
               autoComplete="off"
@@ -97,6 +99,9 @@ export const Card = () => {
                 setNetwork({ ...network, password: e.target.value })
               }
             />
+          
+          <input type="checkbox" id="hide-password-checkbox" onChange={() => setHidePassword(!hidePassword)}/>
+          <label for="hide-password-checkbox" className="hide-password">Hide password field before printing</label>
           </div>
         </div>
 
