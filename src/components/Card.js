@@ -48,7 +48,12 @@ export const Card = () => {
           className="details"
           style={{ flexDirection: portrait ? 'column' : 'row' }}
         >
-          <QRCode className="qrcode" value={qrvalue} size={175} />
+          <QRCode
+            className="qrcode"
+            style={{ paddingRight: portrait ? '' : '1em' }}
+            value={qrvalue}
+            size={175}
+          />
 
           <div className="inputs">
             <label>Network name</label>
