@@ -100,7 +100,7 @@ export const Card = () => {
               }
             />
           
-          <input type="checkbox" id="hide-password-checkbox" onChange={() => setHidePassword(!hidePassword)}/>
+          <input type="checkbox" id="hide-password-checkbox" className="hide-password" onChange={() => setHidePassword(!hidePassword)}/>
           <label for="hide-password-checkbox" className="hide-password">Hide password field before printing</label>
           </div>
         </div>
