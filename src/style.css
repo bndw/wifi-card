@@ -4,7 +4,3 @@ body {
 .tag {
   line-height: 1.6;
 }
-fieldset {
-  border-style: dashed;
-  border-color: #aaa;
-}

@@ -1,20 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
 #print-area {
+  border-color: #aaa;
+  border-style: dashed;
+  margin-bottom: 2em;
   margin-top: 2em;
   padding: 1em;
 }
+
 .details {
   display: flex;
-  padding: 1em;
+  align-items: center;
 }
-.details .text {
-  margin: 0;
+
+.qrcode {
+  margin-bottom: 1em;
 }
-.details .text * {
-  margin: 0 1em;
-}
-.details .text textarea {
+
+textarea {
   background-color: #fff;
   border: solid 1px #ddd;
   font-family: 'Source Code Pro', serif;
@@ -24,14 +27,22 @@
   overflow: hidden;
   resize: none;
 }
-.print-btn {
-  padding-top: 2em;
-}
-.print-btn button {
-  color: #fff;
+
+button {
   height: 50px;
   width: 180px;
+}
+
+button#print {
+  color: #fff;
   background-color: #0074d9;
+  border-color: #0074d9;
+}
+
+button#rotate {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
 }
 
 @media print {
@@ -42,7 +53,7 @@
   #print-area * {
     visibility: visible;
   }
-  #print-area input {
+  #print-area textarea {
     border: none;
   }
   #print-area {
