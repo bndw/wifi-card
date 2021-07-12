@@ -28,6 +28,12 @@ textarea {
   resize: none;
 }
 
+textarea#password {
+  text-security: disc; /* IE/Safari */
+  -moz-text-security: disc; /* FireFox */
+  -webkit-text-security: disc; /* Chrome/Safari */
+}
+
 button {
   height: 50px;
   width: 180px;
