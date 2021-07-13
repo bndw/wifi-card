@@ -7,6 +7,7 @@ export const Card = () => {
   const [qrvalue, setQrvalue] = useState('');
   const [network, setNetwork] = useState({
     ssid: '',
+    encryptionMode: 'not-set',
     password: '',
     hidePassword: false,
   });
@@ -30,6 +31,8 @@ export const Card = () => {
   const onPrint = () => {
     if (network.password.length < 8) {
       alert('Password must be at least 8 characters');
+    } else if (network.encryptionMode === 'not-set') {
+      alert('Encryption mode not set')
     } else {
       window.print();
     }
@@ -43,7 +46,8 @@ export const Card = () => {
 
     const ssid = escape(network.ssid);
     const password = escape(network.password);
-    setQrvalue(`WIFI:T:WPA;S:${ssid};P:${password};;`);
+    const encryptionMode = escape(network.encryptionMode)
+    setQrvalue(`WIFI:T:${encryptionMode};S:${ssid};P:${password};;`);
   }, [network]);
 
   return (
@@ -113,6 +117,50 @@ export const Card = () => {
             <label for="hide-password-checkbox" className="hide-password">
               Hide password field before printing
             </label>
+
+            <br/><br/>
+
+            <label>Encryption</label>
+            <input
+              type="radio"
+              name="encrypt-select"
+              id="encrypt-none"
+              value=""
+              onChange={(e) =>
+                setNetwork({ ...network, encryptionMode: e.target.value })
+              }
+            />
+            <label
+              for="encrypt-none">
+                None
+            </label>
+            <input
+              type="radio"
+              name="encrypt-select"
+              id="encrypt-wpa-wpa2"
+              value="WPA"
+              onChange={(e) =>
+                setNetwork({ ...network, encryptionMode: e.target.value })
+              }
+            />
+            <label
+              for="encrypt-wpa-wpa2">
+                WPA/WPA2
+            </label>
+            <input
+              type="radio"
+              name="encrypt-select"
+              id="encrypt-wep"
+              value="WEP"
+              onChange={(e) =>
+                setNetwork({ ...network, encryptionMode: e.target.value })
+              }
+            />
+            <label
+              for="encrypt-wep">
+                WEP
+            </label>
+
           </div>
         </div>
 
