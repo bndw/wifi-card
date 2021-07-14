@@ -122,44 +122,53 @@ export const Card = () => {
 
             <br/><br/>
 
-            <label>Encryption: </label>
+            <label
+              className="hide-encrypt">
+              Encryption:
+            </label>
             <input
               type="radio"
               name="encrypt-select"
               id="encrypt-none"
+              className="hide-encrypt"
               value=""
               onChange={(e) =>
                 setNetwork({ ...network, encryptionMode: e.target.value })
               }
             />
             <label
-              for="encrypt-none">
+              for="encrypt-none"
+              className="hide-encrypt">
                 None
             </label>
             <input
               type="radio"
               name="encrypt-select"
               id="encrypt-wpa-wpa2"
+              className="hide-encrypt"
               value="WPA"
               onChange={(e) =>
                 setNetwork({ ...network, encryptionMode: e.target.value })
               }
             />
             <label
-              for="encrypt-wpa-wpa2">
+              for="encrypt-wpa-wpa2"
+              className="hide-encrypt">
                 WPA/WPA2
             </label>
             <input
               type="radio"
               name="encrypt-select"
               id="encrypt-wep"
+              className="hide-encrypt"
               value="WEP"
               onChange={(e) =>
                 setNetwork({ ...network, encryptionMode: e.target.value })
               }
             />
             <label
-              for="encrypt-wep">
+              for="encrypt-wep"
+              className="hide-encrypt">
                 WEP
             </label>
 

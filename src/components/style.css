@@ -59,6 +59,9 @@ button#rotate {
   .hide-password {
     display: none;
   }
+  .hide-encrypt {
+    display: none;
+  }
   #print-area {
     position: absolute;
     left: 0;
