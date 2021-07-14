@@ -59,6 +59,9 @@ button#rotate {
   .no-print {
     display: none;
   }
+  .hide-encrypt {
+    display: none;
+  }
   #print-area {
     position: absolute;
     left: 0;
