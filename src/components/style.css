@@ -56,7 +56,7 @@ button#rotate {
   #print-area textarea {
     border: none;
   }
-  .hide-password {
+  .no-print {
     display: none;
   }
   #print-area {
