@@ -6,9 +6,9 @@ export const Card = () => {
   const firstLoad = useRef(true);
   const [qrvalue, setQrvalue] = useState('');
   const [network, setNetwork] = useState({
-    ssid: '',
-    encryptionMode: 'not-set',
-    password: '',
+    ssid: "",
+    encryptionMode: "not-set",
+    password: "",
     hidePassword: false,
   });
   const [portrait, setPortrait] = useState(false);
@@ -29,10 +29,12 @@ export const Card = () => {
   };
 
   const onPrint = () => {
-    if (network.password.length < 8) {
+    if (network.password.length < 8 && network.encryptionMode === "WPA") {
       alert('Password must be at least 8 characters');
-    } else if (network.encryptionMode === 'not-set') {
-      alert('Encryption mode not set')
+    } else if (network.password.length < 5 && network.encryptionMode === "WEP") {
+      alert('Password must be at least 5 characters');
+    } else if (network.encryptionMode === "not-set") {
+      alert('Please set an encryption mode')
     } else {
       window.print();
     }
@@ -101,9 +103,9 @@ export const Card = () => {
               autoCapitalize="none"
               spellCheck="false"
               value={network.password}
-              onChange={(e) =>
+              onChange={(e) => {
                 setNetwork({ ...network, password: e.target.value })
-              }
+              }}
             />
 
             <input
@@ -120,7 +122,7 @@ export const Card = () => {
 
             <br/><br/>
 
-            <label>Encryption</label>
+            <label>Encryption: </label>
             <input
               type="radio"
               name="encrypt-select"
