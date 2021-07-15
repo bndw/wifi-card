@@ -144,6 +144,7 @@ export const Card = () => {
                 onChange={(e) =>
                   setNetwork({ ...network, encryptionMode: e.target.value })
                 }
+                defaultChecked
               />
               <label for="encrypt-wpa-wpa2">WPA/WPA2</label>
               <input
