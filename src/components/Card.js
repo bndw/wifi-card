@@ -89,19 +89,21 @@ export const Card = () => {
               value={network.ssid}
               onChange={(e) => setNetwork({ ...network, ssid: e.target.value })}
             />
-            <label className={[
-              network.hidePassword ? "no-print" : '',
-              network.encryptionMode === 'nopass' ? 'hidden' : ''
-            ].join(' ')}>
+            <label
+              className={[
+                network.hidePassword ? 'no-print' : '',
+                network.encryptionMode === 'nopass' ? 'hidden' : '',
+              ].join(' ')}
+            >
               Password
             </label>
             <textarea
               id="password"
               type="text"
               className={[
-  network.hidePassword ? "no-print" : '',
-  network.encryptionMode === 'nopass' ? 'hidden' : ''
-].join(' ')}
+                network.hidePassword ? 'no-print' : '',
+                network.encryptionMode === 'nopass' ? 'hidden' : '',
+              ].join(' ')}
               style={{
                 height:
                   portrait && network.password.length > 40 ? '5em' : 'auto',
@@ -123,9 +125,9 @@ export const Card = () => {
                 type="checkbox"
                 id="hide-password-checkbox"
                 className={[
-  network.hidePassword ? "no-print" : '',
-  network.encryptionMode === 'nopass' ? 'hidden' : ''
-].join(' ')}
+                  network.hidePassword ? 'no-print' : '',
+                  network.encryptionMode === 'nopass' ? 'hidden' : '',
+                ].join(' ')}
                 onChange={() =>
                   setNetwork({
                     ...network,
@@ -134,11 +136,12 @@ export const Card = () => {
                 }
               />
               <label
-              for="hide-password-checkbox"
-              className={[
-  network.hidePassword ? "no-print" : '',
-  network.encryptionMode === 'nopass' ? 'hidden' : ''
-].join(' ')}>
+                for="hide-password-checkbox"
+                className={[
+                  network.hidePassword ? 'no-print' : '',
+                  network.encryptionMode === 'nopass' ? 'hidden' : '',
+                ].join(' ')}
+              >
                 Hide password field before printing
               </label>
             </div>
