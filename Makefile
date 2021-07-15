@@ -14,6 +14,14 @@ dev:
 	yarn
 	yarn start
 
+.PHONY: fmt
+fmt:
+	npx prettier --check . '!**/*.min.{css,js}'
+
+.PHONY: fmt.write
+fmt.write:
+	npx prettier --write . '!**/*.min.{css,js}'
+
 .PHONY: run
 run:
 	docker run --rm -p 8080:80 $(TAG_LATEST)
