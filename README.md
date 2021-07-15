@@ -16,8 +16,25 @@ Run the official Docker image on http://localhost:8080
 make run
 ```
 
-Run the live-reload server on http://localhost:3000
+## Development
+
+1. Make sure you have `yarn` installed
+2. Run the live-reload server on http://localhost:3000
+   ```
+   make dev
+   ```
+
+This project uses [Prettier](https://prettier.io/) formatting and all pull requests must pass
+the automated lint checks prior to merging.
+
+Run the link check with:
 
 ```
-make dev
+npx prettier --check . '!**/*.min.{css,js}'
+```
+
+Rewrite the files to resolve any style issues with:
+
+```
+npx prettier --write . '!**/*.min.{css,js}'
 ```
