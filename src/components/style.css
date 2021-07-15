@@ -65,3 +65,7 @@ button#rotate {
     top: 0;
   }
 }
+
+hr {
+  margin-top: 25px;
+}

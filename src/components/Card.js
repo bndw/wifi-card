@@ -160,7 +160,7 @@ export const Card = () => {
             </div>
           </div>
         </div>
-
+        <hr />
         <p>
           <span role="img" aria-label="mobile-phone">
             📸📱

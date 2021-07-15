@@ -1,6 +1,6 @@
 ![ci](https://github.com/bndw/wifi-card/workflows/ci/badge.svg)
 
-# 📶 WiFi Card
+# <img width="32px" src="./public/images/wifi.png"> WiFi Card
 
 https://wificard.io
 
