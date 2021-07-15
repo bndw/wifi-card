@@ -29,15 +29,19 @@ export const Card = () => {
   };
 
   const onPrint = () => {
-    if (network.password.length < 8 && network.encryptionMode === 'WPA') {
-      alert('Password must be at least 8 characters');
-    } else if (
-      network.password.length < 5 &&
-      network.encryptionMode === 'WEP'
-    ) {
-      alert('Password must be at least 5 characters');
+    if (network.ssid.length > 0) {
+      if (network.password.length < 8 && network.encryptionMode === 'WPA') {
+        alert('Password must be at least 8 characters');
+      } else if (
+        network.password.length < 5 &&
+        network.encryptionMode === 'WEP'
+      ) {
+        alert('Password must be at least 5 characters');
+      } else {
+        window.print();
+      }
     } else {
-      window.print();
+      alert('Network name cannot be empty');
     }
   };
 
