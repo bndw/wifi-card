@@ -91,7 +91,7 @@ export const Card = () => {
             />
             <label
               className={[
-                network.hidePassword ? 'no-print' : '',
+                network.hidePassword ? 'no-print hidden' : '',
                 network.encryptionMode === 'nopass' ? 'hidden' : '',
               ].join(' ')}
             >
@@ -101,7 +101,7 @@ export const Card = () => {
               id="password"
               type="text"
               className={[
-                network.hidePassword ? 'no-print' : '',
+                network.hidePassword ? 'no-print hidden' : '',
                 network.encryptionMode === 'nopass' ? 'hidden' : '',
               ].join(' ')}
               style={{
