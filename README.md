@@ -27,14 +27,14 @@ make run
 This project uses [Prettier](https://prettier.io/) formatting and all pull requests must pass
 the automated lint checks prior to merging.
 
-Run the link check with:
+Run the lint check with:
 
 ```
-npx prettier --check . '!**/*.min.{css,js}'
+make fmt
 ```
 
 Rewrite the files to resolve any style issues with:
 
 ```
-npx prettier --write . '!**/*.min.{css,js}'
+make fmt.write
 ```
