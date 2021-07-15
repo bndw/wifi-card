@@ -1,14 +1,13 @@
 import React from 'react';
 import { Card } from './components/Card';
 import './style.css';
+import logo from './images/wifi.png';
 
 function App() {
   return (
     <div className="App">
       <h1>
-        <span role="img" aria-label="antenna-bars">
-          📶
-        </span>
+      <img src={logo} width="32" height="32" />
         &nbsp; WiFi Card
       </h1>
 

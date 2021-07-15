@@ -115,7 +115,8 @@ export const Card = () => {
             </label>
           </div>
         </div>
-
+       <br />
+      <hr />
         <p>
           <span role="img" aria-label="mobile-phone">
             📸📱
