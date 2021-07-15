@@ -6,7 +6,8 @@ https://wificard.io
 
 Print a simple card with your WiFi login details. Tape it to the fridge, keep it in your wallet, etc.
 
-![wificard](https://user-images.githubusercontent.com/4248167/125180713-2f5d3d00-e1b2-11eb-88f8-be5b4db4e0b1.gif)
+![wificard](https://user-images.githubusercontent.com/48166553/125853182-49fd361d-5797-4989-afbf-e6a617945be2.gif)
+
 
 ## Running locally
 
