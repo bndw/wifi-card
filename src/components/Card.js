@@ -7,6 +7,7 @@ export const Card = () => {
   const [qrvalue, setQrvalue] = useState('');
   const [network, setNetwork] = useState({
     ssid: '',
+    encryptionMode: 'WPA',
     password: '',
     hidePassword: false,
   });
@@ -28,8 +29,13 @@ export const Card = () => {
   };
 
   const onPrint = () => {
-    if (network.password.length < 8) {
+    if (network.password.length < 8 && network.encryptionMode === 'WPA') {
       alert('Password must be at least 8 characters');
+    } else if (
+      network.password.length < 5 &&
+      network.encryptionMode === 'WEP'
+    ) {
+      alert('Password must be at least 5 characters');
     } else {
       window.print();
     }
@@ -43,7 +49,7 @@ export const Card = () => {
 
     const ssid = escape(network.ssid);
     const password = escape(network.password);
-    setQrvalue(`WIFI:T:WPA;S:${ssid};P:${password};;`);
+    setQrvalue(`WIFI:T:${network.encryptionMode};S:${ssid};P:${password};;`);
   }, [network]);
 
   return (
@@ -79,17 +85,17 @@ export const Card = () => {
               value={network.ssid}
               onChange={(e) => setNetwork({ ...network, ssid: e.target.value })}
             />
-            <label className={network.hidePassword ? 'hide-password' : ''}>
+            <label className={network.hidePassword ? 'no-print' : ''}>
               Password
             </label>
             <textarea
               id="password"
               type="text"
+              className={network.hidePassword ? 'no-print' : ''}
               style={{
                 height:
                   portrait && network.password.length > 40 ? '5em' : 'auto',
               }}
-              className={network.hidePassword ? 'hide-password' : ''}
               maxLength="63"
               placeholder="Password"
               autoComplete="off"
@@ -97,22 +103,61 @@ export const Card = () => {
               autoCapitalize="none"
               spellCheck="false"
               value={network.password}
-              onChange={(e) =>
-                setNetwork({ ...network, password: e.target.value })
-              }
+              onChange={(e) => {
+                setNetwork({ ...network, password: e.target.value });
+              }}
             />
 
-            <input
-              type="checkbox"
-              id="hide-password-checkbox"
-              className="hide-password"
-              onChange={() =>
-                setNetwork({ ...network, hidePassword: !network.hidePassword })
-              }
-            />
-            <label for="hide-password-checkbox" className="hide-password">
-              Hide password field before printing
-            </label>
+            <div className="no-print">
+              <input
+                type="checkbox"
+                id="hide-password-checkbox"
+                onChange={() =>
+                  setNetwork({
+                    ...network,
+                    hidePassword: !network.hidePassword,
+                  })
+                }
+              />
+              <label for="hide-password-checkbox">
+                Hide password field before printing
+              </label>
+            </div>
+
+            <div className="no-print">
+              <label>Encryption:</label>
+              <input
+                type="radio"
+                name="encrypt-select"
+                id="encrypt-none"
+                value="nopass"
+                onChange={(e) => {
+                  setNetwork({ ...network, encryptionMode: e.target.value });
+                }}
+              />
+              <label for="encrypt-none">None</label>
+              <input
+                type="radio"
+                name="encrypt-select"
+                id="encrypt-wpa-wpa2"
+                value="WPA"
+                onChange={(e) =>
+                  setNetwork({ ...network, encryptionMode: e.target.value })
+                }
+                defaultChecked
+              />
+              <label for="encrypt-wpa-wpa2">WPA/WPA2</label>
+              <input
+                type="radio"
+                name="encrypt-select"
+                id="encrypt-wep"
+                value="WEP"
+                onChange={(e) =>
+                  setNetwork({ ...network, encryptionMode: e.target.value })
+                }
+              />
+              <label for="encrypt-wep">WEP</label>
+            </div>
           </div>
         </div>
 
