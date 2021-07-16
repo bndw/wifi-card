@@ -16,11 +16,11 @@ dev:
 
 .PHONY: fmt
 fmt:
-	npx prettier --check . '!**/*.min.{css,js}'
+	npx prettier --check ./src
 
 .PHONY: fmt.write
 fmt.write:
-	npx prettier --write . '!**/*.min.{css,js}'
+	npx prettier --write ./src
 
 .PHONY: run
 run:

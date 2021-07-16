@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './light.min.css';
 import App from './App';
 
 ReactDOM.render(
