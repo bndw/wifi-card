@@ -1,30 +1,60 @@
-import React from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Card } from './components/Card';
 import './style.css';
 import logo from '../src/images/wifi.png';
+import { LanguageContext } from './components/Language';
+import intl from 'react-intl-universal';
 
-function App() {
+const App = () => {
+  const [locale, setLocale] = useState('en-US');
+  const [localeInit, setlocaleInit] = useState(false);
+
+  // app locale data
+  const locales = {
+    'en-US': require('./locales/en-US.js'),
+    'zh-CN': require('./locales/zh-CN.js'),
+  };
+
+  const initIntl = async (locale) => {
+    await intl.init({
+      currentLocale: locale,
+      locales,
+    });
+    console.log(`init intl: ${locale}`);
+  };
+
+  useEffect(() => {
+    async function init() {
+      await initIntl(locale);
+      setlocaleInit(true);
+    }
+    init();
+  }, []);
+
   return (
-    <div className="App">
-      <h1>
-        <img alt="icon" src={logo} width="32" height="32" />
-        &nbsp; WiFi Card
-      </h1>
+    localeInit && (
+      <LanguageContext.Provider value={{ locale, setLocale }}>
+        <div className="App">
+          <h1>
+            <img alt="icon" src={logo} width="32" height="32" />
+            &nbsp; {intl.get('WiFi Card')}
+          </h1>
 
-      <p className="tag">
-        Print a simple card with your WiFi login details. Tape it to the fridge,
-        keep it in your wallet, etc.
-      </p>
+          <p className="tag">{intl.get('App_Tips1')}</p>
 
-      <p className="tag">
-        Your WiFi information is never sent to the server. No tracking,
-        analytics, or fingerprinting are used on this website. View the{' '}
-        <a href="https://github.com/bndw/wifi-card">source code</a>.
-      </p>
+          <p className="tag">
+            {intl.get('App_Tips2')}{' '}
+            <a href="https://github.com/bndw/wifi-card">
+              {intl.get('source code')}
+            </a>
+            .
+          </p>
 
-      <Card />
-    </div>
+          <Card />
+        </div>
+      </LanguageContext.Provider>
+    )
   );
-}
+};
 
 export default App;

@@ -9,6 +9,7 @@
     "qrcode.react": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-intl-universal": "^2.4.7",
     "react-scripts": "^4.0.1"
   },
   "scripts": {
