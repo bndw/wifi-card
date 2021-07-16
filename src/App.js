@@ -20,6 +20,7 @@ function App() {
           <option value="en-US">en-US</option>
           <option value="简体中文">简体中文</option>
           <option value="pt-BR">pt-BR</option>
+          <option value="es">es</option>
         </select>
       </div>
 
