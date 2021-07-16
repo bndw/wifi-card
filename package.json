@@ -6,9 +6,11 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "i18next": "^20.3.3",
     "qrcode.react": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-i18next": "^11.11.2",
     "react-scripts": "^4.0.1"
   },
   "scripts": {

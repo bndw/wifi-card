@@ -1,25 +1,32 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Card } from './components/Card';
 import './style.css';
 import logo from '../src/images/wifi.png';
 
 function App() {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className="App">
       <h1>
         <img alt="icon" src={logo} width="32" height="32" />
-        &nbsp; WiFi Card
+        &nbsp; {t('title')}
       </h1>
 
-      <p className="tag">
-        Print a simple card with your WiFi login details. Tape it to the fridge,
-        keep it in your wallet, etc.
-      </p>
+      <div>
+        <label>{t('select')}</label>
+        <select onChange={(e) => i18n.changeLanguage(e.target.value)}>
+          <option value="en-US">en-US</option>
+          <option value="简体中文">简体中文</option>
+        </select>
+      </div>
+
+      <p className="tag">{t('desc.use')}</p>
 
       <p className="tag">
-        Your WiFi information is never sent to the server. No tracking,
-        analytics, or fingerprinting are used on this website. View the{' '}
-        <a href="https://github.com/bndw/wifi-card">source code</a>.
+        {t('desc.privacy')}{' '}
+        <a href="https://github.com/bndw/wifi-card">{t('desc.source')}</a>.
       </p>
 
       <Card />
