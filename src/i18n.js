@@ -51,6 +51,33 @@ const resources = {
       select: '选择语言',
     },
   },
+  es: {
+    translation: {
+      title: 'Tarjeta WiFi',
+      'desc.use':
+        'Imprima una sencilla tarjeta con sus datos de acceso a la WiFi. Pégela en la nevera, guárdela en la cartera, etc.',
+      'desc.privacy':
+        'Su información WiFi nunca se envía al servidor. En este sitio web no se utiliza ningún tipo de rastreo, análisis o huella digital. Ver el',
+      'desc.source': 'código fuente',
+      'wifi.login': 'Acceso WiFi',
+      'wifi.name': 'Nombre de la red',
+      'wifi.name.placeholder': 'Nombre de la red WiFi',
+      'wifi.password': 'Contraseña',
+      'wifi.password.placeholder': 'Contraseña',
+      'wifi.password.hide':
+        'Ocultar el campo de la contraseña antes de imprimir',
+      'wifi.password.encryption': 'Cifrado',
+      'wifi.tip':
+        'Apunte la cámara de su teléfono al código QR para conectarse automáticamente',
+      'wifi.alert.name': 'El nombre de la red no puede estar vacío',
+      'wifi.alert.password.length.5':
+        'La contraseña debe tener al menos 5 caracteres',
+      'wifi.alert.password.8': 'La contraseña debe tener al menos 8 caracteres',
+      'button.rotate': 'Girar',
+      'button.print': 'Imprimir',
+      select: 'Seleccionar idioma',
+    },
+  },
 };
 
 i18n.use(initReactI18next).init({
