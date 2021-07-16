@@ -1,5 +1,6 @@
 import QRCode from 'qrcode.react';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './style.css';
 
 export const Card = () => {
@@ -12,7 +13,7 @@ export const Card = () => {
     hidePassword: false,
   });
   const [portrait, setPortrait] = useState(false);
-
+  const { t } = useTranslation();
   const escape = (v) => {
     const needsEscape = ['"', ';', ',', ':', '\\'];
 
@@ -31,17 +32,17 @@ export const Card = () => {
   const onPrint = () => {
     if (network.ssid.length > 0) {
       if (network.password.length < 8 && network.encryptionMode === 'WPA') {
-        alert('Password must be at least 8 characters');
+        alert(t("wifi.alert.password.8"));
       } else if (
         network.password.length < 5 &&
         network.encryptionMode === 'WEP'
       ) {
-        alert('Password must be at least 5 characters');
+        alert(t("wifi.alert.password.5"));
       } else {
         window.print();
       }
     } else {
-      alert('Network name cannot be empty');
+      alert(t("wifi.alert.name"));
     }
   };
 
@@ -62,7 +63,7 @@ export const Card = () => {
         id="print-area"
         style={{ maxWidth: portrait ? '350px' : '100%' }}
       >
-        <h1 style={{ textAlign: portrait ? 'center' : 'left' }}>WiFi Login</h1>
+        <h1 style={{ textAlign: portrait ? 'center' : 'left' }}>{t("wifi.login")}</h1>
 
         <div
           className="details"
@@ -76,12 +77,12 @@ export const Card = () => {
           />
 
           <div className="inputs">
-            <label>Network name</label>
+            <label>{t("wifi.name")}</label>
             <textarea
               id="ssid"
               type="text"
               maxLength="32"
-              placeholder="WiFi Network name"
+              placeholder={t("wifi.name.placeholder")}
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="none"
@@ -90,7 +91,7 @@ export const Card = () => {
               onChange={(e) => setNetwork({ ...network, ssid: e.target.value })}
             />
             <label className={network.hidePassword ? 'no-print' : ''}>
-              Password
+              {t("wifi.password")}
             </label>
             <textarea
               id="password"
@@ -101,7 +102,7 @@ export const Card = () => {
                   portrait && network.password.length > 40 ? '5em' : 'auto',
               }}
               maxLength="63"
-              placeholder="Password"
+              placeholder={t("wifi.password.placeholder")}
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="none"
@@ -124,12 +125,12 @@ export const Card = () => {
                 }
               />
               <label for="hide-password-checkbox">
-                Hide password field before printing
+                {t("wifi.password.hide")}
               </label>
             </div>
 
             <div className="no-print">
-              <label>Encryption:</label>
+              <label>{t("wifi.password.encryption")}:</label>
               <input
                 type="radio"
                 name="encrypt-select"
@@ -169,16 +170,16 @@ export const Card = () => {
           <span role="img" aria-label="mobile-phone">
             📸📱
           </span>
-          Point your phone's camera at the QR Code to connect automatically
+          {t("wifi.tip")}
         </p>
       </fieldset>
 
       <div className="buttons">
         <button id="rotate" onClick={() => setPortrait(!portrait)}>
-          Rotate
+          {t("button.rotate")}
         </button>
         <button id="print" onClick={onPrint}>
-          Print
+          {t("button.print")}
         </button>
       </div>
     </div>
