@@ -44,7 +44,9 @@ button#rotate {
   background-color: #6c757d;
   border-color: #6c757d;
 }
-
+.error{
+  color: red;
+}
 @media print {
   body * {
     visibility: hidden;

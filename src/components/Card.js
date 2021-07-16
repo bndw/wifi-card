@@ -12,6 +12,7 @@ export const Card = () => {
     hidePassword: false,
   });
   const [portrait, setPortrait] = useState(false);
+  const [error, setError] = useState('');
 
   const escape = (v) => {
     const needsEscape = ['"', ';', ',', ':', '\\'];
@@ -27,24 +28,40 @@ export const Card = () => {
 
     return escaped;
   };
+  const onEncryptionTypeChange = (ev) => {
+    if (ev.target.value === 'nopass') {
+      //DO Something to disable password input area
 
+      //Set PAssword Field to Empty
+      setNetwork({ ...network, password: '', encryptionMode: ev.target.value });
+    } else setNetwork({ ...network, encryptionMode: ev.target.value });
+  };
+  const onSSIDChange = (ev) => {
+    setError('');
+    setNetwork({ ...network, ssid: ev.target.value });
+  };
+  const onPasswordChange = (ev) => {
+    setError('');
+    if (network.encryptionMode === 'nopass') {
+      setNetwork({ ...network, password: '' });
+    } else setNetwork({ ...network, password: ev.target.value });
+  };
   const onPrint = () => {
     if (network.ssid.length > 0) {
       if (network.password.length < 8 && network.encryptionMode === 'WPA') {
-        alert('Password must be at least 8 characters');
+        setError('Password must be at least 8 characters');
       } else if (
         network.password.length < 5 &&
         network.encryptionMode === 'WEP'
       ) {
-        alert('Password must be at least 5 characters');
+        setError('Password must be at least 5 characters');
       } else {
         window.print();
       }
     } else {
-      alert('Network name cannot be empty');
+      setError('Network name cannot be empty');
     }
   };
-
   useEffect(() => {
     if (firstLoad.current && window.innerWidth < 500) {
       firstLoad.current = false;
@@ -53,7 +70,10 @@ export const Card = () => {
 
     const ssid = escape(network.ssid);
     const password = escape(network.password);
-    setQrvalue(`WIFI:T:${network.encryptionMode};S:${ssid};P:${password};;`);
+    if (network.encryptionMode !== 'nopass') {
+      setQrvalue(`WIFI:T:${network.encryptionMode};S:${ssid};P:${password};;`);
+    } else
+      setQrvalue(`WIFI:T:${network.encryptionMode};S:${ssid};P:${password};;`);
   }, [network]);
 
   return (
@@ -87,7 +107,7 @@ export const Card = () => {
               autoCapitalize="none"
               spellCheck="false"
               value={network.ssid}
-              onChange={(e) => setNetwork({ ...network, ssid: e.target.value })}
+              onChange={onSSIDChange}
             />
             <label className={network.hidePassword ? 'no-print' : ''}>
               Password
@@ -107,9 +127,7 @@ export const Card = () => {
               autoCapitalize="none"
               spellCheck="false"
               value={network.password}
-              onChange={(e) => {
-                setNetwork({ ...network, password: e.target.value });
-              }}
+              onChange={onPasswordChange}
             />
 
             <div className="no-print">
@@ -135,9 +153,7 @@ export const Card = () => {
                 name="encrypt-select"
                 id="encrypt-none"
                 value="nopass"
-                onChange={(e) => {
-                  setNetwork({ ...network, encryptionMode: e.target.value });
-                }}
+                onChange={onEncryptionTypeChange}
               />
               <label for="encrypt-none">None</label>
               <input
@@ -145,9 +161,7 @@ export const Card = () => {
                 name="encrypt-select"
                 id="encrypt-wpa-wpa2"
                 value="WPA"
-                onChange={(e) =>
-                  setNetwork({ ...network, encryptionMode: e.target.value })
-                }
+                onChange={onEncryptionTypeChange}
                 defaultChecked
               />
               <label for="encrypt-wpa-wpa2">WPA/WPA2</label>
@@ -156,9 +170,7 @@ export const Card = () => {
                 name="encrypt-select"
                 id="encrypt-wep"
                 value="WEP"
-                onChange={(e) =>
-                  setNetwork({ ...network, encryptionMode: e.target.value })
-                }
+                onChange={onEncryptionTypeChange}
               />
               <label for="encrypt-wep">WEP</label>
             </div>
@@ -172,7 +184,7 @@ export const Card = () => {
           Point your phone's camera at the QR Code to connect automatically
         </p>
       </fieldset>
-
+      {error !== '' && <span className="error">{error}</span>}
       <div className="buttons">
         <button id="rotate" onClick={() => setPortrait(!portrait)}>
           Rotate
