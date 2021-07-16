@@ -90,20 +90,20 @@ export const Card = () => {
               onChange={(e) => setNetwork({ ...network, ssid: e.target.value })}
             />
             <label
-              className={[
-                network.hidePassword ? 'no-print hidden' : '',
-                network.encryptionMode === 'nopass' ? 'hidden' : '',
-              ].join(' ')}
+              className={`
+                ${network.hidePassword && 'no-print hidden'}
+                ${network.encryptionMode === 'nopass' && 'hidden'}
+              `}
             >
               Password
             </label>
             <textarea
               id="password"
               type="text"
-              className={[
-                network.hidePassword ? 'no-print hidden' : '',
-                network.encryptionMode === 'nopass' ? 'hidden' : '',
-              ].join(' ')}
+              className={`
+                ${network.hidePassword && 'no-print hidden'}
+                ${network.encryptionMode === 'nopass' && 'hidden'}
+              `}
               style={{
                 height:
                   portrait && network.password.length > 40 ? '5em' : 'auto',
@@ -124,10 +124,7 @@ export const Card = () => {
               <input
                 type="checkbox"
                 id="hide-password-checkbox"
-                className={[
-                  network.hidePassword ? 'no-print' : '',
-                  network.encryptionMode === 'nopass' ? 'hidden' : '',
-                ].join(' ')}
+                className={network.encryptionMode === 'nopass' ? 'hidden' : ''}
                 onChange={() =>
                   setNetwork({
                     ...network,
@@ -137,12 +134,9 @@ export const Card = () => {
               />
               <label
                 for="hide-password-checkbox"
-                className={[
-                  network.hidePassword ? 'no-print' : '',
-                  network.encryptionMode === 'nopass' ? 'hidden' : '',
-                ].join(' ')}
+                className={network.encryptionMode === 'nopass' ? 'hidden' : ''}
               >
-                Hide password field before printing
+                Hide password
               </label>
             </div>
 
@@ -153,9 +147,9 @@ export const Card = () => {
                 name="encrypt-select"
                 id="encrypt-none"
                 value="nopass"
-                onChange={(e) => {
-                  setNetwork({ ...network, encryptionMode: e.target.value });
-                }}
+                onChange={(e) =>
+                  setNetwork({ ...network, encryptionMode: e.target.value })
+                }
               />
               <label for="encrypt-none">None</label>
               <input
