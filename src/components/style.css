@@ -17,6 +17,10 @@
   margin-bottom: 1em;
 }
 
+.hidden {
+  display: none;
+}
+
 textarea {
   background-color: #fff;
   border: solid 1px #ddd;
