@@ -151,7 +151,11 @@ export const Card = () => {
                 id="encrypt-none"
                 value="nopass"
                 onChange={(e) => {
-                  setNetwork({ ...network, encryptionMode: e.target.value, password: '' });
+                  setNetwork({
+                    ...network,
+                    encryptionMode: e.target.value,
+                    password: '',
+                  });
                 }}
               />
               <label for="encrypt-none">None</label>
