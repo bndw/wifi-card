@@ -15,22 +15,18 @@ function App() {
       </h1>
 
       <div>
-        <label>{t("select")}</label>
-        <select
-          onChange={e => i18n.changeLanguage(e.target.value)}
-        >
+        <label>{t('select')}</label>
+        <select onChange={(e) => i18n.changeLanguage(e.target.value)}>
           <option value="en-US">en-US</option>
           <option value="简体中文">简体中文</option>
         </select>
       </div>
 
-      <p className="tag">
-        {t('desc.use')}
-      </p>
+      <p className="tag">{t('desc.use')}</p>
 
       <p className="tag">
-        {t("desc.privacy")}{' '}
-        <a href="https://github.com/bndw/wifi-card">{t("desc.source")}</a>.
+        {t('desc.privacy')}{' '}
+        <a href="https://github.com/bndw/wifi-card">{t('desc.source')}</a>.
       </p>
 
       <Card />

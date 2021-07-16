@@ -32,17 +32,17 @@ export const Card = () => {
   const onPrint = () => {
     if (network.ssid.length > 0) {
       if (network.password.length < 8 && network.encryptionMode === 'WPA') {
-        alert(t("wifi.alert.password.8"));
+        alert(t('wifi.alert.password.8'));
       } else if (
         network.password.length < 5 &&
         network.encryptionMode === 'WEP'
       ) {
-        alert(t("wifi.alert.password.5"));
+        alert(t('wifi.alert.password.5'));
       } else {
         window.print();
       }
     } else {
-      alert(t("wifi.alert.name"));
+      alert(t('wifi.alert.name'));
     }
   };
 
@@ -63,7 +63,9 @@ export const Card = () => {
         id="print-area"
         style={{ maxWidth: portrait ? '350px' : '100%' }}
       >
-        <h1 style={{ textAlign: portrait ? 'center' : 'left' }}>{t("wifi.login")}</h1>
+        <h1 style={{ textAlign: portrait ? 'center' : 'left' }}>
+          {t('wifi.login')}
+        </h1>
 
         <div
           className="details"
@@ -77,12 +79,12 @@ export const Card = () => {
           />
 
           <div className="inputs">
-            <label>{t("wifi.name")}</label>
+            <label>{t('wifi.name')}</label>
             <textarea
               id="ssid"
               type="text"
               maxLength="32"
-              placeholder={t("wifi.name.placeholder")}
+              placeholder={t('wifi.name.placeholder')}
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="none"
@@ -91,7 +93,7 @@ export const Card = () => {
               onChange={(e) => setNetwork({ ...network, ssid: e.target.value })}
             />
             <label className={network.hidePassword ? 'no-print' : ''}>
-              {t("wifi.password")}
+              {t('wifi.password')}
             </label>
             <textarea
               id="password"
@@ -102,7 +104,7 @@ export const Card = () => {
                   portrait && network.password.length > 40 ? '5em' : 'auto',
               }}
               maxLength="63"
-              placeholder={t("wifi.password.placeholder")}
+              placeholder={t('wifi.password.placeholder')}
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="none"
@@ -125,12 +127,12 @@ export const Card = () => {
                 }
               />
               <label for="hide-password-checkbox">
-                {t("wifi.password.hide")}
+                {t('wifi.password.hide')}
               </label>
             </div>
 
             <div className="no-print">
-              <label>{t("wifi.password.encryption")}:</label>
+              <label>{t('wifi.password.encryption')}:</label>
               <input
                 type="radio"
                 name="encrypt-select"
@@ -170,16 +172,16 @@ export const Card = () => {
           <span role="img" aria-label="mobile-phone">
             📸📱
           </span>
-          {t("wifi.tip")}
+          {t('wifi.tip')}
         </p>
       </fieldset>
 
       <div className="buttons">
         <button id="rotate" onClick={() => setPortrait(!portrait)}>
-          {t("button.rotate")}
+          {t('button.rotate')}
         </button>
         <button id="print" onClick={onPrint}>
-          {t("button.print")}
+          {t('button.print')}
         </button>
       </div>
     </div>
