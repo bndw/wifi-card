@@ -103,7 +103,6 @@ const resources = {
       select: 'Selecionar Linguagem',
     },
   },
-  
 };
 
 i18n.use(initReactI18next).init({
