@@ -103,6 +103,30 @@ const resources = {
       select: 'Selecionar Linguagem',
     },
   },
+  ja: {
+    translation: {
+      title: 'WiFi ログイン',
+      'desc.use':
+        'WiFiのログイン情報を記載したシンプルなカードを印刷します。冷蔵庫に貼ったり、お財布に入れたりしてください。',
+      'desc.privacy':
+        'お客様のWiFi情報がサーバーに送信されることはありません。このウェブサイトでは、トラッキング、アナリティクス、フィンガープリントは使用されていません。確認する',
+      'desc.source': 'ソースコード',
+      'wifi.login': ' WiFi ログイン',
+      'wifi.name': 'ネットワーク名',
+      'wifi.name.placeholder': 'WiFi ネットワーク名',
+      'wifi.password': 'パスワード',
+      'wifi.password.placeholder': 'パスワード',
+      'wifi.password.hide': '印刷前にパスワードを非表示にする',
+      'wifi.password.encryption': '暗号化',
+      'wifi.tip': '携帯電話のカメラをQRコードに向けると、自動的に接続されます',
+      'wifi.alert.name': 'ネットワーク名は空にできません',
+      'wifi.alert.password.length.5': 'パスワードは5文字以上でなければなりません',
+      'wifi.alert.password.8': 'パスワードは8文字以上でなければなりません',
+      'button.rotate': '回転する',
+      'button.print': '印刷する',
+      select: '言語を選択',
+    },
+  }
 };
 
 i18n.use(initReactI18next).init({
