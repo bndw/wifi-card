@@ -16,7 +16,10 @@ function App() {
 
       <div>
         <label>{t('select')}</label>
-        <select value={i18n.language} onChange={(e) => i18n.changeLanguage(e.target.value)}>
+        <select
+          value={i18n.language}
+          onChange={(e) => i18n.changeLanguage(e.target.value)}
+        >
           <option value="en-US">en-US</option>
           <option value="zh-CN">简体中文</option>
           <option value="es">es</option>
