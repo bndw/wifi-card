@@ -1,5 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
 const resources = {
   'en-US': {
@@ -27,7 +28,7 @@ const resources = {
       select: 'Select Language',
     },
   },
-  简体中文: {
+  'zh-CN': {
     translation: {
       title: 'WiFi 连接卡',
       'desc.use':
@@ -82,10 +83,11 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'en-US',
   interpolation: {
     escapeValue: false,
   },
 });
+
+i18n.use(LanguageDetector).init();
 
 export default i18n;
