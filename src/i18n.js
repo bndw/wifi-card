@@ -120,7 +120,8 @@ const resources = {
       'wifi.password.encryption': '暗号化',
       'wifi.tip': '携帯電話のカメラをQRコードに向けると、自動的に接続されます',
       'wifi.alert.name': 'ネットワーク名は空にできません',
-      'wifi.alert.password.length.5': 'パスワードは5文字以上でなければなりません',
+      'wifi.alert.password.length.5':
+        'パスワードは5文字以上でなければなりません',
       'wifi.alert.password.8': 'パスワードは8文字以上でなければなりません',
       'button.rotate': '回転する',
       'button.print': '印刷する',
