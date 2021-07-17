@@ -126,7 +126,7 @@ const resources = {
       'button.print': '印刷する',
       select: '言語を選択',
     },
-  }
+  },
 };
 
 i18n.use(initReactI18next).init({
