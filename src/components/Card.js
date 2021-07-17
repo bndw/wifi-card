@@ -37,7 +37,7 @@ export const Card = () => {
         network.password.length < 5 &&
         network.encryptionMode === 'WEP'
       ) {
-        alert(t('wifi.alert.password.5'));
+        alert(t('wifi.alert.password.length.5'));
       } else {
         window.print();
       }
