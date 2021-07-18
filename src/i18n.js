@@ -34,7 +34,7 @@ const resources = {
       'desc.use':
         'Print een eenvoudige kaart met uw WiFi inloggegevens. Plak het op je koelkast, stop het in je portemonnee, etc.',
       'desc.privacy':
-        'Je WiFi informatie wordt nooit naar de server verzonden. Geen tracking, analytics of fingerprinting wordt gebruikt op deze website. Bekijk de',
+        'Je WiFi informatie wordt nooit naar de server verzonden. Tracking, analytics of fingerprinting wordt niet gebruikt op deze website. Bekijk de',
       'desc.source': 'broncode',
       'wifi.login': 'WiFi Login',
       'wifi.name': 'Netwerk naam',
