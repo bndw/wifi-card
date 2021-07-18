@@ -28,6 +28,32 @@ const resources = {
       select: 'Select Language',
     },
   },
+  'nl-NL': {
+    translation: {
+      title: 'WiFi Kaart',
+      'desc.use':
+        'Print een eenvoudige kaart met uw WiFi inloggegevens. Plak het op je koelkast, stop het in je portemonnee, etc.',
+      'desc.privacy':
+        'Je WiFi informatie wordt nooit naar de server verzonden. Geen tracking, analytics of fingerprinting wordt gebruikt op deze website. Bekijk de',
+      'desc.source': 'broncode',
+      'wifi.login': 'WiFi Login',
+      'wifi.name': 'Netwerk naam',
+      'wifi.name.placeholder': 'WiFi Netwerk naam',
+      'wifi.password': 'Wachtwoord',
+      'wifi.password.placeholder': 'Wachtwoord',
+      'wifi.password.hide': 'Wachtwoord verbergen voor afdrukken',
+      'wifi.password.encryption': 'Encryptie',
+      'wifi.tip':
+        'Wijs met de camera van je telefoon naar de QR code om automatisch verbinding te maken',
+      'wifi.alert.name': 'Netwerk naam kan niet leeg zijn',
+      'wifi.alert.password.length.5': 'Wachtwoord moet ten minste 5 tekens bevatten',
+      'wifi.alert.password.8': 'Wachtwoord moet ten minste 8 tekens bevatten',
+      'button.rotate': 'Draai',
+      'button.print': 'Print',
+      select: 'Selecteer Taal',
+    },
+  },
+
   'zh-CN': {
     translation: {
       title: 'WiFi 连接卡',
