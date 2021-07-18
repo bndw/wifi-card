@@ -54,7 +54,6 @@ const resources = {
       select: 'Selecteer Taal',
     },
   },
-
   'zh-CN': {
     translation: {
       title: 'WiFi 连接卡',
