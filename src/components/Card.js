@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './style.css';
 
-export const Card = () => {
+export const Card = ({ direction = 'ltr' }) => {
   const firstLoad = useRef(true);
   const [qrvalue, setQrvalue] = useState('');
   const [network, setNetwork] = useState({
@@ -63,7 +63,7 @@ export const Card = () => {
         id="print-area"
         style={{ maxWidth: portrait ? '350px' : '100%' }}
       >
-        <h1 style={{ textAlign: portrait ? 'center' : 'left' }}>
+        <h1 style={{ textAlign: portrait ? 'center' : 'unset' }}>
           {t('wifi.login')}
         </h1>
 
@@ -73,7 +73,7 @@ export const Card = () => {
         >
           <QRCode
             className="qrcode"
-            style={{ paddingRight: portrait ? '' : '1em' }}
+            style={!portrait ? direction === 'ltr' ? { paddingRight: '1em' } : { paddingLeft: '1em' } : {}}
             value={qrvalue}
             size={175}
           />
