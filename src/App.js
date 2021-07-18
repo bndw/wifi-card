@@ -27,6 +27,7 @@ function App() {
           <option value="ja">日本語</option>
           <option value="ru-RU">Русский</option>
           <option value="uk-UA">Українська</option>
+          <option value="nl-NL">Nederlands</option>
         </select>
       </div>
 
