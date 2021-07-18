@@ -17,6 +17,10 @@ function App() {
     i18n.changeLanguage(language)
   }
 
+  if(i18n.language === 'fa-IR'){
+    html.style.direction = "rtl";
+  }
+
   return (
     <div className="App">
       <h1>
