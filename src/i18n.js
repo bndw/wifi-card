@@ -46,7 +46,8 @@ const resources = {
       'wifi.tip':
         'Wijs met de camera van je telefoon naar de QR code om automatisch verbinding te maken',
       'wifi.alert.name': 'Netwerk naam kan niet leeg zijn',
-      'wifi.alert.password.length.5': 'Wachtwoord moet ten minste 5 tekens bevatten',
+      'wifi.alert.password.length.5':
+        'Wachtwoord moet ten minste 5 tekens bevatten',
       'wifi.alert.password.8': 'Wachtwoord moet ten minste 8 tekens bevatten',
       'button.rotate': 'Draai',
       'button.print': 'Print',
