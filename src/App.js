@@ -21,6 +21,7 @@ function App() {
           onChange={(e) => i18n.changeLanguage(e.target.value)}
         >
           <option value="en-US">en-US</option>
+          <option value="hi-IN">हिंदी</option>
           <option value="zh-CN">简体中文</option>
           <option value="es">es</option>
           <option value="pt">Português</option>

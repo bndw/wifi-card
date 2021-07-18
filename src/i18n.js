@@ -208,6 +208,31 @@ const resources = {
       select: 'Вибір мови',
     },
   },
+  'hi-IN':{
+    translation: {
+      title: 'Wifi कार्ड',
+      'desc.use':
+        'अपने WiFi लॉगिन विवरण के साथ एक कार्ड प्रिंट करें। इसे फ्रिज पर चिपकाये या अपने बटुए में रखें ...',
+      'desc.privacy':
+        'आपकी WiFi जानकारी सर्वर पर कभी नहीं भेजी जाती है। इस वेबसाइट पर किसी ट्रैकिंग, एनालिटिक्स या फ़िंगरप्रिंटिंग का उपयोग नहीं किया जाता है। देखने के लिए',
+      'desc.source': 'सोर्स कोड',
+      'wifi.login': 'WiFi लॉग इन',
+      'wifi.name': 'नेटवर्क का नाम',
+      'wifi.name.placeholder': 'WiFi नेटवर्क का नाम',
+      'wifi.password': 'पासवर्ड',
+      'wifi.password.placeholder': 'पासवर्ड',
+      'wifi.password.hide': 'प्रिंट करने से पहले पासवर्ड फ़ील्ड छुपाएं',
+      'wifi.password.encryption': 'एन्क्रिप्शन',
+      'wifi.tip':
+        "अपने आप कनेक्ट होने के लिए अपने फ़ोन के कैमरे को QR कोड की ओर इंगित करें",
+      'wifi.alert.name': 'नेटवर्क का नाम खाली नहीं हो सकता',
+      'wifi.alert.password.length.5': 'पासवर्ड कम से कम 5 अक्षरों का होना चाहिए',
+      'wifi.alert.password.8': 'पासवर्ड कम से कम 8 अक्षरों का होना चाहिए',
+      'button.rotate': 'घुमाएँ',
+      'button.print': 'प्रिंट',
+      select: 'भाषा का चयन करें',
+    },
+  },
 };
 
 i18n
