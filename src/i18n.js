@@ -1,4 +1,5 @@
 import i18n from 'i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
 const resources = {
@@ -27,7 +28,33 @@ const resources = {
       select: 'Select Language',
     },
   },
-  简体中文: {
+  'nl-NL': {
+    translation: {
+      title: 'WiFi Kaart',
+      'desc.use':
+        'Print een eenvoudige kaart met uw WiFi inloggegevens. Plak het op je koelkast, stop het in je portemonnee, etc.',
+      'desc.privacy':
+        'Je WiFi informatie wordt nooit naar de server verzonden. Tracking, analytics of fingerprinting wordt niet gebruikt op deze website. Bekijk de',
+      'desc.source': 'broncode',
+      'wifi.login': 'WiFi Login',
+      'wifi.name': 'Netwerk naam',
+      'wifi.name.placeholder': 'WiFi Netwerk naam',
+      'wifi.password': 'Wachtwoord',
+      'wifi.password.placeholder': 'Wachtwoord',
+      'wifi.password.hide': 'Wachtwoord verbergen voor afdrukken',
+      'wifi.password.encryption': 'Encryptie',
+      'wifi.tip':
+        'Wijs met de camera van je telefoon naar de QR code om automatisch verbinding te maken',
+      'wifi.alert.name': 'Netwerk naam kan niet leeg zijn',
+      'wifi.alert.password.length.5':
+        'Wachtwoord moet ten minste 5 tekens bevatten',
+      'wifi.alert.password.8': 'Wachtwoord moet ten minste 8 tekens bevatten',
+      'button.rotate': 'Draai',
+      'button.print': 'Print',
+      select: 'Selecteer Taal',
+    },
+  },
+  'zh-CN': {
     translation: {
       title: 'WiFi 连接卡',
       'desc.use':
@@ -103,14 +130,95 @@ const resources = {
       select: 'Selecionar Linguagem',
     },
   },
+  ja: {
+    translation: {
+      title: 'WiFi ログイン',
+      'desc.use':
+        'WiFiのログイン情報を記載したシンプルなカードを印刷します。冷蔵庫に貼ったり、お財布に入れたりしてください。',
+      'desc.privacy':
+        'お客様のWiFi情報がサーバーに送信されることはありません。このウェブサイトでは、トラッキング、アナリティクス、フィンガープリントは使用されていません。確認する',
+      'desc.source': 'ソースコード',
+      'wifi.login': ' WiFi ログイン',
+      'wifi.name': 'ネットワーク名',
+      'wifi.name.placeholder': 'WiFi ネットワーク名',
+      'wifi.password': 'パスワード',
+      'wifi.password.placeholder': 'パスワード',
+      'wifi.password.hide': '印刷前にパスワードを非表示にする',
+      'wifi.password.encryption': '暗号化',
+      'wifi.tip': '携帯電話のカメラをQRコードに向けると、自動的に接続されます',
+      'wifi.alert.name': 'ネットワーク名は空にできません',
+      'wifi.alert.password.length.5':
+        'パスワードは5文字以上でなければなりません',
+      'wifi.alert.password.8': 'パスワードは8文字以上でなければなりません',
+      'button.rotate': '回転する',
+      'button.print': '印刷する',
+      select: '言語を選択',
+    },
+  },
+  'ru-RU': {
+    translation: {
+      title: 'Карта WiFi',
+      'desc.use':
+        'Распечатайте простую карточку с данными для входа в WiFi. Приклейте ее на холодильник, храните в бумажнике и т.д.',
+      'desc.privacy':
+        'Информация о вашем WiFi никогда не отправляется на сервер. На этом сайте не используется отслеживание, аналитика или цифровые отпечатки. Посмотреть',
+      'desc.source': 'исходный код',
+      'wifi.login': 'Вход в WiFi',
+      'wifi.name': 'Название сети',
+      'wifi.name.placeholder': 'Название сети WiFi',
+      'wifi.password': 'Пароль',
+      'wifi.password.placeholder': 'Пароль',
+      'wifi.password.hide': 'Скрыть поле пароля перед печатью',
+      'wifi.password.encryption': 'Шифрование',
+      'wifi.tip':
+        'Наведите камеру телефона на QR-код для автоматического подключения',
+      'wifi.alert.name': 'Название сети не может быть пустым',
+      'wifi.alert.password.length.5':
+        'Пароль должен состоять не менее чем из 5 символов',
+      'wifi.alert.password.8':
+        'Пароль должен состоять не менее чем из 8 символов',
+      'button.rotate': 'Повернуть',
+      'button.print': 'Распечатать',
+      select: 'Выбор языка',
+    },
+  },
+  'uk-UA': {
+    translation: {
+      title: 'Карта WiFi',
+      'desc.use':
+        'Роздрукуйте просту картку з даними для входу в WiFi. Приклейте її на холодильник, зберігайте в гаманці і т.д.',
+      'desc.privacy':
+        'Інформація про ваш WiFi ніколи не відправляється на сервер. На цьому сайті не використовується відстеження, аналітика або цифрові відбитки. Переглянути',
+      'desc.source': 'вихідний код',
+      'wifi.login': 'Вхід в WiFi',
+      'wifi.name': 'Назва мережі',
+      'wifi.name.placeholder': 'Назва мережі WiFi',
+      'wifi.password': 'Пароль',
+      'wifi.password.placeholder': 'Пароль',
+      'wifi.password.hide': 'Приховати поле пароля перед друком',
+      'wifi.password.encryption': 'Шифрування',
+      'wifi.tip':
+        'Наведіть камеру телефону на QR-код, щоб автоматично підключитися',
+      'wifi.alert.name': 'Назва мережі не може бути порожньою',
+      'wifi.alert.password.length.5':
+        'Пароль повинен містити принаймні 5 символів',
+      'wifi.alert.password.8': 'Пароль повинен містити принаймні 8 символів',
+      'button.rotate': 'Повернути',
+      'button.print': 'Друкувати',
+      select: 'Вибір мови',
+    },
+  },
 };
 
-i18n.use(initReactI18next).init({
-  resources,
-  lng: 'en-US',
-  interpolation: {
-    escapeValue: false,
-  },
-});
+i18n
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .init({
+    fallbackLng: 'en-US',
+    resources,
+    interpolation: {
+      escapeValue: false,
+    },
+  });
 
 export default i18n;
