@@ -76,6 +76,7 @@ export const Card = () => {
             style={{ paddingRight: portrait ? '' : '1em' }}
             value={qrvalue}
             size={175}
+            renderAs = "svg"
           />
 
           <div className="inputs">
