@@ -191,7 +191,7 @@ const resources = {
       'wifi.name': 'Название сети',
       'wifi.size': 'Размер',
       'wifi.size.small': 'Небольшой',
-      'wifi.size.medium': 'Середина',
+      'wifi.size.medium': 'Средний',
       'wifi.size.large': 'Большой',
       'wifi.name.placeholder': 'Название сети WiFi',
       'wifi.password': 'Пароль',
