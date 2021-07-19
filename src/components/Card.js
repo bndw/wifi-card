@@ -6,6 +6,13 @@ import './style.css';
 export const Card = () => {
   const firstLoad = useRef(true);
   const [qrvalue, setQrvalue] = useState('');
+  const smallSize = 175;
+  const mediumSize = 225;
+  const largeSize = 275;
+  const [size, setSize] = useState({
+    size: mediumSize,
+  });
+  var currentSize = size.size;
   const [network, setNetwork] = useState({
     ssid: '',
     encryptionMode: 'WPA',
@@ -37,7 +44,7 @@ export const Card = () => {
         network.password.length < 5 &&
         network.encryptionMode === 'WEP'
       ) {
-        alert(t('wifi.alert.password.length.5'));
+        alert(t('wifi.alert.password.5'));
       } else {
         window.print();
       }
@@ -73,56 +80,71 @@ export const Card = () => {
         >
           <QRCode
             className="qrcode"
-            style={{ paddingRight: portrait ? '' : '1em' }}
+            style={{
+              paddingRight: portrait ? '' : '1em',
+              height: currentSize + 'px',
+              width: currentSize + 'px',
+            }}
             value={qrvalue}
-            size={175}
+            size={currentSize}
           />
 
-          <div className="inputs">
-            <label>{t('wifi.name')}</label>
-            <textarea
-              id="ssid"
-              type="text"
-              maxLength="32"
-              placeholder={t('wifi.name.placeholder')}
-              autoComplete="off"
-              autoCorrect="off"
-              autoCapitalize="none"
-              spellCheck="false"
-              value={network.ssid}
-              onChange={(e) => setNetwork({ ...network, ssid: e.target.value })}
-            />
-            <label
+          <div>
+            <div
               className={`
-                ${network.hidePassword && 'no-print hidden'}
-                ${network.encryptionMode === 'nopass' && 'hidden'}
+                ${currentSize == smallSize ? 'inputs-small' : false}
+                ${currentSize == mediumSize ? 'inputs-medium' : false}
+                ${currentSize == largeSize ? 'inputs-large' : false}
               `}
             >
-              {t('wifi.password')}
-            </label>
-            <textarea
-              id="password"
-              type="text"
-              className={`
+              <label>{t('wifi.name')}</label>
+              <textarea
+                id="ssid"
+                type="text"
+                maxLength="32"
+                placeholder={t('wifi.name.placeholder')}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="none"
+                spellCheck="false"
+                value={network.ssid}
+                onChange={(e) =>
+                  setNetwork({ ...network, ssid: e.target.value })
+                }
+              />
+              <label
+                className={`
                 ${network.hidePassword && 'no-print hidden'}
                 ${network.encryptionMode === 'nopass' && 'hidden'}
               `}
-              style={{
-                height:
-                  portrait && network.password.length > 40 ? '5em' : 'auto',
-              }}
-              maxLength="63"
-              placeholder={t('wifi.password.placeholder')}
-              autoComplete="off"
-              autoCorrect="off"
-              autoCapitalize="none"
-              spellCheck="false"
-              value={network.password}
-              onChange={(e) => {
-                setNetwork({ ...network, password: e.target.value });
-              }}
-            />
-
+              >
+                {t('wifi.password')}
+              </label>
+              <textarea
+                id="password"
+                type="text"
+                className={`
+                ${network.hidePassword && 'no-print hidden'}
+                ${network.encryptionMode === 'nopass' && 'hidden'}
+              `}
+                style={{
+                  height:
+                    portrait || (!portrait && network.password.length > 40)
+                      ? '5em'
+                      : 'auto',
+                }}
+                maxLength="63"
+                placeholder={t('wifi.password.placeholder')}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="none"
+                spellCheck="false"
+                value={network.password}
+                onChange={(e) => {
+                  setNetwork({ ...network, password: e.target.value });
+                }}
+              />
+            </div>
             <div className="no-print">
               <input
                 type="checkbox"
@@ -180,6 +202,46 @@ export const Card = () => {
                 }
               />
               <label for="encrypt-wep">WEP</label>
+            </div>
+            <div className="no-print">
+              <label>{t('wifi.size')}:</label>
+              <input
+                type="radio"
+                name="size-select"
+                id="size-small"
+                value={smallSize}
+                onChange={(e) => {
+                  console.log(e.target.value);
+                  setSize({
+                    ...size,
+                    size: e.target.value,
+                  });
+                }}
+              />
+              <label for="size-small">Small</label>
+              <input
+                type="radio"
+                name="size-select"
+                id="size-medium"
+                value={mediumSize}
+                onChange={(e) => {
+                  console.log(e.target.value);
+                  setSize({ ...size, size: e.target.value });
+                }}
+                defaultChecked
+              />
+              <label for="size-medium">Medium</label>
+              <input
+                type="radio"
+                name="size-select"
+                id="size-large"
+                value={largeSize}
+                onChange={(e) => {
+                  console.log(e.target.value);
+                  setSize({ ...size, size: e.target.value });
+                }}
+              />
+              <label for="size-large">Large</label>
             </div>
           </div>
         </div>

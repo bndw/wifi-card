@@ -21,11 +21,22 @@
   display: none;
 }
 
+.inputs-small {
+  font-size: 1em;
+}
+
+.inputs-medium {
+  font-size: 1.3em;
+}
+
+.inputs-large {
+  font-size: 1.6em;
+}
+
 textarea {
   background-color: #fff;
   border: solid 1px #ddd;
   font-family: 'Source Code Pro', serif;
-  font-size: 1.3em;
   font-weight: bold;
   height: 3em;
   overflow: hidden;
