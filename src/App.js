@@ -48,6 +48,7 @@ function App() {
           <option value="fr-FR">French - FR (Français)</option>
           <option value="tr-TR">Turkish - Turkey (Türkçe)</option>
           <option value="hi-IN">Hindi - India (हिन्दी)</option>
+          <option value="ca">Catalan (català)</option>
         </select>
       </div>
 

@@ -366,6 +366,33 @@ const resources = {
       select: 'भाषा चुने',
     },
   },
+  ca: {
+    translation: {
+      title: 'Targeta WiFi',
+      'desc.use':
+        'Imprimeix una targeta senzilla amb les teves dades per iniciar sessió WiFi. Enganxeu-ho a la nevera, guardeu-ho a la cartera, etc.',
+      'desc.privacy':
+        'La vostra informació de WiFi mai no s’envia al servidor. En aquest lloc web no s’utilitza cap rastreig, analítica ni empremta digital. Si vols pots veure el',
+      'desc.source': 'codi font',
+      'wifi.login': 'Inici de sessió WiFi',
+      'wifi.name': 'Nom de la xarxa',
+      'wifi.name.placeholder': 'Nom de la xarxa WiFi',
+      'wifi.password': 'Contrasenya',
+      'wifi.password.placeholder': 'Contrasenya',
+      'wifi.password.hide': 'Amaga el camp de la contrasenya abans d’imprimir',
+      'wifi.password.encryption': 'Encriptació',
+      'wifi.tip':
+        'Apunteu la càmera del telèfon cap al codi QR per connectar-vos automàticament',
+      'wifi.alert.name': 'El nom de la xarxa no pot estar buit',
+      'wifi.alert.password.length.5':
+        'La contrasenya ha de tenir com a mínim 5 caràcters',
+      'wifi.alert.password.8':
+        'La contrasenya ha de tenir com a mínim 8 caràcters',
+      'button.rotate': 'Gira',
+      'button.print': 'Imprimeix',
+      select: 'Escolliu l’idioma',
+    },
+  },
 };
 
 i18n
