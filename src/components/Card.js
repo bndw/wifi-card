@@ -162,14 +162,14 @@ export const Card = () => {
               <input
                 type="radio"
                 name="encrypt-select"
-                id="encrypt-wpa-wpa2"
+                id="encrypt-wpa-wpa2-wpa3"
                 value="WPA"
                 onChange={(e) =>
                   setNetwork({ ...network, encryptionMode: e.target.value })
                 }
                 defaultChecked
               />
-              <label for="encrypt-wpa-wpa2">WPA/WPA2</label>
+              <label for="encrypt-wpa-wpa2-wpa3">WPA/WPA2/WPA3</label>
               <input
                 type="radio"
                 name="encrypt-select"
