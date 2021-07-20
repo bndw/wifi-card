@@ -39,3 +39,42 @@ Rewrite the files to resolve any style issues with:
 ```
 make fmt.write
 ```
+
+## Run without Docker
+
+1. Make sure you have `npm` installed
+2. Buil you project:
+
+```
+npm install
+```
+3. Run the live-reload server on http://localhost:3000
+
+```
+npm start
+```
+
+This project uses [Prettier](https://prettier.io/) formatting and all pull requests must pass
+the automated lint checks prior to merging.
+Make sure you have `prettier` installed. 
+
+You can install `prettier` by `npm`:
+```
+npm install --save-dev --save-exact prettier
+```
+ or by `yarn`:
+ ```
+ yarn add --dev --exact prettier
+ ```
+
+Run the lint check with:
+
+```
+npx prettier --check ./src
+```
+
+Rewrite the files to resolve any style issues with:
+
+```
+npx prettier --write ./src
+```
