@@ -78,6 +78,30 @@ const resources = {
       select: '选择语言',
     },
   },
+  'zh-HK': {
+    translation: {
+      title: 'WiFi 連接卡',
+      'desc.use':
+        '打印一張 WiFi 詳細資料嘅連接卡，將佢癡喺雪櫃上面、放喺銀包入面... ',
+      'desc.privacy':
+        '你嘅 WiFi 資料永遠唔會傳送去網站伺服器。呢個網站無使用任何追蹤、分析或者裝置指紋辨識。睇吓',
+      'desc.source': '源代碼',
+      'wifi.login': '連接 WiFi',
+      'wifi.name': '網絡名稱',
+      'wifi.name.placeholder': 'WiFi 網絡名稱',
+      'wifi.password': '密碼',
+      'wifi.password.placeholder': '密碼',
+      'wifi.password.hide': '打印前隱藏密碼',
+      'wifi.password.encryption': '加密',
+      'wifi.tip': '打開相機指住嗰QR Code就可以連接 WiFi',
+      'wifi.alert.name': '唔可以留空網絡名稱',
+      'wifi.alert.password.length.5': '密碼至少要有 5 個字符',
+      'wifi.alert.password.8': '密碼至少要有 8 個字符 ',
+      'button.rotate': '翻轉',
+      'button.print': '打印',
+      select: '選擇語言',
+    },
+  },
   es: {
     translation: {
       title: 'Tarjeta WiFi',
