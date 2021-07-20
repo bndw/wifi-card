@@ -11,6 +11,7 @@ export const Card = () => {
     encryptionMode: 'WPA',
     password: '',
     hidePassword: false,
+    hiddenSSID: false,
   });
   const [portrait, setPortrait] = useState(false);
   const { t } = useTranslation();
@@ -54,7 +55,10 @@ export const Card = () => {
 
     const ssid = escape(network.ssid);
     const password = escape(network.password);
-    setQrvalue(`WIFI:T:${network.encryptionMode};S:${ssid};P:${password};;`);
+    const hiddenSSID = network.hiddenSSID;
+    setQrvalue(
+      `WIFI:T:${network.encryptionMode};S:${ssid};P:${password};H:${hiddenSSID}`
+    );
   }, [network]);
 
   return (
@@ -98,6 +102,19 @@ export const Card = () => {
                 ${network.encryptionMode === 'nopass' && 'hidden'}
               `}
             >
+              <div className="no-print">
+                <input
+                  type="checkbox"
+                  id="hidden-SSID"
+                  onClick={(e) =>
+                    setNetwork({
+                      ...network,
+                      hiddenSSID: !network.hiddenSSID,
+                    })
+                  }
+                />
+                <label htmlFor="hidden-SSID">{t('wifi.name.hiddenSSID')}</label>
+              </div>
               {t('wifi.password')}
             </label>
             <textarea
