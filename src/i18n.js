@@ -208,7 +208,7 @@ const resources = {
       select: 'Вибір мови',
     },
   },
-  'hi-IN':{
+  'hi-IN': {
     translation: {
       title: 'Wifi कार्ड',
       'desc.use':
@@ -224,9 +224,10 @@ const resources = {
       'wifi.password.hide': 'प्रिंट करने से पहले पासवर्ड फ़ील्ड छुपाएं',
       'wifi.password.encryption': 'एन्क्रिप्शन',
       'wifi.tip':
-        "अपने आप कनेक्ट होने के लिए अपने फ़ोन के कैमरे को QR कोड की ओर इंगित करें",
+        'अपने आप कनेक्ट होने के लिए अपने फ़ोन के कैमरे को QR कोड की ओर इंगित करें',
       'wifi.alert.name': 'नेटवर्क का नाम खाली नहीं हो सकता',
-      'wifi.alert.password.length.5': 'पासवर्ड कम से कम 5 अक्षरों का होना चाहिए',
+      'wifi.alert.password.length.5':
+        'पासवर्ड कम से कम 5 अक्षरों का होना चाहिए',
       'wifi.alert.password.8': 'पासवर्ड कम से कम 8 अक्षरों का होना चाहिए',
       'button.rotate': 'घुमाएँ',
       'button.print': 'प्रिंट',
