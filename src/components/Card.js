@@ -39,6 +39,7 @@ export const Card = () => {
       ) {
         alert(t('wifi.alert.password.length.5'));
       } else {
+        document.title = 'WiFi Card - ' + network.ssid;
         window.print();
       }
     } else {
