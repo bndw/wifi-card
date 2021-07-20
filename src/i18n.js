@@ -208,6 +208,31 @@ const resources = {
       select: 'Вибір мови',
     },
   },
+  'tr-TR': {
+    translation: {
+      title: 'Wifi Kartı',
+      'desc.use':
+        'Kablosuz ağ bağlantı giriş bilgilerinizle bir kart yazdırın! Buzdolabına bantlayın, cüzdanınızda saklayın vb.',
+      'desc.privacy':
+        'Kablosuz ağ bilgileriniz asla sunucuya gönderilmez. Bu web sitesinde hiçbir izleme, analiz veya parmak izi kullanılmamaktadır.',
+      'desc.source': 'Kaynak kodunu incelemek için',
+      'wifi.login': 'WiFi Bilgileri',
+      'wifi.name': 'Ağ Adı',
+      'wifi.name.placeholder': 'Kablosuz Ağ Adı',
+      'wifi.password': 'Parola',
+      'wifi.password.placeholder': 'Parola',
+      'wifi.password.hide': 'Yazdırmadan önce şifre alanını gizle',
+      'wifi.password.encryption': 'Şifreleme Tipi',
+      'wifi.tip':
+        "Otomatik olarak bağlanmak için QR kodu kameranıza okutun.",
+      'wifi.alert.name': 'Kablosuz ağ adı boş olamaz.',
+      'wifi.alert.password.length.5': 'Parola en az 5 karakter olmalı.',
+      'wifi.alert.password.8': 'Parola en az 8 karakter olmalı.',
+      'button.rotate': 'Döndür',
+      'button.print': 'Yazdır',
+      select: 'Dil Seçimi',
+    },
+  },
 };
 
 i18n
