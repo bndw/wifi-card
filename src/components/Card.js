@@ -96,25 +96,25 @@ export const Card = () => {
               value={network.ssid}
               onChange={(e) => setNetwork({ ...network, ssid: e.target.value })}
             />
+            <div className="no-print">
+              <input
+                type="checkbox"
+                id="hidden-SSID"
+                onClick={(e) =>
+                  setNetwork({
+                    ...network,
+                    hiddenSSID: !network.hiddenSSID,
+                  })
+                }
+              />
+              <label htmlFor="hidden-SSID">{t('wifi.name.hiddenSSID')}</label>
+            </div>
             <label
               className={`
                 ${network.hidePassword && 'no-print hidden'}
                 ${network.encryptionMode === 'nopass' && 'hidden'}
               `}
             >
-              <div className="no-print">
-                <input
-                  type="checkbox"
-                  id="hidden-SSID"
-                  onClick={(e) =>
-                    setNetwork({
-                      ...network,
-                      hiddenSSID: !network.hiddenSSID,
-                    })
-                  }
-                />
-                <label htmlFor="hidden-SSID">{t('wifi.name.hiddenSSID')}</label>
-              </div>
               {t('wifi.password')}
             </label>
             <textarea
