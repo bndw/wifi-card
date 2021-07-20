@@ -127,6 +127,15 @@ export const Card = () => {
               <input
                 type="checkbox"
                 id="hide-password-checkbox"
+                disabled={
+                  network.encryptionMode === 'WPA' &&
+                  network.password.length < 8
+                    ? true
+                    : network.encryptionMode === 'WEP' &&
+                      network.password.length < 5
+                    ? true
+                    : false
+                }
                 className={network.encryptionMode === 'nopass' ? 'hidden' : ''}
                 onChange={() =>
                   setNetwork({
