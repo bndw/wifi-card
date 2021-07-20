@@ -136,7 +136,7 @@ export const Card = () => {
                 }
               />
               <label
-                for="hide-password-checkbox"
+                htmlFor="hide-password-checkbox"
                 className={network.encryptionMode === 'nopass' ? 'hidden' : ''}
               >
                 {t('wifi.password.hide')}
@@ -158,7 +158,7 @@ export const Card = () => {
                   });
                 }}
               />
-              <label for="encrypt-none">None</label>
+              <label htmlFor="encrypt-none">None</label>
               <input
                 type="radio"
                 name="encrypt-select"
@@ -169,7 +169,7 @@ export const Card = () => {
                 }
                 defaultChecked
               />
-              <label for="encrypt-wpa-wpa2">WPA/WPA2</label>
+              <label htmlFor="encrypt-wpa-wpa2">WPA/WPA2</label>
               <input
                 type="radio"
                 name="encrypt-select"
@@ -179,7 +179,7 @@ export const Card = () => {
                   setNetwork({ ...network, encryptionMode: e.target.value })
                 }
               />
-              <label for="encrypt-wep">WEP</label>
+              <label htmlFor="encrypt-wep">WEP</label>
             </div>
           </div>
         </div>
