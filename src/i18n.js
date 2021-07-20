@@ -161,7 +161,7 @@ const resources = {
       'wifi.login': ' WiFi ログイン',
       'wifi.name': 'ネットワーク名',
       'wifi.size': 'サイズ',
-      'wifi.size.small': '小さい',
+      'wifi.size.small': '小',
       'wifi.size.medium': '中',
       'wifi.size.large': '大',
       'wifi.name.placeholder': 'WiFi ネットワーク名',
