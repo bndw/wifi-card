@@ -218,7 +218,7 @@ const resources = {
       'desc.source': 'Quellcode',
       'wifi.login': 'WiFi Login',
       'wifi.name': 'Netzwerk Name',
-      'wifi.name.placeholder': 'WiFi Netzwerk Name',
+      'wifi.name.placeholder': 'WLAN-Netzwerkname (SSID)',
       'wifi.password': 'Passwort',
       'wifi.password.placeholder': 'Passwort',
       'wifi.password.hide': 'Passwordfeld vor dem Drucken ausblenden',
