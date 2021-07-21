@@ -210,13 +210,13 @@ const resources = {
   },
   'de-DE': {
     translation: {
-      title: 'WiFi Card',
+      title: 'WLAN Karte',
       'desc.use':
-        'Druck dir eine simple Karte mit deinen WiFi Anmeldedaten. Klebe sie an deinen Kühlschrank, behalte sie in deinem Portemonnaie, etc.',
+        'Druck dir eine simple Karte mit deinen WLAN-Zugangsdaten aus. Klebe sie an deinen Kühlschrank, behalte sie in deinem Portemonnaie, etc.',
       'desc.privacy':
-        'Deine WLAN-Anmeldedaten werden niemals zum Server gesendet. Es gibt kein Tracking, Analytics, oder Fingerprinting auf dieser Website. Hier geht es zum',
+        'Deine Zugangsdaten werden niemals zum Server gesendet. Es gibt kein Tracking, Analytics, oder Fingerprinting auf dieser Website. Hier geht es zum',
       'desc.source': 'Quellcode',
-      'wifi.login': 'WiFi Login',
+      'wifi.login': 'WLAN-Zugangsdaten',
       'wifi.name': 'Netzwerk Name',
       'wifi.name.placeholder': 'WLAN-Netzwerkname (SSID)',
       'wifi.password': 'Passwort',
