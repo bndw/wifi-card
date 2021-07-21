@@ -214,7 +214,7 @@ const resources = {
       'desc.use':
         'Druck dir eine simple Karte mit deinen WiFi Anmeldedaten. Klebe sie an deinen Kühlschrank, behalte sie in deinem Portemonnaie, etc.',
       'desc.privacy':
-        'Deine WiFi Anmeldedaten werden niemals zum Server gesendet. Es gibt kein Tracking, Analytics, oder Fingerprinting auf dieser Website. Hier geht es zum',
+        'Deine WLAN-Anmeldedaten werden niemals zum Server gesendet. Es gibt kein Tracking, Analytics, oder Fingerprinting auf dieser Website. Hier geht es zum',
       'desc.source': 'Quellcode',
       'wifi.login': 'WiFi Login',
       'wifi.name': 'Netzwerk Name',
