@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import logo from '../src/images/wifi.png';
 import { Card } from './components/Card';
 import './style.css';
-import logo from '../src/images/wifi.png';
 
 function App() {
   const html = document.querySelector('html');
@@ -46,6 +46,7 @@ function App() {
           <option value="nl-NL">Nederlands</option>
           <option value="fr-FR">French - FR (Français)</option>
           <option value="pt-BR">pt-BR</option>
+          <option value="id-ID">Indonesia</option>
         </select>
       </div>
 
