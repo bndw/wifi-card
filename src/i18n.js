@@ -28,6 +28,31 @@ const resources = {
       select: 'Select Language',
     },
   },
+  'id-ID': {
+    translation: {
+      title: 'Kartu WiFi',
+      'desc.use':
+        'Cetak kartu sederhana dengan detail login WiFi Anda. Rekatkan ke kulkas, simpan di dompet Anda, dll.',
+      'desc.privacy':
+        'Informasi WiFi Anda tidak pernah dikirim ke server. Tidak ada pelacakan, analitik, atau sidik jari digunakan di situs web ini. Lihat',
+      'desc.source': 'source code',
+      'wifi.login': 'Login WiFi',
+      'wifi.name': 'Nama jaringan',
+      'wifi.name.placeholder': 'Nama jaringan WiFi',
+      'wifi.password': 'Kata sandi',
+      'wifi.password.placeholder': 'Kata sandi',
+      'wifi.password.hide': 'Sembunyikan bidang kata sandi sebelum mencetak',
+      'wifi.password.encryption': 'Enkripsi',
+      'wifi.tip':
+        ' Arahkan kamera ponsel Anda pada kode QR untuk terhubung secara otomatis',
+      'wifi.alert.name': 'Nama jaringan tidak boleh kosong',
+      'wifi.alert.password.length.5': 'Kata sandi harus minimal 5 karakter',
+      'wifi.alert.password.8': 'Kata sandi harus minimal 8 karakter',
+      'button.rotate': 'Rotasi',
+      'button.print': 'Cetak',
+      select: 'Pilih bahasa',
+    },
+  },
   'nl-NL': {
     translation: {
       title: 'WiFi Kaart',
