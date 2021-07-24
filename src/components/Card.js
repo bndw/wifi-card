@@ -46,6 +46,14 @@ export const Card = () => {
     }
   };
 
+  const disableHidePassword = () => {
+    return network.encryptionMode === 'WPA' && network.password.length < 8
+      ? true
+      : network.encryptionMode === 'WEP' && network.password.length < 5
+      ? true
+      : false;
+  };
+
   useEffect(() => {
     if (firstLoad.current && window.innerWidth < 500) {
       firstLoad.current = false;
@@ -127,15 +135,7 @@ export const Card = () => {
               <input
                 type="checkbox"
                 id="hide-password-checkbox"
-                disabled={
-                  network.encryptionMode === 'WPA' &&
-                  network.password.length < 8
-                    ? true
-                    : network.encryptionMode === 'WEP' &&
-                      network.password.length < 5
-                    ? true
-                    : false
-                }
+                disabled={disableHidePassword()}
                 className={network.encryptionMode === 'nopass' ? 'hidden' : ''}
                 onChange={() =>
                   setNetwork({
