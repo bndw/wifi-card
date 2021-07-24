@@ -51,3 +51,4 @@ make fmt.write
 | Russian    | [Teraskull](https://github.com/Teraskull)     |
 | Ukrainian  | [Teraskull](https://github.com/Teraskull)     |
 | Dutch      | [wouterbrink](https://github.com/wouterbrink) |
+| French     | [Divlo](https://github.com/Divlo)

@@ -236,6 +236,33 @@ const resources = {
       select: 'Вибір мови',
     },
   },
+  'fr-FR': {
+    translation: {
+      title: 'Carte WiFi',
+      'desc.use':
+        'Imprimez une simple carte avec vos informations de connexion WiFi. Collez-le au réfrigérateur, gardez-le dans votre portefeuille, etc.',
+      'desc.privacy':
+        'Vos informations WiFi ne sont jamais envoyées au serveur. Aucun suivi, analyse ou prise empreinte digitale ne sont utilisés sur ce site Web. Voir le',
+      'desc.source': 'code source',
+      'wifi.login': 'Connexion Wi-Fi',
+      'wifi.name': 'Nom du réseau',
+      'wifi.name.placeholder': 'Nom du réseau WiFi',
+      'wifi.password': 'Mot de passe',
+      'wifi.password.placeholder': 'Mot de passe',
+      'wifi.password.hide': "Masquer le champ du mot de passe avant d'imprimer",
+      'wifi.password.encryption': 'Chiffrement',
+      'wifi.tip':
+        "Dirigez l'appareil photo de votre téléphone vers le QR code pour vous connecter automatiquement",
+      'wifi.alert.name': 'Le nom du réseau ne peut pas être vide',
+      'wifi.alert.password.length.5':
+        'Le mot de passe doit au moins faire 5 caractères',
+      'wifi.alert.password.8':
+        'Le mot de passe doit au moins faire 8 caractères',
+      'button.rotate': 'Pivoter',
+      'button.print': 'Imprimer',
+      select: 'Choisir la langue',
+    },
+  },
   'pt-BR': {
     translation: {
       title: 'Cartão WiFi',
