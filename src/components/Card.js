@@ -32,7 +32,7 @@ export const Card = () => {
   const onPrint = () => {
     if (network.ssid.length > 0) {
       if (network.password.length < 8 && network.encryptionMode === 'WPA') {
-        alert(t('wifi.alert.password.8'));
+        alert(t('wifi.alert.password.length.8'));
       } else if (
         network.password.length < 5 &&
         network.encryptionMode === 'WEP'

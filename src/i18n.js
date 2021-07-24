@@ -22,7 +22,7 @@ const resources = {
         "Point your phone's camera at the QR Code to connect automatically",
       'wifi.alert.name': 'Network name cannot be empty',
       'wifi.alert.password.length.5': 'Password must be at least 5 characters',
-      'wifi.alert.password.8': 'Password must be at least 8 characters',
+      'wifi.alert.password.length.8': 'Password must be at least 8 characters',
       'button.rotate': 'Rotate',
       'button.print': 'Print',
       select: 'Select Language',
@@ -48,7 +48,8 @@ const resources = {
       'wifi.alert.name': 'Netwerk naam kan niet leeg zijn',
       'wifi.alert.password.length.5':
         'Wachtwoord moet ten minste 5 tekens bevatten',
-      'wifi.alert.password.8': 'Wachtwoord moet ten minste 8 tekens bevatten',
+      'wifi.alert.password.length.8':
+        'Wachtwoord moet ten minste 8 tekens bevatten',
       'button.rotate': 'Draai',
       'button.print': 'Print',
       select: 'Selecteer Taal',
@@ -72,7 +73,7 @@ const resources = {
       'wifi.tip': '将手机摄像头对准二维码即可自动连接',
       'wifi.alert.name': '网络名称不能为空',
       'wifi.alert.password.length.5': '密码至少 5 个字符',
-      'wifi.alert.password.8': '密码至少 8 个字符',
+      'wifi.alert.password.length.8': '密码至少 8 个字符',
       'button.rotate': '翻转',
       'button.print': '打印',
       select: '选择语言',
@@ -99,7 +100,8 @@ const resources = {
       'wifi.alert.name': 'El nombre de la red no puede estar vacío',
       'wifi.alert.password.length.5':
         'La contraseña debe tener al menos 5 caracteres',
-      'wifi.alert.password.8': 'La contraseña debe tener al menos 8 caracteres',
+      'wifi.alert.password.length.8':
+        'La contraseña debe tener al menos 8 caracteres',
       'button.rotate': 'Girar',
       'button.print': 'Imprimir',
       select: 'Seleccionar idioma',
@@ -124,7 +126,7 @@ const resources = {
         'Abra o aplicativo de câmera no seu telemóvel e aponte para o QR Code para conectar-se automaticamente.',
       'wifi.alert.name': 'O Nome da rede não pode ficar em branco',
       'wifi.alert.password.length.5': 'A senha precisa ter no mímimo 4 digítos',
-      'wifi.alert.password.8': 'A senha precisa ter no mímimo 8 digítos',
+      'wifi.alert.password.length.8': 'A senha precisa ter no mímimo 8 digítos',
       'button.rotate': 'Girar',
       'button.print': 'Imprimir',
       select: 'Selecionar Linguagem',
@@ -149,7 +151,8 @@ const resources = {
       'wifi.alert.name': 'ネットワーク名は空にできません',
       'wifi.alert.password.length.5':
         'パスワードは5文字以上でなければなりません',
-      'wifi.alert.password.8': 'パスワードは8文字以上でなければなりません',
+      'wifi.alert.password.length.8':
+        'パスワードは8文字以上でなければなりません',
       'button.rotate': '回転する',
       'button.print': '印刷する',
       select: '言語を選択',
@@ -175,7 +178,7 @@ const resources = {
       'wifi.alert.name': 'Название сети не может быть пустым',
       'wifi.alert.password.length.5':
         'Пароль должен состоять не менее чем из 5 символов',
-      'wifi.alert.password.8':
+      'wifi.alert.password.length.8':
         'Пароль должен состоять не менее чем из 8 символов',
       'button.rotate': 'Повернуть',
       'button.print': 'Распечатать',
@@ -202,7 +205,8 @@ const resources = {
       'wifi.alert.name': 'Назва мережі не може бути порожньою',
       'wifi.alert.password.length.5':
         'Пароль повинен містити принаймні 5 символів',
-      'wifi.alert.password.8': 'Пароль повинен містити принаймні 8 символів',
+      'wifi.alert.password.length.8':
+        'Пароль повинен містити принаймні 8 символів',
       'button.rotate': 'Повернути',
       'button.print': 'Друкувати',
       select: 'Вибір мови',
