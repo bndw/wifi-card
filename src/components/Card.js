@@ -55,9 +55,8 @@ export const Card = () => {
 
     const ssid = escape(network.ssid);
     const password = escape(network.password);
-    const hiddenSSID = network.hiddenSSID;
     setQrvalue(
-      `WIFI:T:${network.encryptionMode};S:${ssid};P:${password};H:${hiddenSSID}`
+      `WIFI:T:${network.encryptionMode};S:${ssid};P:${password};H:${network.hiddenSSID}`
     );
   }, [network]);
 
