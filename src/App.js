@@ -9,16 +9,16 @@ function App() {
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (language) => {
-    if(language === 'fa-IR'){
-      html.style.direction = "rtl";
+    if (language === 'fa-IR') {
+      html.style.direction = 'rtl';
     } else {
-      html.style.direction = "ltr";
+      html.style.direction = 'ltr';
     }
-    i18n.changeLanguage(language)
-  }
+    i18n.changeLanguage(language);
+  };
 
-  if(i18n.language === 'fa-IR'){
-    html.style.direction = "rtl";
+  if (i18n.language === 'fa-IR') {
+    html.style.direction = 'rtl';
   }
 
   return (

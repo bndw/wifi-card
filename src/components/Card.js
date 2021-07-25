@@ -73,7 +73,13 @@ export const Card = ({ direction = 'ltr' }) => {
         >
           <QRCode
             className="qrcode"
-            style={!portrait ? direction === 'ltr' ? { paddingRight: '1em' } : { paddingLeft: '1em' } : {}}
+            style={
+              !portrait
+                ? direction === 'ltr'
+                  ? { paddingRight: '1em' }
+                  : { paddingLeft: '1em' }
+                : {}
+            }
             value={qrvalue}
             size={175}
           />
