@@ -6,13 +6,12 @@ import './style.css';
 export const Card = () => {
   const firstLoad = useRef(true);
   const [qrvalue, setQrvalue] = useState('');
-  const smallSize = 175;
-  const mediumSize = 225;
-  const largeSize = 275;
+  const sizeSmall = 175;
+  const sizeMedium = 225;
+  const sizeLarge = 275;
   const [size, setSize] = useState({
-    size: mediumSize,
+    size: sizeMedium,
   });
-  var currentSize = size.size;
   const [network, setNetwork] = useState({
     ssid: '',
     encryptionMode: 'WPA',
@@ -34,6 +33,19 @@ export const Card = () => {
     }
 
     return escaped;
+  };
+
+  const inputsClassSize = () => {
+    switch (size.size) {
+      case sizeSmall:
+        return 'inputs-small';
+      case sizeMedium:
+        return 'inputs-medium';
+      case sizeLarge:
+        return 'inputs-large';
+      default:
+        break;
+    }
   };
 
   const onPrint = () => {
@@ -82,69 +94,60 @@ export const Card = () => {
             className="qrcode"
             style={{
               paddingRight: portrait ? '' : '1em',
-              height: currentSize + 'px',
-              width: currentSize + 'px',
+              height: `${size.size}px`,
+              width: `${size.size}px`,
             }}
             value={qrvalue}
-            size={currentSize}
+            size={size.size}
           />
 
-          <div>
-            <div
+          <div className={`inputs ${inputsClassSize()}`}>
+            <label>{t('wifi.name')}</label>
+            <textarea
+              id="ssid"
+              type="text"
+              maxLength="32"
+              placeholder={t('wifi.name.placeholder')}
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="none"
+              spellCheck="false"
+              value={network.ssid}
+              onChange={(e) => setNetwork({ ...network, ssid: e.target.value })}
+            />
+            <label
               className={`
-                ${currentSize == smallSize ? 'inputs-small' : false}
-                ${currentSize == mediumSize ? 'inputs-medium' : false}
-                ${currentSize == largeSize ? 'inputs-large' : false}
+                ${network.hidePassword && 'no-print hidden'}
+                ${network.encryptionMode === 'nopass' && 'hidden'}
               `}
             >
-              <label>{t('wifi.name')}</label>
-              <textarea
-                id="ssid"
-                type="text"
-                maxLength="32"
-                placeholder={t('wifi.name.placeholder')}
-                autoComplete="off"
-                autoCorrect="off"
-                autoCapitalize="none"
-                spellCheck="false"
-                value={network.ssid}
-                onChange={(e) =>
-                  setNetwork({ ...network, ssid: e.target.value })
-                }
-              />
-              <label
-                className={`
+              {t('wifi.password')}
+            </label>
+            <textarea
+              id="password"
+              type="text"
+              className={`
                 ${network.hidePassword && 'no-print hidden'}
                 ${network.encryptionMode === 'nopass' && 'hidden'}
               `}
-              >
-                {t('wifi.password')}
-              </label>
-              <textarea
-                id="password"
-                type="text"
-                className={`
-                ${network.hidePassword && 'no-print hidden'}
-                ${network.encryptionMode === 'nopass' && 'hidden'}
-              `}
-                style={{
-                  height:
-                    portrait || (!portrait && network.password.length > 40)
-                      ? '5em'
-                      : 'auto',
-                }}
-                maxLength="63"
-                placeholder={t('wifi.password.placeholder')}
-                autoComplete="off"
-                autoCorrect="off"
-                autoCapitalize="none"
-                spellCheck="false"
-                value={network.password}
-                onChange={(e) => {
-                  setNetwork({ ...network, password: e.target.value });
-                }}
-              />
-            </div>
+              style={{
+                height:
+                  portrait || (!portrait && network.password.length > 40)
+                    ? '5em'
+                    : 'auto',
+              }}
+              maxLength="63"
+              placeholder={t('wifi.password.placeholder')}
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="none"
+              spellCheck="false"
+              value={network.password}
+              onChange={(e) => {
+                setNetwork({ ...network, password: e.target.value });
+              }}
+            />
+
             <div className="no-print">
               <input
                 type="checkbox"
@@ -209,9 +212,8 @@ export const Card = () => {
                 type="radio"
                 name="size-select"
                 id="size-small"
-                value={smallSize}
+                value={sizeSmall}
                 onChange={(e) => {
-                  console.log(e.target.value);
                   setSize({
                     ...size,
                     size: e.target.value,
@@ -223,11 +225,11 @@ export const Card = () => {
                 type="radio"
                 name="size-select"
                 id="size-medium"
-                value={mediumSize}
+                value={sizeMedium}
                 onChange={(e) => {
-                  console.log(e.target.value);
                   setSize({ ...size, size: e.target.value });
                 }}
+                onClick={inputsClassSize()}
                 defaultChecked
               />
               <label for="size-medium">Medium</label>
@@ -235,11 +237,11 @@ export const Card = () => {
                 type="radio"
                 name="size-select"
                 id="size-large"
-                value={largeSize}
+                value={sizeLarge}
                 onChange={(e) => {
-                  console.log(e.target.value);
                   setSize({ ...size, size: e.target.value });
                 }}
+                onClick={inputsClassSize()}
               />
               <label for="size-large">Large</label>
             </div>
