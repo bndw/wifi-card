@@ -40,10 +40,10 @@ Rewrite the files to resolve any style issues with:
 make fmt.write
 ```
 
-## Run without Docker
+### or
 
 1. Make sure you have `npm` installed
-2. Buil you project:
+2. Buil your project:
 
 ```
 npm install
@@ -56,16 +56,6 @@ npm start
 
 This project uses [Prettier](https://prettier.io/) formatting and all pull requests must pass
 the automated lint checks prior to merging.
-Make sure you have `prettier` installed. 
-
-You can install `prettier` by `npm`:
-```
-npm install --save-dev --save-exact prettier
-```
- or by `yarn`:
- ```
- yarn add --dev --exact prettier
- ```
 
 Run the lint check with:
 
