@@ -46,13 +46,13 @@ export const Card = () => {
     }
   };
 
-  const isWEPWithPasswordLengthShorterThat5Characters = () => {
-    return network.encryptionMode === 'WEP' && network.password.length < 5
-      ? true
-      : false;
-  };
-
   const disableHidePassword = () => {
+    const isWEPWithPasswordLengthShorterThat5Characters = () => {
+      return network.encryptionMode === 'WEP' && network.password.length < 5
+        ? true
+        : false;
+    };
+
     return network.encryptionMode === 'WPA' && network.password.length < 8
       ? true
       : isWEPWithPasswordLengthShorterThat5Characters();
