@@ -261,6 +261,35 @@ const resources = {
       select: 'Вибір мови',
     },
   },
+  'pl-PL': {
+    translation: {
+      title: 'Karta WiFi',
+      'desc.use':
+        'Wydrukuj prostą kartę z danymi logowania do sieci Wi-Fi. Przyklej go do lodówki, trzymaj w portfelu, itp.',
+      'desc.privacy':
+        'Twoje informacje o Wi-Fi nigdy nie są wysyłane na serwer. Na tej stronie nie stosuje się śledzenia, analiz ani odcisków palców. Zobacz',
+      'desc.source': 'kod źródłowy',
+      'wifi.login': 'Logowanie do WiFi',
+      'wifi.size': 'Rozmiar',
+      'wifi.size.small': 'Mały',
+      'wifi.size.medium': 'Średni',
+      'wifi.size.large': 'Duży',
+      'wifi.name': 'Nazwa sieci',
+      'wifi.name.placeholder': 'WiFi nazwa sieci',
+      'wifi.password': 'Hasło',
+      'wifi.password.placeholder': 'Hasło',
+      'wifi.password.hide': 'Ukryj pole hasła przed drukowaniem',
+      'wifi.password.encryption': 'Szyfrowanie',
+      'wifi.tip':
+        'Skieruj aparat telefonu na kod QR, aby połączyć się automatycznie',
+      'wifi.alert.name': 'Nazwa sieci nie może być pusta',
+      'wifi.alert.password.length.5': 'Hasło musi mieć co najmniej 5 znaków',
+      'wifi.alert.password.8': 'Hasło musi mieć co najmniej 8 znaków',
+      'button.rotate': 'Obróć',
+      'button.print': 'Drukuj',
+      select: 'Wybierz język',
+    },
+  },
   'fr-FR': {
     translation: {
       title: 'Carte WiFi',
