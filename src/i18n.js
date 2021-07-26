@@ -209,6 +209,31 @@ const resources = {
       select: 'Выбор языка',
     },
   },
+  'fa-IR': {
+    translation: {
+      title: 'کارت WiFi',
+      'desc.use':
+        'توسط اطلاعات شبکه WiFi خود یک کارت ساده چاپ کنید و آن را به یخچال بچسبانید و یا در کیف پول خود نگه دارید.',
+      'desc.privacy':
+        'اطلاعات شبکه شما هرگز به سرور ارسال نمی‌شود و هیچگونه ردیابی، آنالیز و یا تحلیل در این وب سایت انجام نمی‌شود. مشاهده ',
+      'desc.source': 'سورس کد',
+      'wifi.login': 'اتصال به شبکه WiFi',
+      'wifi.name': 'نام شبکه',
+      'wifi.name.placeholder': 'نام شبکه خود را وارد کنید',
+      'wifi.password': 'رمز‌عبور',
+      'wifi.password.placeholder': 'رمز‌عبور شبکه خود را وارد کنید',
+      'wifi.password.hide': 'رمز‌عبور را بعد از چاپ کارت مخفی کن.',
+      'wifi.password.encryption': 'رمزنگاری',
+      'wifi.tip':
+        'دوربین تلفن خود را روی تصویر (QR Code) گرفته تا به صورت خودکار به شبکه متصل شوید.',
+      'wifi.alert.name': 'اسم شبکه شما نباید خالی باشد.',
+      'wifi.alert.password.length.5': 'رمز‌عبور باید حداقل ۵ حرف داشته باشد.',
+      'wifi.alert.password.8': 'رمز‌عبور باید حداقل ۸ حرف داشته باشد.',
+      'button.rotate': 'چرخاندن',
+      'button.print': 'چاپ',
+      select: 'انتخاب زبان',
+    },
+  },
   'uk-UA': {
     translation: {
       title: 'Карта WiFi',
