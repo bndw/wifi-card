@@ -52,4 +52,4 @@ make fmt.write
 | Ukrainian  | [Teraskull](https://github.com/Teraskull)     |
 | Dutch      | [wouterbrink](https://github.com/wouterbrink) |
 | French     | [Divlo](https://github.com/Divlo)             |
-| Turkish    | [Riza Ergun](https://github.com/rizaergun)
+| Turkish    | [Riza Ergun](https://github.com/rizaergun)    |
