@@ -289,6 +289,31 @@ const resources = {
       select: 'Escolha o idioma',
     },
   },
+  'tr-TR': {
+    translation: {
+      title: 'WiFi Kartı',
+      'desc.use':
+        'WiFi giriş bilgilerinizle basit bir kart yazdırın. Buzdolabına bantlayın, cüzdanınızda saklayın vb.',
+      'desc.privacy':
+        'WiFi bilgileriniz asla sunucuya gönderilmez. Bu web sitesinde hiçbir izleme, analiz veya parmak izi kullanılmamaktadır. Görüntüle',
+      'desc.source': 'kaynak kodu',
+      'wifi.login': 'WiFi Giriş',
+      'wifi.name': 'Ağ adı',
+      'wifi.name.placeholder': 'WiFi Ağ adı',
+      'wifi.password': 'Parola',
+      'wifi.password.placeholder': 'Parola',
+      'wifi.password.hide': 'Yazdırmadan önce parola alanını gizle',
+      'wifi.password.encryption': 'Şifreleme',
+      'wifi.tip':
+        "Otomatik olarak bağlanmak için telefonunuzun kamerası ile QR kodunu okutun",
+      'wifi.alert.name': 'Ağ adı boş olamaz',
+      'wifi.alert.password.length.5': 'Parola en az 5 karakter olmalıdır',
+      'wifi.alert.password.length.8': 'Parola en az 8 karakter olmalıdır',
+      'button.rotate': 'Döndür',
+      'button.print': 'Yazdır',
+      select: 'Dil Seçin',
+    },
+  },
 };
 
 i18n
