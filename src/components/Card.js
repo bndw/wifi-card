@@ -18,14 +18,13 @@ export const Card = ({ direction = 'ltr' }) => {
     const needsEscape = ['"', ';', ',', ':', '\\'];
 
     let escaped = '';
-    for (let i = 0; i < v.length; i++) {
-      let c = v[i];
+    for (const c of v) {
       if (needsEscape.includes(c)) {
-        c = '\\' + c;
+        escaped += `\\${c}`;
+      } else {
+        escaped += c;
       }
-      escaped += c;
     }
-
     return escaped;
   };
 
