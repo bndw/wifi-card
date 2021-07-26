@@ -149,8 +149,10 @@ const resources = {
       'wifi.tip':
         'Abra a aplicação da câmera no seu telemóvel e aponte para o QR Code para se ligar automaticamente.',
       'wifi.alert.name': 'O Nome da rede não pode ficar em branco',
-      'wifi.alert.password.length.5': 'A senha precisa ter no mímimo 4 caracteres',
-      'wifi.alert.password.length.8': 'A senha precisa ter no mímimo 8 caracteres',
+      'wifi.alert.password.length.5':
+        'A senha precisa ter no mímimo 4 caracteres',
+      'wifi.alert.password.length.8':
+        'A senha precisa ter no mímimo 8 caracteres',
       'button.rotate': 'Rodar',
       'button.print': 'Imprimir',
       select: 'Selecionar Lingua',
