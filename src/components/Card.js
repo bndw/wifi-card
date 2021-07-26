@@ -229,7 +229,6 @@ export const Card = () => {
                 onChange={(e) => {
                   setSize({ ...size, size: e.target.value });
                 }}
-                onClick={inputsClassSize()}
                 defaultChecked
               />
               <label for="size-medium">Medium</label>
@@ -241,7 +240,6 @@ export const Card = () => {
                 onChange={(e) => {
                   setSize({ ...size, size: e.target.value });
                 }}
-                onClick={inputsClassSize()}
               />
               <label for="size-large">Large</label>
             </div>
