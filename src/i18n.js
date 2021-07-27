@@ -339,6 +339,31 @@ const resources = {
       select: 'Dil Seçin',
     },
   },
+  'pirate': {
+    translation: {
+      title: 'Ye WiFi Treasure Map',
+      'desc.use':
+        "Print a simple card wit'yer WiFi login details.Tape it t' the fridge, keep it in yer coffer, etc.",
+      'desc.privacy':
+        "Yer WiFi information be ne'er sent t' the server. No trackin', analyticals, or fingerprintin' are used on this website. View the",
+      'desc.source': 'source code',
+      'wifi.login': 'WiFi Login',
+      'wifi.name': 'Network name',
+      'wifi.name.placeholder': 'WiFi Network name',
+      'wifi.password': 'Secret Code',
+      'wifi.password.placeholder': 'Secret Code',
+      'wifi.password.hide': "Hide secret code field afore printin'",
+      'wifi.password.encryption ': 'Encryption ',
+      'wifi.tip ':
+        "Point yer phone's camera at the QR Code t' connect automatically",
+      'wifi.alert.name ': 'Network name can nah be empty',
+      'wifi.alert.password.length.5 ': 'Password must be at least 5 characters',
+      'wifi.alert.password.length.8 ': 'Password must be at least 8 characters',
+      'button.rotate': 'Rotate',
+      'button.print ': 'Print',
+      select: 'Select Language',
+    },
+  },
 };
 
 i18n
