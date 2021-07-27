@@ -11,6 +11,7 @@ export const Card = () => {
   const sizeLarge = 275;
   const [size, setSize] = useState({
     size: sizeMedium,
+    class: 'inputs-medium',
   });
   const [network, setNetwork] = useState({
     ssid: '',
@@ -38,12 +39,16 @@ export const Card = () => {
   const inputsClassSize = () => {
     switch (size.size) {
       case sizeSmall:
-        return 'inputs-small';
+        setSize({ ...size, class: 'inputs-small' });
+        break;
       case sizeMedium:
-        return 'inputs-medium';
+        setSize({ ...size, class: 'inputs-medium' });
+        break;
       case sizeLarge:
-        return 'inputs-large';
+        setSize({ ...size, class: 'inputs-large' });
+        break;
       default:
+        setSize({ ...size, class: 'inputs-medium' });
         break;
     }
   };
@@ -71,10 +76,12 @@ export const Card = () => {
       setPortrait(true);
     }
 
+    inputsClassSize();
+
     const ssid = escape(network.ssid);
     const password = escape(network.password);
     setQrvalue(`WIFI:T:${network.encryptionMode};S:${ssid};P:${password};;`);
-  }, [network]);
+  }, [network, size.size]);
 
   return (
     <div>
@@ -101,7 +108,7 @@ export const Card = () => {
             size={size.size}
           />
 
-          <div className={`inputs ${inputsClassSize()}`}>
+          <div className={`inputs ${size.class}`}>
             <label>{t('wifi.name')}</label>
             <textarea
               id="ssid"
@@ -212,11 +219,10 @@ export const Card = () => {
                 type="radio"
                 name="size-select"
                 id="size-small"
-                value={sizeSmall}
                 onChange={(e) => {
                   setSize({
                     ...size,
-                    size: e.target.value,
+                    size: sizeSmall,
                   });
                 }}
               />
@@ -225,9 +231,8 @@ export const Card = () => {
                 type="radio"
                 name="size-select"
                 id="size-medium"
-                value={sizeMedium}
                 onChange={(e) => {
-                  setSize({ ...size, size: e.target.value });
+                  setSize({ ...size, size: sizeMedium });
                 }}
                 defaultChecked
               />
@@ -236,9 +241,8 @@ export const Card = () => {
                 type="radio"
                 name="size-select"
                 id="size-large"
-                value={sizeLarge}
                 onChange={(e) => {
-                  setSize({ ...size, size: e.target.value });
+                  setSize({ ...size, size: sizeLarge });
                 }}
               />
               <label for="size-large">Large</label>
