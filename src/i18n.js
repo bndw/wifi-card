@@ -339,6 +339,31 @@ const resources = {
       select: 'Dil Seçin',
     },
   },
+  'en-GB': {
+    translation: {
+      title: 'WiFi Card',
+      'desc.use':
+        'Print a simple card with your WiFi login details. Tape it to the fridge, keep it in your wallet, etc.',
+      'desc.privacy':
+        'Your WiFi information is never sent to the server. No tracking, analytics, or fingerprinting are used on this website. View the',
+      'desc.source': 'source code',
+      'wifi.login': 'WiFi Login',
+      'wifi.name': 'Network name',
+      'wifi.name.placeholder': 'WiFi Network name',
+      'wifi.password': 'Password',
+      'wifi.password.placeholder': 'Password',
+      'wifi.password.hide': 'Hide password field before printing',
+      'wifi.password.encryption': 'Encryption',
+      'wifi.tip':
+        "Point your phone's camera at the QR Code to connect automatically",
+      'wifi.alert.name': 'Network name cannot be empty',
+      'wifi.alert.password.length.5': 'Password must be at least 5 characters',
+      'wifi.alert.password.length.8': 'Password must be at least 8 characters',
+      'button.rotate': 'Rotate',
+      'button.print': 'Print',
+      select: 'Select Language',
+    },
+  },
 };
 
 i18n
