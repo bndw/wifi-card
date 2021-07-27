@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './style.css';
 
-export const Card = () => {
+export const Card = ({ direction = 'ltr' }) => {
   const firstLoad = useRef(true);
   const [qrvalue, setQrvalue] = useState('');
   const [network, setNetwork] = useState({
@@ -18,32 +18,44 @@ export const Card = () => {
     const needsEscape = ['"', ';', ',', ':', '\\'];
 
     let escaped = '';
-    for (let i = 0; i < v.length; i++) {
-      let c = v[i];
+    for (const c of v) {
       if (needsEscape.includes(c)) {
-        c = '\\' + c;
+        escaped += `\\${c}`;
+      } else {
+        escaped += c;
       }
-      escaped += c;
     }
-
     return escaped;
   };
 
   const onPrint = () => {
     if (network.ssid.length > 0) {
       if (network.password.length < 8 && network.encryptionMode === 'WPA') {
-        alert(t('wifi.alert.password.8'));
+        alert(t('wifi.alert.password.length.8'));
       } else if (
         network.password.length < 5 &&
         network.encryptionMode === 'WEP'
       ) {
         alert(t('wifi.alert.password.length.5'));
       } else {
+        document.title = 'WiFi Card - ' + network.ssid;
         window.print();
       }
     } else {
       alert(t('wifi.alert.name'));
     }
+  };
+
+  const disableHidePassword = () => {
+    const isWEPWithPasswordLengthShorterThat5Characters = () => {
+      return network.encryptionMode === 'WEP' && network.password.length < 5
+        ? true
+        : false;
+    };
+
+    return network.encryptionMode === 'WPA' && network.password.length < 8
+      ? true
+      : isWEPWithPasswordLengthShorterThat5Characters();
   };
 
   useEffect(() => {
@@ -63,7 +75,7 @@ export const Card = () => {
         id="print-area"
         style={{ maxWidth: portrait ? '350px' : '100%' }}
       >
-        <h1 style={{ textAlign: portrait ? 'center' : 'left' }}>
+        <h1 style={{ textAlign: portrait ? 'center' : 'unset' }}>
           {t('wifi.login')}
         </h1>
 
@@ -73,7 +85,13 @@ export const Card = () => {
         >
           <QRCode
             className="qrcode"
-            style={{ paddingRight: portrait ? '' : '1em' }}
+            style={
+              !portrait
+                ? direction === 'ltr'
+                  ? { paddingRight: '1em' }
+                  : { paddingLeft: '1em' }
+                : {}
+            }
             value={qrvalue}
             size={175}
           />
@@ -127,6 +145,7 @@ export const Card = () => {
               <input
                 type="checkbox"
                 id="hide-password-checkbox"
+                disabled={disableHidePassword()}
                 className={network.encryptionMode === 'nopass' ? 'hidden' : ''}
                 onChange={() =>
                   setNetwork({
@@ -136,7 +155,7 @@ export const Card = () => {
                 }
               />
               <label
-                for="hide-password-checkbox"
+                htmlFor="hide-password-checkbox"
                 className={network.encryptionMode === 'nopass' ? 'hidden' : ''}
               >
                 {t('wifi.password.hide')}
@@ -158,18 +177,18 @@ export const Card = () => {
                   });
                 }}
               />
-              <label for="encrypt-none">None</label>
+              <label htmlFor="encrypt-none">None</label>
               <input
                 type="radio"
                 name="encrypt-select"
-                id="encrypt-wpa-wpa2"
+                id="encrypt-wpa-wpa2-wpa3"
                 value="WPA"
                 onChange={(e) =>
                   setNetwork({ ...network, encryptionMode: e.target.value })
                 }
                 defaultChecked
               />
-              <label for="encrypt-wpa-wpa2">WPA/WPA2</label>
+              <label htmlFor="encrypt-wpa-wpa2-wpa3">WPA/WPA2/WPA3</label>
               <input
                 type="radio"
                 name="encrypt-select"
@@ -179,7 +198,7 @@ export const Card = () => {
                   setNetwork({ ...network, encryptionMode: e.target.value })
                 }
               />
-              <label for="encrypt-wep">WEP</label>
+              <label htmlFor="encrypt-wep">WEP</label>
             </div>
           </div>
         </div>
