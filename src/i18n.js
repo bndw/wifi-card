@@ -288,6 +288,33 @@ const resources = {
       select: 'Choisir la langue',
     },
   },
+  oc: {
+    translation: {
+      title: 'Carta WiFi',
+      'desc.use':
+        'Imprimissètz una carta simpla amb vòstras informacions de connexion WiFi. Pegatz-la al refregidor, gardatz-la al pòrtafuèlha, etc.',
+      'desc.privacy':
+        "Vòstras informacions WiFi son pas jamai enviadas al servidor. Cap de seguiment, d'analisi o de generacion d'emprenta numerica son pas realizats sus aqueste site Web. Veire lo',
+      'desc.source': 'còde font',
+      'wifi.login': 'Connexion Wi-Fi',
+      'wifi.name': 'Nom de la ret',
+      'wifi.name.placeholder': 'Nom de la ret WiFi',
+      'wifi.password': 'Senhal',
+      'wifi.password.placeholder': 'Senhal',
+      'wifi.password.hide': "Rescondre lo camp del senhal abans d'imprimir",
+      'wifi.password.encryption': 'Chiframent',
+      'wifi.tip':
+        "Viratz vòstre aparelh fòto cap al còdi QR per vos connectar automaticament",
+      'wifi.alert.name': 'Lo nom de la ret pòt pas èsser void',
+      'wifi.alert.password.length.5':
+        'Lo senhal deu conténer almens 5 caractèrs',
+      'wifi.alert.password.8':
+        'Lo senhal deu conténer almens 8 caractèrs',
+      'button.rotate': 'Pivotar',
+      'button.print': 'Imprimir',
+      select: 'Causir la lenga',
+    },
+  },  
   'pt-BR': {
     translation: {
       title: 'Cartão WiFi',
