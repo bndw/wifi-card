@@ -39,6 +39,14 @@ Rewrite the files to resolve any style issues with:
 make fmt.write
 ```
 
+## Language Contribution Guide
+
+We would love for you to contribute to different languages and help make it even better than it is today! As a language contributor, here are some steps we would like you to follow:
+
+1. Add a translation to `./src/i18n.js`
+2. Add the language option to `./src/app.js`. Use the format e.g. `French (Français)`
+3. Run `make fmt.write` to format your changes with Prettier
+
 ## Supported Languages
 
 | Language   | Author Credit                                 |
