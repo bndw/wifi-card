@@ -53,3 +53,4 @@ make fmt.write
 | Dutch      | [wouterbrink](https://github.com/wouterbrink) |
 | French     | [Divlo](https://github.com/Divlo)             |
 | Turkish    | [Riza Ergun](https://github.com/rizaergun)    |
+| Indonesia  | [nyancodeid](https://github.com/nyancodeid)   |
