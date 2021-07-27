@@ -16,6 +16,11 @@ function App() {
     i18n.changeLanguage(language);
   };
 
+  /* handle the edge case of the initial render requiring RTL direction */
+  if (RTL_LANGUAGES.includes(i18n.language)) {
+    html.style.direction = 'rtl';
+  }
+
   return (
     <div className="App">
       <h1>
