@@ -10,6 +10,7 @@ export const Card = ({ direction = 'ltr' }) => {
     ssid: '',
     encryptionMode: 'WPA',
     password: '',
+    tmpPassword: '',
     hidePassword: false,
   });
   const [portrait, setPortrait] = useState(false);
@@ -173,6 +174,7 @@ export const Card = ({ direction = 'ltr' }) => {
                   setNetwork({
                     ...network,
                     encryptionMode: e.target.value,
+                    tmpPassword: network.password,
                     password: '',
                   });
                 }}
@@ -184,7 +186,11 @@ export const Card = ({ direction = 'ltr' }) => {
                 id="encrypt-wpa-wpa2-wpa3"
                 value="WPA"
                 onChange={(e) =>
-                  setNetwork({ ...network, encryptionMode: e.target.value })
+                  setNetwork({
+                    ...network,
+                    encryptionMode: e.target.value,
+                    password: network.tmpPassword,
+                  })
                 }
                 defaultChecked
               />
@@ -195,7 +201,11 @@ export const Card = ({ direction = 'ltr' }) => {
                 id="encrypt-wep"
                 value="WEP"
                 onChange={(e) =>
-                  setNetwork({ ...network, encryptionMode: e.target.value })
+                  setNetwork({
+                    ...network,
+                    encryptionMode: e.target.value,
+                    password: network.tmpPassword,
+                  })
                 }
               />
               <label htmlFor="encrypt-wep">WEP</label>
