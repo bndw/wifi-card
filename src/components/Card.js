@@ -18,14 +18,13 @@ export const Card = ({ direction = 'ltr' }) => {
     const needsEscape = ['"', ';', ',', ':', '\\'];
 
     let escaped = '';
-    for (let i = 0; i < v.length; i++) {
-      let c = v[i];
+    for (const c of v) {
       if (needsEscape.includes(c)) {
-        c = '\\' + c;
+        escaped += `\\${c}`;
+      } else {
+        escaped += c;
       }
-      escaped += c;
     }
-
     return escaped;
   };
 
@@ -45,6 +44,18 @@ export const Card = ({ direction = 'ltr' }) => {
     } else {
       alert(t('wifi.alert.name'));
     }
+  };
+
+  const disableHidePassword = () => {
+    const isWEPWithPasswordLengthShorterThat5Characters = () => {
+      return network.encryptionMode === 'WEP' && network.password.length < 5
+        ? true
+        : false;
+    };
+
+    return network.encryptionMode === 'WPA' && network.password.length < 8
+      ? true
+      : isWEPWithPasswordLengthShorterThat5Characters();
   };
 
   useEffect(() => {
@@ -134,6 +145,7 @@ export const Card = ({ direction = 'ltr' }) => {
               <input
                 type="checkbox"
                 id="hide-password-checkbox"
+                disabled={disableHidePassword()}
                 className={network.encryptionMode === 'nopass' ? 'hidden' : ''}
                 onChange={() =>
                   setNetwork({
