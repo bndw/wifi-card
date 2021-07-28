@@ -352,7 +352,7 @@ const resources = {
       'wifi.name.placeholder': 'WLAN-Netzwerkname',
       'wifi.password': 'Passwort',
       'wifi.password.placeholder': 'Passwort',
-      'wifi.password.hide': 'Passwordfeld vor dem Drucken ausblenden',
+      'wifi.password.hide': 'Passwortfeld vor dem Drucken ausblenden',
       'wifi.password.encryption': 'Verschlüsselung',
       'wifi.tip':
         'Zeige mit der Kamera deines Handys auf den QR-Code, um automatisch eine Verbindung herzustellen',
