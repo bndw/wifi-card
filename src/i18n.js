@@ -22,7 +22,7 @@ const resources = {
         "Point your phone's camera at the QR Code to connect automatically",
       'wifi.alert.name': 'Network name cannot be empty',
       'wifi.alert.password.length.5': 'Password must be at least 5 characters',
-      'wifi.alert.password.8': 'Password must be at least 8 characters',
+      'wifi.alert.password.length.8': 'Password must be at least 8 characters',
       'button.rotate': 'Rotate',
       'button.print': 'Print',
       select: 'Select Language',
@@ -48,7 +48,8 @@ const resources = {
       'wifi.alert.name': 'Netwerk naam kan niet leeg zijn',
       'wifi.alert.password.length.5':
         'Wachtwoord moet ten minste 5 tekens bevatten',
-      'wifi.alert.password.8': 'Wachtwoord moet ten minste 8 tekens bevatten',
+      'wifi.alert.password.length.8':
+        'Wachtwoord moet ten minste 8 tekens bevatten',
       'button.rotate': 'Draai',
       'button.print': 'Print',
       select: 'Selecteer Taal',
@@ -72,10 +73,34 @@ const resources = {
       'wifi.tip': '将手机摄像头对准二维码即可自动连接',
       'wifi.alert.name': '网络名称不能为空',
       'wifi.alert.password.length.5': '密码至少 5 个字符',
-      'wifi.alert.password.8': '密码至少 8 个字符',
+      'wifi.alert.password.length.8': '密码至少 8 个字符',
       'button.rotate': '翻转',
       'button.print': '打印',
       select: '选择语言',
+    },
+  },
+  'zh-HK': {
+    translation: {
+      title: 'WiFi 連接卡',
+      'desc.use':
+        '打印一張 WiFi 詳細資料嘅連接卡，將佢癡喺雪櫃上面、放喺銀包入面... ',
+      'desc.privacy':
+        '你嘅 WiFi 資料永遠唔會傳送去網站伺服器。呢個網站無使用任何追蹤、分析或者裝置指紋辨識。睇吓',
+      'desc.source': '源代碼',
+      'wifi.login': '連接 WiFi',
+      'wifi.name': '網絡名稱',
+      'wifi.name.placeholder': 'WiFi 網絡名稱',
+      'wifi.password': '密碼',
+      'wifi.password.placeholder': '密碼',
+      'wifi.password.hide': '打印前隱藏密碼',
+      'wifi.password.encryption': '加密',
+      'wifi.tip': '打開相機指住嗰QR Code就可以連接 WiFi',
+      'wifi.alert.name': '唔可以留空網絡名稱',
+      'wifi.alert.password.length.5': '密碼至少要有 5 個字符',
+      'wifi.alert.password.8': '密碼至少要有 8 個字符 ',
+      'button.rotate': '翻轉',
+      'button.print': '打印',
+      select: '選擇語言',
     },
   },
   es: {
@@ -99,7 +124,8 @@ const resources = {
       'wifi.alert.name': 'El nombre de la red no puede estar vacío',
       'wifi.alert.password.length.5':
         'La contraseña debe tener al menos 5 caracteres',
-      'wifi.alert.password.8': 'La contraseña debe tener al menos 8 caracteres',
+      'wifi.alert.password.length.8':
+        'La contraseña debe tener al menos 8 caracteres',
       'button.rotate': 'Girar',
       'button.print': 'Imprimir',
       select: 'Seleccionar idioma',
@@ -124,7 +150,7 @@ const resources = {
         'Abra o aplicativo de câmera no seu telemóvel e aponte para o QR Code para conectar-se automaticamente.',
       'wifi.alert.name': 'O Nome da rede não pode ficar em branco',
       'wifi.alert.password.length.5': 'A senha precisa ter no mímimo 4 digítos',
-      'wifi.alert.password.8': 'A senha precisa ter no mímimo 8 digítos',
+      'wifi.alert.password.length.8': 'A senha precisa ter no mímimo 8 digítos',
       'button.rotate': 'Girar',
       'button.print': 'Imprimir',
       select: 'Selecionar Linguagem',
@@ -149,7 +175,8 @@ const resources = {
       'wifi.alert.name': 'ネットワーク名は空にできません',
       'wifi.alert.password.length.5':
         'パスワードは5文字以上でなければなりません',
-      'wifi.alert.password.8': 'パスワードは8文字以上でなければなりません',
+      'wifi.alert.password.length.8':
+        'パスワードは8文字以上でなければなりません',
       'button.rotate': '回転する',
       'button.print': '印刷する',
       select: '言語を選択',
@@ -175,11 +202,36 @@ const resources = {
       'wifi.alert.name': 'Название сети не может быть пустым',
       'wifi.alert.password.length.5':
         'Пароль должен состоять не менее чем из 5 символов',
-      'wifi.alert.password.8':
+      'wifi.alert.password.length.8':
         'Пароль должен состоять не менее чем из 8 символов',
       'button.rotate': 'Повернуть',
       'button.print': 'Распечатать',
       select: 'Выбор языка',
+    },
+  },
+  'fa-IR': {
+    translation: {
+      title: 'کارت WiFi',
+      'desc.use':
+        'توسط اطلاعات شبکه WiFi خود یک کارت ساده چاپ کنید و آن را به یخچال بچسبانید و یا در کیف پول خود نگه دارید.',
+      'desc.privacy':
+        'اطلاعات شبکه شما هرگز به سرور ارسال نمی‌شود و هیچگونه ردیابی، آنالیز و یا تحلیل در این وب سایت انجام نمی‌شود. مشاهده ',
+      'desc.source': 'سورس کد',
+      'wifi.login': 'اتصال به شبکه WiFi',
+      'wifi.name': 'نام شبکه',
+      'wifi.name.placeholder': 'نام شبکه خود را وارد کنید',
+      'wifi.password': 'رمز‌عبور',
+      'wifi.password.placeholder': 'رمز‌عبور شبکه خود را وارد کنید',
+      'wifi.password.hide': 'رمز‌عبور را بعد از چاپ کارت مخفی کن.',
+      'wifi.password.encryption': 'رمزنگاری',
+      'wifi.tip':
+        'دوربین تلفن خود را روی تصویر (QR Code) گرفته تا به صورت خودکار به شبکه متصل شوید.',
+      'wifi.alert.name': 'اسم شبکه شما نباید خالی باشد.',
+      'wifi.alert.password.length.5': 'رمز‌عبور باید حداقل ۵ حرف داشته باشد.',
+      'wifi.alert.password.8': 'رمز‌عبور باید حداقل ۸ حرف داشته باشد.',
+      'button.rotate': 'چرخاندن',
+      'button.print': 'چاپ',
+      select: 'انتخاب زبان',
     },
   },
   'uk-UA': {
@@ -202,7 +254,8 @@ const resources = {
       'wifi.alert.name': 'Назва мережі не може бути порожньою',
       'wifi.alert.password.length.5':
         'Пароль повинен містити принаймні 5 символів',
-      'wifi.alert.password.8': 'Пароль повинен містити принаймні 8 символів',
+      'wifi.alert.password.length.8':
+        'Пароль повинен містити принаймні 8 символів',
       'button.rotate': 'Повернути',
       'button.print': 'Друкувати',
       select: 'Вибір мови',
@@ -231,6 +284,84 @@ const resources = {
       'button.rotate': 'Drehen',
       'button.print': 'Drucken',
       select: 'Sprache auswählen',
+    },
+  },
+  'fr-FR': {
+    translation: {
+      title: 'Carte WiFi',
+      'desc.use':
+        'Imprimez une simple carte avec vos informations de connexion WiFi. Collez-le au réfrigérateur, gardez-le dans votre portefeuille, etc.',
+      'desc.privacy':
+        'Vos informations WiFi ne sont jamais envoyées au serveur. Aucun suivi, analyse ou prise empreinte digitale ne sont utilisés sur ce site Web. Voir le',
+      'desc.source': 'code source',
+      'wifi.login': 'Connexion Wi-Fi',
+      'wifi.name': 'Nom du réseau',
+      'wifi.name.placeholder': 'Nom du réseau WiFi',
+      'wifi.password': 'Mot de passe',
+      'wifi.password.placeholder': 'Mot de passe',
+      'wifi.password.hide': "Masquer le champ du mot de passe avant d'imprimer",
+      'wifi.password.encryption': 'Chiffrement',
+      'wifi.tip':
+        "Dirigez l'appareil photo de votre téléphone vers le QR code pour vous connecter automatiquement",
+      'wifi.alert.name': 'Le nom du réseau ne peut pas être vide',
+      'wifi.alert.password.length.5':
+        'Le mot de passe doit au moins faire 5 caractères',
+      'wifi.alert.password.8':
+        'Le mot de passe doit au moins faire 8 caractères',
+      'button.rotate': 'Pivoter',
+      'button.print': 'Imprimer',
+      select: 'Choisir la langue',
+    },
+  },
+  'pt-BR': {
+    translation: {
+      title: 'Cartão WiFi',
+      'desc.use':
+        'Imprime um simples cartão com os dados de login de sua WiFi. Cole na sua geladeira, guarde na sua carteira etc.',
+      'desc.privacy':
+        'As informações da sua WiFi nunca será enviada para o servidor. Nenhum serviço de tracking, analytics ou fingerprint é usado nesse site. Veja o',
+      'desc.source': 'código fonte',
+      'wifi.login': 'WiFi Login',
+      'wifi.name': 'Nome da rede',
+      'wifi.name.placeholder': 'Nome da Rede',
+      'wifi.password': 'Senha',
+      'wifi.password.placeholder': 'Senha',
+      'wifi.password.hide': 'Esconder senha antes de imprimir',
+      'wifi.password.encryption': 'Tipo de Segurança',
+      'wifi.tip':
+        'Aponte a camera do seu ceular para o código QR para se conectar automaticamente.',
+      'wifi.alert.name': 'Nome da rede não pode estar em branco',
+      'wifi.alert.password.length.5':
+        'A Senha deve ter pelo menos 5 caracteres',
+      'wifi.alert.password.8': 'A Senha deve ter pelo menos 5 caracteres',
+      'button.rotate': 'Rotacionar',
+      'button.print': 'Imprimir',
+      select: 'Escolha o idioma',
+    },
+  },
+  'tr-TR': {
+    translation: {
+      title: 'WiFi Kartı',
+      'desc.use':
+        'WiFi giriş bilgilerinizle basit bir kart yazdırın. Buzdolabına bantlayın, cüzdanınızda saklayın vb.',
+      'desc.privacy':
+        'WiFi bilgileriniz asla sunucuya gönderilmez. Bu web sitesinde hiçbir izleme, analiz veya parmak izi kullanılmamaktadır. Görüntüle',
+      'desc.source': 'kaynak kodu',
+      'wifi.login': 'WiFi Giriş',
+      'wifi.name': 'Ağ adı',
+      'wifi.name.placeholder': 'WiFi Ağ adı',
+      'wifi.password': 'Parola',
+      'wifi.password.placeholder': 'Parola',
+      'wifi.password.hide': 'Yazdırmadan önce parola alanını gizle',
+      'wifi.password.encryption': 'Şifreleme',
+      'wifi.tip':
+        'Otomatik olarak bağlanmak için telefonunuzun kamerası ile QR kodunu okutun',
+      'wifi.alert.name': 'Ağ adı boş olamaz',
+      'wifi.alert.password.length.5': 'Parola en az 5 karakter olmalıdır',
+      'wifi.alert.password.length.8': 'Parola en az 8 karakter olmalıdır',
+      'button.rotate': 'Döndür',
+      'button.print': 'Yazdır',
+      select: 'Dil Seçin',
     },
   },
 };
