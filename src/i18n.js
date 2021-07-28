@@ -217,7 +217,7 @@ const resources = {
         'Deine Zugangsdaten werden niemals zum Server gesendet. Es gibt kein Tracking, Analytics, oder Fingerprinting auf dieser Website. Hier geht es zum',
       'desc.source': 'Quellcode',
       'wifi.login': 'WLAN-Zugangsdaten',
-      'wifi.name': 'Netzwerk Name',
+      'wifi.name': 'WLAN-Netzwerkname (SSID)',
       'wifi.name.placeholder': 'WLAN-Netzwerkname (SSID)',
       'wifi.password': 'Passwort',
       'wifi.password.placeholder': 'Passwort',
