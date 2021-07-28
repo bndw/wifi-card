@@ -314,6 +314,31 @@ const resources = {
       select: 'Escolha o idioma',
     },
   },
+    'it-IT': {
+    translation: {
+      title: 'WiFi Card',
+      'desc.use':
+        'Stampa una scheda con le informazioni di accesso WiFi. Attaccala al frigo, tienila nel portafogli etc.',
+      'desc.privacy':
+        'Le informazioni del tuo WiFi non verranno mai inviate ai nostri server. Nessun tracciamento, analytics, o fingerprinting viene usato su questo sito. Visiona le',
+      'desc.source': 'codice sorgente',
+      'wifi.login': 'WiFi Login',
+      'wifi.name': 'Nome della rete',
+      'wifi.name.placeholder': 'Nome della rete wifi',
+      'wifi.password': 'Password',
+      'wifi.password.placeholder': 'Password',
+      'wifi.password.hide': 'Nascondi il campo password prima di stampare',
+      'wifi.password.encryption': 'Cifratura',
+      'wifi.tip':
+        "Inquadra il codice QR con il tuo smartphone per collegarti automaticamente",
+      'wifi.alert.name': 'Il nome della rete wifi non può essere vuoto',
+      'wifi.alert.password.length.5': 'La password deve contenere almeno 5 caratteri',
+      'wifi.alert.password.length.8': 'La password deve contenere almeno 8 caratteri',
+      'button.rotate': 'Ruota',
+      'button.print': 'Stampa',
+      select: 'Seleziona una lingua',
+    },
+  },
   'tr-TR': {
     translation: {
       title: 'WiFi Kartı',
