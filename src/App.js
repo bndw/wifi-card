@@ -34,19 +34,19 @@ function App() {
           value={i18n.language}
           onChange={(e) => changeLanguage(e.target.value)}
         >
-          <option value="en-US">en-US</option>
-          <option value="zh-HK">繁體中文🇭🇰</option>
-          <option value="zh-CN">简体中文</option>
-          <option value="es">es</option>
-          <option value="pt">Português</option>
-          <option value="ja">日本語</option>
-          <option value="fa-IR">Persian</option>
-          <option value="ru-RU">Русский</option>
-          <option value="uk-UA">Українська</option>
-          <option value="nl-NL">Nederlands</option>
+          <option value="en-US">English - US (English)</option>
+          <option value="zh-HK">Chinese - Hong Kong (简体中文)</option>
+          <option value="zh-CN">Chinese - Simplified (简体中文)</option>
+          <option value="es">Spanish (Español)</option>
+          <option value="pt">Portuguese (Português)</option>
+          <option value="pt-BR">Portuguese (Brazil)</option>
+          <option value="ja">Japanese (日本語)</option>
+          <option value="fa-IR">Persian - Iran (فارسی)</option>
+          <option value="ru-RU">Russian - Russia (Русский)</option>
+          <option value="uk-UA">Ukrainian - Ukraine (Українська)</option>
+          <option value="nl-NL">Dutch - Netherlands (Nederlands)</option>
           <option value="fr-FR">French - FR (Français)</option>
-          <option value="pt-BR">pt-BR</option>
-          <option value="tr-TR">Turkish (Türkçe)</option>
+          <option value="tr-TR">Turkish - Turkey (Türkçe)</option>
         </select>
       </div>
 
