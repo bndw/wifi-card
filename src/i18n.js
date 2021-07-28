@@ -339,6 +339,31 @@ const resources = {
       select: 'Dil Seçin',
     },
   },
+  'id-ID': {
+    translation: {
+      title: 'Kartu WiFi',
+      'desc.use':
+        'Cetak sebuah kartu sederhana sesuai dengan detail dari WiFi-mu. Tempelkan di kulkas, atau simpan di dalam dompetmu, dll.',
+      'desc.privacy':
+        'Informasi dari WiFi mu tidak akan pernah disimpan ke server. Juga tidak ada pelacakan, analisis, atau sidikjari yang digunakan di website ini. Lihat ',
+      'desc.source': 'kode sumber',
+      'wifi.login': 'WiFi Login',
+      'wifi.name': 'Nama Network',
+      'wifi.name.placeholder': 'Nama WiFi Network',
+      'wifi.password': 'Kata sandi',
+      'wifi.password.placeholder': 'Kata sandi',
+      'wifi.password.hide': 'Sembunyikan isi kolom kata sandi sebelum mencetak',
+      'wifi.password.encryption': 'Enkripsi',
+      'wifi.tip':
+        "Arahkan kamera handphone mu ke arah Kode QR untuk menyambungkan secara otomatis",
+      'wifi.alert.name': 'Nama Network harus diisi',
+      'wifi.alert.password.length.5': 'Password harus berisi minimal 5 karakter',
+      'wifi.alert.password.length.8': 'Password harus berisi minimal 8 karakter',
+      'button.rotate': 'Rotasi',
+      'button.print': 'Print / Cetak',
+      select: 'Pilih Bahasa',
+    },
+  },
 };
 
 i18n
