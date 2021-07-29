@@ -45,10 +45,15 @@ button#print {
   border-color: #0074d9;
 }
 
-button#rotate {
+button#settings {
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d;
+}
+
+#settings {
+  border: solid 1px #aaa;
+  padding: 1em;
 }
 
 @media print {

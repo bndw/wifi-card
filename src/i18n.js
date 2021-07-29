@@ -25,6 +25,7 @@ const resources = {
       'wifi.alert.password.length.8': 'Password must be at least 8 characters',
       'button.rotate': 'Rotate',
       'button.print': 'Print',
+      'button.settings': 'Settings',
       select: 'Select Language',
     },
   },
