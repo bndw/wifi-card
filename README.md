@@ -58,3 +58,4 @@ make fmt.write
 | Catalan             | [aniol](https://github.com/aniol)                 |
 | German              | [devofthings](https://github.com/devofthings)     |
 | Indonesia           | [nyancodeid](https://github.com/nyancodeid)       |
+| Polish              | [olekstomek](https://github.com/olekstomek)       |
