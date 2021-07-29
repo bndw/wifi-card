@@ -143,19 +143,17 @@ const resources = {
       'wifi.name': 'Nome da Rede',
       'wifi.name.placeholder': 'Nome da sua rede WiFi',
       'wifi.password': 'Senha',
-      'wifi.password.placeholder': 'Senha da rede WiFi',
-      'wifi.password.hide': 'Esconder o campo senha antes de imprimir',
+      'wifi.password.placeholder': 'Senha da sua rede WiFi',
+      'wifi.password.hide': 'Esconder o campo de senha antes da impressão',
       'wifi.password.encryption': 'Criptografia',
       'wifi.tip':
         'Abra a aplicação da câmera no seu telemóvel e aponte para o QR Code para se ligar automaticamente.',
       'wifi.alert.name': 'O Nome da rede não pode ficar em branco',
-      'wifi.alert.password.length.5':
-        'A senha precisa ter no mímimo 4 caracteres',
-      'wifi.alert.password.length.8':
-        'A senha precisa ter no mímimo 8 caracteres',
-      'button.rotate': 'Rodar',
+      'wifi.alert.password.length.5': 'A senha precisa ter no mínimo 5 dígitos',
+      'wifi.alert.password.length.8': 'A senha precisa ter no mínimo 8 dígtos',
+      'button.rotate': 'Girar',
       'button.print': 'Imprimir',
-      select: 'Selecionar Lingua',
+      select: 'Selecionar Idioma',
     },
   },
   ja: {
@@ -392,7 +390,7 @@ const resources = {
       'wifi.alert.name': 'Nome da rede não pode estar em branco',
       'wifi.alert.password.length.5':
         'A Senha deve ter pelo menos 5 caracteres',
-      'wifi.alert.password.8': 'A Senha deve ter pelo menos 5 caracteres',
+      'wifi.alert.password.8': 'A Senha deve ter pelo menos 8 caracteres',
       'button.rotate': 'Rotacionar',
       'button.print': 'Imprimir',
       select: 'Escolha o idioma',
