@@ -54,6 +54,7 @@ function App() {
           <option value="pl-PL">Polish - PL (Polski)</option>
           <option value="ar">Arabic - العربية</option>
           <option value="oc">Occitan</option>
+          <option value="it-IT">Italian</option>
         </select>
       </div>
 
