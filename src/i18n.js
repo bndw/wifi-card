@@ -420,6 +420,31 @@ const resources = {
       select: 'Escolliu l’idioma',
     },
   },
+  'id-ID': {
+    translation: {
+      title: 'Kartu WiFi',
+      'desc.use':
+        'Cetak kartu sederhana ini dengan informasi login WiFi anda. Tempelkan di pintu lemari es, atau simpan di dompet anda, dll.',
+      'desc.privacy':
+        'Informasi WiFi anda tidak akan dikirim ke server manapun. Tidak ada pelacakan, analitik, atau sidik jari yang digunakan di situs website ini. Lihat',
+      'desc.source': 'source code',
+      'wifi.login': 'Login WiFi',
+      'wifi.name': 'Nama Jaringan',
+      'wifi.name.placeholder': 'Nama Jaringan WiFi',
+      'wifi.password': 'Kata Sandi',
+      'wifi.password.placeholder': 'Kata Sandi',
+      'wifi.password.hide': 'Sembunyikan kata sandi sebelum dicetak.',
+      'wifi.password.encryption': 'Enkripsi',
+      'wifi.tip':
+        'Arahkan kamera ponsel anda ke Kode QR untuk terhubung ke WiFi secara otomatis',
+      'wifi.alert.name': 'Nama jaringan tidak boleh kosong',
+      'wifi.alert.password.length.5': 'Kata sandi minimal harus 5 karakter',
+      'wifi.alert.password.8': 'Kata sandi minimal harus 8 karakter',
+      'button.rotate': 'Putar',
+      'button.print': 'Cetak',
+      select: 'Pilih Bahasa',
+    },
+  },
 };
 
 i18n

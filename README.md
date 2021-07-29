@@ -57,3 +57,4 @@ make fmt.write
 | Hindi               | [Pushpender](https://github.com/PushpenderSaini0) |
 | Catalan             | [aniol](https://github.com/aniol)                 |
 | German              | [devofthings](https://github.com/devofthings)     |
+| Indonesia           | [nyancodeid](https://github.com/nyancodeid)       |
