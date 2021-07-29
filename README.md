@@ -54,3 +54,4 @@ make fmt.write
 | French     | [Divlo](https://github.com/Divlo)             |
 | Turkish    | [Riza Ergun](https://github.com/rizaergun)    |
 | Arabic     | [Ahmed Tokyo](https://github.com/a-tokyo)     |
+| Hindi      | [Pushpender](https://github.com/PushpenderSaini0)|
