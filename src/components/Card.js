@@ -53,9 +53,24 @@ export const Card = ({ direction = 'ltr' }) => {
         : false;
     };
 
-    return network.encryptionMode === 'WPA' && network.password.length < 8
-      ? true
-      : isWEPWithPasswordLengthShorterThat5Characters();
+    if (network.encryptionMode === 'WPA' && network.password.length < 8) {
+      let checkbox = document.getElementById('hide-password-checkbox');
+      if (checkbox) checkbox.checked = false;
+
+      let passwordLabel = document.getElementById('password-label');
+      let password = document.getElementById('password');
+
+      if (passwordLabel) {
+        passwordLabel.classList.remove('no-print');
+        passwordLabel.classList.remove('hidden');
+      }
+      if (password) {
+        password.classList.remove('no-print');
+        password.classList.remove('hidden');
+      }
+      return true;
+    }
+    return isWEPWithPasswordLengthShorterThat5Characters();
   };
 
   useEffect(() => {
@@ -111,6 +126,7 @@ export const Card = ({ direction = 'ltr' }) => {
               onChange={(e) => setNetwork({ ...network, ssid: e.target.value })}
             />
             <label
+              id="password-label"
               className={`
                 ${network.hidePassword && 'no-print hidden'}
                 ${network.encryptionMode === 'nopass' && 'hidden'}
