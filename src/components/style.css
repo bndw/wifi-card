@@ -2,8 +2,7 @@
 
 #print-area {
   border-color: #aaa;
-  border-style: dashed;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   margin-top: 2em;
   padding: 1em;
 }
@@ -45,10 +44,15 @@ button#print {
   border-color: #0074d9;
 }
 
-button#rotate {
+button#settings {
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d;
+}
+
+#settings {
+  margin-bottom: 1em;
+  padding: 1em;
 }
 
 @media print {

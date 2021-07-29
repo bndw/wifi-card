@@ -1,19 +1,33 @@
+import { Card as ECard, Checkbox, Pane, RadioGroup } from 'evergreen-ui';
 import QRCode from 'qrcode.react';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './style.css';
 
 export const Card = ({ direction = 'ltr' }) => {
+  const { t } = useTranslation();
   const firstLoad = useRef(true);
   const [qrvalue, setQrvalue] = useState('');
-  const [network, setNetwork] = useState({
+  const [settings, setSettings] = useState({
+    // Network SSID name
     ssid: '',
-    encryptionMode: 'WPA',
+    // Network password
     password: '',
+    // Show advanced options
+    showAdvanced: false,
+    // Advanced option: Network encryption mode
+    encryptionMode: 'WPA',
+    // Advanced option: Hide password on the printed card
     hidePassword: false,
+    // Advanced option: Portrait orientation
+    portrait: false,
   });
-  const [portrait, setPortrait] = useState(false);
-  const { t } = useTranslation();
+  const [encryptionModes] = useState([
+    { label: 'None', value: 'nopass' },
+    { label: 'WPA/WPA2/WPA3', value: 'WPA' },
+    { label: 'WEP', value: 'WEP' },
+  ]);
+
   const escape = (v) => {
     const needsEscape = ['"', ';', ',', ':', '\\'];
 
@@ -29,16 +43,16 @@ export const Card = ({ direction = 'ltr' }) => {
   };
 
   const onPrint = () => {
-    if (network.ssid.length > 0) {
-      if (network.password.length < 8 && network.encryptionMode === 'WPA') {
+    if (settings.ssid.length > 0) {
+      if (settings.password.length < 8 && settings.encryptionMode === 'WPA') {
         alert(t('wifi.alert.password.length.8'));
       } else if (
-        network.password.length < 5 &&
-        network.encryptionMode === 'WEP'
+        settings.password.length < 5 &&
+        settings.encryptionMode === 'WEP'
       ) {
         alert(t('wifi.alert.password.length.5'));
       } else {
-        document.title = 'WiFi Card - ' + network.ssid;
+        document.title = 'WiFi Card - ' + settings.ssid;
         window.print();
       }
     } else {
@@ -48,12 +62,12 @@ export const Card = ({ direction = 'ltr' }) => {
 
   const disableHidePassword = () => {
     const isWEPWithPasswordLengthShorterThat5Characters = () => {
-      return network.encryptionMode === 'WEP' && network.password.length < 5
+      return settings.encryptionMode === 'WEP' && settings.password.length < 5
         ? true
         : false;
     };
 
-    return network.encryptionMode === 'WPA' && network.password.length < 8
+    return settings.encryptionMode === 'WPA' && settings.password.length < 8
       ? true
       : isWEPWithPasswordLengthShorterThat5Characters();
   };
@@ -61,14 +75,14 @@ export const Card = ({ direction = 'ltr' }) => {
   useEffect(() => {
     if (firstLoad.current && window.innerWidth < 500) {
       firstLoad.current = false;
-      setPortrait(true);
+      setSettings({ ...settings, portrait: true });
     }
 
-    const ssid = escape(network.ssid);
+    const ssid = escape(settings.ssid);
     const password =
-      network.encryptionMode === 'nopass' ? '' : escape(network.password);
-    setQrvalue(`WIFI:T:${network.encryptionMode};S:${ssid};P:${password};;`);
-  }, [network]);
+      settings.encryptionMode === 'nopass' ? '' : escape(settings.password);
+    setQrvalue(`WIFI:T:${settings.encryptionMode};S:${ssid};P:${password};;`);
+  }, [settings]);
 
   const setEncryptionMode = (e) =>
     setNetwork({
@@ -80,22 +94,29 @@ export const Card = ({ direction = 'ltr' }) => {
     direction === 'ltr' ? { paddingRight: '1em' } : { paddingLeft: '1em' };
 
   return (
-    <div>
-      <fieldset
+    <Pane>
+      <ECard
         id="print-area"
-        style={{ maxWidth: portrait ? '350px' : '100%' }}
+        elevation={3}
+        style={{ maxWidth: settings.portrait ? '350px' : '100%' }}
       >
-        <h1 style={{ textAlign: portrait ? 'center' : 'unset' }}>
+        <h1 style={{ textAlign: settings.portrait ? 'center' : 'unset' }}>
           {t('wifi.login')}
         </h1>
 
         <div
           className="details"
-          style={{ flexDirection: portrait ? 'column' : 'row' }}
+          style={{ flexDirection: settings.portrait ? 'column' : 'row' }}
         >
           <QRCode
             className="qrcode"
-            style={!portrait && checkDirectionAndSetPadding}
+            style={
+              !settings.portrait
+                ? direction === 'ltr'
+                  ? { paddingRight: '1em' }
+                  : { paddingLeft: '1em' }
+                : {}
+            }
             value={qrvalue}
             size={175}
           />
@@ -111,13 +132,15 @@ export const Card = ({ direction = 'ltr' }) => {
               autoCorrect="off"
               autoCapitalize="none"
               spellCheck="false"
-              value={network.ssid}
-              onChange={(e) => setNetwork({ ...network, ssid: e.target.value })}
+              value={settings.ssid}
+              onChange={(e) =>
+                setSettings({ ...settings, ssid: e.target.value })
+              }
             />
             <label
               className={`
-                ${network.hidePassword && 'no-print hidden'}
-                ${network.encryptionMode === 'nopass' && 'hidden'}
+                ${settings.hidePassword && 'no-print hidden'}
+                ${settings.encryptionMode === 'nopass' && 'hidden'}
               `}
             >
               {t('wifi.password')}
@@ -126,12 +149,14 @@ export const Card = ({ direction = 'ltr' }) => {
               id="password"
               type="text"
               className={`
-                ${network.hidePassword && 'no-print hidden'}
-                ${network.encryptionMode === 'nopass' && 'hidden'}
+                ${settings.hidePassword && 'no-print hidden'}
+                ${settings.encryptionMode === 'nopass' && 'hidden'}
               `}
               style={{
                 height:
-                  portrait && network.password.length > 40 ? '5em' : 'auto',
+                  settings.portrait && settings.password.length > 40
+                    ? '5em'
+                    : 'auto',
               }}
               maxLength="63"
               placeholder={t('wifi.password.placeholder')}
@@ -139,68 +164,11 @@ export const Card = ({ direction = 'ltr' }) => {
               autoCorrect="off"
               autoCapitalize="none"
               spellCheck="false"
-              value={network.password}
+              value={settings.password}
               onChange={(e) => {
-                setNetwork({ ...network, password: e.target.value });
+                setSettings({ ...settings, password: e.target.value });
               }}
             />
-
-            <div className="no-print">
-              <input
-                type="checkbox"
-                id="hide-password-checkbox"
-                checked={network.hidePassword}
-                disabled={disableHidePassword()}
-                className={network.encryptionMode === 'nopass' ? 'hidden' : ''}
-                onChange={() =>
-                  setNetwork({
-                    ...network,
-                    hidePassword: !network.hidePassword,
-                  })
-                }
-              />
-              <label
-                htmlFor="hide-password-checkbox"
-                className={network.encryptionMode === 'nopass' ? 'hidden' : ''}
-              >
-                {t('wifi.password.hide')}
-              </label>
-            </div>
-
-            <div className="no-print">
-              <label>
-                {t('wifi.password.encryption')}:{direction === 'rtl' ? ' ' : ''}
-              </label>
-              <span dir="ltr">
-                <input
-                  type="radio"
-                  name="encrypt-select"
-                  id="encrypt-none"
-                  value="nopass"
-                  onChange={setEncryptionMode}
-                />
-                <label htmlFor="encrypt-none">
-                  {t('wifi.password.encryption.none')}
-                </label>
-                <input
-                  type="radio"
-                  name="encrypt-select"
-                  id="encrypt-wpa-wpa2-wpa3"
-                  value="WPA"
-                  onChange={setEncryptionMode}
-                  defaultChecked
-                />
-                <label htmlFor="encrypt-wpa-wpa2-wpa3">WPA/WPA2/WPA3</label>
-                <input
-                  type="radio"
-                  name="encrypt-select"
-                  id="encrypt-wep"
-                  value="WEP"
-                  onChange={setEncryptionMode}
-                />
-                <label htmlFor="encrypt-wep">WEP</label>
-              </span>
-            </div>
           </div>
         </div>
         <hr />
@@ -210,16 +178,46 @@ export const Card = ({ direction = 'ltr' }) => {
           </span>
           {t('wifi.tip')}
         </p>
-      </fieldset>
+      </ECard>
+
+      <div
+        id="settings"
+        style={{ maxWidth: settings.portrait ? '350px' : '100%' }}
+      >
+        <RadioGroup
+          label={`${t('wifi.password.encryption')}:${
+            direction === 'rtl' ? ' ' : ''
+          }`}
+          size={16}
+          value={settings.encryptionMode}
+          options={encryptionModes}
+          onChange={(e) =>
+            setSettings({ ...settings, encryptionMode: e.target.value })
+          }
+        />
+
+        <Checkbox
+          label={t('wifi.password.hide')}
+          checked={settings.hidePassword}
+          disabled={disableHidePassword()}
+          onChange={() =>
+            setSettings({ ...settings, hidePassword: !settings.hidePassword })
+          }
+        />
+        <Checkbox
+          label={t('button.rotate')}
+          checked={settings.portrait}
+          onChange={() =>
+            setSettings({ ...settings, portrait: !settings.portrait })
+          }
+        />
+      </div>
 
       <div className="buttons">
-        <button id="rotate" onClick={() => setPortrait(!portrait)}>
-          {t('button.rotate')}
-        </button>
         <button id="print" onClick={onPrint}>
           {t('button.print')}
         </button>
       </div>
-    </div>
+    </Pane>
   );
 };
