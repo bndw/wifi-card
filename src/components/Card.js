@@ -164,7 +164,9 @@ export const Card = ({ direction = 'ltr' }) => {
             </div>
 
             <div className="no-print">
-              <label>{t('wifi.password.encryption')}:{direction === 'rtl' ? ' ' : ''}</label>
+              <label>
+                {t('wifi.password.encryption')}:{direction === 'rtl' ? ' ' : ''}
+              </label>
               <span dir="ltr">
                 <input
                   type="radio"
