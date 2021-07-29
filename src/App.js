@@ -50,7 +50,7 @@ function App() {
           <option value="fa-IR">Persian Iran - فارسی</option>
           <option value="pl-PL">Polish - Polski</option>
           <option value="pt">Portuguese - Português</option>
-          <option value="pt-BR">Portuguese - Brazil</option>
+          <option value="pt-BR">Portuguese - Português brasileiro</option>
           <option value="ru-RU">Russian - Русский</option>
           <option value="es">Spanish - Español</option>
           <option value="tr-TR">Turkish - Türkçe</option>
