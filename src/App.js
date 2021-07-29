@@ -4,20 +4,20 @@ import logo from '../src/images/wifi.png';
 import { Card } from './components/Card';
 import './style.css';
 
+/* List of languages that require RTL direction (alphabetic order). */
+const RTL_LANGUAGES = ['ar', 'fa-IR'];
+
 function App() {
   const html = document.querySelector('html');
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (language) => {
-    if (language === 'fa-IR') {
-      html.style.direction = 'rtl';
-    } else {
-      html.style.direction = 'ltr';
-    }
+    html.style.direction = RTL_LANGUAGES.includes(language) ? 'rtl' : 'ltr';
     i18n.changeLanguage(language);
   };
 
-  if (i18n.language === 'fa-IR') {
+  /* handle the edge case of the initial render requiring RTL direction */
+  if (RTL_LANGUAGES.includes(i18n.language)) {
     html.style.direction = 'rtl';
   }
 
@@ -52,6 +52,7 @@ function App() {
           <option value="de-DE">German (Germany)</option>
           <option value="id-ID">Indonesian (Indonesia)</option>
           <option value="pl-PL">Polish - PL (Polski)</option>
+          <option value="ar">Arabic - العربية</option>
         </select>
       </div>
 
@@ -62,7 +63,7 @@ function App() {
         <a href="https://github.com/bndw/wifi-card">{t('desc.source')}</a>.
       </p>
 
-      <Card direction={i18n.language === 'fa-IR' ? 'rtl' : 'ltr'} />
+      <Card direction={RTL_LANGUAGES.includes(i18n.language) ? 'rtl' : 'ltr'} />
     </div>
   );
 }
