@@ -56,3 +56,4 @@ make fmt.write
 | Turkish             | [Riza Ergun](https://github.com/rizaergun)        |
 | Hindi               | [Pushpender](https://github.com/PushpenderSaini0) |
 | Catalan             | [aniol](https://github.com/aniol)                 |
+| German              | [devofthings](https://github.com/devofthings)     |
