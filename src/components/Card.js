@@ -13,6 +13,7 @@ export const Card = ({ direction = 'ltr' }) => {
     hidePassword: false,
   });
   const [portrait, setPortrait] = useState(false);
+  const [checkbox, setCheckbox] = useState(false);
   const { t } = useTranslation();
   const escape = (v) => {
     const needsEscape = ['"', ';', ',', ':', '\\'];
@@ -146,14 +147,16 @@ export const Card = ({ direction = 'ltr' }) => {
               <input
                 type="checkbox"
                 id="hide-password-checkbox"
+                checked={checkbox}
                 disabled={disableHidePassword()}
                 className={network.encryptionMode === 'nopass' ? 'hidden' : ''}
-                onChange={() =>
+                onChange={() => {
+                  setCheckbox(!checkbox);
                   setNetwork({
                     ...network,
                     hidePassword: !network.hidePassword,
-                  })
-                }
+                  });
+                }}
               />
               <label
                 htmlFor="hide-password-checkbox"
