@@ -24,20 +24,7 @@ make run
    make dev
    ```
 
-This project uses [Prettier](https://prettier.io/) formatting and all pull requests must pass
-the automated lint checks prior to merging.
-
-Run the lint check with:
-
-```
-make fmt
-```
-
-Rewrite the files to resolve any style issues with:
-
-```
-make fmt.write
-```
+This project uses [Prettier](https://prettier.io/) formatting. All pull requests must pass the automated lint checks before merging. Prettier format is run automatically as a pre-commit hook.
 
 ## Supported Languages
 
