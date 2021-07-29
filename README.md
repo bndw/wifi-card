@@ -59,3 +59,4 @@ make fmt.write
 | German              | [devofthings](https://github.com/devofthings)     |
 | Indonesia           | [nyancodeid](https://github.com/nyancodeid)       |
 | Polish              | [olekstomek](https://github.com/olekstomek)       |
+| Arabic              | [Ahmed Tokyo](https://github.com/a-tokyo)         |
