@@ -61,3 +61,4 @@ make fmt.write
 | Polish              | [olekstomek](https://github.com/olekstomek)       |
 | Arabic              | [Ahmed Tokyo](https://github.com/a-tokyo)         |
 | Occitan             | [ensag-dev](https://github.com/ensag-dev)         |
+| Italian             | [Domenico Pascucci](https://github.com/pasmimmo)  |
