@@ -95,6 +95,7 @@ export const Card = ({ direction = 'ltr' }) => {
             }
             value={qrvalue}
             size={175}
+            renderAs="svg"
           />
 
           <div className="inputs">
@@ -165,7 +166,12 @@ export const Card = ({ direction = 'ltr' }) => {
 
             <div className="no-print">
               <label>{t('wifi.password.encryption')}:</label>
-              <input
+
+              <label>
+                {t('wifi.password.encryption')}:{direction === 'rtl' ? ' ' : ''}
+              </label>
+              <span dir="ltr">
+<input
                 type="radio"
                 name="encrypt-select"
                 id="encrypt-none"
@@ -209,6 +215,7 @@ export const Card = ({ direction = 'ltr' }) => {
                 }
               />
               <label htmlFor="encrypt-wep">WEP</label>
+              </span>
             </div>
           </div>
         </div>

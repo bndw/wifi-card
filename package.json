@@ -14,11 +14,16 @@
     "react-i18next": "^11.11.2",
     "react-scripts": "^4.0.1"
   },
+  "devDependencies": {
+    "prettier": "2.3.2",
+    "husky": "^7.0.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,8 +43,5 @@
   "main": "index.js",
   "repository": "git@github.com:bndw/wifi-card.git",
   "author": "bndw <ben@bdw.to>",
-  "license": "MIT",
-  "devDependencies": {
-    "prettier": "2.3.2"
-  }
+  "license": "MIT"
 }
