@@ -41,7 +41,7 @@ function App() {
           <option value="nl-NL">Dutch - Nederlands</option>
           <option value="en">English</option>
           <option value="fr-FR">French - Français</option>
-          <option value="de-DE">German - Germany</option>
+          <option value="de-DE">German - Deutsch</option>
           <option value="hi-IN">Hindi - हिन्दी</option>
           <option value="id-ID">Indonesian</option>
           <option value="it-IT">Italian</option>
