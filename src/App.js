@@ -53,6 +53,7 @@ function App() {
           <option value="id-ID">Indonesian (Indonesia)</option>
           <option value="pl-PL">Polish - PL (Polski)</option>
           <option value="ar">Arabic - العربية</option>
+          <option value="oc">Occitan</option>
         </select>
       </div>
 
