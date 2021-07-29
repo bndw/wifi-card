@@ -41,17 +41,18 @@ make fmt.write
 
 ## Supported Languages
 
-| Language   | Author Credit                                     |
-| ---------- | ------------------------------------------------- |
-| English    | [bndw](https://github.com/bndw)                   |
-| Chinese    | [Baoyuantop](https://github.com/Baoyuantop)       |
-| Spanish    | [oscfdezdz](https://github.com/oscfdezdz)         |
-| Portuguese | [pedrorenan](https://github.com/pedrorenan)       |
-| Japanese   | [hatsu38](https://github.com/hatsu38)             |
-| Russian    | [Teraskull](https://github.com/Teraskull)         |
-| Ukrainian  | [Teraskull](https://github.com/Teraskull)         |
-| Dutch      | [wouterbrink](https://github.com/wouterbrink)     |
-| French     | [Divlo](https://github.com/Divlo)                 |
-| Turkish    | [Riza Ergun](https://github.com/rizaergun)        |
-| Hindi      | [Pushpender](https://github.com/PushpenderSaini0) |
-| Catalan    | [aniol](https://github.com/aniol)                 |
+| Language            | Author Credit                                     |
+| ------------------- | ------------------------------------------------- |
+| English             | [bndw](https://github.com/bndw)                   |
+| Chinese             | [Baoyuantop](https://github.com/Baoyuantop)       |
+| Spanish             | [oscfdezdz](https://github.com/oscfdezdz)         |
+| Portuguese          | [pedrorenan](https://github.com/pedrorenan)       |
+| Portuguese (Brazil) | [ismaelpereira](https://github.com/ismaelpereira) |
+| Japanese            | [hatsu38](https://github.com/hatsu38)             |
+| Russian             | [Teraskull](https://github.com/Teraskull)         |
+| Ukrainian           | [Teraskull](https://github.com/Teraskull)         |
+| Dutch               | [wouterbrink](https://github.com/wouterbrink)     |
+| French              | [Divlo](https://github.com/Divlo)                 |
+| Turkish             | [Riza Ergun](https://github.com/rizaergun)        |
+| Hindi               | [Pushpender](https://github.com/PushpenderSaini0) |
+| Catalan             | [aniol](https://github.com/aniol)                 |

@@ -94,6 +94,7 @@ export const Card = ({ direction = 'ltr' }) => {
             }
             value={qrvalue}
             size={175}
+            renderAs="svg"
           />
 
           <div className="inputs">
