@@ -10,7 +10,6 @@ export const Card = ({ direction = 'ltr' }) => {
     ssid: '',
     encryptionMode: 'WPA',
     password: '',
-    tmpPassword: '',
     hidePassword: false,
   });
   const [portrait, setPortrait] = useState(false);
@@ -66,7 +65,8 @@ export const Card = ({ direction = 'ltr' }) => {
     }
 
     const ssid = escape(network.ssid);
-    const password = escape(network.password);
+    const password =
+      network.encryptionMode === 'None' ? '' : escape(network.password);
     setQrvalue(`WIFI:T:${network.encryptionMode};S:${ssid};P:${password};;`);
   }, [network]);
 
@@ -171,50 +171,46 @@ export const Card = ({ direction = 'ltr' }) => {
                 {t('wifi.password.encryption')}:{direction === 'rtl' ? ' ' : ''}
               </label>
               <span dir="ltr">
-<input
-                type="radio"
-                name="encrypt-select"
-                id="encrypt-none"
-                value="nopass"
-                onChange={(e) => {
-                  setNetwork({
-                    ...network,
-                    encryptionMode: e.target.value,
-                    tmpPassword: network.password,
-                    password: '',
-                  });
-                }}
-              />
-              <label htmlFor="encrypt-none">None</label>
-              <input
-                type="radio"
-                name="encrypt-select"
-                id="encrypt-wpa-wpa2-wpa3"
-                value="WPA"
-                onChange={(e) =>
-                  setNetwork({
-                    ...network,
-                    encryptionMode: e.target.value,
-                    password: network.tmpPassword,
-                  })
-                }
-                defaultChecked
-              />
-              <label htmlFor="encrypt-wpa-wpa2-wpa3">WPA/WPA2/WPA3</label>
-              <input
-                type="radio"
-                name="encrypt-select"
-                id="encrypt-wep"
-                value="WEP"
-                onChange={(e) =>
-                  setNetwork({
-                    ...network,
-                    encryptionMode: e.target.value,
-                    password: network.tmpPassword,
-                  })
-                }
-              />
-              <label htmlFor="encrypt-wep">WEP</label>
+                <input
+                  type="radio"
+                  name="encrypt-select"
+                  id="encrypt-none"
+                  value="nopass"
+                  onChange={(e) => {
+                    setNetwork({
+                      ...network,
+                      encryptionMode: e.target.value,
+                    });
+                  }}
+                />
+                <label htmlFor="encrypt-none">None</label>
+                <input
+                  type="radio"
+                  name="encrypt-select"
+                  id="encrypt-wpa-wpa2-wpa3"
+                  value="WPA"
+                  onChange={(e) =>
+                    setNetwork({
+                      ...network,
+                      encryptionMode: e.target.value,
+                    })
+                  }
+                  defaultChecked
+                />
+                <label htmlFor="encrypt-wpa-wpa2-wpa3">WPA/WPA2/WPA3</label>
+                <input
+                  type="radio"
+                  name="encrypt-select"
+                  id="encrypt-wep"
+                  value="WEP"
+                  onChange={(e) =>
+                    setNetwork({
+                      ...network,
+                      encryptionMode: e.target.value,
+                    })
+                  }
+                />
+                <label htmlFor="encrypt-wep">WEP</label>
               </span>
             </div>
           </div>
