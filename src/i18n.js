@@ -261,6 +261,31 @@ const resources = {
       select: 'Вибір мови',
     },
   },
+  'de-DE': {
+    translation: {
+      title: 'WLAN Karte',
+      'desc.use':
+        'Druck dir eine simple Karte mit deinen WLAN-Zugangsdaten aus. Klebe sie an deinen Kühlschrank, behalte sie in deinem Portemonnaie, etc.',
+      'desc.privacy':
+        'Deine Zugangsdaten werden niemals zum Server gesendet. Es gibt kein Tracking, Analytics, oder Fingerprinting auf dieser Website. Hier geht es zum',
+      'desc.source': 'Quellcode',
+      'wifi.login': 'WLAN-Zugangsdaten',
+      'wifi.name': 'WLAN-Netzwerkname (SSID)',
+      'wifi.name.placeholder': 'WLAN-Netzwerkname (SSID)',
+      'wifi.password': 'Passwort',
+      'wifi.password.placeholder': 'Passwort',
+      'wifi.password.hide': 'Passwortfeld vor dem Drucken ausblenden',
+      'wifi.password.encryption': 'Verschlüsselung',
+      'wifi.tip': 
+        'Zeige mit der Kamera deines Handys auf den QR-Code, um automatisch eine Verbindung herzustellen',
+      'wifi.alert.name': 'Der Netzwerkname darf nicht leer sein',
+      'wifi.alert.password.length.5': 'Das Passwort muss mindestends 5 Zeichen lang sein',
+      'wifi.alert.password.8': 'Das Passwort muss mindestends 8 Zeichen lang sein',
+      'button.rotate': 'Drehen',
+      'button.print': 'Drucken',
+      select: 'Sprache auswählen',
+    },
+  },
   'fr-FR': {
     translation: {
       title: 'Carte WiFi',
