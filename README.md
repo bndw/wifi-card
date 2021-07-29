@@ -60,3 +60,4 @@ make fmt.write
 | Indonesia           | [nyancodeid](https://github.com/nyancodeid)       |
 | Polish              | [olekstomek](https://github.com/olekstomek)       |
 | Arabic              | [Ahmed Tokyo](https://github.com/a-tokyo)         |
+| Occitan             | [ensag-dev](https://github.com/ensag-dev)         |
