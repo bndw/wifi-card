@@ -135,25 +135,27 @@ const resources = {
     translation: {
       title: 'Cartão WiFi',
       'desc.use':
-        'Imprima um cartão com detalhes de autenticação da sua WiFi. Cole na geladeira, perto da churrasqueira, etc.',
+        'Imprima um cartão com detalhes de autenticação da sua rede WiFi. Cole no frigorifico, na sala, etc.',
       'desc.privacy':
-        'As informações da sua WiFi não são enviadas ao servidor. Nenhum dado é coletado por esse website. Veja o',
+        'As informações da sua rede WiFi não são enviadas para o servidor. Nenhum dado é recolhido pelo website. Veja o',
       'desc.source': 'código fonte',
       'wifi.login': 'Autenticação WiFi ',
       'wifi.name': 'Nome da Rede',
       'wifi.name.placeholder': 'Nome da sua rede WiFi',
       'wifi.password': 'Senha',
-      'wifi.password.placeholder': 'Senha',
-      'wifi.password.hide': 'Esconder o campo senha antes da impressão',
+      'wifi.password.placeholder': 'Senha da rede WiFi',
+      'wifi.password.hide': 'Esconder o campo senha antes de imprimir',
       'wifi.password.encryption': 'Criptografia',
       'wifi.tip':
-        'Abra o aplicativo de câmera no seu telemóvel e aponte para o QR Code para conectar-se automaticamente.',
+        'Abra a aplicação da câmera no seu telemóvel e aponte para o QR Code para se ligar automaticamente.',
       'wifi.alert.name': 'O Nome da rede não pode ficar em branco',
-      'wifi.alert.password.length.5': 'A senha precisa ter no mímimo 4 digítos',
-      'wifi.alert.password.length.8': 'A senha precisa ter no mímimo 8 digítos',
-      'button.rotate': 'Girar',
+      'wifi.alert.password.length.5':
+        'A senha precisa ter no mímimo 4 caracteres',
+      'wifi.alert.password.length.8':
+        'A senha precisa ter no mímimo 8 caracteres',
+      'button.rotate': 'Rodar',
       'button.print': 'Imprimir',
-      select: 'Selecionar Linguagem',
+      select: 'Selecionar Lingua',
     },
   },
   ja: {
