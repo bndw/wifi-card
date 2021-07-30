@@ -146,6 +146,7 @@ export const Card = ({ direction = 'ltr' }) => {
               <input
                 type="checkbox"
                 id="hide-password-checkbox"
+                checked={network.hidePassword}
                 disabled={disableHidePassword()}
                 className={network.encryptionMode === 'nopass' ? 'hidden' : ''}
                 onChange={() =>
@@ -178,6 +179,7 @@ export const Card = ({ direction = 'ltr' }) => {
                       ...network,
                       encryptionMode: e.target.value,
                       password: '',
+                      hidePassword: false,
                     });
                   }}
                 />
@@ -188,7 +190,10 @@ export const Card = ({ direction = 'ltr' }) => {
                   id="encrypt-wpa-wpa2-wpa3"
                   value="WPA"
                   onChange={(e) =>
-                    setNetwork({ ...network, encryptionMode: e.target.value })
+                    setNetwork({
+                      ...network,
+                      encryptionMode: e.target.value,
+                    })
                   }
                   defaultChecked
                 />
@@ -199,7 +204,10 @@ export const Card = ({ direction = 'ltr' }) => {
                   id="encrypt-wep"
                   value="WEP"
                   onChange={(e) =>
-                    setNetwork({ ...network, encryptionMode: e.target.value })
+                    setNetwork({
+                      ...network,
+                      encryptionMode: e.target.value,
+                    })
                   }
                 />
                 <label htmlFor="encrypt-wep">WEP</label>
