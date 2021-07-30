@@ -13,7 +13,6 @@ export const Card = ({ direction = 'ltr' }) => {
     hidePassword: false,
   });
   const [portrait, setPortrait] = useState(false);
-  const [checkbox, setCheckbox] = useState(false);
   const { t } = useTranslation();
   const escape = (v) => {
     const needsEscape = ['"', ';', ',', ':', '\\'];
@@ -147,16 +146,15 @@ export const Card = ({ direction = 'ltr' }) => {
               <input
                 type="checkbox"
                 id="hide-password-checkbox"
-                checked={checkbox}
+                checked={network.hidePassword}
                 disabled={disableHidePassword()}
                 className={network.encryptionMode === 'nopass' ? 'hidden' : ''}
-                onChange={() => {
-                  setCheckbox(!checkbox);
+                onChange={() =>
                   setNetwork({
                     ...network,
                     hidePassword: !network.hidePassword,
-                  });
-                }}
+                  })
+                }
               />
               <label
                 htmlFor="hide-password-checkbox"
@@ -181,6 +179,7 @@ export const Card = ({ direction = 'ltr' }) => {
                       ...network,
                       encryptionMode: e.target.value,
                       password: '',
+                      hidePassword: false,
                     });
                   }}
                 />
@@ -191,7 +190,12 @@ export const Card = ({ direction = 'ltr' }) => {
                   id="encrypt-wpa-wpa2-wpa3"
                   value="WPA"
                   onChange={(e) =>
-                    setNetwork({ ...network, encryptionMode: e.target.value })
+                    setNetwork({
+                      ...network,
+                      encryptionMode: e.target.value,
+                      hidePassword:
+                        network.password.length !== 0 && network.hidePassword,
+                    })
                   }
                   defaultChecked
                 />
@@ -202,7 +206,12 @@ export const Card = ({ direction = 'ltr' }) => {
                   id="encrypt-wep"
                   value="WEP"
                   onChange={(e) =>
-                    setNetwork({ ...network, encryptionMode: e.target.value })
+                    setNetwork({
+                      ...network,
+                      encryptionMode: e.target.value,
+                      hidePassword:
+                        network.password.length !== 0 && network.hidePassword,
+                    })
                   }
                 />
                 <label htmlFor="encrypt-wep">WEP</label>
