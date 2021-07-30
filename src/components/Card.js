@@ -66,7 +66,7 @@ export const Card = ({ direction = 'ltr' }) => {
 
     const ssid = escape(network.ssid);
     const password =
-      network.encryptionMode === 'None' ? '' : escape(network.password);
+      network.encryptionMode === 'nopass' ? '' : escape(network.password);
     setQrvalue(`WIFI:T:${network.encryptionMode};S:${ssid};P:${password};;`);
   }, [network]);
 
@@ -165,8 +165,6 @@ export const Card = ({ direction = 'ltr' }) => {
             </div>
 
             <div className="no-print">
-              <label>{t('wifi.password.encryption')}:</label>
-
               <label>
                 {t('wifi.password.encryption')}:{direction === 'rtl' ? ' ' : ''}
               </label>
