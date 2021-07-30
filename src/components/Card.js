@@ -193,8 +193,6 @@ export const Card = ({ direction = 'ltr' }) => {
                     setNetwork({
                       ...network,
                       encryptionMode: e.target.value,
-                      hidePassword:
-                        network.password.length !== 0 && network.hidePassword,
                     })
                   }
                   defaultChecked
@@ -209,8 +207,6 @@ export const Card = ({ direction = 'ltr' }) => {
                     setNetwork({
                       ...network,
                       encryptionMode: e.target.value,
-                      hidePassword:
-                        network.password.length !== 0 && network.hidePassword,
                     })
                   }
                 />
