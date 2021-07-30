@@ -393,7 +393,7 @@ const resources = {
       select: 'Escolliu l’idioma',
     },
   },
-  pl: {
+  'pl-PL': {
     translation: {
       title: 'Karta WiFi',
       'desc.use':
