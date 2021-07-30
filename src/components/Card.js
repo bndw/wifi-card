@@ -147,6 +147,7 @@ export const Card = ({ direction = 'ltr' }) => {
               <input
                 type="checkbox"
                 id="hide-password-checkbox"
+                checked={network.hidePassword}
                 disabled={disableHidePassword()}
                 className={network.encryptionMode === 'nopass' ? 'hidden' : ''}
                 onChange={() =>

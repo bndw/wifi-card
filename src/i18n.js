@@ -3,7 +3,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
 const resources = {
-  'en-US': {
+  en: {
     translation: {
       title: 'WiFi Card',
       'desc.use':
@@ -560,7 +560,7 @@ i18n
   .use(initReactI18next)
   .use(LanguageDetector)
   .init({
-    fallbackLng: 'en-US',
+    fallbackLng: 'en',
     resources,
     interpolation: {
       escapeValue: false,
