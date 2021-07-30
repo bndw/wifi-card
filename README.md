@@ -24,32 +24,37 @@ make run
    make dev
    ```
 
-This project uses [Prettier](https://prettier.io/) formatting and all pull requests must pass
-the automated lint checks prior to merging.
+This project uses [Prettier](https://prettier.io/) formatting. All pull requests must pass the automated lint checks before merging. Prettier format is run automatically as a pre-commit hook.
 
-Run the lint check with:
+## Language Contribution Guide
 
-```
-make fmt
-```
+We would love for you to contribute to different languages and help make it even better than it is today! As a language contributor, here are some steps we would like you to follow:
 
-Rewrite the files to resolve any style issues with:
-
-```
-make fmt.write
-```
+1. Add a translation to [`./src/i18n.js`](./src/i18n.js)
+2. Add the language option to [`./src/App.js`](./src/App.js) in the format `latinName - nativeName`, e.g. `French - Français`
+3. If the languages added require RTL direction, add the language keys to RTL_LANGUAGES constant in ./src/App.js.
+4. Add an entry to the translation-table in README.md.
 
 ## Supported Languages
 
-| Language   | Author Credit                                 |
-| ---------- | --------------------------------------------- |
-| English    | [bndw](https://github.com/bndw)               |
-| Chinese    | [Baoyuantop](https://github.com/Baoyuantop)   |
-| Spanish    | [oscfdezdz](https://github.com/oscfdezdz)     |
-| Portuguese | [pedrorenan](https://github.com/pedrorenan)   |
-| Japanese   | [hatsu38](https://github.com/hatsu38)         |
-| Russian    | [Teraskull](https://github.com/Teraskull)     |
-| Ukrainian  | [Teraskull](https://github.com/Teraskull)     |
-| Dutch      | [wouterbrink](https://github.com/wouterbrink) |
-| French     | [Divlo](https://github.com/Divlo)             |
-| Turkish    | [Riza Ergun](https://github.com/rizaergun)    |
+| Language            | Author Credit                                     |
+| ------------------- | ------------------------------------------------- |
+| English             | [bndw](https://github.com/bndw)                   |
+| Chinese             | [Baoyuantop](https://github.com/Baoyuantop)       |
+| Spanish             | [oscfdezdz](https://github.com/oscfdezdz)         |
+| Portuguese          | [pedrorenan](https://github.com/pedrorenan)       |
+| Portuguese (Brazil) | [ismaelpereira](https://github.com/ismaelpereira) |
+| Japanese            | [hatsu38](https://github.com/hatsu38)             |
+| Russian             | [Teraskull](https://github.com/Teraskull)         |
+| Ukrainian           | [Teraskull](https://github.com/Teraskull)         |
+| Dutch               | [wouterbrink](https://github.com/wouterbrink)     |
+| French              | [Divlo](https://github.com/Divlo)                 |
+| Turkish             | [Riza Ergun](https://github.com/rizaergun)        |
+| Hindi               | [Pushpender](https://github.com/PushpenderSaini0) |
+| Catalan             | [aniol](https://github.com/aniol)                 |
+| German              | [devofthings](https://github.com/devofthings)     |
+| Indonesia           | [nyancodeid](https://github.com/nyancodeid)       |
+| Polish              | [olekstomek](https://github.com/olekstomek)       |
+| Arabic              | [Ahmed Tokyo](https://github.com/a-tokyo)         |
+| Occitan             | [ensag-dev](https://github.com/ensag-dev)         |
+| Italian             | [Domenico Pascucci](https://github.com/pasmimmo)  |
