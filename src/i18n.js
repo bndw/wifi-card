@@ -560,6 +560,10 @@ i18n
   .use(initReactI18next)
   .use(LanguageDetector)
   .init({
+    detection: {
+      order: ['localStorage'],
+      lookupLocalStorage: 'i18nextLng',
+    },
     fallbackLng: 'en',
     resources,
     interpolation: {
