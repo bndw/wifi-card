@@ -393,6 +393,33 @@ const resources = {
       select: 'Escolliu l’idioma',
     },
   },
+  pl: {
+    translation: {
+      title: 'Karta WiFi',
+      'desc.use':
+        'Wydrukuj prostą kartę z własnymi danymi do WiFi. Powieś ją na lodówce, przechowuj w portfelu, itd.',
+      'desc.privacy':
+        'Twoje dane WiFi nie są nigdy wysyłane do serwera. Strona nie używa śledzenia, analizy, czy odcisku palca. Zobacz',
+      'desc.source': 'kod źródłowy.',
+      'wifi.login': 'Login WiFi',
+      'wifi.name': 'Nazwa sieci',
+      'wifi.name.placeholder': 'Nazwa sieci WiFi',
+      'wifi.password': 'Hasło',
+      'wifi.password.placeholder': 'Hasło',
+      'wifi.password.hide': 'Ukryj pole z hasłem przed wydrukiem',
+      'wifi.password.encryption': 'Szyfrowanie',
+      'wifi.tip':
+        'Skieruj kamerę swojego telefonu na kod QR, aby połączyć się automatycznie',
+      'wifi.alert.name': 'Nazwa sieci nie może być pusta',
+      'wifi.alert.password.length.5':
+        'Hasło musi składać się z przynajmniej 5 znaków',
+      'wifi.alert.password.8':
+        'Hasło musi składać się z przynajmniej 8 znaków',
+      'button.rotate': 'Obróć',
+      'button.print': 'Drukuj',
+      select: 'Wybierz język',
+    },
+  },
 };
 
 i18n
