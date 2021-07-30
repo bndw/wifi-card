@@ -24,20 +24,7 @@ make run
    make dev
    ```
 
-This project uses [Prettier](https://prettier.io/) formatting and all pull requests must pass
-the automated lint checks prior to merging.
-
-Run the lint check with:
-
-```
-make fmt
-```
-
-Rewrite the files to resolve any style issues with:
-
-```
-make fmt.write
-```
+This project uses [Prettier](https://prettier.io/) formatting. All pull requests must pass the automated lint checks before merging. Prettier format is run automatically as a pre-commit hook.
 
 ## Supported Languages
 
@@ -57,3 +44,9 @@ make fmt.write
 | Hindi               | [Pushpender](https://github.com/PushpenderSaini0) |
 | Catalan             | [aniol](https://github.com/aniol)                 |
 | Polish              | [adrianghub](https://github.com/adrianghub)       |
+| German              | [devofthings](https://github.com/devofthings)     |
+| Indonesia           | [nyancodeid](https://github.com/nyancodeid)       |
+| Polish              | [olekstomek](https://github.com/olekstomek)       |
+| Arabic              | [Ahmed Tokyo](https://github.com/a-tokyo)         |
+| Occitan             | [ensag-dev](https://github.com/ensag-dev)         |
+| Italian             | [Domenico Pascucci](https://github.com/pasmimmo)  |
