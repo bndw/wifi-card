@@ -26,6 +26,15 @@ make run
 
 This project uses [Prettier](https://prettier.io/) formatting. All pull requests must pass the automated lint checks before merging. Prettier format is run automatically as a pre-commit hook.
 
+## Language Contribution Guide
+
+We would love for you to contribute to different languages and help make it even better than it is today! As a language contributor, here are some steps we would like you to follow:
+
+1. Add a translation to [`./src/i18n.js`](./src/i18n.js)
+2. Add the language option to [`./src/App.js`](./src/App.js) in the format `latinName - nativeName`, e.g. `French - Français`
+3. If the languages added require RTL direction, add the language keys to RTL_LANGUAGES constant in ./src/App.js.
+4. Add an entry to the translation-table in README.md.
+
 ## Supported Languages
 
 | Language            | Author Credit                                     |
