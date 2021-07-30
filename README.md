@@ -43,7 +43,7 @@ make fmt.write
 
 We would love for you to contribute to different languages and help make it even better than it is today! As a language contributor, here are some steps we would like you to follow:
 
-1. Add a translation to `./src/i18n.js`
+1. Add a translation to [`./src/i18n.js`](./src/i18n.js)
 2. Add the language option to `./src/App.js`. Use the format e.g. `French (Français)`
 3. If the languages added require RTL direction, add the language keys to RTL_LANGUAGES constant in ./src/App.js.
 4. Add an entry to the translation-table in README.md.
