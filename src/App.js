@@ -34,12 +34,12 @@ function App() {
           value={i18n.language}
           onChange={(e) => changeLanguage(e.target.value)}
         >
+          <option value="en-US">English</option>
           <option value="ar">Arabic - العربية</option>
           <option value="ca">Catalan - Català</option>
           <option value="zh-HK">Chinese Hong Kong - 简体中文</option>
           <option value="zh-CN">Chinese Simplified - 简体中文</option>
           <option value="nl-NL">Dutch - Nederlands</option>
-          <option value="en-US">English</option>
           <option value="fr-FR">French - Français</option>
           <option value="de-DE">German - Deutsch</option>
           <option value="hi-IN">Hindi - हिन्दी</option>
