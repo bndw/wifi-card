@@ -95,7 +95,7 @@ export const Card = ({ direction = 'ltr' }) => {
         >
           <QRCode
             className="qrcode"
-            style={!portrait ? checkDirectionAndSetPadding : {}}
+            style={!portrait && checkDirectionAndSetPadding}
             value={qrvalue}
             size={175}
             renderAs="svg"
