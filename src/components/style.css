@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
+body {
+  background-color: #fafafa;
+}
+
 #print-area {
+  background-color: #fff;
   border-color: #aaa;
   margin-bottom: 1em;
   margin-top: 2em;

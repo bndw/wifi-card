@@ -91,6 +91,7 @@ function App() {
           setSettings({ ...settings, hidePassword: v })
         }
       />
+
       <div className="buttons">
         <button id="print" onClick={onPrint}>
           {t('button.print')}

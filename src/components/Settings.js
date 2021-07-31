@@ -39,7 +39,8 @@ export const Settings = (props) => {
       style={{ maxWidth: props.settings.portrait ? '350px' : '100%' }}
     >
       <SelectField
-        height={40}
+        width={300}
+        inputHeight={38}
         label={t('select')}
         selected={i18n.language}
         onChange={(e) => props.onLanguageChange(e.target.value)}
