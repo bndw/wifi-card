@@ -70,6 +70,15 @@ export const Card = ({ direction = 'ltr' }) => {
     setQrvalue(`WIFI:T:${network.encryptionMode};S:${ssid};P:${password};;`);
   }, [network]);
 
+  const setEncryptionMode = (e) =>
+    setNetwork({
+      ...network,
+      encryptionMode: e.target.value,
+    });
+
+  const checkDirectionAndSetPadding =
+    direction === 'ltr' ? { paddingRight: '1em' } : { paddingLeft: '1em' };
+
   return (
     <div>
       <fieldset
@@ -86,13 +95,7 @@ export const Card = ({ direction = 'ltr' }) => {
         >
           <QRCode
             className="qrcode"
-            style={
-              !portrait
-                ? direction === 'ltr'
-                  ? { paddingRight: '1em' }
-                  : { paddingLeft: '1em' }
-                : {}
-            }
+            style={!portrait && checkDirectionAndSetPadding}
             value={qrvalue}
             size={175}
             renderAs="svg"
@@ -175,12 +178,7 @@ export const Card = ({ direction = 'ltr' }) => {
                   name="encrypt-select"
                   id="encrypt-none"
                   value="nopass"
-                  onChange={(e) => {
-                    setNetwork({
-                      ...network,
-                      encryptionMode: e.target.value,
-                    });
-                  }}
+                  onChange={setEncryptionMode}
                 />
                 <label htmlFor="encrypt-none">None</label>
                 <input
@@ -188,12 +186,7 @@ export const Card = ({ direction = 'ltr' }) => {
                   name="encrypt-select"
                   id="encrypt-wpa-wpa2-wpa3"
                   value="WPA"
-                  onChange={(e) =>
-                    setNetwork({
-                      ...network,
-                      encryptionMode: e.target.value,
-                    })
-                  }
+                  onChange={setEncryptionMode}
                   defaultChecked
                 />
                 <label htmlFor="encrypt-wpa-wpa2-wpa3">WPA/WPA2/WPA3</label>
@@ -202,12 +195,7 @@ export const Card = ({ direction = 'ltr' }) => {
                   name="encrypt-select"
                   id="encrypt-wep"
                   value="WEP"
-                  onChange={(e) =>
-                    setNetwork({
-                      ...network,
-                      encryptionMode: e.target.value,
-                    })
-                  }
+                  onChange={setEncryptionMode}
                 />
                 <label htmlFor="encrypt-wep">WEP</label>
               </span>
