@@ -165,26 +165,11 @@ export const Card = ({ direction = 'ltr' }) => {
         </p>
       </fieldset>
 
-      <div className="buttons">
-        <button
-          id="settings"
-          onClick={() =>
-            setSettings({ ...settings, showAdvanced: !settings.showAdvanced })
-          }
-        >
-          {t('button.settings')}
-        </button>
-
-        <button id="print" onClick={onPrint}>
-          {t('button.print')}
-        </button>
-      </div>
-
       <div
         id="settings"
-        className={`${settings.showAdvanced || 'hidden'}`}
         style={{ maxWidth: settings.portrait ? '350px' : '100%' }}
       >
+        <span>Settings</span>
         <div id="encryption-mode">
           <label>
             {t('wifi.password.encryption')}:{direction === 'rtl' ? ' ' : ''}
@@ -258,6 +243,12 @@ export const Card = ({ direction = 'ltr' }) => {
           />
           <label htmlFor="portrait">{t('button.rotate')}</label>
         </div>
+      </div>
+
+      <div className="buttons">
+        <button id="print" onClick={onPrint}>
+          {t('button.print')}
+        </button>
       </div>
     </div>
   );

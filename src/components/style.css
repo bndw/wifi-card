@@ -3,7 +3,7 @@
 #print-area {
   border-color: #aaa;
   border-style: dashed;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   margin-top: 2em;
   padding: 1em;
 }
@@ -52,7 +52,8 @@ button#settings {
 }
 
 #settings {
-  border: solid 1px #aaa;
+  border: solid 1px #eee;
+  margin-bottom: 1em;
   padding: 1em;
 }
 
