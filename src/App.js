@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import logo from '../src/images/wifi.png';
 import { Card } from './components/Card';
+import { Settings } from './components/Settings';
 import './style.css';
 
 /* List of languages that require RTL direction (alphabetic order). */
@@ -10,16 +11,51 @@ const RTL_LANGUAGES = ['ar', 'fa-IR'];
 function App() {
   const html = document.querySelector('html');
   const { t, i18n } = useTranslation();
+  const firstLoad = useRef(true);
+  const [settings, setSettings] = useState({
+    // Network SSID name
+    ssid: '',
+    // Network password
+    password: '',
+    // Show advanced options
+    showAdvanced: false,
+    // Advanced option: Network encryption mode
+    encryptionMode: 'WPA',
+    // Advanced option: Hide password on the printed card
+    hidePassword: false,
+    // Advanced option: Portrait orientation
+    portrait: false,
+  });
 
   const changeLanguage = (language) => {
     html.style.direction = RTL_LANGUAGES.includes(language) ? 'rtl' : 'ltr';
     i18n.changeLanguage(language);
   };
 
-  /* handle the edge case of the initial render requiring RTL direction */
-  if (RTL_LANGUAGES.includes(i18n.language)) {
-    html.style.direction = 'rtl';
-  }
+  const onPrint = () => {
+    if (settings.ssid.length > 0) {
+      if (settings.password.length < 8 && settings.encryptionMode === 'WPA') {
+        alert(t('wifi.alert.password.length.8'));
+      } else if (
+        settings.password.length < 5 &&
+        settings.encryptionMode === 'WEP'
+      ) {
+        alert(t('wifi.alert.password.length.5'));
+      } else {
+        document.title = 'WiFi Card - ' + settings.ssid;
+        window.print();
+      }
+    } else {
+      alert(t('wifi.alert.name'));
+    }
+  };
+
+  useEffect(() => {
+    /* handle the edge case of the initial render requiring RTL direction */
+    if (RTL_LANGUAGES.includes(i18n.language)) {
+      html.style.direction = 'rtl';
+    }
+  });
 
   return (
     <div className="App">
@@ -28,38 +64,6 @@ function App() {
         &nbsp; {t('title')}
       </h1>
 
-      <div>
-        <label>{t('select')}</label>
-        <select
-          value={i18n.language}
-          onChange={(e) => changeLanguage(e.target.value)}
-        >
-          <option value="en-US">English</option>
-          <option value="ar">Arabic - العربية</option>
-          <option value="ca">Catalan - Català</option>
-          <option value="zh-HK">Chinese Hong Kong - 简体中文</option>
-          <option value="zh-CN">Chinese Simplified - 简体中文</option>
-          <option value="nl-NL">Dutch - Nederlands</option>
-          <option value="fr-FR">French - Français</option>
-          <option value="de-DE">German - Deutsch</option>
-          <option value="hi-IN">Hindi - हिन्दी</option>
-          <option value="id-ID">Indonesian</option>
-          <option value="it-IT">Italian</option>
-          <option value="ja">Japanese - 日本語</option>
-          <option value="ko">Korean - 한국어</option>
-          <option value="no-NB">Norwegian - Norsk</option>
-          <option value="oc">Occitan</option>
-          <option value="fa-IR">Persian Iran - فارسی</option>
-          <option value="pl-PL">Polish - Polski</option>
-          <option value="pt">Portuguese - Português</option>
-          <option value="pt-BR">Portuguese - Português brasileiro</option>
-          <option value="ru-RU">Russian - Русский</option>
-          <option value="es">Spanish - Español</option>
-          <option value="tr-TR">Turkish - Türkçe</option>
-          <option value="uk-UA">Ukrainian - Українська</option>
-        </select>
-      </div>
-
       <p className="tag">{t('desc.use')}</p>
 
       <p className="tag">
@@ -67,7 +71,31 @@ function App() {
         <a href="https://github.com/bndw/wifi-card">{t('desc.source')}</a>.
       </p>
 
-      <Card direction={RTL_LANGUAGES.includes(i18n.language) ? 'rtl' : 'ltr'} />
+      <Card
+        direction={RTL_LANGUAGES.includes(i18n.language) ? 'rtl' : 'ltr'}
+        settings={settings}
+        onSSIDChange={(v) => setSettings({ ...settings, ssid: v })}
+        onPasswordChange={(v) => setSettings({ ...settings, password: v })}
+      />
+
+      <Settings
+        settings={settings}
+        firstLoad={firstLoad}
+        onFirstLoad={() => (firstLoad.current = false)}
+        onLanguageChange={(v) => changeLanguage(v)}
+        onEncryptionModeChange={(v) =>
+          setSettings({ ...settings, encryptionMode: v })
+        }
+        onOrientationChange={(v) => setSettings({ ...settings, portrait: v })}
+        onHidePasswordChange={(v) =>
+          setSettings({ ...settings, hidePassword: v })
+        }
+      />
+      <div className="buttons">
+        <button id="print" onClick={onPrint}>
+          {t('button.print')}
+        </button>
+      </div>
     </div>
   );
 }

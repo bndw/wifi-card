@@ -63,6 +63,9 @@ button#settings {
   #print-area * {
     visibility: visible;
   }
+  #print-area {
+    border-style: dashed;
+  }
   #print-area textarea {
     border: none;
   }
