@@ -18,6 +18,7 @@ const resources = {
       'wifi.password.placeholder': 'Password',
       'wifi.password.hide': 'Hide password field before printing',
       'wifi.password.encryption': 'Encryption',
+      'wifi.password.encryption.none': 'None',
       'wifi.tip':
         "Point your phone's camera at the QR Code to connect automatically",
       'wifi.alert.name': 'Network name cannot be empty',
@@ -43,6 +44,7 @@ const resources = {
       'wifi.password.placeholder': 'Wachtwoord',
       'wifi.password.hide': 'Wachtwoord verbergen voor afdrukken',
       'wifi.password.encryption': 'Encryptie',
+      'wifi.password.encryption.none': 'Geen',
       'wifi.tip':
         'Wijs met de camera van je telefoon naar de QR code om automatisch verbinding te maken',
       'wifi.alert.name': 'Netwerk naam kan niet leeg zijn',
@@ -70,6 +72,7 @@ const resources = {
       'wifi.password.placeholder': '密码',
       'wifi.password.hide': '打印前隐藏密码字段',
       'wifi.password.encryption': '加密',
+      'wifi.password.encryption.none': '没有任何',
       'wifi.tip': '将手机摄像头对准二维码即可自动连接',
       'wifi.alert.name': '网络名称不能为空',
       'wifi.alert.password.length.5': '密码至少 5 个字符',
@@ -94,6 +97,7 @@ const resources = {
       'wifi.password.placeholder': '密碼',
       'wifi.password.hide': '打印前隱藏密碼',
       'wifi.password.encryption': '加密',
+      'wifi.password.encryption.none': '没有任何',
       'wifi.tip': '打開相機指住嗰QR Code就可以連接 WiFi',
       'wifi.alert.name': '唔可以留空網絡名稱',
       'wifi.alert.password.length.5': '密碼至少要有 5 個字符',
@@ -119,6 +123,7 @@ const resources = {
       'wifi.password.hide':
         'Ocultar el campo de la contraseña antes de imprimir',
       'wifi.password.encryption': 'Cifrado',
+      'wifi.password.encryption.none': 'Ninguno',
       'wifi.tip':
         'Apunte la cámara de su teléfono al código QR para conectarse automáticamente',
       'wifi.alert.name': 'El nombre de la red no puede estar vacío',
@@ -146,6 +151,7 @@ const resources = {
       'wifi.password.placeholder': 'Senha da sua rede WiFi',
       'wifi.password.hide': 'Esconder o campo de senha antes da impressão',
       'wifi.password.encryption': 'Criptografia',
+      'wifi.password.encryption.none': 'Nenhum',
       'wifi.tip':
         'Abra a aplicação da câmera no seu telemóvel e aponte para o QR Code para se ligar automaticamente.',
       'wifi.alert.name': 'O Nome da rede não pode ficar em branco',
@@ -171,6 +177,7 @@ const resources = {
       'wifi.password.placeholder': 'パスワード',
       'wifi.password.hide': '印刷前にパスワードを非表示にする',
       'wifi.password.encryption': '暗号化',
+      'wifi.password.encryption.none': 'なし',
       'wifi.tip': '携帯電話のカメラをQRコードに向けると、自動的に接続されます',
       'wifi.alert.name': 'ネットワーク名は空にできません',
       'wifi.alert.password.length.5':
@@ -197,6 +204,7 @@ const resources = {
       'wifi.password.placeholder': 'Пароль',
       'wifi.password.hide': 'Скрыть поле пароля перед печатью',
       'wifi.password.encryption': 'Шифрование',
+      'wifi.password.encryption.none': 'Никто',
       'wifi.tip':
         'Наведите камеру телефона на QR-код для автоматического подключения',
       'wifi.alert.name': 'Название сети не может быть пустым',
@@ -224,6 +232,7 @@ const resources = {
       'wifi.password.placeholder': 'رمز‌عبور شبکه خود را وارد کنید',
       'wifi.password.hide': 'رمز‌عبور را بعد از چاپ کارت مخفی کن.',
       'wifi.password.encryption': 'رمزنگاری',
+      'wifi.password.encryption.none': 'هیچ یک',
       'wifi.tip':
         'دوربین تلفن خود را روی تصویر (QR Code) گرفته تا به صورت خودکار به شبکه متصل شوید.',
       'wifi.alert.name': 'اسم شبکه شما نباید خالی باشد.',
@@ -249,6 +258,7 @@ const resources = {
       'wifi.password.placeholder': 'Пароль',
       'wifi.password.hide': 'Приховати поле пароля перед друком',
       'wifi.password.encryption': 'Шифрування',
+      'wifi.password.encryption.none': 'Жодного',
       'wifi.tip':
         'Наведіть камеру телефону на QR-код, щоб автоматично підключитися',
       'wifi.alert.name': 'Назва мережі не може бути порожньою',
@@ -276,6 +286,7 @@ const resources = {
       'wifi.password.placeholder': 'Passwort',
       'wifi.password.hide': 'Passwortfeld vor dem Drucken ausblenden',
       'wifi.password.encryption': 'Verschlüsselung',
+      'wifi.password.encryption.none': 'Keiner',
       'wifi.tip':
         'Zeige mit der Kamera deines Handys auf den QR-Code, um automatisch eine Verbindung herzustellen',
       'wifi.alert.name': 'Der Netzwerkname darf nicht leer sein',
@@ -307,6 +318,7 @@ const resources = {
       'wifi.password.placeholder': 'Hasło',
       'wifi.password.hide': 'Ukryj pole hasła przed drukowaniem',
       'wifi.password.encryption': 'Szyfrowanie',
+      'wifi.password.encryption.none': 'Nic',
       'wifi.tip':
         'Skieruj aparat telefonu na kod QR, aby połączyć się automatycznie',
       'wifi.alert.name': 'Nazwa sieci nie może być pusta',
@@ -332,6 +344,7 @@ const resources = {
       'wifi.password.placeholder': 'Mot de passe',
       'wifi.password.hide': "Masquer le champ du mot de passe avant d'imprimer",
       'wifi.password.encryption': 'Chiffrement',
+      'wifi.password.encryption.none': 'Rien',
       'wifi.tip':
         "Dirigez l'appareil photo de votre téléphone vers le QR code pour vous connecter automatiquement",
       'wifi.alert.name': 'Le nom du réseau ne peut pas être vide',
@@ -359,6 +372,7 @@ const resources = {
       'wifi.password.placeholder': 'Senhal',
       'wifi.password.hide': "Rescondre lo camp del senhal abans d'imprimir",
       'wifi.password.encryption': 'Chiframent',
+      'wifi.password.encryption.none': 'Cap',
       'wifi.tip':
         'Viratz vòstre aparelh fòto cap al còdi QR per vos connectar automaticament',
       'wifi.alert.name': 'Lo nom de la ret pòt pas èsser void',
@@ -385,6 +399,7 @@ const resources = {
       'wifi.password.placeholder': 'Senha',
       'wifi.password.hide': 'Esconder senha antes de imprimir',
       'wifi.password.encryption': 'Tipo de Segurança',
+      'wifi.password.encryption.none': 'Nenhum',
       'wifi.tip':
         'Aponte a camera do seu ceular para o código QR para se conectar automaticamente.',
       'wifi.alert.name': 'Nome da rede não pode estar em branco',
@@ -411,6 +426,7 @@ const resources = {
       'wifi.password.placeholder': 'Password',
       'wifi.password.hide': 'Nascondi il campo password prima di stampare',
       'wifi.password.encryption': 'Cifratura',
+      'wifi.password.encryption.none': 'Nessuno',
       'wifi.tip':
         'Inquadra il codice QR con il tuo smartphone per collegarti automaticamente',
       'wifi.alert.name': 'Il nome della rete wifi non può essere vuoto',
@@ -438,6 +454,7 @@ const resources = {
       'wifi.password.placeholder': 'Parola',
       'wifi.password.hide': 'Yazdırmadan önce parola alanını gizle',
       'wifi.password.encryption': 'Şifreleme',
+      'wifi.password.encryption.none': 'Hiçbiri',
       'wifi.tip':
         'Otomatik olarak bağlanmak için telefonunuzun kamerası ile QR kodunu okutun',
       'wifi.alert.name': 'Ağ adı boş olamaz',
@@ -463,6 +480,7 @@ const resources = {
       'wifi.password.placeholder': 'كلمه السر',
       'wifi.password.hide': 'إخفاء حقل كلمة المرور قبل الطباعة',
       'wifi.password.encryption': 'التشفير',
+      'wifi.password.encryption.none': 'لا شيء',
       'wifi.tip':
         'وجّه كاميرا هاتفك إلى رمز الاستجابة السريعة للاتصال تلقائيًا',
       'wifi.alert.name': 'لا يمكن أن يكون اسم الشبكة فارغًا',
@@ -490,6 +508,7 @@ const resources = {
       'wifi.password.placeholder': 'पासवर्ड',
       'wifi.password.hide': 'प्रिंट करने से पहले पासवर्ड छुपाएं',
       'wifi.password.encryption': 'एन्क्रिप्शन',
+      'wifi.password.encryption.none': 'कोई नहीं',
       'wifi.tip':
         'अपने आप कनेक्ट होने के लिए अपने फ़ोन के कैमरे से QR कोड को स्कैन करें',
       'wifi.alert.name': 'नेटवर्क का नाम खाली नहीं हो सकता',
@@ -517,6 +536,7 @@ const resources = {
       'wifi.password.placeholder': 'Contrasenya',
       'wifi.password.hide': 'Amaga el camp de la contrasenya abans d’imprimir',
       'wifi.password.encryption': 'Encriptació',
+      'wifi.password.encryption.none': 'Cap',
       'wifi.tip':
         'Apunteu la càmera del telèfon cap al codi QR per connectar-vos automàticament',
       'wifi.alert.name': 'El nom de la xarxa no pot estar buit',
@@ -544,6 +564,7 @@ const resources = {
       'wifi.password.placeholder': 'Kata Sandi',
       'wifi.password.hide': 'Sembunyikan kata sandi sebelum dicetak.',
       'wifi.password.encryption': 'Enkripsi',
+      'wifi.password.encryption.none': 'Tidak ada',
       'wifi.tip':
         'Arahkan kamera ponsel anda ke Kode QR untuk terhubung ke WiFi secara otomatis',
       'wifi.alert.name': 'Nama jaringan tidak boleh kosong',

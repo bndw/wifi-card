@@ -180,7 +180,9 @@ export const Card = ({ direction = 'ltr' }) => {
                   value="nopass"
                   onChange={setEncryptionMode}
                 />
-                <label htmlFor="encrypt-none">None</label>
+                <label htmlFor="encrypt-none">
+                  {t('wifi.password.encryption.none')}
+                </label>
                 <input
                   type="radio"
                   name="encrypt-select"
