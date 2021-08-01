@@ -204,7 +204,7 @@ const resources = {
       'wifi.password.placeholder': 'Пароль',
       'wifi.password.hide': 'Скрыть поле пароля перед печатью',
       'wifi.password.encryption': 'Шифрование',
-      'wifi.password.encryption.none': 'Никто',
+      'wifi.password.encryption.none': 'Нет',
       'wifi.tip':
         'Наведите камеру телефона на QR-код для автоматического подключения',
       'wifi.alert.name': 'Название сети не может быть пустым',
@@ -258,7 +258,7 @@ const resources = {
       'wifi.password.placeholder': 'Пароль',
       'wifi.password.hide': 'Приховати поле пароля перед друком',
       'wifi.password.encryption': 'Шифрування',
-      'wifi.password.encryption.none': 'Жодного',
+      'wifi.password.encryption.none': 'Немає',
       'wifi.tip':
         'Наведіть камеру телефону на QR-код, щоб автоматично підключитися',
       'wifi.alert.name': 'Назва мережі не може бути порожньою',
@@ -318,7 +318,7 @@ const resources = {
       'wifi.password.placeholder': 'Hasło',
       'wifi.password.hide': 'Ukryj pole hasła przed drukowaniem',
       'wifi.password.encryption': 'Szyfrowanie',
-      'wifi.password.encryption.none': 'Nic',
+      'wifi.password.encryption.none': 'Brak',
       'wifi.tip':
         'Skieruj aparat telefonu na kod QR, aby połączyć się automatycznie',
       'wifi.alert.name': 'Nazwa sieci nie może być pusta',
