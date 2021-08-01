@@ -1,8 +1,9 @@
+import { Button, Heading, Link, Pane, Paragraph } from 'evergreen-ui';
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import logo from '../src/images/wifi.png';
-import { Card } from './components/Card';
 import { Settings } from './components/Settings';
+import { WifiCard } from './components/WifiCard';
 import './style.css';
 
 /* List of languages that require RTL direction (alphabetic order). */
@@ -26,8 +27,12 @@ function App() {
     // Advanced option: Portrait orientation
     portrait: false,
   });
+  const [errors, setErrors] = useState({
+    ssidError: '',
+    passwordError: '',
+  });
 
-  const changeLanguage = (language) => {
+  const onChangeLanguage = (language) => {
     html.style.direction = RTL_LANGUAGES.includes(language) ? 'rtl' : 'ltr';
     i18n.changeLanguage(language);
   };
@@ -35,19 +40,49 @@ function App() {
   const onPrint = () => {
     if (settings.ssid.length > 0) {
       if (settings.password.length < 8 && settings.encryptionMode === 'WPA') {
-        alert(t('wifi.alert.password.length.8'));
+        setErrors({
+          ...errors,
+          passwordError: t('wifi.alert.password.8'),
+        });
       } else if (
         settings.password.length < 5 &&
         settings.encryptionMode === 'WEP'
       ) {
-        alert(t('wifi.alert.password.length.5'));
+        setErrors({
+          ...errors,
+          passwordError: t('wifi.alert.password.length.5'),
+        });
       } else {
         document.title = 'WiFi Card - ' + settings.ssid;
         window.print();
       }
     } else {
-      alert(t('wifi.alert.name'));
+      setErrors({
+        ...errors,
+        ssidError: t('wifi.alert.name'),
+      });
     }
+  };
+
+  const onSSIDChange = (ssid) => {
+    setErrors({ ...errors, ssidError: '' });
+    setSettings({ ...settings, ssid });
+  };
+  const onPasswordChange = (password) => {
+    setErrors({ ...errors, passwordError: '' });
+    setSettings({ ...settings, password });
+  };
+  const onEncryptionModeChange = (encryptionMode) => {
+    setSettings({ ...settings, encryptionMode });
+  };
+  const onOrientationChange = (portrait) => {
+    setSettings({ ...settings, portrait });
+  };
+  const onHidePasswordChange = (hidePassword) => {
+    setSettings({ ...settings, hidePassword });
+  };
+  const onFirstLoad = () => {
+    firstLoad.current = false;
   };
 
   useEffect(() => {
@@ -58,46 +93,55 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <h1>
+    <Pane>
+      <Pane display="flex">
         <img alt="icon" src={logo} width="32" height="32" />
-        &nbsp; {t('title')}
-      </h1>
+        <Heading size={900} paddingLeft={16}>
+          {t('title')}
+        </Heading>
+      </Pane>
 
-      <p className="tag">{t('desc.use')}</p>
+      <Pane>
+        <Paragraph marginTop={12}>{t('desc.use')}</Paragraph>
 
-      <p className="tag">
-        {t('desc.privacy')}{' '}
-        <a href="https://github.com/bndw/wifi-card">{t('desc.source')}</a>.
-      </p>
+        <Paragraph marginTop={12}>
+          {t('desc.privacy')}{' '}
+          <Link href="https://github.com/bndw/wifi-card">
+            {t('desc.source')}
+          </Link>
+          .
+        </Paragraph>
+      </Pane>
 
-      <Card
+      <WifiCard
         direction={RTL_LANGUAGES.includes(i18n.language) ? 'rtl' : 'ltr'}
         settings={settings}
-        onSSIDChange={(v) => setSettings({ ...settings, ssid: v })}
-        onPasswordChange={(v) => setSettings({ ...settings, password: v })}
+        ssidError={errors.ssidError}
+        passwordError={errors.passwordError}
+        onSSIDChange={onSSIDChange}
+        onPasswordChange={onPasswordChange}
       />
 
       <Settings
         settings={settings}
         firstLoad={firstLoad}
-        onFirstLoad={() => (firstLoad.current = false)}
-        onLanguageChange={(v) => changeLanguage(v)}
-        onEncryptionModeChange={(v) =>
-          setSettings({ ...settings, encryptionMode: v })
-        }
-        onOrientationChange={(v) => setSettings({ ...settings, portrait: v })}
-        onHidePasswordChange={(v) =>
-          setSettings({ ...settings, hidePassword: v })
-        }
+        onFirstLoad={onFirstLoad}
+        onLanguageChange={onChangeLanguage}
+        onEncryptionModeChange={onEncryptionModeChange}
+        onOrientationChange={onOrientationChange}
+        onHidePasswordChange={onHidePasswordChange}
       />
 
-      <div className="buttons">
-        <button id="print" onClick={onPrint}>
-          {t('button.print')}
-        </button>
-      </div>
-    </div>
+      <Button
+        id="print"
+        appearance="primary"
+        height={40}
+        marginRight={16}
+        onClick={onPrint}
+      >
+        {t('button.print')}
+      </Button>
+    </Pane>
   );
 }
 

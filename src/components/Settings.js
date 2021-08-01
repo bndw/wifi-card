@@ -68,14 +68,11 @@ export const Settings = (props) => {
         <option value="uk-UA">Ukrainian - Українська</option>
       </SelectField>
 
-      <RadioGroup
-        label={t('wifi.password.encryption')}
-        size={16}
-        value={props.settings.encryptionMode}
-        options={encryptionModes}
-        onChange={(e) => props.onEncryptionModeChange(e.target.value)}
+      <Checkbox
+        label={t('button.rotate')}
+        checked={props.settings.portrait}
+        onChange={() => props.onOrientationChange(!props.settings.portrait)}
       />
-
       <Checkbox
         label={t('wifi.password.hide')}
         checked={props.settings.hidePassword}
@@ -84,10 +81,12 @@ export const Settings = (props) => {
           props.onHidePasswordChange(!props.settings.hidePassword)
         }
       />
-      <Checkbox
-        label={t('button.rotate')}
-        checked={props.settings.portrait}
-        onChange={() => props.onOrientationChange(!props.settings.portrait)}
+      <RadioGroup
+        label={t('wifi.password.encryption')}
+        size={16}
+        value={props.settings.encryptionMode}
+        options={encryptionModes}
+        onChange={(e) => props.onEncryptionModeChange(e.target.value)}
       />
     </Pane>
   );

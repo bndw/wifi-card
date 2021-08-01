@@ -1,10 +1,19 @@
-import { Card as ECard, Pane } from 'evergreen-ui';
+import {
+  CameraIcon,
+  Card,
+  Heading,
+  MobilePhoneIcon,
+  Pane,
+  Paragraph,
+  Text,
+  TextareaField,
+} from 'evergreen-ui';
 import QRCode from 'qrcode.react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './style.css';
 
-export const Card = (props) => {
+export const WifiCard = (props) => {
   const { t } = useTranslation();
   const [qrvalue, setQrvalue] = useState('');
 
@@ -44,16 +53,19 @@ export const Card = (props) => {
 
   return (
     <Pane>
-      <ECard
+      <Card
         id="print-area"
         elevation={3}
         style={{ maxWidth: props.settings.portrait ? '350px' : '100%' }}
       >
-        <h1 style={{ textAlign: props.settings.portrait ? 'center' : 'unset' }}>
+        <Heading
+          size={900}
+          textAlign={props.settings.portrait ? 'center' : 'unset'}
+        >
           {t('wifi.login')}
-        </h1>
+        </Heading>
 
-        <div
+        <Pane
           className="details"
           style={{ flexDirection: props.settings.portrait ? 'column' : 'row' }}
         >
@@ -70,60 +82,56 @@ export const Card = (props) => {
             size={175}
           />
 
-          <div className="inputs">
-            <label>{t('wifi.name')}</label>
-            <textarea
+          <Pane width={'100%'}>
+            <TextareaField
               id="ssid"
               type="text"
-              maxLength="32"
-              placeholder={t('wifi.name.placeholder')}
+              marginBottom={5}
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="none"
-              spellCheck="false"
+              spellCheck={false}
+              maxLength="32"
+              label={t('wifi.name')}
+              placeholder={t('wifi.name.placeholder')}
               value={props.settings.ssid}
               onChange={(e) => props.onSSIDChange(e.target.value)}
+              isInvalid={!!props.ssidError}
+              validationMessage={!!props.ssidError && props.ssidError}
             />
-            <label
-              className={`
-                ${props.settings.hidePassword && 'no-print hidden'}
-                ${props.settings.encryptionMode === 'nopass' && 'hidden'}
-              `}
-            >
-              {t('wifi.password')}
-            </label>
-            <textarea
+            <TextareaField
               id="password"
               type="text"
-              className={`
-                ${props.settings.hidePassword && 'no-print hidden'}
-                ${props.settings.encryptionMode === 'nopass' && 'hidden'}
-              `}
-              style={{
-                height:
-                  props.settings.portrait && props.settings.password.length > 40
-                    ? '5em'
-                    : 'auto',
-              }}
               maxLength="63"
-              placeholder={t('wifi.password.placeholder')}
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="none"
-              spellCheck="false"
+              spellCheck={false}
+              className={`
+                ${props.settings.hidePassword && 'no-print hidden'}
+                ${props.settings.encryptionMode === 'nopass' && 'hidden'}
+              `}
+              height={
+                props.settings.portrait && props.settings.password.length > 40
+                  ? '5em'
+                  : 'auto'
+              }
+              label={t('wifi.password')}
+              placeholder={t('wifi.password.placeholder')}
               value={props.settings.password}
               onChange={(e) => props.onPasswordChange(e.target.value)}
+              isInvalid={!!props.passwordError}
+              validationMessage={!!props.passwordError && props.passwordError}
             />
-          </div>
-        </div>
+          </Pane>
+        </Pane>
         <hr />
-        <p>
-          <span role="img" aria-label="mobile-phone">
-            📸📱
-          </span>
-          {t('wifi.tip')}
-        </p>
-      </ECard>
+        <Paragraph>
+          <CameraIcon />
+          <MobilePhoneIcon />
+          <Text paddingLeft={8}>{t('wifi.tip')}</Text>
+        </Paragraph>
+      </Card>
     </Pane>
   );
 };

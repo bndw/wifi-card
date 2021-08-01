@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
 body {
-  background-color: #fafafa;
 }
 
 #print-area {
-  background-color: #fff;
   border-color: #aaa;
   margin-bottom: 1em;
   margin-top: 2em;
@@ -30,10 +28,10 @@ body {
 textarea {
   background-color: #fff;
   border: solid 1px #ddd;
-  font-family: 'Source Code Pro', serif;
-  font-size: 1.3em;
+  font-family: 'Source Code Pro', serif !important;
+  font-size: 1.2em !important;
   font-weight: bold;
-  height: 3em;
+  margin-bottom: 0;
   overflow: hidden;
   resize: none;
 }
@@ -82,8 +80,4 @@ button#settings {
     left: 0;
     top: 0;
   }
-}
-
-hr {
-  margin-top: 25px;
 }
