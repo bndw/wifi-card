@@ -587,7 +587,7 @@ const resources = {
       'wifi.alert.name': 'El nom de la xarxa no pot estar buit',
       'wifi.alert.password.length.5':
         'La contrasenya ha de tenir com a mínim 5 caràcters',
-      'wifi.alert.password.8':
+      'wifi.alert.password.length.8':
         'La contrasenya ha de tenir com a mínim 8 caràcters',
       'button.rotate': 'Gira',
       'button.print': 'Imprimeix',
@@ -615,7 +615,7 @@ const resources = {
         'Arahkan kamera ponsel anda ke Kode QR untuk terhubung ke WiFi secara otomatis',
       'wifi.alert.name': 'Nama jaringan tidak boleh kosong',
       'wifi.alert.password.length.5': 'Kata sandi minimal harus 5 karakter',
-      'wifi.alert.password.8': 'Kata sandi minimal harus 8 karakter',
+      'wifi.alert.password.length.8': 'Kata sandi minimal harus 8 karakter',
       'button.rotate': 'Putar',
       'button.print': 'Cetak',
       'button.settings': 'Pengaturan',

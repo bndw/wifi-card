@@ -42,7 +42,7 @@ function App() {
       if (settings.password.length < 8 && settings.encryptionMode === 'WPA') {
         setErrors({
           ...errors,
-          passwordError: t('wifi.alert.password.8'),
+          passwordError: t('wifi.alert.password.length.8'),
         });
       } else if (
         settings.password.length < 5 &&
@@ -73,6 +73,7 @@ function App() {
     setSettings({ ...settings, password });
   };
   const onEncryptionModeChange = (encryptionMode) => {
+    setErrors({ ...errors, passwordError: '' });
     setSettings({ ...settings, encryptionMode });
   };
   const onOrientationChange = (portrait) => {
