@@ -575,6 +575,31 @@ const resources = {
       select: 'Pilih Bahasa',
     },
   },
+  ko: {
+    translation: {
+      title: 'WiFi 카드',
+      'desc.use':
+        'WiFi 로그인 정보를 알려주는 간단한 카드를 출력하세요. 냉장고에 붙이거나, 지갑에 소지하는 등 다양하게 이용하세요.',
+      'desc.privacy':
+        '입력한 WiFi 정보는 서버로 전송되지 않습니다. 이 웹사이트는 추적, 분석, 디지털 지문을 사용하지 않습니다. 소스 코드를 참조하세요',
+      'desc.source': '소스 코드',
+      'wifi.login': 'WiFi 로그인',
+      'wifi.name': '네트워크 이름',
+      'wifi.name.placeholder': 'WiFi 네트워크 이름',
+      'wifi.password': '비밀번호',
+      'wifi.password.placeholder': '비밀번호',
+      'wifi.password.hide': '인쇄하기 전에 비밀번호 가리기',
+      'wifi.password.encryption': '보안',
+      'wifi.password.encryption.none': '없음',
+      'wifi.tip': '휴대폰의 카메라를 QR 코드에 가져대어 자동으로 연결하세요',
+      'wifi.alert.name': '네트워크 이름은 공백일 수 없습니다',
+      'wifi.alert.password.length.5': '비밀번호는 5글자 이상이어야 합니다.',
+      'wifi.alert.password.length.8': '비밀번호는 8글자 이상이어야 합니다.',
+      'button.rotate': '회전',
+      'button.print': '인쇄',
+      select: '언어 선택',
+    },
+  },
 };
 
 i18n
