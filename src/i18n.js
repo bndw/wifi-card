@@ -72,7 +72,7 @@ const resources = {
       'wifi.password.placeholder': '密码',
       'wifi.password.hide': '打印前隐藏密码字段',
       'wifi.password.encryption': '加密',
-      'wifi.password.encryption.none': '没有任何',
+      'wifi.password.encryption.none': '无',
       'wifi.tip': '将手机摄像头对准二维码即可自动连接',
       'wifi.alert.name': '网络名称不能为空',
       'wifi.alert.password.length.5': '密码至少 5 个字符',
@@ -204,7 +204,7 @@ const resources = {
       'wifi.password.placeholder': 'Пароль',
       'wifi.password.hide': 'Скрыть поле пароля перед печатью',
       'wifi.password.encryption': 'Шифрование',
-      'wifi.password.encryption.none': 'Никто',
+      'wifi.password.encryption.none': 'Нет',
       'wifi.tip':
         'Наведите камеру телефона на QR-код для автоматического подключения',
       'wifi.alert.name': 'Название сети не может быть пустым',
@@ -258,7 +258,7 @@ const resources = {
       'wifi.password.placeholder': 'Пароль',
       'wifi.password.hide': 'Приховати поле пароля перед друком',
       'wifi.password.encryption': 'Шифрування',
-      'wifi.password.encryption.none': 'Жодного',
+      'wifi.password.encryption.none': 'Немає',
       'wifi.tip':
         'Наведіть камеру телефону на QR-код, щоб автоматично підключитися',
       'wifi.alert.name': 'Назва мережі не може бути порожньою',
@@ -318,7 +318,7 @@ const resources = {
       'wifi.password.placeholder': 'Hasło',
       'wifi.password.hide': 'Ukryj pole hasła przed drukowaniem',
       'wifi.password.encryption': 'Szyfrowanie',
-      'wifi.password.encryption.none': 'Nic',
+      'wifi.password.encryption.none': 'Brak',
       'wifi.tip':
         'Skieruj aparat telefonu na kod QR, aby połączyć się automatycznie',
       'wifi.alert.name': 'Nazwa sieci nie może być pusta',
@@ -344,7 +344,7 @@ const resources = {
       'wifi.password.placeholder': 'Mot de passe',
       'wifi.password.hide': "Masquer le champ du mot de passe avant d'imprimer",
       'wifi.password.encryption': 'Chiffrement',
-      'wifi.password.encryption.none': 'Rien',
+      'wifi.password.encryption.none': 'Aucun',
       'wifi.tip':
         "Dirigez l'appareil photo de votre téléphone vers le QR code pour vous connecter automatiquement",
       'wifi.alert.name': 'Le nom du réseau ne peut pas être vide',
@@ -364,7 +364,7 @@ const resources = {
         'Imprimissètz una carta simpla amb vòstras informacions de connexion WiFi. Pegatz-la al refregidor, gardatz-la al pòrtafuèlha, etc.',
       'desc.privacy':
         "Vòstras informacions WiFi son pas jamai enviadas al servidor. Cap de seguiment, d'analisi o de generacion d'emprenta numerica son pas realizats sus aqueste site Web. Veire lo",
-      'desc.source': 'còde font',
+      'desc.source': 'còdi font',
       'wifi.login': 'Connexion Wi-Fi',
       'wifi.name': 'Nom de la ret',
       'wifi.name.placeholder': 'Nom de la ret WiFi',
