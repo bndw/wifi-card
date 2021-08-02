@@ -72,7 +72,7 @@ const resources = {
       'wifi.password.placeholder': '密码',
       'wifi.password.hide': '打印前隐藏密码字段',
       'wifi.password.encryption': '加密',
-      'wifi.password.encryption.none': '没有任何',
+      'wifi.password.encryption.none': '无',
       'wifi.tip': '将手机摄像头对准二维码即可自动连接',
       'wifi.alert.name': '网络名称不能为空',
       'wifi.alert.password.length.5': '密码至少 5 个字符',
