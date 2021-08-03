@@ -98,7 +98,6 @@ export const Card = ({ direction = 'ltr' }) => {
             style={!portrait && checkDirectionAndSetPadding}
             value={qrvalue}
             size={175}
-            renderAs="svg"
           />
 
           <div className="inputs">
