@@ -42,21 +42,17 @@ export const WifiCard = (props) => {
     );
   }, [props.settings]);
 
-  const setEncryptionMode = (e) =>
-    setNetwork({
-      ...network,
-      encryptionMode: e.target.value,
-    });
-
-  const checkDirectionAndSetPadding =
-    direction === 'ltr' ? { paddingRight: '1em' } : { paddingLeft: '1em' };
+  const portraitWidth = () => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    return isMobile ? '100%' : '280px';
+  };
 
   return (
     <Pane>
       <Card
         id="print-area"
         elevation={3}
-        style={{ maxWidth: props.settings.portrait ? '350px' : '100%' }}
+        style={{ maxWidth: props.settings.portrait ? portraitWidth() : '100%' }}
       >
         <Heading
           size={700}
