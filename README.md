@@ -58,5 +58,5 @@ We would love for you to contribute to different languages and help make it even
 | Arabic              | [Ahmed Tokyo](https://github.com/a-tokyo)         |
 | Occitan             | [ensag-dev](https://github.com/ensag-dev)         |
 | Italian             | [Domenico Pascucci](https://github.com/pasmimmo)  |
-| Norwegian           | [tplive](https://github.com/tplive)               |
 | Korean              | [Seungbin Oh](https://github.com/sboh1214)        |
+| Norwegian           | [tplive](https://github.com/tplive)               |
