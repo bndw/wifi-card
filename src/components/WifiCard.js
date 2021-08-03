@@ -125,7 +125,9 @@ export const WifiCard = (props) => {
         <Paragraph>
           <CameraIcon />
           <MobilePhoneIcon />
-          <Text paddingLeft={8}>{t('wifi.tip')}</Text>
+          <Text size={300} paddingLeft={8}>
+            {t('wifi.tip')}
+          </Text>
         </Paragraph>
       </Card>
     </Pane>
