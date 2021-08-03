@@ -29,6 +29,32 @@ const resources = {
       select: 'Select Language',
     },
   },
+  'no-NB': {
+    translation: {
+      title: 'WiFi Kort',
+      'desc.use':
+        'Skriver ut et enkelt kort med dine Wifi innloggingsdetaljer. Sett det på kjøleskapet, ha det i lommeboka el. lign.',
+      'desc.privacy':
+        'Din wifi-informasjon blir aldri sendt til våre servere. Ingen sporing, analyse eller identifisering brukes på dette nettstedet. Se vår',
+      'desc.source': 'kildekode',
+      'wifi.login': 'WiFi Innlogging',
+      'wifi.name': 'Nettverksnavn',
+      'wifi.name.placeholder': 'WiFi Nettverksnavn',
+      'wifi.password': 'Passord',
+      'wifi.password.placeholder': 'Passord',
+      'wifi.password.hide': 'Skjul passordfeltet før utskrift',
+      'wifi.password.encryption': 'Kryptering',
+      'wifi.password.encryption.none': 'Ingen',
+      'wifi.tip':
+        'Pek telefonens kamera mot QR koden for å koble til automatisk',
+      'wifi.alert.name': 'Nettverksnavnet kan ikke være tomt',
+      'wifi.alert.password.length.5': 'Passordet må være minst 5 karakterer',
+      'wifi.alert.password.length.8': 'Passordet må være minst 8 karakterer',
+      'button.rotate': 'Roter',
+      'button.print': 'Skriv ut',
+      select: 'Velg språk',
+    },
+  },
   'nl-NL': {
     translation: {
       title: 'WiFi Kaart',

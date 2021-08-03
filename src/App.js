@@ -47,6 +47,7 @@ function App() {
           <option value="it-IT">Italian</option>
           <option value="ja">Japanese - 日本語</option>
           <option value="ko">Korean - 한국어</option>
+          <option value="no-NB">Norwegian - Norsk</option>
           <option value="oc">Occitan</option>
           <option value="fa-IR">Persian Iran - فارسی</option>
           <option value="pl-PL">Polish - Polski</option>

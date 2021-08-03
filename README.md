@@ -59,3 +59,4 @@ We would love for you to contribute to different languages and help make it even
 | Occitan             | [ensag-dev](https://github.com/ensag-dev)         |
 | Italian             | [Domenico Pascucci](https://github.com/pasmimmo)  |
 | Korean              | [Seungbin Oh](https://github.com/sboh1214)        |
+| Norwegian           | [tplive](https://github.com/tplive)               |
