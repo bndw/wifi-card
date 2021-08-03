@@ -16,7 +16,7 @@ const resources = {
       'wifi.name.placeholder': 'WiFi Network name',
       'wifi.password': 'Password',
       'wifi.password.placeholder': 'Password',
-      'wifi.password.hide': 'Hide password field before printing',
+      'wifi.password.hide': 'Hide password',
       'wifi.password.encryption': 'Encryption',
       'wifi.password.encryption.none': 'None',
       'wifi.tip':

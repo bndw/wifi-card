@@ -12,20 +12,6 @@ export const Settings = (props) => {
     { label: 'WEP', value: 'WEP' },
   ]);
 
-  const disableHidePassword = () => {
-    const isWEPWithPasswordLengthShorterThat5Characters = () => {
-      return props.settings.encryptionMode === 'WEP' &&
-        props.settings.password.length < 5
-        ? true
-        : false;
-    };
-
-    return props.settings.encryptionMode === 'WPA' &&
-      props.settings.password.length < 8
-      ? true
-      : isWEPWithPasswordLengthShorterThat5Characters();
-  };
-
   useEffect(() => {
     if (props.firstLoad.current && window.innerWidth < 500) {
       props.onFirstLoad();
@@ -76,7 +62,6 @@ export const Settings = (props) => {
       <Checkbox
         label={t('wifi.password.hide')}
         checked={props.settings.hidePassword}
-        disabled={disableHidePassword()}
         onChange={() =>
           props.onHidePasswordChange(!props.settings.hidePassword)
         }
