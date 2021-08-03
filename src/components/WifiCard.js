@@ -59,7 +59,7 @@ export const WifiCard = (props) => {
         style={{ maxWidth: props.settings.portrait ? '350px' : '100%' }}
       >
         <Heading
-          size={900}
+          size={700}
           textAlign={props.settings.portrait ? 'center' : 'unset'}
         >
           {t('wifi.login')}
@@ -79,7 +79,7 @@ export const WifiCard = (props) => {
                 : {}
             }
             value={qrvalue}
-            size={175}
+            size={150}
           />
 
           <Pane width={'100%'}>

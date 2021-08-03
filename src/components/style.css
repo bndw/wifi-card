@@ -24,16 +24,24 @@ body {
 .hidden {
   display: none;
 }
-
 textarea {
   background-color: #fff;
   border: solid 1px #ddd;
   font-family: 'Source Code Pro', serif !important;
-  font-size: 1.2em !important;
-  font-weight: bold;
+  font-size: 1em !important;
+  font-weight: bold !important;
   margin-bottom: 0;
+  height: 40px !important;
+  min-height: 0px !important;
   overflow: hidden;
   resize: none;
+}
+textarea#password {
+  height: 60px !important;
+}
+
+hr {
+  margin-top: 0;
 }
 
 button {
@@ -68,6 +76,7 @@ button#settings {
   }
   #print-area {
     border-style: dashed;
+    box-shadow: none;
   }
   #print-area textarea {
     border: none;
