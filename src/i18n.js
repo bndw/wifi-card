@@ -46,7 +46,7 @@ const resources = {
       'wifi.password.encryption': 'Kryptering',
       'wifi.password.encryption.none': 'Ingen',
       'wifi.tip':
-        "Pek telefonens kamera mot QR koden for å koble til automatisk",
+        'Pek telefonens kamera mot QR koden for å koble til automatisk',
       'wifi.alert.name': 'Nettverksnavnet kan ikke være tomt',
       'wifi.alert.password.length.5': 'Passordet må være minst 5 karakterer',
       'wifi.alert.password.length.8': 'Passordet må være minst 8 karakterer',
