@@ -4,7 +4,7 @@
 
 https://wificard.io
 
-Print a simple card with your WiFi login details. Tape it to the fridge, keep it in your wallet, etc.
+Print a simple card with your WiFi login details. Tape it to the fridge, keep it in your wallet, hang on the wall for guests at home or in the hotel, etc.
 
 ![wificard](https://user-images.githubusercontent.com/48166553/125853182-49fd361d-5797-4989-afbf-e6a617945be2.gif)
 
@@ -58,4 +58,5 @@ We would love for you to contribute to different languages and help make it even
 | Arabic              | [Ahmed Tokyo](https://github.com/a-tokyo)         |
 | Occitan             | [ensag-dev](https://github.com/ensag-dev)         |
 | Italian             | [Domenico Pascucci](https://github.com/pasmimmo)  |
-| Norwegian           | [tplive](https://github.com/tplive)  |
+| Korean              | [Seungbin Oh](https://github.com/sboh1214)        |
+| Norwegian           | [tplive](https://github.com/tplive)               |
