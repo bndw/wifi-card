@@ -116,7 +116,7 @@ export const WifiCard = (props) => {
                   ? '5em'
                   : 'auto'
               }
-              label={t('wifi.password')}
+              label={!props.settings.hidePassword && t('wifi.password')}
               placeholder={t('wifi.password.placeholder')}
               value={props.settings.password}
               onChange={(e) => props.onPasswordChange(e.target.value)}
