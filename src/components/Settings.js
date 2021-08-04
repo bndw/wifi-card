@@ -7,7 +7,7 @@ import './style.css';
 export const Settings = (props) => {
   const { t } = useTranslation();
   const [encryptionModes] = useState([
-    { label: 'None', value: 'nopass' },
+    { label: 'None', value: '' },
     { label: 'WPA/WPA2/WPA3', value: 'WPA' },
     { label: 'WEP', value: 'WEP' },
   ]);

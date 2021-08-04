@@ -33,10 +33,9 @@ export const WifiCard = (props) => {
 
   useEffect(() => {
     const ssid = escape(props.settings.ssid);
-    const password =
-      props.settings.encryptionMode === 'nopass'
-        ? ''
-        : escape(props.settings.password);
+    const password = !props.settings.encryptionMode
+      ? ''
+      : escape(props.settings.password);
     setQrvalue(
       `WIFI:T:${props.settings.encryptionMode};S:${ssid};P:${password};;`
     );
@@ -48,14 +47,9 @@ export const WifiCard = (props) => {
   };
 
   const passwordFieldLabel = () => {
-    if (
-      props.settings.hidePassword ||
-      props.settings.encryptionMode === 'nopass'
-    ) {
-      return '';
-    }
-
-    return t('wifi.password');
+    const hiddenPassword =
+      props.settings.hidePassword || !props.settings.encryptionMode;
+    return hiddenPassword ? '' : t('wifi.password');
   };
 
   return (
@@ -116,8 +110,11 @@ export const WifiCard = (props) => {
               autoCapitalize="none"
               spellCheck={false}
               className={`
-                ${props.settings.hidePassword && 'no-print hidden'}
-                ${props.settings.encryptionMode === 'nopass' && 'hidden'}
+                ${
+                  (props.settings.hidePassword ||
+                    !props.settings.encryptionMode) &&
+                  'hidden'
+                }
               `}
               height={
                 props.settings.portrait && props.settings.password.length > 40
