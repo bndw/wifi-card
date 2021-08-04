@@ -18,13 +18,11 @@ function App() {
     ssid: '',
     // Network password
     password: '',
-    // Show advanced options
-    showAdvanced: false,
-    // Advanced option: Network encryption mode
+    // Settings: Network encryption mode
     encryptionMode: 'WPA',
-    // Advanced option: Hide password on the printed card
+    // Settings: Hide password on the printed card
     hidePassword: false,
-    // Advanced option: Portrait orientation
+    // Settings: Portrait orientation
     portrait: false,
   });
   const [errors, setErrors] = useState({
