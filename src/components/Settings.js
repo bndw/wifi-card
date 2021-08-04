@@ -28,7 +28,7 @@ export const Settings = (props) => {
         selected={i18n.language}
         onChange={(e) => props.onLanguageChange(e.target.value)}
       >
-        <option value="en-US">English</option>V
+        <option value="en-US">English</option>
         <option value="ar">Arabic - العربية</option>
         <option value="ca">Catalan - Català</option>
         <option value="zh-HK">Chinese Hong Kong - 简体中文</option>
@@ -40,6 +40,8 @@ export const Settings = (props) => {
         <option value="id-ID">Indonesian</option>
         <option value="it-IT">Italian</option>
         <option value="ja">Japanese - 日本語</option>
+        <option value="ko">Korean - 한국어</option>
+        <option value="no-NB">Norwegian - Norsk</option>
         <option value="oc">Occitan</option>
         <option value="fa-IR">Persian Iran - فارسی</option>
         <option value="pl-PL">Polish - Polski</option>
