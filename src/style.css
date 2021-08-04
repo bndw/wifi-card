@@ -1,3 +1,6 @@
 body {
+  margin: 0 auto;
   max-width: 500px;
+  padding-bottom: 1em;
+  padding-top: 1em;
 }
