@@ -11,6 +11,7 @@ import {
 import QRCode from 'qrcode.react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import logo from '../../src/images/wifi.png';
 import './style.css';
 
 export const WifiCard = (props) => {
@@ -59,13 +60,16 @@ export const WifiCard = (props) => {
         elevation={3}
         style={{ maxWidth: props.settings.portrait ? portraitWidth() : '100%' }}
       >
-        <Heading
-          paddingBottom={10}
-          size={700}
-          textAlign={props.settings.portrait ? 'center' : 'unset'}
-        >
-          {t('wifi.login')}
-        </Heading>
+        <Pane display="flex" paddingBottom={12}>
+          <img alt="icon" src={logo} width="24" height="24" />
+          <Heading
+            paddingLeft={10}
+            size={700}
+            textAlign={props.settings.portrait ? 'center' : 'unset'}
+          >
+            {t('wifi.login')}
+          </Heading>
+        </Pane>
 
         <Pane
           className="details"
