@@ -45,18 +45,6 @@ button {
   width: 180px;
 }
 
-button#print {
-  color: #fff;
-  background-color: #0074d9;
-  border-color: #0074d9;
-}
-
-button#settings {
-  color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
-}
-
 #settings {
   margin-bottom: 1em;
   padding: 1em;
@@ -76,9 +64,6 @@ button#settings {
   }
   #print-area textarea {
     border: none;
-  }
-  .no-print {
-    display: none;
   }
   #print-area {
     position: absolute;
