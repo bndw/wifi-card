@@ -22,8 +22,10 @@ const resources = {
       'wifi.tip':
         "Point your phone's camera at the QR Code to connect automatically",
       'wifi.alert.name': 'Network name cannot be empty',
-      'wifi.alert.password.length.5': 'Password must be at least 5 characters',
-      'wifi.alert.password.length.8': 'Password must be at least 8 characters',
+      'wifi.alert.password.length.5':
+        'Password must be at least 5 characters, or change the encryption to "None"',
+      'wifi.alert.password.length.8':
+        'Password must be at least 8 characters, or change the encryption to "None"',
       'button.rotate': 'Rotate',
       'button.print': 'Print',
       'button.settings': 'Settings',
