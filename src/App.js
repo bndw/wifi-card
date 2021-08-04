@@ -38,6 +38,14 @@ function App() {
   };
 
   const onPrint = () => {
+    if (!settings.ssid.length) {
+      setErrors({
+        ...errors,
+        ssidError: t('wifi.alert.name'),
+      });
+      return;
+    }
+
     if (settings.ssid.length > 0) {
       if (settings.password.length < 8 && settings.encryptionMode === 'WPA') {
         setErrors({
@@ -56,11 +64,6 @@ function App() {
         document.title = 'WiFi Card - ' + settings.ssid;
         window.print();
       }
-    } else {
-      setErrors({
-        ...errors,
-        ssidError: t('wifi.alert.name'),
-      });
     }
   };
 

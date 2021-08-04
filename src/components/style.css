@@ -18,7 +18,6 @@ body {
 .qrcode {
   margin-bottom: 1em;
   max-width: 175px;
-  min-width: 175px;
 }
 
 .hidden {

@@ -47,6 +47,17 @@ export const WifiCard = (props) => {
     return isMobile ? '100%' : '280px';
   };
 
+  const passwordFieldLabel = () => {
+    if (
+      props.settings.hidePassword ||
+      props.settings.encryptionMode === 'nopass'
+    ) {
+      return '';
+    }
+
+    return t('wifi.password');
+  };
+
   return (
     <Pane>
       <Card
@@ -55,6 +66,7 @@ export const WifiCard = (props) => {
         style={{ maxWidth: props.settings.portrait ? portraitWidth() : '100%' }}
       >
         <Heading
+          paddingBottom={10}
           size={700}
           textAlign={props.settings.portrait ? 'center' : 'unset'}
         >
@@ -112,7 +124,7 @@ export const WifiCard = (props) => {
                   ? '5em'
                   : 'auto'
               }
-              label={!props.settings.hidePassword && t('wifi.password')}
+              label={passwordFieldLabel()}
               placeholder={t('wifi.password.placeholder')}
               value={props.settings.password}
               onChange={(e) => props.onPasswordChange(e.target.value)}
