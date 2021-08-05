@@ -1,13 +1,11 @@
 import { Button, Heading, Link, Pane, Paragraph } from 'evergreen-ui';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import logo from '../src/images/wifi.png';
 import { Settings } from './components/Settings';
 import { WifiCard } from './components/WifiCard';
 import './style.css';
-
-/* List of languages that require RTL direction (alphabetic order). */
-const RTL_LANGUAGES = ['ar', 'fa-IR'];
+import { Translations } from './translations';
 
 function App() {
   const html = document.querySelector('html');
@@ -30,8 +28,14 @@ function App() {
     passwordError: '',
   });
 
+  const htmlDirection = (languageID) => {
+    languageID = languageID || i18n.language;
+    const rtl = Translations.filter((t) => t.id === languageID)[0].rtl;
+    return rtl ? 'rtl' : 'ltr';
+  };
+
   const onChangeLanguage = (language) => {
-    html.style.direction = RTL_LANGUAGES.includes(language) ? 'rtl' : 'ltr';
+    html.style.direction = htmlDirection(language);
     i18n.changeLanguage(language);
   };
 
@@ -84,15 +88,9 @@ function App() {
     setSettings({ ...settings, hidePassword });
   };
   const onFirstLoad = () => {
+    html.style.direction = htmlDirection();
     firstLoad.current = false;
   };
-
-  useEffect(() => {
-    /* handle the edge case of the initial render requiring RTL direction */
-    if (RTL_LANGUAGES.includes(i18n.language)) {
-      html.style.direction = 'rtl';
-    }
-  });
 
   return (
     <Pane>
@@ -116,7 +114,7 @@ function App() {
       </Pane>
 
       <WifiCard
-        direction={RTL_LANGUAGES.includes(i18n.language) ? 'rtl' : 'ltr'}
+        direction={htmlDirection()}
         settings={settings}
         ssidError={errors.ssidError}
         passwordError={errors.passwordError}
