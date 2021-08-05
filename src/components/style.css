@@ -2,8 +2,7 @@
 
 #print-area {
   border-color: #aaa;
-  border-style: dashed;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   margin-top: 2em;
   padding: 1em;
 }
@@ -16,22 +15,29 @@
 .qrcode {
   margin-bottom: 1em;
   max-width: 175px;
-  min-width: 175px;
 }
 
 .hidden {
   display: none;
 }
-
 textarea {
   background-color: #fff;
   border: solid 1px #ddd;
-  font-family: 'Source Code Pro', serif;
-  font-size: 1.3em;
-  font-weight: bold;
-  height: 3em;
+  font-family: 'Source Code Pro', serif !important;
+  font-size: 1em !important;
+  font-weight: bold !important;
+  margin-bottom: 0;
+  height: 40px !important;
+  min-height: 0px !important;
   overflow: hidden;
   resize: none;
+}
+textarea#password {
+  height: 60px !important;
+}
+
+hr {
+  margin-top: 0;
 }
 
 button {
@@ -39,16 +45,9 @@ button {
   width: 180px;
 }
 
-button#print {
-  color: #fff;
-  background-color: #0074d9;
-  border-color: #0074d9;
-}
-
-button#rotate {
-  color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+#settings {
+  margin-bottom: 1em;
+  padding: 1em;
 }
 
 @media print {
@@ -59,19 +58,16 @@ button#rotate {
   #print-area * {
     visibility: visible;
   }
+  #print-area {
+    border-style: dashed;
+    box-shadow: none;
+  }
   #print-area textarea {
     border: none;
-  }
-  .no-print {
-    display: none;
   }
   #print-area {
     position: absolute;
     left: 0;
     top: 0;
   }
-}
-
-hr {
-  margin-top: 25px;
 }

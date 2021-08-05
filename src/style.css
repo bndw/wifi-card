@@ -1,6 +1,5 @@
 body {
-  max-width: 680px;
-}
-.tag {
-  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 1em;
 }

@@ -1,7 +1,9 @@
-import React from 'react';
+import { Button, Heading, Link, Pane, Paragraph } from 'evergreen-ui';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import logo from '../src/images/wifi.png';
-import { Card } from './components/Card';
+import { Settings } from './components/Settings';
+import { WifiCard } from './components/WifiCard';
 import './style.css';
 
 /* List of languages that require RTL direction (alphabetic order). */
@@ -10,65 +12,138 @@ const RTL_LANGUAGES = ['ar', 'fa-IR'];
 function App() {
   const html = document.querySelector('html');
   const { t, i18n } = useTranslation();
+  const firstLoad = useRef(true);
+  const [settings, setSettings] = useState({
+    // Network SSID name
+    ssid: '',
+    // Network password
+    password: '',
+    // Settings: Network encryption mode
+    encryptionMode: 'WPA',
+    // Settings: Hide password on the printed card
+    hidePassword: false,
+    // Settings: Portrait orientation
+    portrait: false,
+  });
+  const [errors, setErrors] = useState({
+    ssidError: '',
+    passwordError: '',
+  });
 
-  const changeLanguage = (language) => {
+  const onChangeLanguage = (language) => {
     html.style.direction = RTL_LANGUAGES.includes(language) ? 'rtl' : 'ltr';
     i18n.changeLanguage(language);
   };
 
-  /* handle the edge case of the initial render requiring RTL direction */
-  if (RTL_LANGUAGES.includes(i18n.language)) {
-    html.style.direction = 'rtl';
-  }
+  const onPrint = () => {
+    if (!settings.ssid.length) {
+      setErrors({
+        ...errors,
+        ssidError: t('wifi.alert.name'),
+      });
+      return;
+    }
+
+    if (settings.ssid.length > 0) {
+      if (settings.password.length < 8 && settings.encryptionMode === 'WPA') {
+        setErrors({
+          ...errors,
+          passwordError: t('wifi.alert.password.length.8'),
+        });
+      } else if (
+        settings.password.length < 5 &&
+        settings.encryptionMode === 'WEP'
+      ) {
+        setErrors({
+          ...errors,
+          passwordError: t('wifi.alert.password.length.5'),
+        });
+      } else {
+        document.title = 'WiFi Card - ' + settings.ssid;
+        window.print();
+      }
+    }
+  };
+
+  const onSSIDChange = (ssid) => {
+    setErrors({ ...errors, ssidError: '' });
+    setSettings({ ...settings, ssid });
+  };
+  const onPasswordChange = (password) => {
+    setErrors({ ...errors, passwordError: '' });
+    setSettings({ ...settings, password });
+  };
+  const onEncryptionModeChange = (encryptionMode) => {
+    setErrors({ ...errors, passwordError: '' });
+    setSettings({ ...settings, encryptionMode });
+  };
+  const onOrientationChange = (portrait) => {
+    setSettings({ ...settings, portrait });
+  };
+  const onHidePasswordChange = (hidePassword) => {
+    setSettings({ ...settings, hidePassword });
+  };
+  const onFirstLoad = () => {
+    firstLoad.current = false;
+  };
+
+  useEffect(() => {
+    /* handle the edge case of the initial render requiring RTL direction */
+    if (RTL_LANGUAGES.includes(i18n.language)) {
+      html.style.direction = 'rtl';
+    }
+  });
 
   return (
-    <div className="App">
-      <h1>
+    <Pane>
+      <Pane display="flex">
         <img alt="icon" src={logo} width="32" height="32" />
-        &nbsp; {t('title')}
-      </h1>
+        <Heading size={900} paddingLeft={16}>
+          {t('title')}
+        </Heading>
+      </Pane>
 
-      <div>
-        <label>{t('select')}</label>
-        <select
-          value={i18n.language}
-          onChange={(e) => changeLanguage(e.target.value)}
-        >
-          <option value="en-US">English</option>
-          <option value="ar">Arabic - العربية</option>
-          <option value="ca">Catalan - Català</option>
-          <option value="zh-HK">Chinese Hong Kong - 简体中文</option>
-          <option value="zh-CN">Chinese Simplified - 简体中文</option>
-          <option value="nl-NL">Dutch - Nederlands</option>
-          <option value="fr-FR">French - Français</option>
-          <option value="de-DE">German - Deutsch</option>
-          <option value="hi-IN">Hindi - हिन्दी</option>
-          <option value="id-ID">Indonesian</option>
-          <option value="it-IT">Italian</option>
-          <option value="ja">Japanese - 日本語</option>
-          <option value="ko">Korean - 한국어</option>
-          <option value="no-NB">Norwegian - Norsk</option>
-          <option value="oc">Occitan</option>
-          <option value="fa-IR">Persian Iran - فارسی</option>
-          <option value="pl-PL">Polish - Polski</option>
-          <option value="pt">Portuguese - Português</option>
-          <option value="pt-BR">Portuguese - Português brasileiro</option>
-          <option value="ru-RU">Russian - Русский</option>
-          <option value="es">Spanish - Español</option>
-          <option value="tr-TR">Turkish - Türkçe</option>
-          <option value="uk-UA">Ukrainian - Українська</option>
-        </select>
-      </div>
+      <Pane>
+        <Paragraph marginTop={12}>{t('desc.use')}</Paragraph>
 
-      <p className="tag">{t('desc.use')}</p>
+        <Paragraph marginTop={12}>
+          {t('desc.privacy')}{' '}
+          <Link href="https://github.com/bndw/wifi-card">
+            {t('desc.source')}
+          </Link>
+          .
+        </Paragraph>
+      </Pane>
 
-      <p className="tag">
-        {t('desc.privacy')}{' '}
-        <a href="https://github.com/bndw/wifi-card">{t('desc.source')}</a>.
-      </p>
+      <WifiCard
+        direction={RTL_LANGUAGES.includes(i18n.language) ? 'rtl' : 'ltr'}
+        settings={settings}
+        ssidError={errors.ssidError}
+        passwordError={errors.passwordError}
+        onSSIDChange={onSSIDChange}
+        onPasswordChange={onPasswordChange}
+      />
 
-      <Card direction={RTL_LANGUAGES.includes(i18n.language) ? 'rtl' : 'ltr'} />
-    </div>
+      <Settings
+        settings={settings}
+        firstLoad={firstLoad}
+        onFirstLoad={onFirstLoad}
+        onLanguageChange={onChangeLanguage}
+        onEncryptionModeChange={onEncryptionModeChange}
+        onOrientationChange={onOrientationChange}
+        onHidePasswordChange={onHidePasswordChange}
+      />
+
+      <Button
+        id="print"
+        appearance="primary"
+        height={40}
+        marginRight={16}
+        onClick={onPrint}
+      >
+        {t('button.print')}
+      </Button>
+    </Pane>
   );
 }
 
