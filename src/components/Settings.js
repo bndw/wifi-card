@@ -37,6 +37,7 @@ export const Settings = (props) => {
         <option value="fr-FR">French - Français</option>
         <option value="de-DE">German - Deutsch</option>
         <option value="hi-IN">Hindi - हिन्दी</option>
+        <option value="hu-HU">Hungarian - Magyar</option>
         <option value="id-ID">Indonesian</option>
         <option value="it-IT">Italian</option>
         <option value="ja">Japanese - 日本語</option>

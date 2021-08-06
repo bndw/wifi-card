@@ -649,6 +649,35 @@ const resources = {
       select: '언어 선택',
     },
   },
+  'hu-HU': {
+    translation: {
+      title: 'WiFi Kártya',
+      'desc.use':
+        'Nyomtass ki egy egyszerű kártyát a WiFi bejelentkezési adataiddal. Ragaszd fel a hűtőszekrényedre, tartsd a pénztárcádban, stb.',
+      'desc.privacy':
+        'A WiFi adataid sosem lesznek elküldve a szerverre. Ezen a weboldalon nincs követés, nincs analitika vagy digitális ujjlenyomatozás. Nézd meg a',
+      'desc.source': 'forráskódot',
+      'wifi.login': 'WiFi Bejelentkezés',
+      'wifi.name': 'Hálózat neve',
+      'wifi.name.placeholder': 'WiFi hálózat neve',
+      'wifi.password': 'Jelszó',
+      'wifi.password.placeholder': 'Jelszó',
+      'wifi.password.hide': 'Jelszó elrejtése',
+      'wifi.password.encryption': 'Titkosítás',
+      'wifi.password.encryption.none': 'Nincs',
+      'wifi.tip':
+        'Olvasd be a QR kódot a telefonod kamerájával az automatikus csatlakozáshoz',
+      'wifi.alert.name': 'A Hálózat neve nem lehet üres',
+      'wifi.alert.password.length.5':
+        'A jelszó minimum 5 karakter legyen, vagy állítsd a titkosítást "Nincs"-re',
+      'wifi.alert.password.length.8':
+        'A jelszó minimum 8 karakter legyen, vagy állítsd a titkosítást "Nincs"-re',
+      'button.rotate': 'Forgatás',
+      'button.print': 'Nyomtatás',
+      'button.settings': 'Beállítások',
+      select: 'Válassz nyelvet',
+    },
+  },
 };
 
 i18n
