@@ -4,10 +4,9 @@
 
 https://wificard.io
 
-Print a simple card with your WiFi login details. Tape it to the fridge, keep it in your wallet, etc.
+Print a simple card with your WiFi login details. Tape it to the fridge, keep it in your wallet, hang on the wall for guests at home or in the hotel, etc.
 
 ![wificard](https://user-images.githubusercontent.com/48166553/125853182-49fd361d-5797-4989-afbf-e6a617945be2.gif)
-
 
 ## Running locally
 
@@ -25,17 +24,50 @@ make run
    make dev
    ```
 
-This project uses [Prettier](https://prettier.io/) formatting and all pull requests must pass
-the automated lint checks prior to merging.
+This project uses [Prettier](https://prettier.io/) formatting. All pull requests must pass the automated lint checks before merging. Prettier format is run automatically as a pre-commit hook.
 
-Run the lint check with:
+## Language Contribution Guide
 
-```
-make fmt
-```
+We would love for you to contribute to different languages and help make it even better than it is today! As a language contributor, here are some steps we would like you to follow:
 
-Rewrite the files to resolve any style issues with:
+1. Add a translation to [`./src/translations.js`](./src/translations.js), e.g.:
 
-```
-make fmt.write
-```
+   ```
+   {
+      id: 'de-DE',              // locale code
+      name: 'German - Deutsch', // Display name in the format 'latinName - nativeName'
+      rtl: true,                // Optional, true if this is a right-to-left language
+      translation: {
+         ...
+      }
+   }
+   ```
+
+2. Append an entry to the [Supported Languages](#supported-languages) table in below.
+
+## Supported Languages
+
+| Language            | Author Credit                                     |
+| ------------------- | ------------------------------------------------- |
+| English             | [bndw](https://github.com/bndw)                   |
+| Chinese             | [Baoyuantop](https://github.com/Baoyuantop)       |
+| Spanish             | [oscfdezdz](https://github.com/oscfdezdz)         |
+| Portuguese          | [pedrorenan](https://github.com/pedrorenan)       |
+| Portuguese (Brazil) | [ismaelpereira](https://github.com/ismaelpereira) |
+| Japanese            | [hatsu38](https://github.com/hatsu38)             |
+| Russian             | [Teraskull](https://github.com/Teraskull)         |
+| Ukrainian           | [Teraskull](https://github.com/Teraskull)         |
+| Dutch               | [wouterbrink](https://github.com/wouterbrink)     |
+| French              | [Divlo](https://github.com/Divlo)                 |
+| Turkish             | [Riza Ergun](https://github.com/rizaergun)        |
+| Hindi               | [Pushpender](https://github.com/PushpenderSaini0) |
+| Catalan             | [aniol](https://github.com/aniol)                 |
+| German              | [devofthings](https://github.com/devofthings)     |
+| Indonesia           | [nyancodeid](https://github.com/nyancodeid)       |
+| Polish              | [olekstomek](https://github.com/olekstomek)       |
+| Arabic              | [Ahmed Tokyo](https://github.com/a-tokyo)         |
+| Occitan             | [ensag-dev](https://github.com/ensag-dev)         |
+| Italian             | [Domenico Pascucci](https://github.com/pasmimmo)  |
+| Korean              | [Seungbin Oh](https://github.com/sboh1214)        |
+| Norwegian           | [tplive](https://github.com/tplive)               |
+| Hungarian           | [munkacsimark](https://github.com/munkacsimark)   |

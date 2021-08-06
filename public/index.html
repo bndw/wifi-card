@@ -4,9 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Print a card for your WiFi login" />
+    <meta
+      name="description"
+      content="Print a simple card with your WiFi login details. Tape it to the fridge, keep it in your wallet, etc."
+    />
     <link rel="icon" href="./images/wifi.ico" />
-    <link rel="stylesheet" href="/light.min.css" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -23,11 +25,13 @@
     -->
     <title>WiFi Card</title>
   </head>
+
   <body>
     <noscript
       >You need to enable JavaScript to run this app. Feel free to view the
       <a href="https://github.com/bndw/wifi-card">source code</a>.</noscript
     >
+
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -40,4 +44,15 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+
+  <script>
+    // Internet Explorer 6-11
+    const isIE = /*@cc_on!@*/ false || !!document.documentMode;
+
+    if (isIE) {
+      document.getElementById('root').innerHTML =
+        'Internet Explorer is not supported. Download Firefox/Chrome/Opera.';
+      document.body.style.fontSize = '50px';
+    }
+  </script>
 </html>
