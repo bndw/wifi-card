@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+@font-face {
+  font-family: 'Source Serif';
+  src: url(./SourceSerif4-Semibold.otf);
+}
 
 #print-area {
   border-color: #aaa;
@@ -23,9 +26,8 @@
 textarea {
   background-color: #fff;
   border: solid 1px #ddd;
-  font-family: 'Source Code Pro', serif !important;
-  font-size: 1em !important;
-  font-weight: bold !important;
+  font-family: 'Source Serif', serif !important;
+  font-size: 1.2em !important;
   margin-bottom: 0;
   height: 40px !important;
   min-height: 0px !important;
@@ -61,9 +63,6 @@ button {
   #print-area {
     border-style: dashed;
     box-shadow: none;
-  }
-  #print-area textarea {
-    border: none;
   }
   #print-area {
     position: absolute;
