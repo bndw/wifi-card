@@ -1,5 +1,5 @@
 import { Checkbox, Pane, RadioGroup, SelectField } from 'evergreen-ui';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
 import { Translations } from '../translations';
@@ -7,11 +7,11 @@ import './style.css';
 
 export const Settings = (props) => {
   const { t } = useTranslation();
-  const [encryptionModes] = useState([
-    { label: 'None', value: '' },
+  const encryptionModes = [
+    { label: t('wifi.password.encryption.none'), value: '' },
     { label: 'WPA/WPA2/WPA3', value: 'WPA' },
     { label: 'WEP', value: 'WEP' },
-  ]);
+  ];
 
   useEffect(() => {
     if (props.firstLoad.current && window.innerWidth < 500) {
@@ -28,9 +28,10 @@ export const Settings = (props) => {
         label={t('select')}
         selected={i18n.language}
         onChange={(e) => props.onLanguageChange(e.target.value)}
+        defaultValue="en-US"
       >
         {Translations.map((t) => (
-          <option key={t.id} value={t.id} selected={t.id === i18n.language}>
+          <option key={t.id} value={t.id}>
             {t.name}
           </option>
         ))}
