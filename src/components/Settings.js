@@ -28,9 +28,10 @@ export const Settings = (props) => {
         label={t('select')}
         selected={i18n.language}
         onChange={(e) => props.onLanguageChange(e.target.value)}
+        defaultValue="en-US"
       >
         {Translations.map((t) => (
-          <option key={t.id} value={t.id} selected={t.id === i18n.language}>
+          <option key={t.id} value={t.id}>
             {t.name}
           </option>
         ))}
