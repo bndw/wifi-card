@@ -2,6 +2,7 @@ import { Checkbox, Pane, RadioGroup, SelectField } from 'evergreen-ui';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
+import { Translations } from '../translations';
 import './style.css';
 
 export const Settings = (props) => {
@@ -28,30 +29,11 @@ export const Settings = (props) => {
         selected={i18n.language}
         onChange={(e) => props.onLanguageChange(e.target.value)}
       >
-        <option value="en-US">English</option>
-        <option value="ar">Arabic - العربية</option>
-        <option value="ca">Catalan - Català</option>
-        <option value="zh-HK">Chinese Hong Kong - 简体中文</option>
-        <option value="zh-CN">Chinese Simplified - 简体中文</option>
-        <option value="nl-NL">Dutch - Nederlands</option>
-        <option value="fr-FR">French - Français</option>
-        <option value="de-DE">German - Deutsch</option>
-        <option value="hi-IN">Hindi - हिन्दी</option>
-        <option value="hu-HU">Hungarian - Magyar</option>
-        <option value="id-ID">Indonesian</option>
-        <option value="it-IT">Italian</option>
-        <option value="ja">Japanese - 日本語</option>
-        <option value="ko">Korean - 한국어</option>
-        <option value="no-NB">Norwegian - Norsk</option>
-        <option value="oc">Occitan</option>
-        <option value="fa-IR">Persian Iran - فارسی</option>
-        <option value="pl-PL">Polish - Polski</option>
-        <option value="pt">Portuguese - Português</option>
-        <option value="pt-BR">Portuguese - Português brasileiro</option>
-        <option value="ru-RU">Russian - Русский</option>
-        <option value="es">Spanish - Español</option>
-        <option value="tr-TR">Turkish - Türkçe</option>
-        <option value="uk-UA">Ukrainian - Українська</option>
+        {Translations.map((t) => (
+          <option key={t.id} value={t.id} selected={t.id === i18n.language}>
+            {t.name}
+          </option>
+        ))}
       </SelectField>
 
       <Checkbox
