@@ -114,7 +114,6 @@ function App() {
       </Pane>
 
       <WifiCard
-        direction={htmlDirection()}
         settings={settings}
         ssidError={errors.ssidError}
         passwordError={errors.passwordError}
