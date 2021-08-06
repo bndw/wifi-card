@@ -41,7 +41,7 @@
       The build step will place the bundled scripts into the <body> tag.
 
       To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
+      To create a production bundle,  use `npm run build` or `yarn build`.
     -->
   </body>
 
@@ -54,5 +54,23 @@
         'Internet Explorer is not supported. Download Firefox/Chrome/Opera.';
       document.body.style.fontSize = '50px';
     }
+    src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js">
+      var options = {
+  bottom: '32px', // default: '32px'
+  right: '32px', // default: '32px'
+  left: '32px', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '&#x1f313;', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+    
   </script>
 </html>
