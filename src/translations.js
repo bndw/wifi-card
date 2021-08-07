@@ -11,7 +11,7 @@ export const Translations = [
       'desc.source': 'source code',
       'wifi.login': 'WiFi Login',
       'wifi.name': 'Network name',
-      'wifi.name.hiddenSSID': 'Hidden network SSID',
+      'wifi.name.hiddenSSID': 'Hidden SSID',
       'wifi.name.placeholder': 'WiFi Network name',
       'wifi.password': 'Password',
       'wifi.password.placeholder': 'Password',
