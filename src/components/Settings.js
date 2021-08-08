@@ -13,6 +13,14 @@ export const Settings = (props) => {
     { label: 'WEP', value: 'WEP' },
   ];
 
+  const langSelectDefaultValue = () => {
+    const t = Translations.filter((t) => t.id === i18n.language);
+    if (t.length !== 1) {
+      return 'en-US';
+    }
+    return t[0].id;
+  };
+
   useEffect(() => {
     if (props.firstLoad.current && window.innerWidth < 500) {
       props.onFirstLoad();
@@ -26,9 +34,8 @@ export const Settings = (props) => {
         width={300}
         inputHeight={38}
         label={t('select')}
-        selected={i18n.language}
         onChange={(e) => props.onLanguageChange(e.target.value)}
-        defaultValue="en-US"
+        defaultValue={langSelectDefaultValue()}
       >
         {Translations.map((t) => (
           <option key={t.id} value={t.id}>
