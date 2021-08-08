@@ -20,6 +20,8 @@ function App() {
     encryptionMode: 'WPA',
     // Settings: Hide password on the printed card
     hidePassword: false,
+    // Settings: Mark your network as hidden SSID
+    hiddenSSID: false,
     // Settings: Portrait orientation
     portrait: false,
   });
@@ -87,6 +89,9 @@ function App() {
   const onHidePasswordChange = (hidePassword) => {
     setSettings({ ...settings, hidePassword });
   };
+  const onHiddenSSIDChange = (hiddenSSID) => {
+    setSettings({ ...settings, hiddenSSID });
+  };
   const onFirstLoad = () => {
     html.style.direction = htmlDirection();
     firstLoad.current = false;
@@ -129,6 +134,7 @@ function App() {
         onEncryptionModeChange={onEncryptionModeChange}
         onOrientationChange={onOrientationChange}
         onHidePasswordChange={onHidePasswordChange}
+        onHiddenSSIDChange={onHiddenSSIDChange}
       />
 
       <Button

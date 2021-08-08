@@ -38,7 +38,7 @@ export const WifiCard = (props) => {
       ? ''
       : escape(props.settings.password);
     setQrvalue(
-      `WIFI:T:${props.settings.encryptionMode};S:${ssid};P:${password};;`
+      `WIFI:T:${props.settings.encryptionMode};S:${ssid};P:${password};H:${props.settings.hiddenSSID};`
     );
   }, [props.settings]);
 
