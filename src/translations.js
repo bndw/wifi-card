@@ -725,7 +725,7 @@ export const Translations = [
     },
   },
   {
-    id: 'sr-Latn-CS',
+    id: 'sr',
     name: 'Serbian - Srpski',
     translation: {
       title: 'WiFi Karta',
