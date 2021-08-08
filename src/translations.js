@@ -726,6 +726,68 @@ export const Translations = [
       select: 'Válassz nyelvet',
     },
   },
+  {
+    id: 'sr',
+    name: 'Serbian - Srpski',
+    translation: {
+      title: 'WiFi Karta',
+      'desc.use':
+        'Odštampajte jednostavnu karticu sa Vašim WiFi podacima za prijavu. Zalepite je na frižideru, držite je u novčaniku, itd.',
+      'desc.privacy':
+        'Informacije o Vašoj WiFi mreži se nikada ne šalju na server. Nema nikakvog praćenja, analitike ili formi identifikacije na ovom sajtu.',
+      'desc.source': 'Izvorni kod',
+      'wifi.login': 'WiFi prijava',
+      'wifi.name': 'Ime mreže',
+      'wifi.name.placeholder': 'Ime WiFi mreže',
+      'wifi.password': 'Šifra',
+      'wifi.password.placeholder': 'Šifra',
+      'wifi.password.hide': 'Sakri šifru',
+      'wifi.password.encryption': 'Enkripcija',
+      'wifi.password.encryption.none': 'Nema',
+      'wifi.tip':
+        'Uperite kameru Vašeg telefona na QR kod da bi ste se povezali automatski na mrežu',
+      'wifi.alert.name': 'Ime mreže ne može biti prazno',
+      'wifi.alert.password.length.5':
+        'Šifra mora imati minimum 5 karaktera ili promenite enkripciju na "Nema"',
+      'wifi.alert.password.length.8':
+        'Šifra mora imati minimum 8 karaktera ili promenite enkripciju na "Nema"',
+      'button.rotate': 'Rotiraj',
+      'button.print': 'Odštampaj',
+      'button.settings': 'Podešavanja',
+      select: 'Odaberite jezik',
+    },
+  },
+  {
+    id: 'sr-Cyrl-CS',
+    name: 'Serbian - Српски',
+    translation: {
+      title: 'WiFi карта',
+      'desc.use':
+        'Одштампајте једноставну картицу са Вашим WiFi подацима за пријаву. Залепите је на фрижидеру, држите је у новчанику, итд.',
+      'desc.privacy':
+        'Информације о Вашој WiFi мрежи се никада не саљу на сервер. Нема никаквог праћења, аналитике или форми индетификације на овом сајту.',
+      'desc.source': 'Изворни код',
+      'wifi.login': 'WiFi мрежа',
+      'wifi.name': 'Име мреже',
+      'wifi.name.placeholder': 'Име WiFi мреже',
+      'wifi.password': 'Шифра',
+      'wifi.password.placeholder': 'Шифра',
+      'wifi.password.hide': 'Сакри шифру',
+      'wifi.password.encryption': 'Енкрипција',
+      'wifi.password.encryption.none': 'Нема',
+      'wifi.tip':
+        'Уперите камеру Вашег телефона на QR код да би сте се повезали аутомацки на мрежу',
+      'wifi.alert.name': 'Име мреже не може бити празно',
+      'wifi.alert.password.length.5':
+        'Шифра мора имати минимум 5 карактера или промените енкрипцију на "Нема"',
+      'wifi.alert.password.length.8':
+        'Шифра мора имати минимум 8 карактера или промените енкрипцију на "Нема"',
+      'button.rotate': 'Ротирај',
+      'button.print': 'Одштампај',
+      'button.settings': 'Подешавања',
+      select: 'Одаберите језик',
+    },
+  },
 ].sort((a, b) => {
   return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
 });

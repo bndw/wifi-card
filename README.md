@@ -71,3 +71,4 @@ We would love for you to contribute to different languages and help make it even
 | Korean              | [Seungbin Oh](https://github.com/sboh1214)        |
 | Norwegian           | [tplive](https://github.com/tplive)               |
 | Hungarian           | [munkacsimark](https://github.com/munkacsimark)   |
+| Serbian             | [demanderbag](https://github.com/demanderbag)     |
