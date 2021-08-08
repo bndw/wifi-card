@@ -43,16 +43,15 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      // Internet Explorer 6-11
+      const isIE = /*@cc_on!@*/ false || !!document.documentMode;
+  
+      if (isIE) {
+        document.getElementById('root').innerHTML =
+          'Internet Explorer is not supported. Download Firefox/Chrome/Opera.';
+        document.body.style.fontSize = '50px';
+      }
+    </script>
   </body>
-
-  <script>
-    // Internet Explorer 6-11
-    const isIE = /*@cc_on!@*/ false || !!document.documentMode;
-
-    if (isIE) {
-      document.getElementById('root').innerHTML =
-        'Internet Explorer is not supported. Download Firefox/Chrome/Opera.';
-      document.body.style.fontSize = '50px';
-    }
-  </script>
 </html>
