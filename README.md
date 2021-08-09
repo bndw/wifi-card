@@ -30,20 +30,20 @@ This project uses [Prettier](https://prettier.io/) formatting. All pull requests
 
 We would love for you to contribute to different languages and help make it even better than it is today! As a language contributor, here are some steps we would like you to follow:
 
-1. Add a translation to [`./src/translations.js`](./src/translations.js), e.g.:
+1. Add a translation to [`./src/translations.js`](./src/translations.js). Here's an example of the German translation:
 
    ```
    {
       id: 'de-DE',              // locale code
       name: 'German - Deutsch', // Display name in the format 'latinName - nativeName'
-      rtl: true,                // Optional, true if this is a right-to-left language
+      rtl: false,               // Optional, true if this is a right-to-left language
       translation: {
          ...
       }
    }
    ```
 
-2. Append an entry to the [Supported Languages](#supported-languages) table in below.
+2. Append an entry to the [Supported Languages](#supported-languages) table below.
 
 ## Supported Languages
 
