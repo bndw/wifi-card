@@ -788,6 +788,38 @@ export const Translations = [
       select: 'Одаберите језик',
     },
   },
+  {
+    id: 'Ur',
+    name: 'Urdu',
+    translation: {
+      title: 'وائی ​​فائی کارڈ',
+      'desc.use':
+        'اپنے وائی فائی لاگ ان کی تفصیلات کے ساتھ ایک سادہ کارڈ پرنٹ کریں۔ اسے فریج میں ٹیپ کریں ، اسے اپنے پرس میں رکھیں ، وغیرہ۔',
+      'desc.privacy':
+        'آپ کی وائی فائی معلومات کبھی بھی سرور کو نہیں بھیجی جاتی۔ اس ویب سائٹ پر کوئی ٹریکنگ ، تجزیات ، یا فنگر پرنٹنگ استعمال نہیں کی جاتی ہے۔ دیکھیں۔',
+      'desc.source': 'سورس کوڈ',
+      'wifi.login': 'وائی ​​فائی لاگ ان',
+      'wifi.name': 'نیٹ ورک کا نام',
+      'wifi.name.hiddenSSID': 'پوشیدہ SSID۔',
+      'wifi.name.placeholder': 'وائی ​​فائی نیٹ ورک کا نام۔',
+      'wifi.password': 'پاس ورڈ',
+      'wifi.password.placeholder': 'پاس ورڈ',
+      'wifi.password.hide': 'پاس ورڈ چھپائیں۔',
+      'wifi.password.encryption': 'خفیہ کاری۔',
+      'wifi.password.encryption.none': 'کوئی نہیں',
+      'wifi.tip':
+        "اپنے فون کے کیمرے کو QR کوڈ کی طرف اشارہ کریں تاکہ خود بخود جڑ جائے۔",
+      'wifi.alert.name': 'نیٹ ورک کا نام خالی نہیں ہو سکتا۔',
+      'wifi.alert.password.length.5':
+        'پاس ورڈ کم از کم 5 حروف کا ہونا چاہیے ، یا خفیہ کاری کو "کوئی نہیں" میں تبدیل کرنا چاہیے',
+      'wifi.alert.password.length.8':
+        'پاس ورڈ کم از کم 8 حروف کا ہونا چاہیے ، یا خفیہ کاری کو "کوئی نہیں" میں تبدیل کرنا چاہیے',
+      'button.rotate': 'گھمائیں',
+      'button.print': 'پرنٹ کریں',
+      'button.settings': 'ترتیبات',
+      select: 'زبان منتخب کریں۔',
+    },
+  },
 ].sort((a, b) => {
   return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
 });
