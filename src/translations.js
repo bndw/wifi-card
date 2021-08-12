@@ -92,7 +92,7 @@ export const Translations = [
   },
   {
     id: 'zh-CN',
-    name: 'Chinese Simplified - 简体中文',
+    name: 'Simplified Chinese - 简体中文',
     translation: {
       title: 'WiFi 连接卡',
       'desc.use':
@@ -120,7 +120,7 @@ export const Translations = [
   },
   {
     id: 'zh-HK',
-    name: 'Chinese Hong Kong - 简体中文',
+    name: 'Traditional Chinese - 繁體中文',
     translation: {
       title: 'WiFi 連接卡',
       'desc.use':
