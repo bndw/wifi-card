@@ -72,3 +72,4 @@ We would love for you to contribute to different languages and help make it even
 | Norwegian           | [tplive](https://github.com/tplive)               |
 | Hungarian           | [munkacsimark](https://github.com/munkacsimark)   |
 | Serbian             | [demanderbag](https://github.com/demanderbag)     |
+| Urdu                | [mHassan11](https://github.com/mHassan11)         |
