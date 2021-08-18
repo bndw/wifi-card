@@ -403,18 +403,19 @@ export const Translations = [
       'wifi.login': 'Connexion Wi-Fi',
       'wifi.name': 'Nom du réseau',
       'wifi.name.placeholder': 'Nom du réseau WiFi',
+      'wifi.name.hiddenSSID': 'SSID masqué',
       'wifi.password': 'Mot de passe',
       'wifi.password.placeholder': 'Mot de passe',
-      'wifi.password.hide': "Masquer le champ du mot de passe avant d'imprimer",
+      'wifi.password.hide': 'Masquer le mot de passe',
       'wifi.password.encryption': 'Chiffrement',
       'wifi.password.encryption.none': 'Aucun',
       'wifi.tip':
         "Dirigez l'appareil photo de votre téléphone vers le QR code pour vous connecter automatiquement",
       'wifi.alert.name': 'Le nom du réseau ne peut pas être vide',
       'wifi.alert.password.length.5':
-        'Le mot de passe doit au moins faire 5 caractères',
+        'Le mot de passe doit au moins faire 5 caractères, ou changez le cryptage en "Aucun"',
       'wifi.alert.password.8':
-        'Le mot de passe doit au moins faire 8 caractères',
+        'Le mot de passe doit au moins faire 8 caractères, ou changez le cryptage en "Aucun"',
       'button.rotate': 'Pivoter',
       'button.print': 'Imprimer',
       select: 'Choisir la langue',
