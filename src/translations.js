@@ -163,17 +163,17 @@ export const Translations = [
       'wifi.name.placeholder': 'Nombre de la red WiFi',
       'wifi.password': 'Contraseña',
       'wifi.password.placeholder': 'Contraseña',
-      'wifi.password.hide':
-        'Ocultar el campo de la contraseña antes de imprimir',
+      'wifi.name.hiddenSSID': 'SSID oculta',
+      'wifi.password.hide': 'Ocultar contraseña',
       'wifi.password.encryption': 'Cifrado',
       'wifi.password.encryption.none': 'Ninguno',
       'wifi.tip':
         'Apunte la cámara de su teléfono al código QR para conectarse automáticamente',
       'wifi.alert.name': 'El nombre de la red no puede estar vacío',
       'wifi.alert.password.length.5':
-        'La contraseña debe tener al menos 5 caracteres',
+        'La contraseña debe tener al menos 5 caracteres, o cambiar el cifrado a "Ninguno"',
       'wifi.alert.password.length.8':
-        'La contraseña debe tener al menos 8 caracteres',
+        'La contraseña debe tener al menos 8 caracteres, o cambiar el cifrado a "Ninguno"',
       'button.rotate': 'Girar',
       'button.print': 'Imprimir',
       select: 'Seleccionar idioma',
@@ -700,6 +700,7 @@ export const Translations = [
       'wifi.name.placeholder': 'WiFi hálózat neve',
       'wifi.password': 'Jelszó',
       'wifi.password.placeholder': 'Jelszó',
+      'wifi.name.hiddenSSID': 'Rejtett SSID',
       'wifi.password.hide': 'Jelszó elrejtése',
       'wifi.password.encryption': 'Titkosítás',
       'wifi.password.encryption.none': 'Nincs',
