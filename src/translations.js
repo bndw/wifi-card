@@ -413,9 +413,9 @@ export const Translations = [
         "Dirigez l'appareil photo de votre téléphone vers le QR code pour vous connecter automatiquement",
       'wifi.alert.name': 'Le nom du réseau ne peut pas être vide',
       'wifi.alert.password.length.5':
-        'Le mot de passe doit au moins faire 5 caractères, ou changez le cryptage en "Aucun"',
+        'Le mot de passe doit au moins faire 5 caractères, ou changez le chiffrement en "Aucun"',
       'wifi.alert.password.8':
-        'Le mot de passe doit au moins faire 8 caractères, ou changez le cryptage en "Aucun"',
+        'Le mot de passe doit au moins faire 8 caractères, ou changez le chiffrement en "Aucun"',
       'button.rotate': 'Pivoter',
       'button.print': 'Imprimer',
       select: 'Choisir la langue',
@@ -444,8 +444,8 @@ export const Translations = [
         'Viratz vòstre aparelh fòto cap al còdi QR per vos connectar automaticament',
       'wifi.alert.name': 'Lo nom de la ret pòt pas èsser void',
       'wifi.alert.password.length.5':
-        'Lo senhal deu conténer almens 5 caractèrs',
-      'wifi.alert.password.8': 'Lo senhal deu conténer almens 8 caractèrs',
+        'Lo senhal deu conténer almens 5 caractèrs o cambiatz lo chiframent per « Cap »',
+      'wifi.alert.password.8': 'Lo senhal deu conténer almens 8 caractèrs o cambiatz lo chiframent per « Cap »',
       'button.rotate': 'Pivotar',
       'button.print': 'Imprimir',
       select: 'Causir la lenga',
@@ -615,16 +615,16 @@ export const Translations = [
       'wifi.name.placeholder': 'Nom de la xarxa WiFi',
       'wifi.password': 'Contrasenya',
       'wifi.password.placeholder': 'Contrasenya',
-      'wifi.password.hide': 'Amaga el camp de la contrasenya',
+      'wifi.password.hide': 'Amaga la contrasenya',
       'wifi.password.encryption': 'Encriptació',
       'wifi.password.encryption.none': 'Cap',
       'wifi.tip':
         'Apunteu la càmera del telèfon cap al codi QR per connectar-vos automàticament',
       'wifi.alert.name': 'El nom de la xarxa no pot estar buit',
       'wifi.alert.password.length.5':
-        'La contrasenya ha de tenir com a mínim 5 caràcters',
+        "La contrasenya ha de tenir com a mínim 5 caràcters o canvieu l'encriptació per « Cap »",
       'wifi.alert.password.length.8':
-        'La contrasenya ha de tenir com a mínim 8 caràcters',
+        "La contrasenya ha de tenir com a mínim 8 caràcters o canvieu l'encriptació per « Cap "',
       'button.rotate': 'Gira',
       'button.print': 'Imprimeix',
       select: 'Escolliu l’idioma',
