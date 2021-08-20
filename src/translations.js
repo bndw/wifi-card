@@ -624,7 +624,7 @@ export const Translations = [
       'wifi.alert.password.length.5':
         "La contrasenya ha de tenir com a mínim 5 caràcters o canvieu l'encriptació per « Cap »",
       'wifi.alert.password.length.8':
-        "La contrasenya ha de tenir com a mínim 8 caràcters o canvieu l'encriptació per « Cap "',
+        "La contrasenya ha de tenir com a mínim 8 caràcters o canvieu l'encriptació per « Cap »",
       'button.rotate': 'Gira',
       'button.print': 'Imprimeix',
       select: 'Escolliu l’idioma',
