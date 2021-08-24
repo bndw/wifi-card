@@ -551,6 +551,7 @@ export const Translations = [
       'desc.source': 'البرنامج',
       'wifi.login': 'تسجيل الدخول',
       'wifi.name': 'إسم الشبكة',
+      'wifi.name.hiddenSSID': 'مخفي SSID',
       'wifi.name.placeholder': 'إسم الشبكة',
       'wifi.password': 'كلمه السر',
       'wifi.password.placeholder': 'كلمه السر',
