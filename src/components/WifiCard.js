@@ -17,6 +17,7 @@ import './style.css';
 export const WifiCard = (props) => {
   const { t } = useTranslation();
   const [qrvalue, setQrvalue] = useState('');
+  const html = document.querySelector('html');
 
   const escape = (v) => {
     const needsEscape = ['"', ';', ',', ':', '\\'];
@@ -132,7 +133,12 @@ export const WifiCard = (props) => {
         <Paragraph>
           <CameraIcon />
           <MobilePhoneIcon />
-          <Text size={300} paddingLeft={8}>
+          <Text
+            size={300}
+            {...(html.style.direction === 'rtl'
+              ? { paddingRight: 8 }
+              : { paddingLeft: 8 })}
+          >
             {t('wifi.tip')}
           </Text>
         </Paragraph>
