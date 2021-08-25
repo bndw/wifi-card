@@ -64,7 +64,9 @@ export const WifiCard = (props) => {
         <Pane display="flex" paddingBottom={12}>
           <img alt="icon" src={logo} width="24" height="24" />
           <Heading
-            paddingLeft={10}
+            {...(html.style.direction === 'rtl'
+              ? { paddingRight: 10 }
+              : { paddingLeft: 10 })}
             size={700}
             textAlign={props.settings.portrait ? 'center' : 'unset'}
           >
