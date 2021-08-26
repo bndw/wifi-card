@@ -373,8 +373,8 @@ export const Translations = [
       'wifi.size.medium': 'Średni',
       'wifi.size.large': 'Duży',
       'wifi.name': 'Nazwa sieci',
-      'wifi.name.hiddenSSID': 'Ukryj SSID sieci',
-      'wifi.name.placeholder': 'WiFi nazwa sieci',
+      'wifi.name.hiddenSSID': 'Ukryj SSID sieci WiFi',
+      'wifi.name.placeholder': 'Nazwa sieci WiFi',
       'wifi.password': 'Hasło',
       'wifi.password.placeholder': 'Hasło',
       'wifi.password.hide': 'Ukryj pole hasła przed wydrukowaniem',
@@ -383,8 +383,10 @@ export const Translations = [
       'wifi.tip':
         'Skieruj aparat telefonu na kod QR, aby połączyć się automatycznie',
       'wifi.alert.name': 'Nazwa sieci nie może być pusta',
-      'wifi.alert.password.length.5': 'Hasło musi mieć co najmniej 5 znaków',
-      'wifi.alert.password.8': 'Hasło musi mieć co najmniej 8 znaków',
+      'wifi.alert.password.length.5':
+        'Hasło musi mieć co najmniej 5 znaków lub zmień szyfrowanie na „Brak”',
+      'wifi.alert.password.8':
+        'Hasło musi mieć co najmniej 8 znaków lub zmień szyfrowanie na „Brak”',
       'button.rotate': 'Obróć',
       'button.print': 'Drukuj',
       select: 'Wybierz język',
