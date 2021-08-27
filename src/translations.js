@@ -52,8 +52,10 @@ export const Translations = [
       'wifi.tip':
         'Pek telefonens kamera mot QR koden for å koble til automatisk',
       'wifi.alert.name': 'Nettverksnavnet kan ikke være tomt',
-      'wifi.alert.password.length.5': 'Passordet må være minst 5 karakterer, eller endre kryptering til "Ingen"',
-      'wifi.alert.password.length.8': 'Passordet må være minst 8 karakterer, eller endre kryptering til "Ingen"',
+      'wifi.alert.password.length.5':
+        'Passordet må være minst 5 karakterer, eller endre kryptering til "Ingen"',
+      'wifi.alert.password.length.8':
+        'Passordet må være minst 8 karakterer, eller endre kryptering til "Ingen"',
       'button.rotate': 'Roter',
       'button.print': 'Skriv ut',
       select: 'Velg språk',
