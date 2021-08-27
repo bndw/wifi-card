@@ -745,6 +745,7 @@ export const Translations = [
       'wifi.name.placeholder': 'Ime WiFi mreže',
       'wifi.password': 'Šifra',
       'wifi.password.placeholder': 'Šifra',
+      'wifi.name.hiddenSSID': 'Sakriven SSID ',
       'wifi.password.hide': 'Sakri šifru',
       'wifi.password.encryption': 'Enkripcija',
       'wifi.password.encryption.none': 'Nema',
@@ -752,9 +753,9 @@ export const Translations = [
         'Uperite kameru Vašeg telefona na QR kod da bi ste se povezali automatski na mrežu',
       'wifi.alert.name': 'Ime mreže ne može biti prazno',
       'wifi.alert.password.length.5':
-        'Šifra mora imati minimum 5 karaktera ili promenite enkripciju na "Nema"',
+        'Šifra mora imati minimum 5 karaktera ili promeni enkripciju na "Nema"',
       'wifi.alert.password.length.8':
-        'Šifra mora imati minimum 8 karaktera ili promenite enkripciju na "Nema"',
+        'Šifra mora imati minimum 8 karaktera ili promeni enkripciju na "Nema"',
       'button.rotate': 'Rotiraj',
       'button.print': 'Odštampaj',
       select: 'Odaberite jezik',
@@ -775,6 +776,7 @@ export const Translations = [
       'wifi.name.placeholder': 'Име WiFi мреже',
       'wifi.password': 'Шифра',
       'wifi.password.placeholder': 'Шифра',
+      'wifi.name.hiddenSSID': 'Сакривен SSID ',
       'wifi.password.hide': 'Сакри шифру',
       'wifi.password.encryption': 'Енкрипција',
       'wifi.password.encryption.none': 'Нема',
@@ -782,9 +784,9 @@ export const Translations = [
         'Уперите камеру Вашег телефона на QR код да би сте се повезали аутомацки на мрежу',
       'wifi.alert.name': 'Име мреже не може бити празно',
       'wifi.alert.password.length.5':
-        'Шифра мора имати минимум 5 карактера или промените енкрипцију на "Нема"',
+        'Шифра мора имати минимум 5 карактера или промени енкрипцију на "Нема"',
       'wifi.alert.password.length.8':
-        'Шифра мора имати минимум 8 карактера или промените енкрипцију на "Нема"',
+        'Шифра мора имати минимум 8 карактера или промени енкрипцију на "Нема"',
       'button.rotate': 'Ротирај',
       'button.print': 'Одштампај',
       select: 'Одаберите језик',
