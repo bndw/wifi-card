@@ -653,14 +653,17 @@ export const Translations = [
       'wifi.name.placeholder': 'Nama Jaringan WiFi',
       'wifi.password': 'Kata Sandi',
       'wifi.password.placeholder': 'Kata Sandi',
-      'wifi.password.hide': 'Sembunyikan kata sandi sebelum dicetak.',
+      'wifi.name.hiddenSSID': 'Sembunyikan SSID',
+      'wifi.password.hide': 'Sembunyikan kata sandi',
       'wifi.password.encryption': 'Enkripsi',
       'wifi.password.encryption.none': 'Tidak ada',
       'wifi.tip':
         'Arahkan kamera ponsel anda ke Kode QR untuk terhubung ke WiFi secara otomatis',
       'wifi.alert.name': 'Nama jaringan tidak boleh kosong',
-      'wifi.alert.password.length.5': 'Kata sandi minimal harus 5 karakter',
-      'wifi.alert.password.length.8': 'Kata sandi minimal harus 8 karakter',
+      'wifi.alert.password.length.5':
+        'Kata sandi minimal harus 5 karakter, atau ubah enkripsi menjadi "Tidak ada"',
+      'wifi.alert.password.length.8':
+        'Kata sandi minimal harus 8 karakter, atau ubah enkripsi menjadi "Tidak ada"',
       'button.rotate': 'Putar',
       'button.print': 'Cetak',
       select: 'Pilih Bahasa',
