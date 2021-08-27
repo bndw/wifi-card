@@ -31,6 +31,37 @@ export const Translations = [
     },
   },
   {
+    id: 'sv-SE',
+    name: 'Swedish - Svenska',
+    translation: {
+      title: 'WiFi Kort',
+      'desc.use':
+        'Skriv ut ett enkelt kort med inloggningsuppgifter till ditt WiFI. Sätt upp det på kylskåpet eller ha det i din plånbok etc.',
+      'desc.privacy':
+        'Din WiFi information skickas aldrig till webbservern. Varken spårning, analys eller identifiering används på hemsidan. Se ',
+      'desc.source': 'källkoden',
+      'wifi.login': 'WiFi Inloggning',
+      'wifi.name': 'Nätverksnamn',
+      'wifi.name.hiddenSSID': 'Dolt SSID',
+      'wifi.name.placeholder': 'WiFi Nätverksnamn',
+      'wifi.password': 'Lösenord',
+      'wifi.password.placeholder': 'Lösenord',
+      'wifi.password.hide': 'Dölj lösenordet',
+      'wifi.password.encryption': 'Kryptering',
+      'wifi.password.encryption.none': 'Ingen',
+      'wifi.tip':
+        'Peka din telefons kamera mot QR-koden för att ansluta automatiskt',
+      'wifi.alert.name': 'Nätverksnamn måste fyllas i',
+      'wifi.alert.password.length.5':
+        'Lösenordet måste bestå av minst 5 tecken eller ändra kryptering till "Ingen"',
+      'wifi.alert.password.length.8':
+        'Lösenordet måste bestå av minst 8 tecken eller ändra kryptering till "Ingen"',
+      'button.rotate': 'Rotera',
+      'button.print': 'Skriv ut',
+      select: 'Välj språk',
+    },
+  },
+  {
     id: 'no-NB',
     name: 'Norwegian - Norsk',
     translation: {
