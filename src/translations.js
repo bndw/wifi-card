@@ -50,7 +50,7 @@ export const Translations = [
       'wifi.password.encryption': 'Kryptering',
       'wifi.password.encryption.none': 'Ingen',
       'wifi.tip':
-        "Peka din telefons kamera mot QR-koden för att ansluta automatiskt",
+        'Peka din telefons kamera mot QR-koden för att ansluta automatiskt',
       'wifi.alert.name': 'Nätverksnamn måste fyllas i',
       'wifi.alert.password.length.5':
         'Lösenordet måste bestå av minst 5 tecken eller ändra kryptering till "Ingen"',
