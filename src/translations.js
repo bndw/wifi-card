@@ -76,16 +76,17 @@ export const Translations = [
       'wifi.name.placeholder': 'WiFi Netwerk naam',
       'wifi.password': 'Wachtwoord',
       'wifi.password.placeholder': 'Wachtwoord',
-      'wifi.password.hide': 'Wachtwoord verbergen voor afdrukken',
+      'wifi.password.hide': 'Verberg wachtwoord',
+      'wifi.name.hiddenSSID': 'Verberg SSID',
       'wifi.password.encryption': 'Encryptie',
       'wifi.password.encryption.none': 'Geen',
       'wifi.tip':
         'Wijs met de camera van je telefoon naar de QR code om automatisch verbinding te maken',
       'wifi.alert.name': 'Netwerk naam kan niet leeg zijn',
       'wifi.alert.password.length.5':
-        'Wachtwoord moet ten minste 5 tekens bevatten',
+        'Wachtwoord moet ten minste 5 tekens bevatten, of verander de encryptie naar "Geen"',
       'wifi.alert.password.length.8':
-        'Wachtwoord moet ten minste 8 tekens bevatten',
+        'Wachtwoord moet ten minste 8 tekens bevatten, of verander de encryptie naar "Geen"',
       'button.rotate': 'Draai',
       'button.print': 'Print',
       select: 'Selecteer Taal',
