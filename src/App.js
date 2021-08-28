@@ -108,7 +108,7 @@ function App() {
     <Pane>
       <Pane display="flex">
         <img alt="icon" src={logo} width="32" height="32" />
-        <Heading size={900} paddingLeft={16}>
+        <Heading size={900} paddingRight={16} paddingLeft={16}>
           {t('title')}
         </Heading>
       </Pane>
