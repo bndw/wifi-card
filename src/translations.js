@@ -624,16 +624,17 @@ export const Translations = [
       'wifi.name.placeholder': 'वाईफाई नेटवर्क का नाम',
       'wifi.password': 'पासवर्ड',
       'wifi.password.placeholder': 'पासवर्ड',
-      'wifi.password.hide': 'प्रिंट करने से पहले पासवर्ड छुपाएं',
+      'wifi.password.hide': 'पासवर्ड छुपाएं',
+      'wifi.name.hiddenSSID': 'छिपा हुआ SSID',
       'wifi.password.encryption': 'एन्क्रिप्शन',
       'wifi.password.encryption.none': 'कोई नहीं',
       'wifi.tip':
         'अपने आप कनेक्ट होने के लिए अपने फ़ोन के कैमरे से QR कोड को स्कैन करें',
       'wifi.alert.name': 'नेटवर्क का नाम खाली नहीं हो सकता',
       'wifi.alert.password.length.5':
-        'पासवर्ड कम से कम 5 अक्षरों का होना चाहिए',
+        'पासवर्ड कम से कम 5 अक्षरों का होना चाहिए, या एन्क्रिप्शन को "कोई नहीं" में बदलें',
       'wifi.alert.password.length.8':
-        'पासवर्ड कम से कम 8 अक्षरों का होना चाहिए',
+        'पासवर्ड कम से कम 8 अक्षरों का होना चाहिए, या एन्क्रिप्शन को "कोई नहीं" में बदलें',
       'button.rotate': 'घुमाएँ',
       'button.print': 'प्रिंट करे',
       select: 'भाषा चुने',
