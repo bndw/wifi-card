@@ -230,13 +230,16 @@ export const Translations = [
       'wifi.password': 'Senha',
       'wifi.password.placeholder': 'Senha da sua rede WiFi',
       'wifi.password.hide': 'Esconder o campo de senha antes da impressão',
+      'wifi.name.hiddenSSID': 'Esconder nome da rede antes da impressão',
       'wifi.password.encryption': 'Criptografia',
       'wifi.password.encryption.none': 'Nenhum',
       'wifi.tip':
         'Abra a aplicação da câmera no seu telemóvel e aponte para o QR Code para se ligar automaticamente.',
       'wifi.alert.name': 'O Nome da rede não pode ficar em branco',
-      'wifi.alert.password.length.5': 'A senha precisa ter no mínimo 5 dígitos',
-      'wifi.alert.password.length.8': 'A senha precisa ter no mínimo 8 dígtos',
+      'wifi.alert.password.length.5':
+        'A senha precisa ter no mínimo 5 dígitos, ou alterar a criptografia para "Nenhum"',
+      'wifi.alert.password.length.8':
+        'A senha precisa ter no mínimo 8 dígitos, ou alterar a criptografia para "Nenhum"',
       'button.rotate': 'Girar',
       'button.print': 'Imprimir',
       select: 'Selecionar Idioma',
@@ -505,15 +508,17 @@ export const Translations = [
       'wifi.name.placeholder': 'Nome da Rede',
       'wifi.password': 'Senha',
       'wifi.password.placeholder': 'Senha',
-      'wifi.password.hide': 'Esconder senha antes de imprimir',
+      'wifi.password.hide': 'Esconder Senha',
+      'wifi.name.hiddenSSID': 'Esconder SSID',
       'wifi.password.encryption': 'Tipo de Segurança',
       'wifi.password.encryption.none': 'Nenhum',
       'wifi.tip':
         'Aponte a camera do seu ceular para o código QR para se conectar automaticamente.',
       'wifi.alert.name': 'Nome da rede não pode estar em branco',
       'wifi.alert.password.length.5':
-        'A Senha deve ter pelo menos 5 caracteres',
-      'wifi.alert.password.8': 'A Senha deve ter pelo menos 8 caracteres',
+        'Sua senha deve ter pelo menos 5 caracteres, ou  altere a criptografia para "Nenhum"',
+      'wifi.alert.password.8':
+        'Sua senha deve ter pelo menos 8 caracteres, ou  altere a criptografia para "Nenhum"',
       'button.rotate': 'Rotacionar',
       'button.print': 'Imprimir',
       select: 'Escolha o idioma',
@@ -624,16 +629,17 @@ export const Translations = [
       'wifi.name.placeholder': 'वाईफाई नेटवर्क का नाम',
       'wifi.password': 'पासवर्ड',
       'wifi.password.placeholder': 'पासवर्ड',
-      'wifi.password.hide': 'प्रिंट करने से पहले पासवर्ड छुपाएं',
+      'wifi.password.hide': 'पासवर्ड छुपाएं',
+      'wifi.name.hiddenSSID': 'छिपा हुआ SSID',
       'wifi.password.encryption': 'एन्क्रिप्शन',
       'wifi.password.encryption.none': 'कोई नहीं',
       'wifi.tip':
         'अपने आप कनेक्ट होने के लिए अपने फ़ोन के कैमरे से QR कोड को स्कैन करें',
       'wifi.alert.name': 'नेटवर्क का नाम खाली नहीं हो सकता',
       'wifi.alert.password.length.5':
-        'पासवर्ड कम से कम 5 अक्षरों का होना चाहिए',
+        'पासवर्ड कम से कम 5 अक्षरों का होना चाहिए, या एन्क्रिप्शन को "कोई नहीं" में बदलें',
       'wifi.alert.password.length.8':
-        'पासवर्ड कम से कम 8 अक्षरों का होना चाहिए',
+        'पासवर्ड कम से कम 8 अक्षरों का होना चाहिए, या एन्क्रिप्शन को "कोई नहीं" में बदलें',
       'button.rotate': 'घुमाएँ',
       'button.print': 'प्रिंट करे',
       select: 'भाषा चुने',
