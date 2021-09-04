@@ -381,16 +381,17 @@ export const Translations = [
       'wifi.name.placeholder': 'WLAN-Netzwerkname (SSID)',
       'wifi.password': 'Passwort',
       'wifi.password.placeholder': 'Passwort',
-      'wifi.password.hide': 'Passwortfeld vor dem Drucken ausblenden',
+      'wifi.password.hide': 'Passwort verstecken',
+      'wifi.name.hiddenSSID': 'Versteckte SSID',
       'wifi.password.encryption': 'Verschlüsselung',
-      'wifi.password.encryption.none': 'Keiner',
+      'wifi.password.encryption.none': 'Keine',
       'wifi.tip':
         'Zeige mit der Kamera deines Handys auf den QR-Code, um automatisch eine Verbindung herzustellen',
       'wifi.alert.name': 'Der Netzwerkname darf nicht leer sein',
       'wifi.alert.password.length.5':
-        'Das Passwort muss mindestends 5 Zeichen lang sein',
+        'Das Passwort muss mindestends 5 Zeichen lang sein, oder stelle die Verschlüsselung auf "Keine"',
       'wifi.alert.password.8':
-        'Das Passwort muss mindestends 8 Zeichen lang sein',
+        'Das Passwort muss mindestends 8 Zeichen lang sein, oder stelle die Verschlüsselung auf "Keine"',
       'button.rotate': 'Drehen',
       'button.print': 'Drucken',
       select: 'Sprache auswählen',
