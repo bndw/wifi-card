@@ -869,21 +869,21 @@ export const Translations = [
   },
   {
     id: 'th-TH',
-    name: 'Thai',
+    name: 'Thai - ภาษาไทย',
     translation: {
       title: 'การ์ด WiFi',
       'desc.use':
-        'พิมพ์การ์ดอย่างง่ายพร้อมรายละเอียดการเข้าสู่ระบบ WiFi ของคุณ ติดเทปไว้ในตู้เย็น เก็บไว้ในกระเป๋าสตางค์ ฯลฯ',
+        'พิมพ์การ์ดอย่างง่ายพร้อมรายละเอียดการเข้าสู่ระบบ WiFi ของคุณ. ติดเทปไว้บนตู้เย็น, เก็บไว้ในกระเป๋าสตางค์ ฯลฯ',
       'desc.privacy':
         'ข้อมูล WiFi ของคุณจะไม่ถูกส่งไปยังเซิร์ฟเวอร์, ไม่มีการติดตาม, การวิเคราะห์, หรือลายนิ้วมือบนเว็บไซต์นี้. ดู',
       'desc.source': 'ซอร์ซโคด',
       'wifi.login': 'เข้าสู่ระบบ WiFi',
       'wifi.name': 'ชื่อเครือข่าย',
-      'wifi.name.hiddenSSID': 'SSID ที่ซ่อนอยู่',
+      'wifi.name.hiddenSSID': 'SSID ถูกซ่อนอยู่',
       'wifi.name.placeholder': 'ชื่อเครือข่าย WiFi',
       'wifi.password': 'รหัสผ่าน WiFi',
       'wifi.password.placeholder': 'รหัสผ่าน WiFi',
-      'wifi.password.hide': 'Hide รหัสผ่าน WiFi',
+      'wifi.password.hide': 'ซ่อนรหัสผ่าน WiFi บนการ์ด',
       'wifi.password.encryption': 'การเข้ารหัส',
       'wifi.password.encryption.none': 'ไม่มี',
       'wifi.tip': 'หันกล้องของโทรศัพท์ไปที่ QR Code เพื่อเชื่อมต่อโดยอัตโนมัติ',
@@ -892,7 +892,7 @@ export const Translations = [
         'รหัสผ่านต้องมีอักขระอย่างน้อย 5 ตัว หรือเปลี่ยนการเข้ารหัสเป็น "ไม่มี"',
       'wifi.alert.password.length.8':
         'รหัสผ่านต้องมีอักขระอย่างน้อย 8 ตัว หรือเปลี่ยนการเข้ารหัสเป็น "ไม่มี"',
-      'button.rotate': 'หมุน',
+      'button.rotate': 'หมุนแนวการ์ด',
       'button.print': 'พิมพ์',
       select: 'เลือกภาษา',
     },
