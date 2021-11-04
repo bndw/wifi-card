@@ -74,3 +74,4 @@ We would love for you to contribute to different languages and help make it even
 | Serbian             | [demanderbag](https://github.com/demanderbag)     |
 | Urdu                | [mHassan11](https://github.com/mHassan11)         |
 | Swedish             | [ddund](https://github.com/ddund)                 |
+| Thai                | [l2D](https://github.com/l2D)                     |
