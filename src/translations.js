@@ -575,14 +575,17 @@ export const Translations = [
       'wifi.name.placeholder': 'WiFi Ağ adı',
       'wifi.password': 'Parola',
       'wifi.password.placeholder': 'Parola',
-      'wifi.password.hide': 'Yazdırmadan önce parola alanını gizle',
+      'wifi.password.hide': 'Şifreyi gizle',
+      'wifi.name.hiddenSSID': 'Gizli SSID',
       'wifi.password.encryption': 'Şifreleme',
       'wifi.password.encryption.none': 'Hiçbiri',
       'wifi.tip':
         'Otomatik olarak bağlanmak için telefonunuzun kamerası ile QR kodunu okutun',
       'wifi.alert.name': 'Ağ adı boş olamaz',
-      'wifi.alert.password.length.5': 'Parola en az 5 karakter olmalıdır',
-      'wifi.alert.password.length.8': 'Parola en az 8 karakter olmalıdır',
+      'wifi.alert.password.length.5':
+        'Şifre en az 5 karakter olmalıdır veya şifrelemeyi "Yok" olarak değiştirin',
+      'wifi.alert.password.length.8':
+        'Şifre en az 8 karakter olmalıdır veya şifrelemeyi "Yok" olarak değiştirin',
       'button.rotate': 'Döndür',
       'button.print': 'Yazdır',
       select: 'Dil Seçin',
