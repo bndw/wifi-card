@@ -230,7 +230,7 @@ export const Translations = [
       'wifi.password': 'Senha',
       'wifi.password.placeholder': 'Senha da sua rede WiFi',
       'wifi.password.hide': 'Esconder o campo de senha antes da impressão',
-      'wifi.name.hiddenSSID': 'Esconder nome da rede antes da impressão',
+      'wifi.name.hiddenSSID': 'Rede oculta',
       'wifi.password.encryption': 'Criptografia',
       'wifi.password.encryption.none': 'Nenhum',
       'wifi.tip':
@@ -542,10 +542,6 @@ export const Translations = [
       'wifi.password.placeholder': 'Password',
       'wifi.password.hide': 'Nascondi password',
       'wifi.name.hiddenSSID': 'SSID nascosto',
-      'wifi.alert.password.length.5':
-        'La password deve avere almeno 5 caratteri, o cambia il tipo di crittografia a "Nessuno"',
-      'wifi.alert.password.length.8':
-        'La password deve avere almeno 8 caratteri, o cambia il tipo di crittografia a "Nessuno"',
       'wifi.password.encryption': 'Cifratura',
       'wifi.password.encryption.none': 'Nessuno',
       'wifi.tip':
