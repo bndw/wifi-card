@@ -230,7 +230,7 @@ export const Translations = [
       'wifi.password': 'Senha',
       'wifi.password.placeholder': 'Senha da sua rede WiFi',
       'wifi.password.hide': 'Esconder o campo de senha antes da impressão',
-      'wifi.name.hiddenSSID': 'Esconder nome da rede antes da impressão',
+      'wifi.name.hiddenSSID': 'Rede oculta',
       'wifi.password.encryption': 'Criptografia',
       'wifi.password.encryption.none': 'Nenhum',
       'wifi.tip':
