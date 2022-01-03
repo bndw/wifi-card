@@ -75,3 +75,4 @@ We would love for you to contribute to different languages and help make it even
 | Urdu                | [mHassan11](https://github.com/mHassan11)         |
 | Swedish             | [ddund](https://github.com/ddund)                 |
 | Thai                | [l2D](https://github.com/l2D)                     |
+| Traditional Chinese (Taiwan) | [Dxball](https://github.com/dxball)      |

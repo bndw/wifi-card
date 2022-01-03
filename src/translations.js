@@ -155,7 +155,7 @@ export const Translations = [
   },
   {
     id: 'zh-HK',
-    name: 'Traditional Chinese - 繁體中文',
+    name: 'Traditional Chinese - 繁體中文 香港',
     translation: {
       title: 'WiFi 連接卡',
       'desc.use':
@@ -180,6 +180,36 @@ export const Translations = [
         '密码必须至少为 8 个字符，或将加密更改为“无”',
       'button.rotate': '翻轉',
       'button.print': '打印',
+      select: '選擇語言',
+    },
+  },
+  {
+    id: 'zh-TW',
+    name: 'Traditional Chinese - 繁體中文 台灣',
+    translation: {
+      title: 'WiFi Card',
+      'desc.use':
+        '列印一張含有 WiFi 連接資訊的卡片，將它貼在冰箱、放在你的錢包裡... ',
+      'desc.privacy':
+        '您的 WiFi 訊息永遠不會被送到伺服器。本網站不使用追蹤、分析或指紋識別。查看',
+      'desc.source': '原始碼',
+      'wifi.login': '連接 WiFi',
+      'wifi.name': '網路名稱',
+      'wifi.name.hiddenSSID': '隱藏 SSID',
+      'wifi.name.placeholder': 'WiFi 網路名稱',
+      'wifi.password': '密碼',
+      'wifi.password.placeholder': '密碼',
+      'wifi.password.hide': '隱藏密碼',
+      'wifi.password.encryption': '加密',
+      'wifi.password.encryption.none': '無',
+      'wifi.tip': '將手機相機對準 QR Code 即可自動連接 WiFi',
+      'wifi.alert.name': '網路名稱不可以留空',
+      'wifi.alert.password.length.5':
+        '密碼至少為 5 個字元以上，或將加密改為"無"',
+      'wifi.alert.password.length.8':
+        '密碼至少為 8 個字元以上，或將加密改為"無"',
+      'button.rotate': '翻轉',
+      'button.print': '列印',
       select: '選擇語言',
     },
   },
