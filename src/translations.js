@@ -183,36 +183,36 @@ export const Translations = [
       select: '選擇語言',
     },
   },
-{
+  {
     id: 'yue-CN',
     name: 'Simplified Cantonese - 简体粤语',
     translation: {
-      title: 'WiFi 连接咭',
+      title: 'Wi-Fi 连接咭',
       'desc.use':
-        '打印一张带有 WiFi 详细信息嘅连接咭，你可以将佢黐喺冰箱上面，或者放喺银包入面...',
+        '打印一张带有 Wi-Fi 详细信息嘅连接咭，你可以将佢黐喺冰箱上面，或者放喺银包入面...',
       'desc.privacy':
-        '你嘅 WiFi 信息永远不会发送到服务端。本网站不使用追踪、分析或指纹识别。喺度睇',
+        '你嘅 Wi-Fi 信息永远不会发送到服务端。本网站不使用追踪、分析或指纹识别。喺度睇',
       'desc.source': '源代码',
       'wifi.login': '连接 Wi-Fi',
       'wifi.name': '网络名称',
-      'wifi.name.hiddenSSID': '隐藏 SSID',
+      'wifi.name.hiddenSSID': '呢个 Wi-Fi 隐藏咗 SSID',
       'wifi.name.placeholder': 'Wi-Fi 网络名称',
       'wifi.password': '密码',
       'wifi.password.placeholder': '密码',
-      'wifi.password.hide': '隐藏密码',
+      'wifi.password.hide': '唔 show 明文密码出嚟',
       'wifi.password.encryption': '加密',
       'wifi.password.encryption.none': '冇',
       'wifi.tip': '打开摄像头指住个二维码就可以连上呢个 Wi-Fi',
       'wifi.alert.name': '网络名称唔可以为空',
       'wifi.alert.password.length.5':
-        '密码必须至少有 5 个字符，你亦都可以将加密方式更改为“冇”',
+        '密码必须至少有 5 个字符，你亦可以将加密方式更改为“冇”',
       'wifi.alert.password.length.8':
-        '密码必须至少有 8 个字符，你亦都可以将加密方式更改为“冇”',
-      'button.rotate': '翻转',
+        '密码必须至少有 8 个字符，你亦可以将加密方式更改为“冇”',
+      'button.rotate': '翻转方向',
       'button.print': '打印',
       select: '选择语言',
     },
-   },
+  },
   {
     id: 'zh-TW',
     name: 'Traditional Chinese - 繁體中文 台灣',
