@@ -96,24 +96,24 @@ export const Translations = [
     id: 'nl-NL',
     name: 'Dutch - Nederlands',
     translation: {
-      title: 'WiFi Kaart',
+      title: 'WiFi-Kaart',
       'desc.use':
-        'Print een eenvoudige kaart met uw WiFi inloggegevens. Plak het op je koelkast, stop het in je portemonnee, etc.',
+        'Print een eenvoudige kaart met uw WiFi-inloggegevens. Plak het op je koelkast, stop het in je portemonnee, etc.',
       'desc.privacy':
-        'Je WiFi informatie wordt nooit naar de server verzonden. Tracking, analytics of fingerprinting wordt niet gebruikt op deze website. Bekijk de',
+        'Je WiFi-informatie wordt nooit naar de server verzonden. Tracking, analytics of fingerprinting wordt niet gebruikt op deze website. Bekijk de',
       'desc.source': 'broncode',
-      'wifi.login': 'WiFi Login',
-      'wifi.name': 'Netwerk naam',
-      'wifi.name.placeholder': 'WiFi Netwerk naam',
+      'wifi.login': 'WiFi-login',
+      'wifi.name': 'Netwerknaam',
+      'wifi.name.placeholder': 'WiFi-netwerknaam',
       'wifi.password': 'Wachtwoord',
       'wifi.password.placeholder': 'Wachtwoord',
       'wifi.password.hide': 'Verberg wachtwoord',
-      'wifi.name.hiddenSSID': 'Verberg SSID',
+      'wifi.name.hiddenSSID': 'Verborgen SSID',
       'wifi.password.encryption': 'Encryptie',
       'wifi.password.encryption.none': 'Geen',
       'wifi.tip':
         'Wijs met de camera van je telefoon naar de QR code om automatisch verbinding te maken',
-      'wifi.alert.name': 'Netwerk naam kan niet leeg zijn',
+      'wifi.alert.name': 'Netwerknaam kan niet leeg zijn',
       'wifi.alert.password.length.5':
         'Wachtwoord moet ten minste 5 tekens bevatten, of verander de encryptie naar "Geen"',
       'wifi.alert.password.length.8':
