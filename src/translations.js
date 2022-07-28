@@ -956,6 +956,37 @@ export const Translations = [
       select: 'เลือกภาษา',
     },
   },
+  {
+    id: 'pb-IN',
+    name: 'Punjabi - ਪੰਜਾਬੀ',
+    translation: {
+      title: 'ਵਾਈਫਾਈ ਕਾਰਡ',
+      'desc.use':
+        'ਆਪਣੇ ਫਾਈ ਲੌਗਇਨ ਵੇਰਵਿਆਂ ਦੇ ਨਾਲ ਇੱਕ ਸਧਾਰਨ ਕਾਰਡ ਪ੍ਰਿੰਟ ਕਰੋ। ਇਸਨੂੰ ਫਰਿੱਜ ਵਿੱਚ ਟੇਪ ਕਰੋ, ਇਸਨੂੰ ਆਪਣੇ ਬਟੂਏ ਵਿੱਚ ਰੱਖੋ, ਆਦਿ',
+      'desc.privacy':
+        'ਤੁਹਾਡੀ ਫਾਈ ਜਾਣਕਾਰੀ ਕਦੇ ਵੀ ਸਰਵਰ ਨੂੰ ਨਹੀਂ ਭੇਜੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਵੈੱਬਸਾਈਟ ਤੇ ਕੋਈ ਟਰੈਕਿੰਗ, ਵਿਸ਼ਲੇਸ਼ਣ ਜਾਂ ਫਿੰਗਰਪ੍ਰਿੰਟਿੰਗ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕੀਤੀ ਜਾਂਦੀ। ਵੇਖੋ',
+      'desc.source': 'ਸੂਤਰ ਸੰਕੇਤਾਵਲੀ',
+      'wifi.login': 'ਫਾਈ ਲਾਗਿਨ',
+      'wifi.name': 'ਨੈੱਟਵਰਕ ਦਾ ਨਾਮ',
+      'wifi.name.hiddenSSID': 'ਲੁਕਿਆ ਹੋਇਆ SSID',
+      'wifi.name.placeholder': 'ਫਾਈ ਨੈੱਟਵਰਕ ਦਾ ਨਾਮ',
+      'wifi.password': 'ਪਾਸਵਰਡ',
+      'wifi.password.placeholder': 'ਪਾਸਵਰਡ',
+      'wifi.password.hide': 'ਓਹਲੇ ਪਾਸਵਰਡ',
+      'wifi.password.encryption': 'ਐਨਕ੍ਰਿਪਸ਼ਨ',
+      'wifi.password.encryption.none': 'ਕੋਈ ਨਹੀਂ',
+      'wifi.tip':
+        'ਸਵੈਚਲਿਤ ਤੌਰ ਤੇ ਕਨੈਕਟ ਕਰਨ ਲਈ ਆਪਣੇ ਫ਼ੋਨ ਦੇ ਕੈਮਰੇ ਨੂੰ QR ਕੋਡ ਤੇ ਪੁਆਇੰਟ ਕਰੋ',
+      'wifi.alert.name': 'ਨੈੱਟਵਰਕ ਨਾਮ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ ਹੈ',
+      'wifi.alert.password.length.5':
+        'ਪਾਸਵਰਡ ਘੱਟੋ-ਘੱਟ ਪੰਜ ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ, ਜਾਂ ਐਨਕ੍ਰਿਪਸ਼ਨ ਨੂੰ ਕੋਈ ਨਹੀਂ ਵਿੱਚ ਬਦਲਣਾ ਚਾਹੀਦਾ ਹੈ',
+      'wifi.alert.password.length.8':
+        'ਪਾਸਵਰਡ ਘੱਟੋ-ਘੱਟ ਅੱਠ ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ, ਜਾਂ ਐਨਕ੍ਰਿਪਸ਼ਨ ਨੂੰ ਕੋਈ ਨਹੀਂ ਵਿੱਚ ਬਦਲਣਾ ਚਾਹੀਦਾ ਹੈ',
+      'button.rotate': 'ਘੁੰਮਾਓ',
+      'button.print': 'ਛਾਪੋ',
+      select: 'ਭਾਸ਼ਾ ਚੁਣੋ',
+    },
+  },
 ].sort((a, b) => {
   return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
 });
