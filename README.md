@@ -77,3 +77,4 @@ We would love for you to contribute to different languages and help make it even
 | Thai                | [l2D](https://github.com/l2D)                     |
 | Traditional Chinese (Taiwan) | [Dxball](https://github.com/dxball)      |
 |Simplified Cantonese |[ous50](https://github.com/ous50)                  |
+|Punjabi              |[phoenixgill34](https://github.com/phoenixgill34/) |
