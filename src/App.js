@@ -18,6 +18,10 @@ function App() {
     password: '',
     // Settings: Network encryption mode
     encryptionMode: 'WPA',
+    // Settings: EAP Method
+    eapMethod: 'PWD',
+    // Settings: EAP identity
+    eapIdentity: '',
     // Settings: Hide password on the printed card
     hidePassword: false,
     // Settings: Mark your network as hidden SSID
@@ -28,6 +32,7 @@ function App() {
   const [errors, setErrors] = useState({
     ssidError: '',
     passwordError: '',
+    eapIdentityError: '',
   });
 
   const htmlDirection = (languageID) => {
@@ -63,6 +68,26 @@ function App() {
       });
       return;
     }
+    if (
+      settings.password.length < 1 &&
+      settings.encryptionMode === 'WPA2-EAP'
+    ) {
+      setErrors({
+        ...errors,
+        passwordError: t('wifi.alert.password'),
+      });
+      return;
+    }
+    if (
+      settings.eapIdentity.length < 1 &&
+      settings.encryptionMode === 'WPA2-EAP'
+    ) {
+      setErrors({
+        ...errors,
+        eapIdentityError: t('wifi.alert.eapIdentity'),
+      });
+      return;
+    }
     document.title = 'WiFi Card - ' + settings.ssid;
     window.print();
   };
@@ -78,6 +103,13 @@ function App() {
   const onEncryptionModeChange = (encryptionMode) => {
     setErrors({ ...errors, passwordError: '' });
     setSettings({ ...settings, encryptionMode });
+  };
+  const onEapMethodChange = (eapMethod) => {
+    setSettings({ ...settings, eapMethod });
+  };
+  const onEapIdentityChange = (eapIdentity) => {
+    setErrors({ ...errors, eapIdentityError: '' });
+    setSettings({ ...settings, eapIdentity });
   };
   const onOrientationChange = (portrait) => {
     setSettings({ ...settings, portrait });
@@ -125,7 +157,9 @@ function App() {
         settings={settings}
         ssidError={errors.ssidError}
         passwordError={errors.passwordError}
+        eapIdentityError={errors.eapIdentityError}
         onSSIDChange={onSSIDChange}
+        onEapIdentityChange={onEapIdentityChange}
         onPasswordChange={onPasswordChange}
       />
 
@@ -135,6 +169,7 @@ function App() {
         onFirstLoad={onFirstLoad}
         onLanguageChange={onChangeLanguage}
         onEncryptionModeChange={onEncryptionModeChange}
+        onEapMethodChange={onEapMethodChange}
         onOrientationChange={onOrientationChange}
         onHidePasswordChange={onHidePasswordChange}
         onHiddenSSIDChange={onHiddenSSIDChange}

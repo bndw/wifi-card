@@ -37,9 +37,11 @@ export const WifiCard = (props) => {
     const password = !props.settings.encryptionMode
       ? ''
       : escape(props.settings.password);
-    setQrvalue(
-      `WIFI:T:${props.settings.encryptionMode};S:${ssid};P:${password};H:${props.settings.hiddenSSID};`
-    );
+    const qrval =
+      props.settings.encryptionMode === 'WPA2-EAP'
+        ? `WIFI:T:${props.settings.encryptionMode};S:${ssid};P:${password};H:${props.settings.hiddenSSID};E:${props.settings.eapMethod};I:${props.settings.eapIdentity};;`
+        : `WIFI:T:${props.settings.encryptionMode};S:${ssid};P:${password};H:${props.settings.hiddenSSID};;`;
+    setQrvalue(qrval);
   }, [props.settings]);
 
   const portraitWidth = () => {
@@ -51,6 +53,15 @@ export const WifiCard = (props) => {
     const hiddenPassword =
       props.settings.hidePassword || !props.settings.encryptionMode;
     return hiddenPassword ? '' : t('wifi.password');
+  };
+
+  const eapIdentityFieldLabel = () => {
+    const hiddenIdentity = props.settings.encryptionMode !== 'WPA2-EAP';
+    return hiddenIdentity ? '' : t('wifi.identity');
+  };
+
+  const eapMethodFieldLabel = () => {
+    return !eapIdentityFieldLabel() ? '' : t('wifi.encryption.eapMethod');
   };
 
   return (
@@ -99,6 +110,38 @@ export const WifiCard = (props) => {
               onChange={(e) => props.onSSIDChange(e.target.value)}
               isInvalid={!!props.ssidError}
               validationMessage={!!props.ssidError && props.ssidError}
+            />
+            <TextareaField
+              id="eapmethod"
+              type="text"
+              marginBottom={5}
+              readOnly={true}
+              spellCheck={false}
+              className={`
+                ${props.settings.encryptionMode !== 'WPA2-EAP' && 'hidden'}
+              `}
+              label={eapMethodFieldLabel()}
+              value={props.settings.eapMethod}
+            />
+            <TextareaField
+              id="identity"
+              type="text"
+              marginBottom={5}
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="none"
+              spellCheck={false}
+              className={`
+                ${props.settings.encryptionMode !== 'WPA2-EAP' && 'hidden'}
+              `}
+              label={eapIdentityFieldLabel()}
+              placeholder={t('wifi.identity.placeholder')}
+              value={props.settings.eapIdentity}
+              onChange={(e) => props.onEapIdentityChange(e.target.value)}
+              isInvalid={!!props.eapIdentityError}
+              validationMessage={
+                !!props.eapIdentityError && props.eapIdentityError
+              }
             />
             <TextareaField
               id="password"
