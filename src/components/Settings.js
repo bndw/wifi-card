@@ -10,9 +10,10 @@ export const Settings = (props) => {
   const encryptionModes = [
     { label: t('wifi.password.encryption.none'), value: '' },
     { label: 'WPA/WPA2/WPA3', value: 'WPA' },
+    { label: 'WPA2-EAP', value: 'WPA2-EAP' },
     { label: 'WEP', value: 'WEP' },
   ];
-
+  const eapMethods = [{ label: 'PWD', value: 'PWD' }];
   const langSelectDefaultValue = () => {
     const t = Translations.filter((t) => t.id === i18n.language);
     if (t.length !== 1) {
@@ -67,6 +68,16 @@ export const Settings = (props) => {
         value={props.settings.encryptionMode}
         options={encryptionModes}
         onChange={(e) => props.onEncryptionModeChange(e.target.value)}
+      />
+      <RadioGroup
+        label={t('wifi.encryption.eapMethod')}
+        size={16}
+        value={props.settings.eapMethod}
+        options={eapMethods}
+        className={`
+          ${props.settings.encryptionMode !== 'WPA2-EAP' && 'hidden'}
+        `}
+        onChange={(e) => props.onEapMethodChange(e.target.value)}
       />
     </Pane>
   );
