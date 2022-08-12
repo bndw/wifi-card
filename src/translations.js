@@ -997,6 +997,36 @@ export const Translations = [
       select: 'ਭਾਸ਼ਾ ਚੁਣੋ',
     },
   },
+  {
+    id: 'dk-DA',
+    name: 'Danish - Dansk',
+    translation: {
+      title: 'WiFi Kort',
+      'desc.use':
+        'Udskriv et enkelt kort med dine Wifi login oplysninger. Sæt det på køleskapet, læg det i din pung eller lignende.',
+      'desc.privacy':
+        'Dine Wifi informationer bliver aldrig sendt til vores servere. Ingen sporing, analyse eller identifikation anvendes på dette website. Se vores',
+      'desc.source': 'kildekode',
+      'wifi.login': 'WiFi login',
+      'wifi.name': 'Netværksnavn',
+      'wifi.name.hiddenSSID': 'Skjult SSID',
+      'wifi.name.placeholder': 'WiFi Netværksnavn',
+      'wifi.password': 'Kodeord',
+      'wifi.password.placeholder': 'Kodeord',
+      'wifi.password.hide': 'Skjul kodeord',
+      'wifi.password.encryption': 'Kryptering',
+      'wifi.password.encryption.none': 'Ingen',
+      'wifi.tip': 'Ret telefonens kamera mod QR koden for tilslutte automatisk',
+      'wifi.alert.name': 'Netværksnavnet må ikke være tomt',
+      'wifi.alert.password.length.5':
+        'Kodeordet skal være på mindst 5 tegn, eller skift kryptering til "Ingen"',
+      'wifi.alert.password.length.8':
+        'Kodeordet skal være på mindst 8 tegn, eller skift kryptering til "Ingen"',
+      'button.rotate': 'Roter',
+      'button.print': 'Print ud',
+      select: 'Vælg sprog',
+    },
+  },
 ].sort((a, b) => {
   return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
 });
