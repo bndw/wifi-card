@@ -52,6 +52,10 @@ button {
   padding: 1em;
 }
 
+#settings label span {
+  margin-right: 8px;
+}
+
 @media print {
   body * {
     visibility: hidden;
