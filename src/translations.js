@@ -468,6 +468,42 @@ export const Translations = [
     },
   },
   {
+    id: 'el-GR',
+    name: 'Greek - Hellenic',
+    translation: {
+      title: 'WiFi Card',
+      'desc.use':
+        'Εκτυπώστε μια απλή κάρτα με τις πληροφορίες πρόσβασης στο WiFi δίκτυό σας. Κολλήστε την στο ψυγείο ή βάλτε τη στο πορτοφόλι σας, κτλ.',
+      'desc.privacy':
+        'Οι πληροφορίες που σχετίζονται με το δίκτυο WiFi δεν αποστέλλονται στον διακομιστή. Καμιά ιχνηλάτηση, στατιστική ανάλυση ή ταυτοποίηση δεν πραγματοποιείται από αυτή την ιστοσελίδα. Δείτε τον',
+      'desc.source': 'πηγαίο κώδικα',
+      'wifi.identity': 'Ταυτότητα',
+      'wifi.identity.placeholder': 'όνομα χρήστη',
+      'wifi.login': 'Πληροφορίες WiFi',
+      'wifi.name': 'Όνομα δικτύου',
+      'wifi.name.hiddenSSID': 'Κρυφό SSID',
+      'wifi.name.placeholder': 'όνομα δικτύου',
+      'wifi.password': 'Κωδικός πρόσβασης',
+      'wifi.password.placeholder': 'κωδικός πρόσβασης',
+      'wifi.password.hide': 'Απόκρυψη κωδικού πρόσβασης',
+      'wifi.password.encryption': 'Κρυπτογράφηση',
+      'wifi.password.encryption.none': 'Καμία',
+      'wifi.encryption.eapMethod': 'Μέθοδος EAP',
+      'wifi.tip':
+        "Στρέψτε την κάμερα του κινητού σας προς τον κώδικα QR για να συνδεθείτε αυτόματα",
+      'wifi.alert.name': 'Το όνομα δικτύου δεν μπορεί να είναι κενό',
+      'wifi.alert.password': 'Ο κωδικός πρόσβασης δεν μπορεί να είναι κενός',
+      'wifi.alert.password.length.5':
+        'Ο κωδικός πρόσβασης πρέπει να αποτελείται από τουλάχιστον 5 χαρακτήρες, διαφορετικά αλλάξτε την κρυπτογράφηση σε "Καμία"',
+      'wifi.alert.password.length.8':
+        'Ο κωδικός πρόσβασης πρέπει να αποτελείται από τουλάχιστον 8 χαρακτήρες, διαφορετικά αλλάξτε την κρυπτογράφηση σε "Καμία"',
+      'wifi.alert.eapIdentity': 'Η ταυτότητα δεν μπορεί να είναι κενή.',
+      'button.rotate': 'Περιστροφή',
+      'button.print': 'Εκτύπωση',
+      select: 'Επιλέξτε γλώσσα',
+    },
+  },
+  {
     id: 'pl-PL',
     name: 'Polish - Polski',
     translation: {
