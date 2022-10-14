@@ -69,6 +69,7 @@ We would love for you to contribute to different languages and help make it even
 | Hindi                        | [Pushpender](https://github.com/PushpenderSaini0)  |
 | Catalan                      | [aniol](https://github.com/aniol)                  |
 | German                       | [devofthings](https://github.com/devofthings)      |
+| Greek                        | [nautilus7](https://github.com/nautilus7)          |
 | Indonesia                    | [nyancodeid](https://github.com/nyancodeid)        |
 | Polish                       | [olekstomek](https://github.com/olekstomek)        |
 | Arabic                       | [Ahmed Tokyo](https://github.com/a-tokyo)          |
