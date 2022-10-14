@@ -490,7 +490,7 @@ export const Translations = [
       'wifi.password.encryption.none': 'Καμία',
       'wifi.encryption.eapMethod': 'Μέθοδος EAP',
       'wifi.tip':
-        "Στρέψτε την κάμερα του κινητού σας προς τον κώδικα QR για να συνδεθείτε αυτόματα",
+        'Στρέψτε την κάμερα του κινητού σας προς τον κώδικα QR για να συνδεθείτε αυτόματα',
       'wifi.alert.name': 'Το όνομα δικτύου δεν μπορεί να είναι κενό',
       'wifi.alert.password': 'Ο κωδικός πρόσβασης δεν μπορεί να είναι κενός',
       'wifi.alert.password.length.5':
