@@ -579,6 +579,8 @@ export const Translations = [
       'desc.privacy':
         "Vòstras informacions WiFi son pas jamai enviadas al servidor. Cap de seguiment, d'analisi o de generacion d'emprenta numerica son pas realizats sus aqueste site Web. Veire lo",
       'desc.source': 'còdi font',
+      'wifi.identity': 'Identitat',
+      'wifi.identity.placeholder': 'Nom d’utilizaire',
       'wifi.login': 'Connexion Wi-Fi',
       'wifi.name': 'Nom de la ret',
       'wifi.name.hiddenSSID': 'SSID amagat',
@@ -588,13 +590,16 @@ export const Translations = [
       'wifi.password.hide': 'Rescondre lo senhal',
       'wifi.password.encryption': 'Chiframent',
       'wifi.password.encryption.none': 'Cap',
+      'wifi.encryption.eapMethod': 'Metòde EAP',	  
       'wifi.tip':
         'Viratz vòstre aparelh fòto cap al còdi QR per vos connectar automaticament',
       'wifi.alert.name': 'Lo nom de la ret pòt pas èsser void',
+      'wifi.alert.password': 'Lo senhal pòt pas èsser void',	  
       'wifi.alert.password.length.5':
         'Lo senhal deu conténer almens 5 caractèrs o cambiatz lo chiframent per « Cap »',
       'wifi.alert.password.8':
         'Lo senhal deu conténer almens 8 caractèrs o cambiatz lo chiframent per « Cap »',
+      'wifi.alert.eapIdentity': 'L’identitat pòt pas èsser voide',
       'button.rotate': 'Pivotar',
       'button.print': 'Imprimir',
       select: 'Causir la lenga',
