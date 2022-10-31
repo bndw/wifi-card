@@ -590,11 +590,11 @@ export const Translations = [
       'wifi.password.hide': 'Rescondre lo senhal',
       'wifi.password.encryption': 'Chiframent',
       'wifi.password.encryption.none': 'Cap',
-      'wifi.encryption.eapMethod': 'Metòde EAP',	  
+      'wifi.encryption.eapMethod': 'Metòde EAP',
       'wifi.tip':
         'Viratz vòstre aparelh fòto cap al còdi QR per vos connectar automaticament',
       'wifi.alert.name': 'Lo nom de la ret pòt pas èsser void',
-      'wifi.alert.password': 'Lo senhal pòt pas èsser void',	  
+      'wifi.alert.password': 'Lo senhal pòt pas èsser void',
       'wifi.alert.password.length.5':
         'Lo senhal deu conténer almens 5 caractèrs o cambiatz lo chiframent per « Cap »',
       'wifi.alert.password.8':
