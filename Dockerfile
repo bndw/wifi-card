@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:14 as builder
+FROM node:14-alpine as builder
 
 WORKDIR /tmp
 COPY . .
