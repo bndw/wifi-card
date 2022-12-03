@@ -1,10 +1,11 @@
-FROM node:14-alpine as builder
+FROM node:18-alpine as builder
 
 WORKDIR /tmp
 COPY . .
 
+ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN npx prettier --check ./src
-RUN yarn && yarn build
+RUN yarn && yarn build 
 
 ###
 # production image
