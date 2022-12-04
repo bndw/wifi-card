@@ -4,8 +4,11 @@ import { useTranslation } from 'react-i18next';
 import logo from '../src/images/wifi.png';
 import { Settings } from './components/Settings';
 import { WifiCard } from './components/WifiCard';
+import { nodeToImageDownloader } from './nodeToImageDownloader';
 import './style.css';
 import { Translations } from './translations';
+
+const WIFI_CARD_ID = 'wifi-card';
 
 function App() {
   const html = document.querySelector('html');
@@ -92,6 +95,13 @@ function App() {
     window.print();
   };
 
+  const onDownload = () => {
+    nodeToImageDownloader({
+      nodeId: WIFI_CARD_ID,
+      imageName: WIFI_CARD_ID,
+    });
+  };
+
   const onSSIDChange = (ssid) => {
     setErrors({ ...errors, ssidError: '' });
     setSettings({ ...settings, ssid });
@@ -154,6 +164,7 @@ function App() {
       </Pane>
 
       <WifiCard
+        id={WIFI_CARD_ID}
         settings={settings}
         ssidError={errors.ssidError}
         passwordError={errors.passwordError}
@@ -176,9 +187,21 @@ function App() {
       />
 
       <Button
+        height={40}
+        id="download"
+        marginTop={16}
+        marginRight={16}
+        appearance="primary"
+        onClick={onDownload}
+      >
+        {t('button.picture.download')}
+      </Button>
+
+      <Button
         id="print"
         appearance="primary"
         height={40}
+        marginTop={16}
         marginRight={16}
         onClick={onPrint}
       >

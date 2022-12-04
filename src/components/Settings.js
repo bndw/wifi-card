@@ -30,7 +30,11 @@ export const Settings = (props) => {
   });
 
   return (
-    <Pane id="settings" maxWidth={props.settings.portrait ? '350px' : '100%'}>
+    <Pane
+      id="settings"
+      marginBottom={0}
+      maxWidth={props.settings.portrait ? '350px' : '100%'}
+    >
       <SelectField
         width={300}
         inputHeight={38}

@@ -65,7 +65,7 @@ export const WifiCard = (props) => {
   };
 
   return (
-    <Pane>
+    <Pane id={props.id}>
       <Card
         id="print-area"
         elevation={3}
