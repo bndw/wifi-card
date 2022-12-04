@@ -71,6 +71,7 @@ We would love for you to contribute to different languages and help make it even
 | German                       | [devofthings](https://github.com/devofthings)      |
 | Greek                        | [nautilus7](https://github.com/nautilus7)          |
 | Indonesia                    | [nyancodeid](https://github.com/nyancodeid)        |
+| Persian (Farsi - فارسی)      | [RaminR77](https://github.com/raminr77/)           |
 | Polish                       | [olekstomek](https://github.com/olekstomek)        |
 | Arabic                       | [Ahmed Tokyo](https://github.com/a-tokyo)          |
 | Occitan                      | [ensag-dev](https://github.com/ensag-dev)          |
