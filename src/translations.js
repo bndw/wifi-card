@@ -684,7 +684,7 @@ export const Translations = [
         'La password deve contenere almeno 8 caratteri',
       'button.rotate': 'Ruota',
       'button.print': 'Stampa',
-      'button.picture.download': 'Scarica l\'immagine',
+      'button.picture.download': "Scarica l'immagine",
       select: 'Seleziona una lingua',
     },
   },
