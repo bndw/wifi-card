@@ -1,10 +1,10 @@
-FROM mhart/alpine-node:14 as builder
+FROM node:18-alpine as builder
 
 WORKDIR /tmp
 COPY . .
 
 RUN npx prettier --check ./src
-RUN yarn && yarn build
+RUN yarn && yarn build 
 
 ###
 # production image
