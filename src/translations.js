@@ -138,6 +138,8 @@ export const Translations = [
       'desc.privacy':
         '您的 WiFi 信息永远不会发送到服务端。本网站不使用追踪、分析或指纹识别。查看',
       'desc.source': '源码',
+      'wifi.identity': '身份',
+      'wifi.identity.placeholder': '用户名',
       'wifi.login': '连接 WiFi',
       'wifi.name': '网络名称',
       'wifi.name.hiddenSSID': '隐藏 SSID',
@@ -147,6 +149,7 @@ export const Translations = [
       'wifi.password.hide': '隐藏密码',
       'wifi.password.encryption': '加密',
       'wifi.password.encryption.none': '无',
+      'wifi.encryption.eapMethod': 'EAP 加密方式',
       'wifi.tip': '将手机摄像头对准二维码即可自动连接',
       'wifi.alert.name': '网络名称不能为空',
       'wifi.alert.password.length.5':
@@ -198,15 +201,18 @@ export const Translations = [
       'desc.privacy':
         '你嘅 Wi-Fi 信息永远不会发送到服务端。本网站不使用追踪、分析或指纹识别。喺度睇',
       'desc.source': '源代码',
+      'wifi.identity': '身份',
+      'wifi.identity.placeholder': '用户名',
       'wifi.login': '连接 Wi-Fi',
       'wifi.name': '网络名称',
-      'wifi.name.hiddenSSID': '呢个 Wi-Fi 隐藏咗 SSID',
+      'wifi.name.hiddenSSID': '呢个 Wi-Fi 嘅名收埋起身咗 ',
       'wifi.name.placeholder': 'Wi-Fi 网络名称',
       'wifi.password': '密码',
       'wifi.password.placeholder': '密码',
-      'wifi.password.hide': '唔 show 明文密码出嚟',
+      'wifi.password.hide': '唔显示明文密码',
       'wifi.password.encryption': '加密',
       'wifi.password.encryption.none': '冇',
+      'wifi.encryption.eapMethod': 'EAP 加密方式',
       'wifi.tip': '打开摄像头指住个二维码就可以连上呢个 Wi-Fi',
       'wifi.alert.name': '网络名称唔可以为空',
       'wifi.alert.password.length.5':
