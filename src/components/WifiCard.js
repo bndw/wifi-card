@@ -33,14 +33,21 @@ export const WifiCard = (props) => {
   };
 
   useEffect(() => {
-    const ssid = escape(props.settings.ssid);
-    const password = !props.settings.encryptionMode
-      ? ''
-      : escape(props.settings.password);
-    const qrval =
-      props.settings.encryptionMode === 'WPA2-EAP'
-        ? `WIFI:T:${props.settings.encryptionMode};S:${ssid};P:${password};H:${props.settings.hiddenSSID};E:${props.settings.eapMethod};I:${props.settings.eapIdentity};;`
-        : `WIFI:T:${props.settings.encryptionMode};S:${ssid};P:${password};H:${props.settings.hiddenSSID};;`;
+    let opts = {};
+
+    opts.T = props.settings.encryptionMode || 'nopass';
+    if (props.settings.encryptionMode === 'WPA2-EAP') {
+      opts.E = props.settings.eapMethod;
+      opts.I = props.settings.eapIdentity;
+    }
+    opts.S = escape(props.settings.ssid);
+    opts.P = escape(props.settings.password);
+    opts.H = props.settings.hiddenSSID;
+
+    let data = '';
+    Object.entries(opts).forEach(([k, v]) => (data += `${k}:${v};`));
+    const qrval = `WIFI:${data};`;
+
     setQrvalue(qrval);
   }, [props.settings]);
 
