@@ -525,7 +525,7 @@ export const Translations = [
   },
   {
     id: 'de-CH',
-    name: 'Schweizer Deutsch',
+    name: 'German - Schwizerdütsch',
     translation: {
       title: 'simple.WiFi Card Creator',
       'desc.use':
