@@ -68,8 +68,14 @@ button {
     position: absolute;
     left: 0;
     top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 1em;
   }
   .card-print {
+    margin-top: 0;
+    margin-bottom: 0;
     border-style: dashed;
     box-shadow: none;
   }
