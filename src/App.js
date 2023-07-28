@@ -29,7 +29,7 @@ function App() {
     // Settings: Portrait orientation
     portrait: false,
     // Settings: Additional cards
-    additionalCards: 0,
+    additionalCards: 1,
   });
   const [errors, setErrors] = useState({
     ssidError: '',
@@ -164,6 +164,20 @@ function App() {
         onEapIdentityChange={onEapIdentityChange}
         onPasswordChange={onPasswordChange}
       />
+
+      {
+        [...Array(settings.additionalCards)].map((el, idx) =>
+          <WifiCard
+            settings={settings}
+            ssidError={errors.ssidError}
+            passwordError={errors.passwordError}
+            eapIdentityError={errors.eapIdentityError}
+            onSSIDChange={onSSIDChange}
+            onEapIdentityChange={onEapIdentityChange}
+            onPasswordChange={onPasswordChange}
+          />
+        )
+      }
 
       <Settings
         settings={settings}
