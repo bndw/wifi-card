@@ -117,38 +117,37 @@ export const WifiCard = (props) => {
             isInvalid={!!props.ssidError}
             validationMessage={!!props.ssidError && props.ssidError}
           />
-          <TextareaField
-            id="eapmethod"
-            type="text"
-            marginBottom={5}
-            readOnly={true}
-            spellCheck={false}
-            className={`
-              ${props.settings.encryptionMode !== 'WPA2-EAP' && 'hidden'}
-            `}
-            label={eapMethodFieldLabel()}
-            value={props.settings.eapMethod}
-          />
-          <TextareaField
-            id="identity"
-            type="text"
-            marginBottom={5}
-            autoComplete="off"
-            autoCorrect="off"
-            autoCapitalize="none"
-            spellCheck={false}
-            className={`
-              ${props.settings.encryptionMode !== 'WPA2-EAP' && 'hidden'}
-            `}
-            label={eapIdentityFieldLabel()}
-            placeholder={t('wifi.identity.placeholder')}
-            value={props.settings.eapIdentity}
-            onChange={(e) => props.onEapIdentityChange(e.target.value)}
-            isInvalid={!!props.eapIdentityError}
-            validationMessage={
-              !!props.eapIdentityError && props.eapIdentityError
-            }
-          />
+          {props.settings.encryptionMode === 'WPA2-EAP' && (
+            <>
+              <TextareaField
+                id="eapmethod"
+                type="text"
+                marginBottom={5}
+                readOnly={true}
+                spellCheck={false}
+                label={eapMethodFieldLabel()}
+                value={props.settings.eapMethod}
+              />
+
+              <TextareaField
+                id="identity"
+                type="text"
+                marginBottom={5}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="none"
+                spellCheck={false}
+                label={eapIdentityFieldLabel()}
+                placeholder={t('wifi.identity.placeholder')}
+                value={props.settings.eapIdentity}
+                onChange={(e) => props.onEapIdentityChange(e.target.value)}
+                isInvalid={!!props.eapIdentityError}
+                validationMessage={
+                  !!props.eapIdentityError && props.eapIdentityError
+                }
+              />
+            </>
+          )}
           <TextareaField
             id="password"
             type="text"
