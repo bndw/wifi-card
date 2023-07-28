@@ -3,7 +3,7 @@
   src: url(./SourceSerif4-Semibold.otf);
 }
 
-#print-area {
+.card-print {
   border-color: #aaa;
   margin-bottom: 1em;
   margin-top: 2em;
@@ -65,12 +65,12 @@ button {
     visibility: visible;
   }
   #print-area {
-    border-style: dashed;
-    box-shadow: none;
-  }
-  #print-area {
     position: absolute;
     left: 0;
     top: 0;
+  }
+  .card-print {
+    border-style: dashed;
+    box-shadow: none;
   }
 }
