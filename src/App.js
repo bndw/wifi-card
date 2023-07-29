@@ -13,7 +13,7 @@ function App() {
   const firstLoad = useRef(true);
   const [settings, setSettings] = useState({
     // Network SSID name
-    ssid: 'initialSSID',
+    ssid: '',
     // Network password
     password: '',
     // Settings: Network encryption mode
@@ -29,7 +29,7 @@ function App() {
     // Settings: Portrait orientation
     portrait: false,
     // Settings: Additional cards
-    additionalCards: 1,
+    additionalCards: 0,
     // Settings: Show tip (legend) on card
     hideTip: false,
   });
