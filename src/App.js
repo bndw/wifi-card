@@ -164,7 +164,7 @@ function App() {
         </Paragraph>
       </Pane>
 
-      <Pane id="print-area">
+      <Pane>
         <WifiCard
           settings={settings}
           ssidError={errors.ssidError}
@@ -174,20 +174,6 @@ function App() {
           onEapIdentityChange={onEapIdentityChange}
           onPasswordChange={onPasswordChange}
         />
-
-        {settings.additionalCards > 0 &&
-          [...Array(settings.additionalCards)].map((el, idx) => (
-            <WifiCard
-              key={`add-$idx`}
-              settings={settings}
-              ssidError={errors.ssidError}
-              passwordError={errors.passwordError}
-              eapIdentityError={errors.eapIdentityError}
-              onSSIDChange={onSSIDChange}
-              onEapIdentityChange={onEapIdentityChange}
-              onPasswordChange={onPasswordChange}
-            />
-          ))}
       </Pane>
 
       <Settings
@@ -213,6 +199,21 @@ function App() {
       >
         {t('button.print')}
       </Button>
+      <Pane id="print-area">
+        {settings.additionalCards >= 0 &&
+          [...Array(settings.additionalCards + 1)].map((el, idx) => (
+            <WifiCard
+              key={`card-nr-${idx}`}
+              settings={settings}
+              ssidError={errors.ssidError}
+              passwordError={errors.passwordError}
+              eapIdentityError={errors.eapIdentityError}
+              onSSIDChange={onSSIDChange}
+              onEapIdentityChange={onEapIdentityChange}
+              onPasswordChange={onPasswordChange}
+            />
+          ))}
+      </Pane>
     </Pane>
   );
 }
