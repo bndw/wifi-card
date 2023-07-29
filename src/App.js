@@ -122,6 +122,10 @@ function App() {
   const onHiddenSSIDChange = (hiddenSSID) => {
     setSettings({ ...settings, hiddenSSID });
   };
+  const onAdditionalCardsChange = (additionalCardsStr) => {
+    const amount = parseInt(additionalCardsStr);
+    amount >= 0 && setSettings({ ...settings, additionalCards: amount });
+  };
   const onFirstLoad = () => {
     html.style.direction = htmlDirection();
     firstLoad.current = false;
@@ -169,6 +173,7 @@ function App() {
         {settings.additionalCards > 0 &&
           [...Array(settings.additionalCards)].map((el, idx) => (
             <WifiCard
+              key={`add-$idx`}
               settings={settings}
               ssidError={errors.ssidError}
               passwordError={errors.passwordError}
@@ -190,6 +195,7 @@ function App() {
         onOrientationChange={onOrientationChange}
         onHidePasswordChange={onHidePasswordChange}
         onHiddenSSIDChange={onHiddenSSIDChange}
+        onAdditionalCardsChange={onAdditionalCardsChange}
       />
 
       <Button

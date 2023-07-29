@@ -1,4 +1,10 @@
-import { Checkbox, Pane, RadioGroup, SelectField } from 'evergreen-ui';
+import {
+  Checkbox,
+  Pane,
+  RadioGroup,
+  SelectField,
+  TextInputField,
+} from 'evergreen-ui';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
@@ -62,12 +68,12 @@ export const Settings = (props) => {
         checked={props.settings.hiddenSSID}
         onChange={() => props.onHiddenSSIDChange(!props.settings.hiddenSSID)}
       />
-      <Checkbox
+      <TextInputField
+        type="number"
+        width={300}
         label={t('cards.additional')}
-        checked={props.settings.additionalCards}
-        onChange={() =>
-          props.onHiddenSSIDChange(!props.settings.additionalCards)
-        }
+        value={props.settings.additionalCards}
+        onChange={(e) => props.onAdditionalCardsChange(e.target.value)}
       />
       <RadioGroup
         label={t('wifi.password.encryption')}
