@@ -155,7 +155,7 @@ function App() {
         </Paragraph>
       </Pane>
 
-      <Pane id="print-area" style={{ maxWidth: '600px' }}>
+      <Pane id="print-area">
         <WifiCard
           settings={settings}
           ssidError={errors.ssidError}
