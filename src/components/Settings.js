@@ -75,6 +75,11 @@ export const Settings = (props) => {
         value={props.settings.additionalCards}
         onChange={(e) => props.onAdditionalCardsChange(e.target.value)}
       />
+      <Checkbox
+        label={t('cards.tip.hide')}
+        checked={props.settings.hideTip}
+        onChange={() => props.onHideTipChange(!props.settings.hideTip)}
+      />
       <RadioGroup
         label={t('wifi.password.encryption')}
         size={16}

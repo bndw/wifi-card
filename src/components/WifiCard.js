@@ -177,14 +177,18 @@ export const WifiCard = (props) => {
           />
         </Pane>
       </Pane>
-      <hr />
-      <Paragraph>
-        <CameraIcon />
-        <MobilePhoneIcon />
-        <Text size={300} paddingRight={8} paddingLeft={8}>
-          {t('wifi.tip')}
-        </Text>
-      </Paragraph>
+      {!props.settings.hideTip && (
+        <>
+          <hr />
+          <Paragraph>
+            <CameraIcon />
+            <MobilePhoneIcon />
+            <Text size={300} paddingRight={8} paddingLeft={8}>
+              {t('wifi.tip')}
+            </Text>
+          </Paragraph>
+        </>
+      )}
     </Card>
   );
 };

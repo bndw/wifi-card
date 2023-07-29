@@ -30,6 +30,8 @@ function App() {
     portrait: false,
     // Settings: Additional cards
     additionalCards: 1,
+    // Settings: Show tip (legend) on card
+    hideTip: false,
   });
   const [errors, setErrors] = useState({
     ssidError: '',
@@ -126,6 +128,9 @@ function App() {
     const amount = parseInt(additionalCardsStr);
     amount >= 0 && setSettings({ ...settings, additionalCards: amount });
   };
+  const onHideTipChange = (hideTip) => {
+    setSettings({ ...settings, hideTip });
+  };
   const onFirstLoad = () => {
     html.style.direction = htmlDirection();
     firstLoad.current = false;
@@ -196,6 +201,7 @@ function App() {
         onHidePasswordChange={onHidePasswordChange}
         onHiddenSSIDChange={onHiddenSSIDChange}
         onAdditionalCardsChange={onAdditionalCardsChange}
+        onHideTipChange={onHideTipChange}
       />
 
       <Button
