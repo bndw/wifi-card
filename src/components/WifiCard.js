@@ -168,6 +168,7 @@ export const WifiCard = (props) => {
                 ? '5em'
                 : 'auto'
             }
+            marginBottom={5}
             label={passwordFieldLabel()}
             placeholder={t('wifi.password.placeholder')}
             value={props.settings.password}
