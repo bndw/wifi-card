@@ -148,34 +148,29 @@ export const WifiCard = (props) => {
               />
             </>
           )}
-          <TextareaField
-            id="password"
-            type="text"
-            maxLength="63"
-            autoComplete="off"
-            autoCorrect="off"
-            autoCapitalize="none"
-            spellCheck={false}
-            className={`
-              ${
-                (props.settings.hidePassword ||
-                  !props.settings.encryptionMode) &&
-                'hidden'
+          {!(props.settings.hidePassword || !props.settings.encryptionMode) && (
+            <TextareaField
+              id="password"
+              type="text"
+              maxLength="63"
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="none"
+              spellCheck={false}
+              height={
+                props.settings.portrait && props.settings.password.length > 40
+                  ? '5em'
+                  : 'auto'
               }
-            `}
-            height={
-              props.settings.portrait && props.settings.password.length > 40
-                ? '5em'
-                : 'auto'
-            }
-            marginBottom={5}
-            label={passwordFieldLabel()}
-            placeholder={t('wifi.password.placeholder')}
-            value={props.settings.password}
-            onChange={(e) => props.onPasswordChange(e.target.value)}
-            isInvalid={!!props.passwordError}
-            validationMessage={!!props.passwordError && props.passwordError}
-          />
+              marginBottom={5}
+              label={passwordFieldLabel()}
+              placeholder={t('wifi.password.placeholder')}
+              value={props.settings.password}
+              onChange={(e) => props.onPasswordChange(e.target.value)}
+              isInvalid={!!props.passwordError}
+              validationMessage={!!props.passwordError && props.passwordError}
+            />
+          )}
         </Pane>
       </Pane>
       {!props.settings.hideTip && (
