@@ -95,7 +95,7 @@ export const WifiCard = (props) => {
       >
         <QRCode
           className="qrcode"
-          style={{ padding: '1em' }}
+          style={{ marginBottom: props.settings.portrait ? '1em' : '0' }}
           value={qrvalue}
           size={150}
         />
