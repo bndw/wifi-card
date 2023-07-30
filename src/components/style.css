@@ -75,7 +75,7 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    row-gap: 1em;
+    row-gap: 0em;
   }
   .card-print {
     border-style: dashed;
