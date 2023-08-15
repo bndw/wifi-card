@@ -72,84 +72,83 @@ export const WifiCard = (props) => {
   };
 
   return (
-    <Pane>
-      <Card
-        id="print-area"
-        elevation={3}
-        style={{ maxWidth: props.settings.portrait ? portraitWidth() : '100%' }}
-      >
-        <Pane display="flex" paddingBottom={12}>
-          <img alt="icon" src={logo} width="24" height="24" />
-          <Heading
-            size={700}
-            paddingRight={10}
-            paddingLeft={10}
-            textAlign={props.settings.portrait ? 'center' : 'unset'}
-          >
-            {t('wifi.login')}
-          </Heading>
-        </Pane>
-
-        <Pane
-          className="details"
-          style={{ flexDirection: props.settings.portrait ? 'column' : 'row' }}
+    <Card
+      className="card-print"
+      elevation={3}
+      style={{ maxWidth: props.settings.portrait ? portraitWidth() : '100%' }}
+    >
+      <Pane display="flex" paddingBottom={12}>
+        <img alt="icon" src={logo} width="24" height="24" />
+        <Heading
+          size={700}
+          paddingRight={10}
+          paddingLeft={10}
+          textAlign={props.settings.portrait ? 'center' : 'unset'}
         >
-          <QRCode
-            className="qrcode"
-            style={{ padding: '1em' }}
-            value={qrvalue}
-            size={150}
-          />
+          {t('wifi.login')}
+        </Heading>
+      </Pane>
 
-          <Pane width={'100%'}>
-            <TextareaField
-              id="ssid"
-              type="text"
-              marginBottom={5}
-              autoComplete="off"
-              autoCorrect="off"
-              autoCapitalize="none"
-              spellCheck={false}
-              maxLength="32"
-              label={t('wifi.name')}
-              placeholder={t('wifi.name.placeholder')}
-              value={props.settings.ssid}
-              onChange={(e) => props.onSSIDChange(e.target.value)}
-              isInvalid={!!props.ssidError}
-              validationMessage={!!props.ssidError && props.ssidError}
-            />
-            <TextareaField
-              id="eapmethod"
-              type="text"
-              marginBottom={5}
-              readOnly={true}
-              spellCheck={false}
-              className={`
-                ${props.settings.encryptionMode !== 'WPA2-EAP' && 'hidden'}
-              `}
-              label={eapMethodFieldLabel()}
-              value={props.settings.eapMethod}
-            />
-            <TextareaField
-              id="identity"
-              type="text"
-              marginBottom={5}
-              autoComplete="off"
-              autoCorrect="off"
-              autoCapitalize="none"
-              spellCheck={false}
-              className={`
-                ${props.settings.encryptionMode !== 'WPA2-EAP' && 'hidden'}
-              `}
-              label={eapIdentityFieldLabel()}
-              placeholder={t('wifi.identity.placeholder')}
-              value={props.settings.eapIdentity}
-              onChange={(e) => props.onEapIdentityChange(e.target.value)}
-              isInvalid={!!props.eapIdentityError}
-              validationMessage={
-                !!props.eapIdentityError && props.eapIdentityError
-              }
-            />
+      <Pane
+        className="details"
+        style={{ flexDirection: props.settings.portrait ? 'column' : 'row' }}
+      >
+        <QRCode
+          className="qrcode"
+          style={{ marginBottom: props.settings.portrait ? '1em' : '0' }}
+          value={qrvalue}
+          size={150}
+        />
+
+        <Pane width={'100%'}>
+          <TextareaField
+            id="ssid"
+            type="text"
+            marginBottom={5}
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="none"
+            spellCheck={false}
+            maxLength="32"
+            label={t('wifi.name')}
+            placeholder={t('wifi.name.placeholder')}
+            value={props.settings.ssid}
+            onChange={(e) => props.onSSIDChange(e.target.value)}
+            isInvalid={!!props.ssidError}
+            validationMessage={!!props.ssidError && props.ssidError}
+          />
+          {props.settings.encryptionMode === 'WPA2-EAP' && (
+            <>
+              <TextareaField
+                id="eapmethod"
+                type="text"
+                marginBottom={5}
+                readOnly={true}
+                spellCheck={false}
+                label={eapMethodFieldLabel()}
+                value={props.settings.eapMethod}
+              />
+
+              <TextareaField
+                id="identity"
+                type="text"
+                marginBottom={5}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="none"
+                spellCheck={false}
+                label={eapIdentityFieldLabel()}
+                placeholder={t('wifi.identity.placeholder')}
+                value={props.settings.eapIdentity}
+                onChange={(e) => props.onEapIdentityChange(e.target.value)}
+                isInvalid={!!props.eapIdentityError}
+                validationMessage={
+                  !!props.eapIdentityError && props.eapIdentityError
+                }
+              />
+            </>
+          )}
+          {!(props.settings.hidePassword || !props.settings.encryptionMode) && (
             <TextareaField
               id="password"
               type="text"
@@ -158,18 +157,12 @@ export const WifiCard = (props) => {
               autoCorrect="off"
               autoCapitalize="none"
               spellCheck={false}
-              className={`
-                ${
-                  (props.settings.hidePassword ||
-                    !props.settings.encryptionMode) &&
-                  'hidden'
-                }
-              `}
               height={
                 props.settings.portrait && props.settings.password.length > 40
                   ? '5em'
                   : 'auto'
               }
+              marginBottom={5}
               label={passwordFieldLabel()}
               placeholder={t('wifi.password.placeholder')}
               value={props.settings.password}
@@ -177,17 +170,21 @@ export const WifiCard = (props) => {
               isInvalid={!!props.passwordError}
               validationMessage={!!props.passwordError && props.passwordError}
             />
-          </Pane>
+          )}
         </Pane>
-        <hr />
-        <Paragraph>
-          <CameraIcon />
-          <MobilePhoneIcon />
-          <Text size={300} paddingRight={8} paddingLeft={8}>
-            {t('wifi.tip')}
-          </Text>
-        </Paragraph>
-      </Card>
-    </Pane>
+      </Pane>
+      {!props.settings.hideTip && (
+        <>
+          <hr />
+          <Paragraph>
+            <CameraIcon />
+            <MobilePhoneIcon />
+            <Text size={300} paddingRight={8} paddingLeft={8}>
+              {t('wifi.tip')}
+            </Text>
+          </Paragraph>
+        </>
+      )}
+    </Card>
   );
 };

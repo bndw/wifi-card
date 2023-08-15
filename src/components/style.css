@@ -3,11 +3,15 @@
   src: url(./SourceSerif4-Semibold.otf);
 }
 
-#print-area {
+.card-print {
   border-color: #aaa;
   margin-bottom: 1em;
   margin-top: 2em;
   padding: 1em;
+}
+
+#print-area {
+  display: none;
 }
 
 .details {
@@ -16,8 +20,8 @@
 }
 
 .qrcode {
-  margin-bottom: 1em;
   max-width: 175px;
+  padding: 1em;
 }
 
 .hidden {
@@ -65,12 +69,20 @@ button {
     visibility: visible;
   }
   #print-area {
-    border-style: dashed;
-    box-shadow: none;
-  }
-  #print-area {
     position: absolute;
     left: 0;
     top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 0em;
+  }
+  .card-print {
+    border-style: dashed;
+    box-shadow: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }

@@ -14,6 +14,8 @@ export const Translations = [
       'wifi.login': 'WiFi Login',
       'wifi.name': 'Network name',
       'wifi.name.hiddenSSID': 'Hidden SSID',
+      'cards.additional': 'Additional cards to print',
+      'cards.tip.hide': 'Hide tip (legend)',
       'wifi.name.placeholder': 'WiFi Network name',
       'wifi.password': 'Password',
       'wifi.password.placeholder': 'Password',

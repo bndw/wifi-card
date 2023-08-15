@@ -28,6 +28,10 @@ function App() {
     hiddenSSID: false,
     // Settings: Portrait orientation
     portrait: false,
+    // Settings: Additional cards
+    additionalCards: 0,
+    // Settings: Show tip (legend) on card
+    hideTip: false,
   });
   const [errors, setErrors] = useState({
     ssidError: '',
@@ -120,6 +124,13 @@ function App() {
   const onHiddenSSIDChange = (hiddenSSID) => {
     setSettings({ ...settings, hiddenSSID });
   };
+  const onAdditionalCardsChange = (additionalCardsStr) => {
+    const amount = parseInt(additionalCardsStr);
+    amount >= 0 && setSettings({ ...settings, additionalCards: amount });
+  };
+  const onHideTipChange = (hideTip) => {
+    setSettings({ ...settings, hideTip });
+  };
   const onFirstLoad = () => {
     html.style.direction = htmlDirection();
     firstLoad.current = false;
@@ -153,15 +164,17 @@ function App() {
         </Paragraph>
       </Pane>
 
-      <WifiCard
-        settings={settings}
-        ssidError={errors.ssidError}
-        passwordError={errors.passwordError}
-        eapIdentityError={errors.eapIdentityError}
-        onSSIDChange={onSSIDChange}
-        onEapIdentityChange={onEapIdentityChange}
-        onPasswordChange={onPasswordChange}
-      />
+      <Pane>
+        <WifiCard
+          settings={settings}
+          ssidError={errors.ssidError}
+          passwordError={errors.passwordError}
+          eapIdentityError={errors.eapIdentityError}
+          onSSIDChange={onSSIDChange}
+          onEapIdentityChange={onEapIdentityChange}
+          onPasswordChange={onPasswordChange}
+        />
+      </Pane>
 
       <Settings
         settings={settings}
@@ -173,6 +186,8 @@ function App() {
         onOrientationChange={onOrientationChange}
         onHidePasswordChange={onHidePasswordChange}
         onHiddenSSIDChange={onHiddenSSIDChange}
+        onAdditionalCardsChange={onAdditionalCardsChange}
+        onHideTipChange={onHideTipChange}
       />
 
       <Button
@@ -184,6 +199,21 @@ function App() {
       >
         {t('button.print')}
       </Button>
+      <Pane id="print-area">
+        {settings.additionalCards >= 0 &&
+          [...Array(settings.additionalCards + 1)].map((el, idx) => (
+            <WifiCard
+              key={`card-nr-${idx}`}
+              settings={settings}
+              ssidError={errors.ssidError}
+              passwordError={errors.passwordError}
+              eapIdentityError={errors.eapIdentityError}
+              onSSIDChange={onSSIDChange}
+              onEapIdentityChange={onEapIdentityChange}
+              onPasswordChange={onPasswordChange}
+            />
+          ))}
+      </Pane>
     </Pane>
   );
 }
