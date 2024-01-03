@@ -458,9 +458,11 @@ export const Translations = [
       'wifi.password.placeholder': 'Passwort',
       'wifi.password.hide': 'Passwort verstecken',
       'wifi.name.hiddenSSID': 'Versteckte SSID',
+      'cards.additional': 'Anzahl',
+      'cards.tip.hide': 'Hinweis verstecken (Legende)',
       'wifi.password.encryption': 'Verschlüsselung',
       'wifi.password.encryption.none': 'Keine',
-      'wifi.encryption.eapMethod': 'EAP Methode',
+      'wifi.encryption.eapMethod': 'EAP-Methode',
       'wifi.tip':
         'Zeige mit der Kamera deines Handys auf den QR-Code, um automatisch eine Verbindung herzustellen',
       'wifi.alert.name': 'Der Netzwerkname darf nicht leer sein',
