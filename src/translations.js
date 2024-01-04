@@ -447,7 +447,7 @@ export const Translations = [
       'desc.use':
         'Druck dir eine simple Karte mit deinen WLAN-Zugangsdaten aus. Klebe sie an deinen Kühlschrank, behalte sie in deinem Portemonnaie, etc.',
       'desc.privacy':
-        'Deine Zugangsdaten werden niemals zum Server gesendet. Es gibt kein Tracking, Analytics, oder Fingerprinting auf dieser Website. Hier geht es zum',
+        'Deine Zugangsdaten werden niemals zum Server gesendet. Es gibt kein Tracking, Fingerprinting und auch keine Analytics auf dieser Website. Hier geht es zum',
       'desc.source': 'Quellcode',
       'wifi.identity': 'Identität',
       'wifi.identity.placeholder': 'Nutzername',
