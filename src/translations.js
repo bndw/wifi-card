@@ -443,7 +443,7 @@ export const Translations = [
     id: 'de-DE',
     name: 'German - Deutsch',
     translation: {
-      title: 'WLAN Karte',
+      title: 'WLAN-Karte',
       'desc.use':
         'Druck dir eine simple Karte mit deinen WLAN-Zugangsdaten aus. Klebe sie an deinen Kühlschrank, behalte sie in deinem Portemonnaie, etc.',
       'desc.privacy':
