@@ -594,6 +594,8 @@ export const Translations = [
       'wifi.login': 'Connexion Wi-Fi',
       'wifi.name': 'Nom de la ret',
       'wifi.name.hiddenSSID': 'SSID amagat',
+      'cards.additional': 'Carta suplementàrias d’imprimir',
+      'cards.tip.hide': 'Rescondre astúcia (legenda)',      
       'wifi.name.placeholder': 'Nom de la ret WiFi',
       'wifi.password': 'Senhal',
       'wifi.password.placeholder': 'Senhal',
