@@ -1078,6 +1078,43 @@ export const Translations = [
       select: 'Vælg sprog',
     },
   },
+  {
+    id: 'eo',
+    name: 'Esperanto',
+    translation: {
+      title: 'Vifia karto',
+      'desc.use':
+        'Presu simplan karton kun viaj vifiaj ensalutaj detaloj. Bendu ĝin al la fridujo, konservu ĝin en via monujo, ktp.',
+      'desc.privacy':
+        'Viaj vifiaj informoj neniam estas senditaj al la servilo. Neniu spurado, analizo aŭ fingrospurado estas uzataj en ĉi tiu retejo. Vidi la',
+      'desc.source': 'fontokodon',
+      'wifi.identity': 'Identeco',
+      'wifi.identity.placeholder': 'Uzantnomo',
+      'wifi.login': 'Vifia ensaluto',
+      'wifi.name': 'Retnomo',
+      'wifi.name.hiddenSSID': 'Kaŝita SSID',
+      'cards.additional': 'Pliaj kartoj por presi',
+      'cards.tip.hide': 'Kaŝi konsileton (klarigeto)',
+      'wifi.name.placeholder': 'Nomo de vifia reto',
+      'wifi.password': 'Pasvorto',
+      'wifi.password.placeholder': 'Pasvorto',
+      'wifi.password.hide': 'Kaŝi pasvorton',
+      'wifi.password.encryption': 'Ĉifrado',
+      'wifi.password.encryption.none': 'Nenio',
+      'wifi.encryption.eapMethod': 'EAP-metodo',
+      'wifi.tip': 'Metu la fotilon de via telefono antaŭ la QR-kodo por aŭtomate konektiĝi',
+      'wifi.alert.name': 'Retnomo ne povas esti malplena',
+      'wifi.alert.password': 'Pasvorto ne povas esti malplena',
+      'wifi.alert.password.length.5':
+        'Pasvorto devas enhavi almenaŭ 5 signoj, aŭ ŝanĝu la ĉifradon al "Neniu"',
+      'wifi.alert.password.length.8':
+        'Pasvorto devas enhavi almenaŭ 8 signoj, aŭ ŝanĝu la ĉifradon al "Neniu"',
+      'wifi.alert.eapIdentity': 'Identeco ne povas esti malplena',
+      'button.rotate': 'Rotacii',
+      'button.print': 'Presi',
+      select: 'Elektu lingvon',
+    },
+  },
 ].sort((a, b) => {
   return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
 });
