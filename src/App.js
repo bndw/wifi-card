@@ -42,8 +42,7 @@ function App() {
       ? true
       : false;
   let planguage =
-    params.get('lng') === null ||
-    params.get('lng').toLowerCase() === ''
+    params.get('lng') === null || params.get('lng').toLowerCase() === ''
       ? 'en-US'
       : params.get('lng');
 
