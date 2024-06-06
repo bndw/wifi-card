@@ -562,6 +562,8 @@ export const Translations = [
       'wifi.name': 'Nom du réseau',
       'wifi.name.placeholder': 'Nom du réseau WiFi',
       'wifi.name.hiddenSSID': 'SSID masqué',
+      'cards.additional': 'Cartes supplémentaires à imprimer',
+      'cards.tip.hide': 'Masquer la légende',
       'wifi.password': 'Mot de passe',
       'wifi.password.placeholder': 'Mot de passe',
       'wifi.password.hide': 'Masquer le mot de passe',
