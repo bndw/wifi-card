@@ -42,15 +42,7 @@
     ]
   },
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/bndw/wifi-card.git"
-  },
+  "repository": "git@github.com:bndw/wifi-card.git",
   "author": "bndw <ben@bdw.to>",
-  "license": "MIT",
-  "description": "![ci](https://github.com/bndw/wifi-card/workflows/ci/badge.svg)",
-  "bugs": {
-    "url": "https://github.com/bndw/wifi-card/issues"
-  },
-  "homepage": "https://github.com/bndw/wifi-card#readme"
+  "license": "MIT"
 }
