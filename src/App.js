@@ -42,10 +42,10 @@ function App() {
       ? true
       : false;
   let planguage =
-    params.get('language') === null ||
-    params.get('language').toLowerCase() === ''
+    params.get('lng') === null ||
+    params.get('lng').toLowerCase() === ''
       ? 'en-US'
-      : params.get('language');
+      : params.get('lng');
 
   // ########################
   const html = document.querySelector('html');

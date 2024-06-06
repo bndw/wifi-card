@@ -13,9 +13,6 @@ import './style.css';
 
 export const Settings = (props) => {
   const { t } = useTranslation();
-  i18n.init({
-    lng: props.settings.language,
-  });
   const encryptionModes = [
     { label: t('wifi.password.encryption.none'), value: '' },
     { label: 'WPA/WPA2/WPA3', value: 'WPA' },
