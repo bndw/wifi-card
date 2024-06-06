@@ -13,6 +13,9 @@ import './style.css';
 
 export const Settings = (props) => {
   const { t } = useTranslation();
+  i18n.init({
+    lng: props.settings.language,
+  });
   const encryptionModes = [
     { label: t('wifi.password.encryption.none'), value: '' },
     { label: 'WPA/WPA2/WPA3', value: 'WPA' },
@@ -20,12 +23,13 @@ export const Settings = (props) => {
     { label: 'WEP', value: 'WEP' },
   ];
   const eapMethods = [{ label: 'PWD', value: 'PWD' }];
+
   const langSelectDefaultValue = () => {
-    const t = Translations.filter((t) => t.id === i18n.language);
+    const t = Translations.filter((t) => t.id === props.settings.language);
     if (t.length !== 1) {
       return 'en-US';
     }
-    return t[0].id;
+    return props.settings.language;
   };
 
   useEffect(() => {

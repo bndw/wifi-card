@@ -8,31 +8,75 @@ import './style.css';
 import { Translations } from './translations';
 
 function App() {
+  const urlSearchString = window.location.search;
+  const params = new URLSearchParams(urlSearchString);
+
+  let pssid = params.get('ssid') || '';
+  let ppassword = params.get('password') || '';
+  let pencryptionMode = params.get('encryptionMode') || 'WPA';
+  let peapMethod = params.get('eapMethod') || 'PWD';
+  let peapIdentity = params.get('eapIdentity') || '';
+  let phidePassword =
+    params.get('hidePassword') === null
+      ? false
+      : params.get('hidePassword').toLowerCase() === 'true'
+      ? true
+      : false;
+  let phiddenSSID =
+    params.get('hiddenSSID') === null
+      ? false
+      : params.get('hiddenSSID').toLowerCase() === 'true'
+      ? true
+      : false;
+  let pportrait =
+    params.get('portrait') === null
+      ? false
+      : params.get('portrait').toLowerCase() === 'true'
+      ? true
+      : false || false;
+  let padditionalCards = params.get('additionalCards') || 0;
+  let phideTip =
+    params.get('hideTip') === null
+      ? false
+      : params.get('hideTip').toLowerCase() === 'true'
+      ? true
+      : false;
+  let planguage =
+    params.get('language') === null ||
+    params.get('language').toLowerCase() === ''
+      ? 'en-US'
+      : params.get('language');
+
+  // ########################
   const html = document.querySelector('html');
+
   const { t, i18n } = useTranslation();
   const firstLoad = useRef(true);
   const [settings, setSettings] = useState({
     // Network SSID name
-    ssid: '',
+    ssid: pssid,
     // Network password
-    password: '',
+    password: ppassword,
     // Settings: Network encryption mode
-    encryptionMode: 'WPA',
+    encryptionMode: pencryptionMode,
     // Settings: EAP Method
-    eapMethod: 'PWD',
+    eapMethod: peapMethod,
     // Settings: EAP identity
-    eapIdentity: '',
+    eapIdentity: peapIdentity,
     // Settings: Hide password on the printed card
-    hidePassword: false,
+    hidePassword: phidePassword,
     // Settings: Mark your network as hidden SSID
-    hiddenSSID: false,
+    hiddenSSID: phiddenSSID,
     // Settings: Portrait orientation
-    portrait: false,
+    portrait: pportrait,
     // Settings: Additional cards
-    additionalCards: 0,
+    additionalCards: padditionalCards,
     // Settings: Show tip (legend) on card
-    hideTip: false,
+    hideTip: phideTip,
+    // Display language
+    language: planguage,
   });
+
   const [errors, setErrors] = useState({
     ssidError: '',
     passwordError: '',
@@ -48,6 +92,8 @@ function App() {
   const onChangeLanguage = (language) => {
     html.style.direction = htmlDirection(language);
     i18n.changeLanguage(language);
+
+    setSettings({ ...settings, language });
   };
 
   const onPrint = () => {
@@ -173,6 +219,7 @@ function App() {
           onSSIDChange={onSSIDChange}
           onEapIdentityChange={onEapIdentityChange}
           onPasswordChange={onPasswordChange}
+          defaultValue={'PATATATATA'}
         />
       </Pane>
 
