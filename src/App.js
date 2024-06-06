@@ -20,27 +20,27 @@ function App() {
     params.get('hidePassword') === null
       ? false
       : params.get('hidePassword').toLowerCase() === 'true'
-      ? true
-      : false;
+        ? true
+        : false;
   let phiddenSSID =
     params.get('hiddenSSID') === null
       ? false
       : params.get('hiddenSSID').toLowerCase() === 'true'
-      ? true
-      : false;
+        ? true
+        : false;
   let pportrait =
     params.get('portrait') === null
       ? false
       : params.get('portrait').toLowerCase() === 'true'
-      ? true
-      : false || false;
+        ? true
+        : false || false;
   let padditionalCards = params.get('additionalCards') || 1;
   let phideTip =
     params.get('hideTip') === null
       ? false
       : params.get('hideTip').toLowerCase() === 'true'
-      ? true
-      : false;
+        ? true
+        : false;
   let planguage =
     params.get('language') === null ||
     params.get('language').toLowerCase() === ''
