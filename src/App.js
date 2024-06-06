@@ -13,7 +13,7 @@ function App() {
 
   let pssid = params.get('ssid') || '';
   let ppassword = params.get('password') || '';
-  let pencryptionMode = params.get('encryptionMode') || 'WPA';
+  let pencryptionMode = params.get('encryptionMode') !== null ? params.get('encryptionMode') : 'WPA';
   let peapMethod = params.get('eapMethod') || 'PWD';
   let peapIdentity = params.get('eapIdentity') || '';
   let phidePassword =
