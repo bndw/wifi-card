@@ -552,15 +552,15 @@ export const Translations = [
     id: 'fr-FR',
     name: 'French - Français',
     translation: {
-      title: 'Carte WiFi',
+      title: 'Carte Wi-Fi',
       'desc.use':
-        'Imprimez une simple carte avec vos informations de connexion WiFi. Collez-le au réfrigérateur, gardez-le dans votre portefeuille, etc.',
+        'Imprimez une carte simple avec vos informations de connexion Wi-Fi. Collez-la sur le réfrigérateur, gardez-la dans votre portefeuille, etc.',
       'desc.privacy':
-        'Vos informations WiFi ne sont jamais envoyées au serveur. Aucun suivi, analyse ou prise empreinte digitale ne sont utilisés sur ce site Web. Voir le',
+        'Vos informations Wi-Fi ne sont jamais envoyées au serveur. Aucun suivi, analyse ou prise empreinte digitale ne sont utilisés sur ce site Web. Voir le',
       'desc.source': 'code source',
       'wifi.login': 'Connexion Wi-Fi',
       'wifi.name': 'Nom du réseau',
-      'wifi.name.placeholder': 'Nom du réseau WiFi',
+      'wifi.name.placeholder': 'Nom du réseau Wi-Fi',
       'wifi.name.hiddenSSID': 'SSID masqué',
       'wifi.password': 'Mot de passe',
       'wifi.password.placeholder': 'Mot de passe',
