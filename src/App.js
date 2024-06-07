@@ -221,7 +221,6 @@ function App() {
           onSSIDChange={onSSIDChange}
           onEapIdentityChange={onEapIdentityChange}
           onPasswordChange={onPasswordChange}
-          defaultValue={'PATATATATA'}
         />
       </Pane>
 
