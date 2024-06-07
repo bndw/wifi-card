@@ -203,6 +203,7 @@ function App() {
         {settings.additionalCards >= 0 &&
           [...Array(settings.additionalCards + 1)].map((el, idx) => (
             <WifiCard
+              keyid={idx}
               key={`card-nr-${idx}`}
               settings={settings}
               ssidError={errors.ssidError}
