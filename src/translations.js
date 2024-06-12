@@ -478,6 +478,40 @@ export const Translations = [
     },
   },
   {
+    id: 'de-CH',
+    name: 'Schweizer Deutsch',
+    translation: {
+      title: 'simple.WiFi Card Creator',
+      'desc.use':
+        'Sie chönd met dem Tool en eifachi Charte mit ehrene WLAN-Date erstelle. Verwänded Sie die, om eifach ehres interne WLAN unter de Metarbeiter zteile oder om es GASCHT-WLAN mit em Chond zteile.',
+      'desc.private':'Dini Zugegangsdate werded nie zom Server gsändet.',
+      'wifi.identity': 'Identität',
+      'wifi.identity.placeholder': 'Notzername',
+      'wifi.login': 'WLAN-Zugangsdate',
+      'wifi.name': 'WLAN-Netzwärchname',
+      'wifi.name.placeholder': 'WLAN-Netzwärchname',
+      'wifi.password': 'Passwort',
+      'wifi.password.placeholder': 'Passwort',
+      'wifi.password.hide': 'Passwort verstecke',
+      'wifi.name.hiddenSSID': 'Versteckti SSID',
+      'wifi.password.encryption': 'Verschlösselig',
+      'wifi.password.encryption.none': 'Keini',
+      'wifi.encryption.eapMethod': 'EAP Methode',
+      'wifi.tip':
+        'Zeig mit dinere Kamera vom Handys auf de QR-Code, um automatisch en Verbindung herzstelle',
+      'wifi.alert.name': 'De Netzwerkname dörf ned leer sii',
+      'wifi.alert.password': 'Das Passwort dörf ned leer sii',
+      'wifi.alert.password.length.5':
+        'Das Passwort muss mendestends 5 Zeiche lang sii, oder stell d Verschlösselig auf "Keini"',
+      'wifi.alert.password.8':
+        'Das Passwort muss mindestends 8 Zeichen lang sii, oder stell d Verschlösselig auf "Keini"',
+      'wifi.alert.eapIdentity': 'Die Identität darf ned leer sii',
+      'button.rotate': 'Dreie',
+      'button.print': 'Drocke',
+      select: 'Sprach uswähle',
+    },
+  },
+  {
     id: 'el-GR',
     name: 'Greek - Hellenic',
     translation: {
