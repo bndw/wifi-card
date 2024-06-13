@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import logo from '../src/images/wifi.png';
 import { Settings } from './components/Settings';
 import { WifiCard } from './components/WifiCard';
-import { LinkField } from './components/LinkField';
 import './style.css';
 import { Translations } from './translations';
 
@@ -30,7 +29,7 @@ function App() {
     // Settings: Portrait orientation
     portrait: false,
     // Settings: Additional cards
-    additionalCards: 0,
+    additionalCards: 1,
     // Settings: Show tip (legend) on card
     hideTip: false,
   });
@@ -127,7 +126,7 @@ function App() {
   };
   const onAdditionalCardsChange = (additionalCardsStr) => {
     const amount = parseInt(additionalCardsStr);
-    amount >= 0 && setSettings({ ...settings, additionalCards: amount });
+    amount >= 1 && setSettings({ ...settings, additionalCards: amount });
   };
   const onHideTipChange = (hideTip) => {
     setSettings({ ...settings, hideTip });
@@ -142,7 +141,6 @@ function App() {
     if (htmlDirection() === 'rtl') {
       html.style.direction = 'rtl';
     }
-    console.log('change detected');
   });
 
   return (
@@ -192,16 +190,6 @@ function App() {
         onHideTipChange={onHideTipChange}
       />
 
-      <LinkField 
-        settings={settings}
-        ssidError={errors.ssidError}
-        passwordError={errors.passwordError}
-        eapIdentityError={errors.eapIdentityError}
-        onSSIDChange={onSSIDChange}
-        onEapIdentityChange={onEapIdentityChange}
-        onPasswordChange={onPasswordChange}
-      />
-
       <Button
         id="print"
         appearance="primary"
@@ -212,8 +200,8 @@ function App() {
         {t('button.print')}
       </Button>
       <Pane id="print-area">
-        {settings.additionalCards >= 0 &&
-          [...Array(settings.additionalCards + 1)].map((el, idx) => (
+        {settings.additionalCards >= 1 &&
+          [...Array(settings.additionalCards)].map((el, idx) => (
             <WifiCard
               key={`card-nr-${idx}`}
               settings={settings}
