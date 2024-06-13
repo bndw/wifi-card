@@ -72,7 +72,7 @@ export const WifiCard = (props) => {
   };
 
   const keyid = props.keyid || '';
-  const suffixKeyID = (prefix) =>  `${prefix}-${keyid}`;
+  const suffixKeyID = (prefix) => `${prefix}-${keyid}`;
 
   return (
     <Card
@@ -105,7 +105,7 @@ export const WifiCard = (props) => {
 
         <Pane width={'100%'}>
           <TextareaField
-            id={suffixKeyID('ssid')} 
+            id={suffixKeyID('ssid')}
             type="text"
             marginBottom={5}
             autoComplete="off"
@@ -133,7 +133,7 @@ export const WifiCard = (props) => {
               />
 
               <TextareaField
-                id={suffixKeyID('identity')} 
+                id={suffixKeyID('identity')}
                 type="text"
                 marginBottom={5}
                 autoComplete="off"
