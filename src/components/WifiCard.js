@@ -47,7 +47,6 @@ export const WifiCard = (props) => {
     let data = '';
     Object.entries(opts).forEach(([k, v]) => (data += `${k}:${v};`));
     const qrval = `WIFI:${data};`;
-
     setQrvalue(qrval);
   }, [props.settings]);
 
