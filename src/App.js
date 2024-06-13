@@ -6,7 +6,11 @@ import { Settings } from './components/Settings';
 import { WifiCard } from './components/WifiCard';
 import './style.css';
 import { Translations } from './translations';
-import { getHashParam, setHash, stringToBoolean } from './commons/HandleHashParameters';
+import {
+  getHashParam,
+  setHash,
+  stringToBoolean,
+} from './commons/HandleHashParameters';
 
 function App() {
   const hashQuery = getHashParam();
@@ -56,7 +60,7 @@ function App() {
     html.style.direction = htmlDirection(language);
     i18n.changeLanguage(language);
 
-    setSettings({ ...settings, 'lng': language });
+    setSettings({ ...settings, lng: language });
   };
 
   const onPrint = () => {
