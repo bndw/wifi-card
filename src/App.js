@@ -6,33 +6,44 @@ import { Settings } from './components/Settings';
 import { WifiCard } from './components/WifiCard';
 import './style.css';
 import { Translations } from './translations';
+import {
+  getHashParam,
+  setHash,
+  stringToBoolean,
+} from './commons/HandleHashParameters';
 
 function App() {
+  const hashQuery = getHashParam();
+
   const html = document.querySelector('html');
+
   const { t, i18n } = useTranslation();
   const firstLoad = useRef(true);
   const [settings, setSettings] = useState({
     // Network SSID name
-    ssid: '',
+    ssid: hashQuery.get('ssid') || '',
     // Network password
-    password: '',
+    password: hashQuery.get('password') || '',
     // Settings: Network encryption mode
-    encryptionMode: 'WPA',
+    encryptionMode: hashQuery.get('encryptionMode') || 'WPA',
     // Settings: EAP Method
-    eapMethod: 'PWD',
+    eapMethod: hashQuery.get('eapMethod') || '',
     // Settings: EAP identity
-    eapIdentity: '',
+    eapIdentity: hashQuery.get('eapIdentity') || '',
     // Settings: Hide password on the printed card
-    hidePassword: false,
+    hidePassword: stringToBoolean(hashQuery.get('hidePassword')) || false,
     // Settings: Mark your network as hidden SSID
-    hiddenSSID: false,
+    hiddenSSID: stringToBoolean(hashQuery.get('hiddenSSID')) || false,
     // Settings: Portrait orientation
-    portrait: false,
+    portrait: stringToBoolean(hashQuery.get('portrait')) || false,
     // Settings: Additional cards
-    additionalCards: 0,
+    additionalCards: hashQuery.get('additionalCards') || 0,
     // Settings: Show tip (legend) on card
-    hideTip: false,
+    hideTip: stringToBoolean(hashQuery.get('hideTip')) || false,
+    // Display language
+    lng: hashQuery.get('lng') || i18n.language,
   });
+
   const [errors, setErrors] = useState({
     ssidError: '',
     passwordError: '',
@@ -48,6 +59,8 @@ function App() {
   const onChangeLanguage = (language) => {
     html.style.direction = htmlDirection(language);
     i18n.changeLanguage(language);
+
+    setSettings({ ...settings, lng: language });
   };
 
   const onPrint = () => {
@@ -142,6 +155,9 @@ function App() {
       html.style.direction = 'rtl';
     }
   });
+  useEffect(() => {
+    setHash(settings);
+  }, [settings]);
 
   return (
     <Pane>

@@ -7,7 +7,6 @@ import {
 } from 'evergreen-ui';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import i18n from '../i18n';
 import { Translations } from '../translations';
 import './style.css';
 
@@ -20,12 +19,13 @@ export const Settings = (props) => {
     { label: 'WEP', value: 'WEP' },
   ];
   const eapMethods = [{ label: 'PWD', value: 'PWD' }];
+
   const langSelectDefaultValue = () => {
-    const t = Translations.filter((t) => t.id === i18n.language);
+    const t = Translations.filter((t) => t.id === props.settings.lng);
     if (t.length !== 1) {
       return 'en-US';
     }
-    return t[0].id;
+    return props.settings.lng;
   };
 
   useEffect(() => {
