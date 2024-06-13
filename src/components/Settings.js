@@ -21,11 +21,11 @@ export const Settings = (props) => {
   const eapMethods = [{ label: 'PWD', value: 'PWD' }];
 
   const langSelectDefaultValue = () => {
-    const t = Translations.filter((t) => t.id === props.settings.language);
+    const t = Translations.filter((t) => t.id === props.settings.lng);
     if (t.length !== 1) {
       return 'en-US';
     }
-    return props.settings.language;
+    return props.settings.lng;
   };
 
   useEffect(() => {
