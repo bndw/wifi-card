@@ -71,6 +71,9 @@ export const WifiCard = (props) => {
     return !eapIdentityFieldLabel() ? '' : t('wifi.encryption.eapMethod');
   };
 
+  const keyid = props.keyid || '';
+  const suffixKeyID = (prefix) =>  `${prefix}-${keyid}`;
+
   return (
     <Card
       className="card-print"
@@ -102,7 +105,7 @@ export const WifiCard = (props) => {
 
         <Pane width={'100%'}>
           <TextareaField
-            id={'ssid' + (props.keyid === undefined ? '' : props.keyid)}
+            id={suffixKeyID('ssid')} 
             type="text"
             marginBottom={5}
             autoComplete="off"
@@ -120,9 +123,7 @@ export const WifiCard = (props) => {
           {props.settings.encryptionMode === 'WPA2-EAP' && (
             <>
               <TextareaField
-                id={
-                  'eapmethod' + (props.keyid === undefined ? '' : props.keyid)
-                }
+                id={suffixKeyID('eapmethod')}
                 type="text"
                 marginBottom={5}
                 readOnly={true}
@@ -132,7 +133,7 @@ export const WifiCard = (props) => {
               />
 
               <TextareaField
-                id={'identity' + (props.keyid === undefined ? '' : props.keyid)}
+                id={suffixKeyID('identity')} 
                 type="text"
                 marginBottom={5}
                 autoComplete="off"
@@ -152,7 +153,7 @@ export const WifiCard = (props) => {
           )}
           {!(props.settings.hidePassword || !props.settings.encryptionMode) && (
             <TextareaField
-              id={'password' + (props.keyid === undefined ? '' : props.keyid)}
+              id={suffixKeyID('password')}
               type="text"
               maxLength="63"
               autoComplete="off"
