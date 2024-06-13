@@ -29,7 +29,7 @@ function App() {
     // Settings: Portrait orientation
     portrait: false,
     // Settings: Additional cards
-    additionalCards: 0,
+    additionalCards: 1,
     // Settings: Show tip (legend) on card
     hideTip: false,
   });
@@ -126,7 +126,7 @@ function App() {
   };
   const onAdditionalCardsChange = (additionalCardsStr) => {
     const amount = parseInt(additionalCardsStr);
-    amount >= 0 && setSettings({ ...settings, additionalCards: amount });
+    amount >= 1 && setSettings({ ...settings, additionalCards: amount });
   };
   const onHideTipChange = (hideTip) => {
     setSettings({ ...settings, hideTip });
@@ -200,8 +200,8 @@ function App() {
         {t('button.print')}
       </Button>
       <Pane id="print-area">
-        {settings.additionalCards >= 0 &&
-          [...Array(settings.additionalCards + 1)].map((el, idx) => (
+        {settings.additionalCards >= 1 &&
+          [...Array(settings.additionalCards)].map((el, idx) => (
             <WifiCard
               key={`card-nr-${idx}`}
               settings={settings}
