@@ -86,3 +86,4 @@ We would love for you to contribute to different languages and help make it even
 | Simplified Cantonese         | [ous50](https://github.com/ous50)                  |
 | Punjabi                      | [phoenixgill34](https://github.com/phoenixgill34/) |
 | Danish                       | [dk90103](https://github.com/dk90103/)             |
+| Esperanto                    | [zeecho](https://github.com/zeecho/)             |
