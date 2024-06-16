@@ -1102,7 +1102,8 @@ export const Translations = [
       'wifi.password.encryption': 'Ĉifrado',
       'wifi.password.encryption.none': 'Nenio',
       'wifi.encryption.eapMethod': 'EAP-metodo',
-      'wifi.tip': 'Metu la fotilon de via telefono antaŭ la QR-kodo por aŭtomate konektiĝi',
+      'wifi.tip':
+        'Metu la fotilon de via telefono antaŭ la QR-kodo por aŭtomate konektiĝi',
       'wifi.alert.name': 'Retnomo ne povas esti malplena',
       'wifi.alert.password': 'Pasvorto ne povas esti malplena',
       'wifi.alert.password.length.5':
