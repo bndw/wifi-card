@@ -1127,6 +1127,44 @@ export const Translations = [
       select: 'Vælg sprog',
     },
   },
+  {
+    id: 'sk-SK',
+    name: 'Slovak - Slovenčina',
+    translation: {
+      title: 'WiFi Karta',
+      'desc.use':
+        'Vytlačte si jednoduchú kartu s prihlasovacími údajmi do siete Wi-Fi. Prilepte ju na chladničku, majte ju v peňaženke atď.',
+      'desc.privacy':
+        'Vaše Wi-Fi informácie sa nikdy neodošlú na server. Na tejto webovej stránke sa nepoužíva žiadne sledovanie, analytika ani fingerprinting. Zobraziť',
+      'desc.source': 'zdrojový kód',
+      'wifi.identity': 'Identita',
+      'wifi.identity.placeholder': 'Uživateľské meno',
+      'wifi.login': 'WiFi Login',
+      'wifi.name': 'Názov siete',
+      'wifi.name.hiddenSSID': 'Skryté SSID',
+      'cards.additional': 'Počet ďalších kariet na tlač',
+      'cards.tip.hide': 'Schovať nápovedu',
+      'wifi.name.placeholder': 'Názov siete WiFi',
+      'wifi.password': 'Heslo',
+      'wifi.password.placeholder': 'Heslo',
+      'wifi.password.hide': 'Schovať heslo',
+      'wifi.password.encryption': 'Šifrovanie',
+      'wifi.password.encryption.none': 'Žiadne',
+      'wifi.encryption.eapMethod': 'Metóda EAP',
+      'wifi.tip':
+        'Namierte fotoaparát telefónu na QR kód a automaticky sa pripojte.',
+      'wifi.alert.name': 'Názov siete nesmie byť prázdny',
+      'wifi.alert.password': 'Heslo nesmie byť prázdne',
+      'wifi.alert.password.length.5':
+        'Heslo musí mať aspoň 5 znakov, alebo zmeňte šifrovanie na "Žiadne"',
+      'wifi.alert.password.length.8':
+        'Heslo musí mať aspoň 8 znakov, alebo zmeňte šifrovanie na "Žiadne"',
+      'wifi.alert.eapIdentity': 'Identita nesmie byť prázdna',
+      'button.rotate': 'Otočiť',
+      'button.print': 'Vytlačiť',
+      select: 'Vybrať jazyk',
+    },
+  },
 ].sort((a, b) => {
   return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
 });
