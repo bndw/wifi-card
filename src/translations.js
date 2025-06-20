@@ -38,6 +38,45 @@ export const Translations = [
     },
   },
   {
+    id: 'he-IL',
+    name: 'Hebrew - עברית',
+    rtl: true,
+    translation: {
+      title: 'כרטיס WiFi',
+      'desc.use':
+        'הדפיסו כרטיס פשוט עם פרטי הכניסה שלכם לרשת ה-WiFi. הדביקו אותו למקרר, שמרו אותו בארנק וכו.',
+      'desc.privacy':
+        'פרטי ה WiFi שלכם לעולם לא נשלחים לשרת. אתר זה אינו עוקב, משתמש באנליטיקות או טביעות אצבע. צפה ב',
+      'desc.source': 'קוד המקור',
+      'wifi.identity': 'זהות',
+      'wifi.identity.placeholder': 'שם משתמש',
+      'wifi.login': 'פרטי WiFi',
+      'wifi.name': 'שם רשת',
+      'wifi.name.hiddenSSID': 'רשת נסתרת (SSID)',
+      'cards.additional': 'מספר כרטיסים נוספים להדפסה',
+      'cards.tip.hide': 'הסתרת טיפ (מקרא)',
+      'wifi.name.placeholder': 'שם רשת WiFi',
+      'wifi.password': 'סיסמה',
+      'wifi.password.placeholder': 'סיסמה',
+      'wifi.password.hide': 'הסתר סיסמה',
+      'wifi.password.encryption': 'הצפנה',
+      'wifi.password.encryption.none': 'None',
+      'wifi.encryption.eapMethod': 'שיטת אימות EAP',
+      'wifi.tip':
+        "כוונו את מצלמת הטלפון אל קוד ה-QR כדי להתחבר אוטומטית",
+      'wifi.alert.name': 'שם רשת לא יכול להיות ריק',
+      'wifi.alert.password': 'סיסמה לא יכולה להיות ריקה',
+      'wifi.alert.password.length.5':
+        'הסיסמה חייבת להיות באורך של לפחות 5 תווים, או שנה את ההצפנה ל "None"',
+      'wifi.alert.password.length.8':
+        'הסיסמה חייבת להיות באורך של לפחות 8 תווים, או שנה את ההצפנה ל "None"',
+      'wifi.alert.eapIdentity': 'זהות לא יכולה להיות ריקה',
+      'button.rotate': 'סובב',
+      'button.print': 'הדפס',
+      select: 'בחר שפה',
+    },
+  },
+  {
     id: 'sv-SE',
     name: 'Swedish - Svenska',
     translation: {
