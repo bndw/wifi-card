@@ -134,12 +134,14 @@ export const Translations = [
     id: 'zh-CN',
     name: 'Simplified Chinese - 简体中文',
     translation: {
-      title: 'WiFi 连接卡',
+      title: 'Wi-Fi 连接卡',
       'desc.use':
-        '打印一张带有 WiFi 详细信息的登录卡片，把它贴到冰箱上、放到你的钱包里...',
+        '打印一张带有 Wi-Fi 详细信息的登录卡片，把它贴到冰箱上、放到你的钱包里...',
       'desc.privacy':
         '您的 WiFi 信息永远不会发送到服务端。本网站不使用追踪、分析或指纹识别。查看',
       'desc.source': '源码',
+      'cards.additional': '额外打印卡片数量',
+      'cards.tip.hide': '隐藏提示（图例）',
       'wifi.identity': '身份',
       'wifi.identity.placeholder': '用户名',
       'wifi.login': '连接 WiFi',
@@ -167,16 +169,18 @@ export const Translations = [
     id: 'zh-HK',
     name: 'Traditional Chinese - 繁體中文 香港',
     translation: {
-      title: 'WiFi 連接卡',
+      title: 'Wi-Fi 連接咭',
       'desc.use':
-        '打印一張 WiFi 詳細資料嘅連接卡，將佢癡喺雪櫃上面、放喺銀包入面... ',
+        '打印一張 Wi-Fi 詳細資料嘅連接卡，你可以將佢癡喺雪櫃上面、放喺銀包入面... ',
       'desc.privacy':
-        '你嘅 WiFi 資料永遠唔會傳送去網站伺服器。呢個網站無使用任何追蹤、分析或者裝置指紋辨識。睇吓',
-      'desc.source': '源代碼',
-      'wifi.login': '連接 WiFi',
+        '你嘅 Wi-Fi 資料永遠唔會傳送去網站伺服器。呢個網站唔會使用任何追蹤、分析或者裝置指紋辨識。',
+      'desc.source': '撳呢度睇源代碼',
+      'cards.additional': '要打印幾多張 Wi-Fi 卡片？',
+      'cards.tip.hide': '隱藏提示（圖例）',
+      'wifi.login': '連接 Wi-Fi',
       'wifi.name': '網絡名稱',
       'wifi.name.hiddenSSID': '隐藏 SSID',
-      'wifi.name.placeholder': 'WiFi 網絡名稱',
+      'wifi.name.placeholder': 'Wi-Fi 網絡名稱',
       'wifi.password': '密碼',
       'wifi.password.placeholder': '密碼',
       'wifi.password.hide': '隐藏密码',
@@ -201,8 +205,10 @@ export const Translations = [
       'desc.use':
         '打印一张带有 Wi-Fi 详细信息嘅连接咭，你可以将佢黐喺冰箱上面，或者放喺银包入面...',
       'desc.privacy':
-        '你嘅 Wi-Fi 信息永远不会发送到服务端。本网站不使用追踪、分析或指纹识别。喺度睇',
-      'desc.source': '源代码',
+        '你嘅 Wi-Fi 信息永远不会发送到服务端。本网站不使用追踪、分析或指纹识别。',
+      'desc.source': '喺度睇源代码',
+      'cards.additional': '要*多打印*多少张 Wi-Fi 卡片？',
+      'cards.tip.hide': '隐藏提示（图例）',
       'wifi.identity': '身份',
       'wifi.identity.placeholder': '用户名',
       'wifi.login': '连接 Wi-Fi',
@@ -230,12 +236,14 @@ export const Translations = [
     id: 'zh-TW',
     name: 'Traditional Chinese - 繁體中文 台灣',
     translation: {
-      title: 'WiFi Card',
+      title: 'Wi-Fi Card',
       'desc.use':
-        '列印一張含有 WiFi 連接資訊的卡片，將它貼在冰箱、放在你的錢包裡... ',
+        '列印一張含有 Wi-Fi 連接資訊的卡片，將它貼在冰箱、放在你的錢包裡... ',
       'desc.privacy':
-        '您的 WiFi 訊息永遠不會被送到伺服器。本網站不使用追蹤、分析或指紋識別。查看',
+        '您的 Wi-Fi 訊息永遠不會被送到伺服器。本網站不使用追蹤、分析或指紋識別。查看',
       'desc.source': '原始碼',
+      'cards.additional': '额外列印卡片數量',
+      'cards.tip.hide': '隱藏提示（圖例）',
       'wifi.login': '連接 WiFi',
       'wifi.name': '網路名稱',
       'wifi.name.hiddenSSID': '隱藏 SSID',

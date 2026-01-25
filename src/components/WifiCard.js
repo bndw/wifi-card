@@ -8,7 +8,7 @@ import {
   Text,
   TextareaField,
 } from 'evergreen-ui';
-import QRCode from 'qrcode.react';
+import { QRCodeSVG as QRCode } from 'qrcode.react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import logo from '../../src/images/wifi.png';

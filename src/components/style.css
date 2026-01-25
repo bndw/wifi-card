@@ -67,6 +67,12 @@ button {
   #print-area,
   #print-area * {
     visibility: visible;
+    /* For printing, use a font stack that prioritizes system fonts 
+       to ensure CJK characters are rendered correctly in Chrome. */
+    font-family: 'PingFang SC', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans JP',
+      'Noto Sans KR', 'Microsoft YaHei', serif;
+    font-weight: 500;
+    font-style: semibold;
   }
   #print-area {
     position: absolute;
