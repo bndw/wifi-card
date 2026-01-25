@@ -1313,7 +1313,7 @@ export const Translations = [
   },
   {
     id: 'ms-MY',
-    name: 'Malay (Malaysia)',
+    name: 'Malay - Malaysia',
     translation: {
       title: 'Kad WiFi',
       'desc.use':
