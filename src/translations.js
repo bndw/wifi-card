@@ -1317,7 +1317,7 @@ export const Translations = [
     translation: {
       title: 'Kad WiFi',
       'desc.use':
-        'Tampal kad ringkas dengan butiran login anda. Tampal pada peti sejuk, simpan dalam dompet anda, dan sebagainya.',
+        'Cetak kad ringkas dengan butiran login anda. Tampal pada peti sejuk, simpan dalam dompet anda, dan sebagainya.',
       'desc.privacy':
         'Informasi WiFi anda tidak dihantar ke server. Tiada penjejakan, analitik, atau pencetakan cap jari digunakan di laman web ini. Lihat',
       'desc.source': 'kod sumber',
