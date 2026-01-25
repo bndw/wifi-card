@@ -1202,6 +1202,40 @@ export const Translations = [
       select: 'Mifidiana fiteny hafa',
     },
   },
+  {
+    id: 'bn-BD',
+    name: 'Bangla - বাংলা',
+    translation: {
+      title: 'ওয়াইফাই কার্ড',
+      'desc.use':
+        'আপনার ওয়াই-ফাই লগইন বিবরণ সহ একটি সাধারণ কার্ড প্রিন্ট করুন। এটি ফ্রিজে টেপ দিয়ে লাগান, আপনার ওয়ালেটে রাখুন, ইত্যাদি।',
+      'desc.privacy':
+        'আপনার ওয়াই-ফাই তথ্য কখনই সার্ভারে পাঠানো হয় না। এই ওয়েবসাইটে কোন ট্র্যাকিং, অ্যানালিটিক্স বা ফিঙ্গারপ্রিন্টিং ব্যবহার করা হয় না। দেখুন',
+      'desc.source': 'সোর্স কোড',
+      'wifi.login': 'ওয়াই-ফাই লগইন',
+      'wifi.name': 'নেটওয়ার্কের নাম',
+      'wifi.name.hiddenSSID': 'লুকানো SSID',
+      'cards.additional': 'অতিরিক্ত কার্ড প্রিন্ট করা হবে',
+      'cards.tip.hide': 'নির্দেশ (টীকা) লুকান',
+      'wifi.name.placeholder': 'ওয়াই-ফাই নেটওয়ার্কের নাম',
+      'wifi.password': 'পাসওয়ার্ড',
+      'wifi.password.placeholder': 'পাসওয়ার্ড',
+      'wifi.password.hide': 'পাসওয়ার্ড লুকান',
+      'wifi.password.encryption': 'এনক্রিপশন',
+      'wifi.password.encryption.none': 'নেই',
+      'wifi.tip':
+        'স্বয়ংক্রিয়ভাবে সংযোগ করতে আপনার ফোনের ক্যামেরা QR কোডে নির্দেশ করুন',
+      'wifi.alert.name': 'নেটওয়ার্কের নাম খালি হতে পারে না',
+      'wifi.alert.password': 'পাসওয়ার্ড খালি হতে পারে না',
+      'wifi.alert.password.length.5':
+        'পাসওয়ার্ড কমপক্ষে ৫ অক্ষরের হতে হবে, অথবা এনক্রিপশন পরিবর্তন করে "নেই" দিন',
+      'wifi.alert.password.length.8':
+        'পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে, অথবা এনক্রিপশন পরিবর্তন করে "নেই" দিন',
+      'button.rotate': 'ঘুরান',
+      'button.print': 'প্রিন্ট',
+      select: 'ভাষা নির্বাচন করুন',
+    },
+  },
 ].sort((a, b) => {
   return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
 });
