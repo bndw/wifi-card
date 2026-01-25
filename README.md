@@ -88,3 +88,4 @@ We would love for you to contribute to different languages and help make it even
 | Danish                       | [dk90103](https://github.com/dk90103/)             |
 | Hebrew                       | [Ido Bronfeld](https://github.com/HelloWorldIL)    |
 | Slovak                       | [matejkubinec](https://github.com/matejkubinec/)   |
+| Esperanto                    | [zeecho](https://github.com/zeecho/)               |
