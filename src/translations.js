@@ -530,7 +530,7 @@ export const Translations = [
       title: 'simple.WiFi Card Creator',
       'desc.use':
         'Sie chönd met dem Tool en eifachi Charte mit ehrene WLAN-Date erstelle. Verwänded Sie die, om eifach ehres interne WLAN unter de Metarbeiter zteile oder om es GASCHT-WLAN mit em Chond zteile.',
-      'desc.private':'Dini Zugegangsdate werded nie zom Server gsändet.',
+      'desc.private': 'Dini Zugegangsdate werded nie zom Server gsändet.',
       'wifi.identity': 'Identität',
       'wifi.identity.placeholder': 'Notzername',
       'wifi.login': 'WLAN-Zugangsdate',
@@ -678,7 +678,7 @@ export const Translations = [
       'wifi.name': 'Nom de la ret',
       'wifi.name.hiddenSSID': 'SSID amagat',
       'cards.additional': 'Carta suplementàrias d’imprimir',
-      'cards.tip.hide': 'Rescondre astúcia (legenda)',      
+      'cards.tip.hide': 'Rescondre astúcia (legenda)',
       'wifi.name.placeholder': 'Nom de la ret WiFi',
       'wifi.password': 'Senhal',
       'wifi.password.placeholder': 'Senhal',
