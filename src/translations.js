@@ -1311,6 +1311,43 @@ export const Translations = [
       select: 'Elektu lingvon',
     },
   },
+  {
+    id: 'ms-MY',
+    name: 'Malay (Malaysia)',
+    translation: {
+      title: 'Kad WiFi',
+      'desc.use':
+        'Tampal kad ringkas dengan butiran login anda. Tampal pada peti sejuk, simpan dalam dompet anda, dan sebagainya.',
+      'desc.privacy':
+        'Informasi WiFi anda tidak dihantar ke server. Tiada penjejakan, analitik, atau pencetakan cap jari digunakan di laman web ini. Lihat',
+      'desc.source': 'kod sumber',
+      'wifi.identity': 'Identiti',
+      'wifi.identity.placeholder': 'Nama Pengguna',
+      'wifi.login': 'Login WiFi',
+      'wifi.name': 'Nama Rangkaian',
+      'wifi.name.hiddenSSID': 'SSID Tersembunyi',
+      'cards.additional': 'Bilangan kad untuk dicetak',
+      'cards.tip.hide': 'Sembunyikan petua (legenda)',
+      'wifi.name.placeholder': 'Nama Rangkaian WiFi',
+      'wifi.password': 'Kata Laluan',
+      'wifi.password.placeholder': 'Kata Laluan',
+      'wifi.password.hide': 'Sembunyikan kata laluan',
+      'wifi.password.encryption': 'Enkripsi',
+      'wifi.password.encryption.none': 'Tiada',
+      'wifi.encryption.eapMethod': 'Kaedah EAP',
+      'wifi.tip': 'Imbas Kod QR untuk menyambung ke WiFi secara automatik',
+      'wifi.alert.name': 'Nama rangkaian tidak boleh kosong',
+      'wifi.alert.password': 'Kata laluan tidak boleh kosong',
+      'wifi.alert.password.length.5':
+        'Kata laluan mesti sekurang-kurangnya 5 aksara, atau tukar enkripsi kepada "Tiada"',
+      'wifi.alert.password.length.8':
+        'Kata laluan mesti sekurang-kurangnya 8 aksara, atau tukar enkripsi kepada "Tiada"',
+      'wifi.alert.eapIdentity': 'Identiti tidak boleh kosong',
+      'button.rotate': 'Putar',
+      'button.print': 'Cetak',
+      select: 'Pilih Bahasa',
+    },
+  },
 ].sort((a, b) => {
   return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
 });

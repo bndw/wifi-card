@@ -90,3 +90,4 @@ We would love for you to contribute to different languages and help make it even
 | Slovak                       | [matejkubinec](https://github.com/matejkubinec/)   |
 | Esperanto                    | [zeecho](https://github.com/zeecho/)               |
 | German (Swiss)               | [NZehnder](https://github.com/NZehnder)            |
+| Malay (Malaysia)             | [hh-shiung](https://github.com/hh-shiung/)         |
