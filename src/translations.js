@@ -1327,7 +1327,7 @@ export const Translations = [
       'wifi.name': 'Nama Rangkaian',
       'wifi.name.hiddenSSID': 'SSID Tersembunyi',
       'cards.additional': 'Bilangan kad untuk dicetak',
-      'cards.tip.hide': 'Sembunyikan petua (legenda)',
+      'cards.tip.hide': 'Sembunyikan panduan (legenda)',
       'wifi.name.placeholder': 'Nama Rangkaian WiFi',
       'wifi.password': 'Kata Laluan',
       'wifi.password.placeholder': 'Kata Laluan',
