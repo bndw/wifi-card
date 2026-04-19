@@ -14,16 +14,16 @@ import { useTranslation } from 'react-i18next';
 import logo from '../../src/images/wifi.png';
 import './style.css';
 
+const WIFI_ESCAPE_CHARS = ['"', ';', ',', ':', '\\'];
+
 export const WifiCard = (props) => {
   const { t } = useTranslation();
   const [qrvalue, setQrvalue] = useState('');
 
   const escape = (v) => {
-    const needsEscape = ['"', ';', ',', ':', '\\'];
-
     let escaped = '';
     for (const c of v) {
-      if (needsEscape.includes(c)) {
+      if (WIFI_ESCAPE_CHARS.includes(c)) {
         escaped += `\\${c}`;
       } else {
         escaped += c;

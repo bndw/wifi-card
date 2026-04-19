@@ -120,8 +120,10 @@ function App() {
     setSettings({ ...settings, hiddenSSID });
   };
   const onAdditionalCardsChange = (additionalCardsStr) => {
-    const amount = parseInt(additionalCardsStr);
-    amount >= 1 && setSettings({ ...settings, additionalCards: amount });
+    const amount = parseInt(additionalCardsStr, 10);
+    if (amount >= 1) {
+      setSettings({ ...settings, additionalCards: amount });
+    }
   };
   const onHideTipChange = (hideTip) => {
     setSettings({ ...settings, hideTip });
@@ -136,6 +138,7 @@ function App() {
     if (htmlDirection() === 'rtl') {
       html.style.direction = 'rtl';
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

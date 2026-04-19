@@ -34,7 +34,8 @@ export const Settings = (props) => {
       props.onFirstLoad();
       props.onOrientationChange(true);
     }
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Pane id="settings" maxWidth={props.settings.portrait ? '350px' : '100%'}>

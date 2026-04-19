@@ -7,7 +7,7 @@ import { Translations } from './translations';
 // {
 //   'en-US': {
 //     translation: {
-//       title: 'WiFi Card',,
+//       title: 'WiFi Card',
 //       ...
 //     }
 //   },
