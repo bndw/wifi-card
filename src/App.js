@@ -87,7 +87,7 @@ function App() {
       });
       return;
     }
-    document.title = 'WiFi Card - ' + settings.ssid;
+    document.title = 'WiFiCard-' + settings.ssid;
     window.print();
   };
 
