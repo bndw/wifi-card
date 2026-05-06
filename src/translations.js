@@ -1347,6 +1347,42 @@ export const Translations = [
       select: 'Pilih Bahasa',
     },
   },
+  {
+    id: 'cs-CZ',
+    name: 'Czech – Čeština',
+    translation: {
+      title: 'WiFi Card',
+      'desc.use':
+        'Jednoduše si vytiskněte kartu s přihlašovacími údaji na Wi-Fi. Přilepte ji na ledničku, dejte si ji do peněženky nebo jinam.',
+      'desc.privacy':
+        'Informace o vaší Wi-Fi se nikdy neodesílají na server. Na těchto webových stránkách neprobíhá žádné sledování ani analýza. Zobrazit',
+      'desc.source': 'zdrojový kód',
+      'wifi.identity': 'Identita',
+      'wifi.identity.placeholder': 'Uživatelské jméno',
+      'wifi.login': 'Login',
+      'wifi.name': 'Název sítě',
+      'wifi.name.hiddenSSID': 'Skrytá síť',
+      'wifi.name.placeholder': 'Název sítě',
+      'wifi.password': 'Heslo',
+      'wifi.password.placeholder': 'Heslo',
+      'wifi.password.hide': 'Skrýt heslo',
+      'wifi.password.encryption': 'Typ zabezpečení',
+      'wifi.password.encryption.none': 'Otevřená',
+      'wifi.encryption.eapMethod': 'EAP',
+      'wifi.tip':
+        'Namířením fotoaparátu telefonu na QR kód se automaticky připojíte.',
+      'wifi.alert.name': 'Název sítě nemůže být prázdný',
+      'wifi.alert.password': 'Heslo nemůže být prázdné',
+      'wifi.alert.password.length.5':
+        'Heslo musí mít alespoň 5 znaků nebo je nutné změnit typ zabezpečení na "otevřená"',
+      'wifi.alert.password.length.8':
+        'Heslo musí mít alespoň 8 znaků nebo je nutné změnit typ zabezpečení na "otevřená"',
+      'wifi.alert.eapIdentity': 'Identita nemůže být prázdná',
+      'button.rotate': 'Otočit',
+      'button.print': 'Tisk',
+      select: 'Vybrat jazyk',
+    },
+  },
 ].sort((a, b) => {
   return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
 });
