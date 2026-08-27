@@ -19,6 +19,15 @@
     "husky": "^9.1.7",
     "prettier": "3.8.1"
   },
+  "resolutions": {
+    "@tootallnate/once": "^2.0.1",
+    "postcss": "^8.5.23",
+    "qs": "^6.15.2",
+    "serialize-javascript": "^7.0.5",
+    "svgo": "^2.8.3",
+    "underscore": "^1.13.8",
+    "uuid": "^11.1.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
