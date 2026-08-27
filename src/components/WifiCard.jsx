@@ -13,19 +13,7 @@ import { useTranslation } from 'react-i18next';
 import logo from '../images/wifi.png';
 import './style.css';
 
-const escape = (v) => {
-  const needsEscape = ['"', ';', ',', ':', '\\'];
-
-  let escaped = '';
-  for (const c of v) {
-    if (needsEscape.includes(c)) {
-      escaped += `\\${c}`;
-    } else {
-      escaped += c;
-    }
-  }
-  return escaped;
-};
+const escape = (v) => v.replace(/([\\";,:])/g, '\\$1');
 
 const buildQrValue = (settings) => {
   let opts = {};
@@ -37,7 +25,9 @@ const buildQrValue = (settings) => {
   }
   opts.S = escape(settings.ssid);
   opts.P = escape(settings.password);
-  opts.H = settings.hiddenSSID;
+  if (settings.hiddenSSID) {
+    opts.H = true;
+  }
 
   let data = '';
   Object.entries(opts).forEach(([k, v]) => (data += `${k}:${v};`));
@@ -68,7 +58,7 @@ export const WifiCard = (props) => {
     return !eapIdentityFieldLabel() ? '' : t('wifi.encryption.eapMethod');
   };
 
-  const keyid = props.keyid || '';
+  const keyid = props.keyid ?? '';
   const suffixKeyID = (prefix) => `${prefix}-${keyid}`;
 
   return (

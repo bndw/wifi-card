@@ -1,5 +1,5 @@
 import { Button, Heading, Link, Pane, Paragraph } from 'evergreen-ui';
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import logo from './images/wifi.png';
 import { Settings } from './components/Settings';
@@ -20,7 +20,6 @@ function App() {
     portrait: window.innerWidth < 500,
     additionalCards: 1,
     hideTip: false,
-    lng: 'en-US',
   }));
 
   const [errors, setErrors] = useState({
@@ -57,8 +56,6 @@ function App() {
 
   const onChangeLanguage = (language) => {
     i18n.changeLanguage(language);
-
-    update({ lng: language });
   };
 
   const onPrint = () => {
@@ -103,13 +100,17 @@ function App() {
       });
       return;
     }
+    const previousTitle = document.title;
     document.title = 'WiFi Card - ' + settings.ssid;
     window.print();
+    document.title = previousTitle;
   };
 
   useEffect(() => {
     document.documentElement.dir = htmlDirection(i18n.language);
   }, [i18n.language, htmlDirection]);
+
+  const cardCount = Math.max(1, parseInt(settings.additionalCards, 10) || 1);
 
   return (
     <Pane>
@@ -154,18 +155,17 @@ function App() {
         {t('button.print')}
       </Button>
       <Pane id="print-area">
-        {settings.additionalCards >= 1 &&
-          [...Array(settings.additionalCards)].map((el, idx) => (
-            <WifiCard
-              keyid={idx}
-              key={`card-nr-${idx}`}
-              settings={settings}
-              ssidError={errors.ssidError}
-              passwordError={errors.passwordError}
-              eapIdentityError={errors.eapIdentityError}
-              onUpdate={update}
-            />
-          ))}
+        {[...Array(cardCount)].map((el, idx) => (
+          <WifiCard
+            keyid={idx}
+            key={`card-nr-${idx}`}
+            settings={settings}
+            ssidError={errors.ssidError}
+            passwordError={errors.passwordError}
+            eapIdentityError={errors.eapIdentityError}
+            onUpdate={update}
+          />
+        ))}
       </Pane>
     </Pane>
   );
