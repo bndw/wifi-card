@@ -28,11 +28,6 @@ export const Settings = (props) => {
     return t[0].id;
   };
 
-  const onAdditionalCardsChange = (additionalCardsStr) => {
-    const amount = parseInt(additionalCardsStr);
-    amount >= 1 && props.onUpdate({ additionalCards: amount });
-  };
-
   return (
     <Pane id="settings" maxWidth={props.settings.portrait ? '350px' : '100%'}>
       <SelectField
@@ -79,7 +74,7 @@ export const Settings = (props) => {
         width={300}
         label={t('cards.additional')}
         value={props.settings.additionalCards}
-        onChange={(e) => onAdditionalCardsChange(e.target.value)}
+        onChange={(e) => props.onUpdate({ additionalCards: e.target.value })}
       />
       <RadioGroup
         label={t('wifi.password.encryption')}

@@ -38,10 +38,6 @@ textarea {
   overflow: hidden;
   resize: none;
 }
-textarea#password {
-  height: 60px !important;
-}
-
 hr {
   margin-top: 0;
 }
