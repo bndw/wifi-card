@@ -1,14 +1,32 @@
-import {
-  Checkbox,
-  Pane,
-  RadioGroup,
-  SelectField,
-  TextInputField,
-} from 'evergreen-ui';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
 import { Translations } from '../translations';
 import './style.css';
+
+const Checkbox = ({ label, checked, onChange }) => (
+  <label className="checkbox">
+    <input type="checkbox" checked={checked} onChange={onChange} />
+    <span>{label}</span>
+  </label>
+);
+
+const RadioGroup = ({ label, name, value, options, onChange, className }) => (
+  <fieldset className={`radio-group ${className || ''}`}>
+    <legend>{label}</legend>
+    {options.map((option) => (
+      <label key={option.value} className="radio">
+        <input
+          type="radio"
+          name={name}
+          value={option.value}
+          checked={value === option.value}
+          onChange={onChange}
+        />
+        <span>{option.label}</span>
+      </label>
+    ))}
+  </fieldset>
+);
 
 export const Settings = (props) => {
   const { t } = useTranslation();
@@ -29,20 +47,24 @@ export const Settings = (props) => {
   };
 
   return (
-    <Pane id="settings" maxWidth={props.settings.portrait ? '350px' : '100%'}>
-      <SelectField
-        width={300}
-        inputHeight={38}
-        label={t('select')}
-        onChange={(e) => props.onLanguageChange(e.target.value)}
-        defaultValue={langSelectDefaultValue()}
-      >
-        {Translations.map((t) => (
-          <option key={t.id} value={t.id}>
-            {t.name}
-          </option>
-        ))}
-      </SelectField>
+    <div
+      id="settings"
+      style={{ maxWidth: props.settings.portrait ? '350px' : '100%' }}
+    >
+      <div className="input-field">
+        <label htmlFor="language">{t('select')}</label>
+        <select
+          id="language"
+          onChange={(e) => props.onLanguageChange(e.target.value)}
+          defaultValue={langSelectDefaultValue()}
+        >
+          {Translations.map((t) => (
+            <option key={t.id} value={t.id}>
+              {t.name}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <Checkbox
         label={t('button.rotate')}
@@ -69,30 +91,31 @@ export const Settings = (props) => {
         checked={props.settings.hideTip}
         onChange={() => props.onUpdate({ hideTip: !props.settings.hideTip })}
       />
-      <TextInputField
-        type="number"
-        width={300}
-        label={t('cards.additional')}
-        value={props.settings.additionalCards}
-        onChange={(e) => props.onUpdate({ additionalCards: e.target.value })}
-      />
+      <div className="input-field">
+        <label htmlFor="additional-cards">{t('cards.additional')}</label>
+        <input
+          id="additional-cards"
+          type="number"
+          min="1"
+          value={props.settings.additionalCards}
+          onChange={(e) => props.onUpdate({ additionalCards: e.target.value })}
+        />
+      </div>
       <RadioGroup
         label={t('wifi.password.encryption')}
-        size={16}
+        name="encryption-mode"
         value={props.settings.encryptionMode}
         options={encryptionModes}
         onChange={(e) => props.onUpdate({ encryptionMode: e.target.value })}
       />
       <RadioGroup
         label={t('wifi.encryption.eapMethod')}
-        size={16}
+        name="eap-method"
         value={props.settings.eapMethod}
         options={eapMethods}
-        className={`
-          ${props.settings.encryptionMode !== 'WPA2-EAP' && 'hidden'}
-        `}
+        className={props.settings.encryptionMode !== 'WPA2-EAP' ? 'hidden' : ''}
         onChange={(e) => props.onUpdate({ eapMethod: e.target.value })}
       />
-    </Pane>
+    </div>
   );
 };

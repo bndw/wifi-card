@@ -4,10 +4,25 @@
 }
 
 .card-print {
-  border-color: #aaa;
+  background-color: #fff;
+  border: 1px none #aaa;
+  border-radius: 4px;
+  box-shadow:
+    0 0 1px rgba(67, 90, 111, 0.3),
+    0 8px 10px -4px rgba(67, 90, 111, 0.47);
   margin-bottom: 1em;
   margin-top: 2em;
   padding: 1em;
+}
+
+.card-header {
+  align-items: center;
+  display: flex;
+  padding-bottom: 12px;
+}
+
+.card-header h2 {
+  flex-grow: 1;
 }
 
 #print-area {
@@ -19,6 +34,10 @@
   align-items: center;
 }
 
+.card-fields {
+  width: 100%;
+}
+
 .qrcode {
   max-width: 175px;
   padding: 1em;
@@ -27,19 +46,66 @@
 .hidden {
   display: none;
 }
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.input-field label,
+.radio-group legend {
+  color: #101840;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.input-field .error-message {
+  color: #d14343;
+  font-size: 12px;
+  margin: 4px 0 0;
+}
+
 textarea {
   background-color: #fff;
   border: solid 1px #ddd;
-  font-family: 'Source Serif', serif !important;
-  font-size: 1.2em !important;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Source Serif', serif;
+  font-size: 1.2em;
+  height: 40px;
   margin-bottom: 0;
-  height: 40px !important;
-  min-height: 0px !important;
   overflow: hidden;
+  padding: 6px 8px;
   resize: none;
+  width: 100%;
 }
+
+textarea[aria-invalid='true'] {
+  border-color: #d14343;
+}
+
 hr {
+  border: none;
+  border-top: 1px solid #e6e8f0;
   margin-top: 0;
+}
+
+.tip {
+  align-items: center;
+  display: flex;
+  margin-bottom: 0;
+}
+
+.tip-icon {
+  flex-shrink: 0;
+  margin-inline-end: 4px;
+}
+
+.tip-text {
+  font-size: 12px;
+  padding-inline: 8px;
 }
 
 button {
@@ -47,13 +113,58 @@ button {
   width: 180px;
 }
 
+#print {
+  background-color: #3366ff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#print:hover {
+  background-color: #2952cc;
+}
+
 #settings {
   margin-bottom: 1em;
   padding: 1em;
 }
 
-#settings label span {
-  margin-right: 8px;
+#settings select,
+#settings input[type='number'] {
+  background-color: #fff;
+  border: 1px solid #d8dae5;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 38px;
+  max-width: 100%;
+  padding-inline: 8px;
+  width: 300px;
+}
+
+#settings .input-field {
+  margin-bottom: 16px;
+}
+
+.checkbox,
+.radio {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.radio-group {
+  border: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.radio-group legend {
+  padding: 0;
 }
 
 @media print {
@@ -63,7 +174,7 @@ button {
   #print-area,
   #print-area * {
     visibility: visible;
-    /* For printing, use a font stack that prioritizes system fonts 
+    /* For printing, use a font stack that prioritizes system fonts
        to ensure CJK characters are rendered correctly in Chrome. */
     font-family:
       'PingFang SC', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans JP',

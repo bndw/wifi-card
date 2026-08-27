@@ -1,13 +1,3 @@
-import {
-  CameraIcon,
-  Card,
-  Heading,
-  MobilePhoneIcon,
-  Pane,
-  Paragraph,
-  Text,
-  TextareaField,
-} from 'evergreen-ui';
 import { QRCodeSVG as QRCode } from 'qrcode.react';
 import { useTranslation } from 'react-i18next';
 import logo from '../images/wifi.png';
@@ -33,6 +23,59 @@ const buildQrValue = (settings) => {
   Object.entries(opts).forEach(([k, v]) => (data += `${k}:${v};`));
   return `WIFI:${data};`;
 };
+
+const CameraIcon = () => (
+  <svg
+    className="tip-icon"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+    <circle cx="12" cy="13" r="4" />
+  </svg>
+);
+
+const MobilePhoneIcon = () => (
+  <svg
+    className="tip-icon"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <rect x="6" y="2" width="12" height="20" rx="2" />
+    <line x1="10" y1="18" x2="14" y2="18" />
+  </svg>
+);
+
+const TextareaField = ({ id, label, validationMessage, style, ...rest }) => (
+  <div className="input-field">
+    <label htmlFor={id}>{label}</label>
+    <textarea
+      id={id}
+      aria-invalid={!!validationMessage || undefined}
+      style={style}
+      {...rest}
+    />
+    {validationMessage ? (
+      <p className="error-message" role="alert">
+        {validationMessage}
+      </p>
+    ) : null}
+  </div>
+);
 
 export const WifiCard = (props) => {
   const { t } = useTranslation();
@@ -62,24 +105,22 @@ export const WifiCard = (props) => {
   const suffixKeyID = (prefix) => `${prefix}-${keyid}`;
 
   return (
-    <Card
+    <div
       className="card-print"
-      elevation={3}
       style={{ maxWidth: props.settings.portrait ? portraitWidth() : '100%' }}
     >
-      <Pane display="flex" paddingBottom={12}>
+      <div className="card-header">
         <img alt="icon" src={logo} width="24" height="24" />
-        <Heading
-          size={700}
-          paddingRight={10}
-          paddingLeft={10}
-          textAlign={props.settings.portrait ? 'center' : 'unset'}
+        <h2
+          style={{
+            textAlign: props.settings.portrait ? 'center' : 'unset',
+          }}
         >
           {t('wifi.login')}
-        </Heading>
-      </Pane>
+        </h2>
+      </div>
 
-      <Pane
+      <div
         className="details"
         style={{ flexDirection: props.settings.portrait ? 'column' : 'row' }}
       >
@@ -90,11 +131,9 @@ export const WifiCard = (props) => {
           size={150}
         />
 
-        <Pane width={'100%'}>
+        <div className="card-fields">
           <TextareaField
             id={suffixKeyID('ssid')}
-            type="text"
-            marginBottom={5}
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="none"
@@ -104,15 +143,12 @@ export const WifiCard = (props) => {
             placeholder={t('wifi.name.placeholder')}
             value={props.settings.ssid}
             onChange={(e) => props.onUpdate({ ssid: e.target.value })}
-            isInvalid={!!props.ssidError}
             validationMessage={!!props.ssidError && props.ssidError}
           />
           {props.settings.encryptionMode === 'WPA2-EAP' && (
             <>
               <TextareaField
                 id={suffixKeyID('eapmethod')}
-                type="text"
-                marginBottom={5}
                 readOnly={true}
                 spellCheck={false}
                 label={eapMethodFieldLabel()}
@@ -121,8 +157,6 @@ export const WifiCard = (props) => {
 
               <TextareaField
                 id={suffixKeyID('identity')}
-                type="text"
-                marginBottom={5}
                 autoComplete="off"
                 autoCorrect="off"
                 autoCapitalize="none"
@@ -133,7 +167,6 @@ export const WifiCard = (props) => {
                 onChange={(e) =>
                   props.onUpdate({ eapIdentity: e.target.value })
                 }
-                isInvalid={!!props.eapIdentityError}
                 validationMessage={
                   !!props.eapIdentityError && props.eapIdentityError
                 }
@@ -143,40 +176,35 @@ export const WifiCard = (props) => {
           {!(props.settings.hidePassword || !props.settings.encryptionMode) && (
             <TextareaField
               id={suffixKeyID('password')}
-              type="text"
               maxLength="63"
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="none"
               spellCheck={false}
-              height={
+              style={
                 props.settings.portrait && props.settings.password.length > 40
-                  ? '5em'
-                  : 'auto'
+                  ? { height: '5em' }
+                  : undefined
               }
-              marginBottom={5}
               label={passwordFieldLabel()}
               placeholder={t('wifi.password.placeholder')}
               value={props.settings.password}
               onChange={(e) => props.onUpdate({ password: e.target.value })}
-              isInvalid={!!props.passwordError}
               validationMessage={!!props.passwordError && props.passwordError}
             />
           )}
-        </Pane>
-      </Pane>
+        </div>
+      </div>
       {!props.settings.hideTip && (
         <>
           <hr />
-          <Paragraph>
+          <p className="tip">
             <CameraIcon />
             <MobilePhoneIcon />
-            <Text size={300} paddingRight={8} paddingLeft={8}>
-              {t('wifi.tip')}
-            </Text>
-          </Paragraph>
+            <span className="tip-text">{t('wifi.tip')}</span>
+          </p>
         </>
       )}
-    </Card>
+    </div>
   );
 };

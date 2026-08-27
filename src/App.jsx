@@ -1,4 +1,3 @@
-import { Button, Heading, Link, Pane, Paragraph } from 'evergreen-ui';
 import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import logo from './images/wifi.png';
@@ -113,25 +112,20 @@ function App() {
   const cardCount = Math.max(1, parseInt(settings.additionalCards, 10) || 1);
 
   return (
-    <Pane>
-      <Pane display="flex">
+    <div>
+      <header className="app-header">
         <img alt="icon" src={logo} width="32" height="32" />
-        <Heading size={900} paddingRight={16} paddingLeft={16}>
-          {t('title')}
-        </Heading>
-      </Pane>
-      <Pane>
-        <Paragraph marginTop={12}>{t('desc.use')}</Paragraph>
+        <h1>{t('title')}</h1>
+      </header>
+      <div>
+        <p>{t('desc.use')}</p>
 
-        <Paragraph marginTop={12}>
+        <p>
           {t('desc.privacy')}{' '}
-          <Link href="https://github.com/bndw/wifi-card">
-            {t('desc.source')}
-          </Link>
-          .
-        </Paragraph>
-      </Pane>
-      <Pane>
+          <a href="https://github.com/bndw/wifi-card">{t('desc.source')}</a>.
+        </p>
+      </div>
+      <div>
         <WifiCard
           settings={settings}
           ssidError={errors.ssidError}
@@ -139,22 +133,16 @@ function App() {
           eapIdentityError={errors.eapIdentityError}
           onUpdate={update}
         />
-      </Pane>
+      </div>
       <Settings
         settings={settings}
         onLanguageChange={onChangeLanguage}
         onUpdate={update}
       />
-      <Button
-        id="print"
-        appearance="primary"
-        height={40}
-        marginRight={16}
-        onClick={onPrint}
-      >
+      <button id="print" type="button" onClick={onPrint}>
         {t('button.print')}
-      </Button>
-      <Pane id="print-area">
+      </button>
+      <div id="print-area">
         {[...Array(cardCount)].map((el, idx) => (
           <WifiCard
             keyid={idx}
@@ -166,8 +154,8 @@ function App() {
             onUpdate={update}
           />
         ))}
-      </Pane>
-    </Pane>
+      </div>
+    </div>
   );
 }
 
