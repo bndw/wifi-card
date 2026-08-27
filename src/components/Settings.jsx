@@ -5,7 +5,6 @@ import {
   SelectField,
   TextInputField,
 } from 'evergreen-ui';
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
 import { Translations } from '../translations';
@@ -33,13 +32,6 @@ export const Settings = (props) => {
     const amount = parseInt(additionalCardsStr);
     amount >= 1 && props.onUpdate({ additionalCards: amount });
   };
-
-  useEffect(() => {
-    if (props.firstLoad.current && window.innerWidth < 500) {
-      props.onFirstLoad();
-      props.onUpdate({ portrait: true });
-    }
-  });
 
   return (
     <Pane id="settings" maxWidth={props.settings.portrait ? '350px' : '100%'}>
