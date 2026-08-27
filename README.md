@@ -58,6 +58,7 @@ We would love for you to contribute to different languages and help make it even
 | Arabic                       | [Ahmed Tokyo](https://github.com/a-tokyo)          |
 | Bangla                       | [Tarek Hasan](https://github.com/Tarek-Hasan)      |
 | Catalan                      | [aniol](https://github.com/aniol)                  |
+| Czech                        | [yukidevv](https://github.com/yukidevv)            |
 | Cantonese Simplified         | [ous50](https://github.com/ous50)                  |
 | Chinese                      | [Baoyuantop](https://github.com/Baoyuantop)        |
 | Chinese Traditional (Taiwan) | [Dxball](https://github.com/dxball)                |
