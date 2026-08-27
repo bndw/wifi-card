@@ -41,11 +41,28 @@ function App() {
     [i18n.language]
   );
 
+  const update = (patch) => {
+    setSettings((s) => ({ ...s, ...patch }));
+    setErrors((e) => {
+      const cleared = { ...e };
+      if ('ssid' in patch) {
+        cleared.ssidError = '';
+      }
+      if ('password' in patch || 'encryptionMode' in patch) {
+        cleared.passwordError = '';
+      }
+      if ('eapIdentity' in patch) {
+        cleared.eapIdentityError = '';
+      }
+      return cleared;
+    });
+  };
+
   const onChangeLanguage = (language) => {
     html.style.direction = htmlDirection(language);
     i18n.changeLanguage(language);
 
-    setSettings({ ...settings, lng: language });
+    update({ lng: language });
   };
 
   const onPrint = () => {
@@ -94,41 +111,6 @@ function App() {
     window.print();
   };
 
-  const onSSIDChange = (ssid) => {
-    setErrors({ ...errors, ssidError: '' });
-    setSettings({ ...settings, ssid });
-  };
-  const onPasswordChange = (password) => {
-    setErrors({ ...errors, passwordError: '' });
-    setSettings({ ...settings, password });
-  };
-  const onEncryptionModeChange = (encryptionMode) => {
-    setErrors({ ...errors, passwordError: '' });
-    setSettings({ ...settings, encryptionMode });
-  };
-  const onEapMethodChange = (eapMethod) => {
-    setSettings({ ...settings, eapMethod });
-  };
-  const onEapIdentityChange = (eapIdentity) => {
-    setErrors({ ...errors, eapIdentityError: '' });
-    setSettings({ ...settings, eapIdentity });
-  };
-  const onOrientationChange = (portrait) => {
-    setSettings({ ...settings, portrait });
-  };
-  const onHidePasswordChange = (hidePassword) => {
-    setSettings({ ...settings, hidePassword });
-  };
-  const onHiddenSSIDChange = (hiddenSSID) => {
-    setSettings({ ...settings, hiddenSSID });
-  };
-  const onAdditionalCardsChange = (additionalCardsStr) => {
-    const amount = parseInt(additionalCardsStr);
-    amount >= 1 && setSettings({ ...settings, additionalCards: amount });
-  };
-  const onHideTipChange = (hideTip) => {
-    setSettings({ ...settings, hideTip });
-  };
   const onFirstLoad = () => {
     html.style.direction = htmlDirection();
     firstLoad.current = false;
@@ -166,9 +148,7 @@ function App() {
           ssidError={errors.ssidError}
           passwordError={errors.passwordError}
           eapIdentityError={errors.eapIdentityError}
-          onSSIDChange={onSSIDChange}
-          onEapIdentityChange={onEapIdentityChange}
-          onPasswordChange={onPasswordChange}
+          onUpdate={update}
         />
       </Pane>
       <Settings
@@ -176,13 +156,7 @@ function App() {
         firstLoad={firstLoad}
         onFirstLoad={onFirstLoad}
         onLanguageChange={onChangeLanguage}
-        onEncryptionModeChange={onEncryptionModeChange}
-        onEapMethodChange={onEapMethodChange}
-        onOrientationChange={onOrientationChange}
-        onHidePasswordChange={onHidePasswordChange}
-        onHiddenSSIDChange={onHiddenSSIDChange}
-        onAdditionalCardsChange={onAdditionalCardsChange}
-        onHideTipChange={onHideTipChange}
+        onUpdate={update}
       />
       <Button
         id="print"
@@ -203,9 +177,7 @@ function App() {
               ssidError={errors.ssidError}
               passwordError={errors.passwordError}
               eapIdentityError={errors.eapIdentityError}
-              onSSIDChange={onSSIDChange}
-              onEapIdentityChange={onEapIdentityChange}
-              onPasswordChange={onPasswordChange}
+              onUpdate={update}
             />
           ))}
       </Pane>
