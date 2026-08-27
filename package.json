@@ -3,55 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.2",
-    "@testing-library/user-event": "^14.6.1",
     "evergreen-ui": "^7.1.9",
     "i18next": "^25.8.0",
     "i18next-browser-languagedetector": "^8.2.0",
     "qrcode.react": "^4.2.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "react-i18next": "^16.5.3",
-    "react-scripts": "^5.0.1"
+    "react-i18next": "^16.5.3"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.0",
     "husky": "^9.1.7",
-    "prettier": "3.8.1"
-  },
-  "resolutions": {
-    "@tootallnate/once": "^2.0.1",
-    "postcss": "^8.5.23",
-    "qs": "^6.15.2",
-    "serialize-javascript": "^7.0.5",
-    "svgo": "^2.8.3",
-    "underscore": "^1.13.8",
-    "uuid": "^11.1.1"
+    "prettier": "3.8.1",
+    "vite": "^8.2.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "prepare": "husky"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   },
   "main": "index.js",
   "repository": "git@github.com:bndw/wifi-card.git",
   "author": "bndw <ben@bdw.to>",
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "yarn@4.18.0+sha512.fcb8716fe7cd0eece141ffc18b92193a9df9204c1ba83189c288835223fc0bbe64af473bab0d5e9927a7daeb5caf2bb07eb2787cc9338ca040ea125f2a1f2f7e"
 }
