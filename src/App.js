@@ -1,5 +1,5 @@
 import { Button, Heading, Link, Pane, Paragraph } from 'evergreen-ui';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import logo from '../src/images/wifi.png';
 import { Settings } from './components/Settings';
@@ -32,11 +32,14 @@ function App() {
     eapIdentityError: '',
   });
 
-  const htmlDirection = (languageID) => {
-    languageID = languageID || i18n.language;
-    const rtl = Translations.filter((t) => t.id === languageID)[0]?.rtl;
-    return rtl ? 'rtl' : 'ltr';
-  };
+  const htmlDirection = useCallback(
+    (languageID) => {
+      languageID = languageID || i18n.language;
+      const rtl = Translations.filter((t) => t.id === languageID)[0]?.rtl;
+      return rtl ? 'rtl' : 'ltr';
+    },
+    [i18n.language]
+  );
 
   const onChangeLanguage = (language) => {
     html.style.direction = htmlDirection(language);
@@ -136,7 +139,7 @@ function App() {
     if (htmlDirection() === 'rtl') {
       html.style.direction = 'rtl';
     }
-  }, []);
+  }, [html.style, htmlDirection]);
 
   return (
     <Pane>
