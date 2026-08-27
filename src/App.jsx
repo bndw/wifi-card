@@ -1,7 +1,7 @@
 import { Button, Heading, Link, Pane, Paragraph } from 'evergreen-ui';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import logo from '../src/images/wifi.png';
+import logo from './images/wifi.png';
 import { Settings } from './components/Settings';
 import { WifiCard } from './components/WifiCard';
 import './style.css';

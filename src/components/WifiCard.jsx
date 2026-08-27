@@ -11,7 +11,7 @@ import {
 import { QRCodeSVG as QRCode } from 'qrcode.react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import logo from '../../src/images/wifi.png';
+import logo from '../images/wifi.png';
 import './style.css';
 
 export const WifiCard = (props) => {

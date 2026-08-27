@@ -1,12 +1,14 @@
-FROM node:22-alpine as builder
+FROM node:24-alpine AS builder
 
-WORKDIR /tmp
+WORKDIR /app
 COPY . .
 
-RUN npx prettier --check ./src
-RUN yarn && yarn build 
+RUN corepack enable
+RUN yarn install --immutable
+RUN yarn prettier --check ./src
+RUN yarn build
 
 ###
 # production image
 FROM nginx:stable-alpine
-COPY --from=builder /tmp/build /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
