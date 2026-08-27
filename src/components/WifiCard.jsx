@@ -116,7 +116,7 @@ export const WifiCard = (props) => {
             label={t('wifi.name')}
             placeholder={t('wifi.name.placeholder')}
             value={props.settings.ssid}
-            onChange={(e) => props.onSSIDChange(e.target.value)}
+            onChange={(e) => props.onUpdate({ ssid: e.target.value })}
             isInvalid={!!props.ssidError}
             validationMessage={!!props.ssidError && props.ssidError}
           />
@@ -143,7 +143,9 @@ export const WifiCard = (props) => {
                 label={eapIdentityFieldLabel()}
                 placeholder={t('wifi.identity.placeholder')}
                 value={props.settings.eapIdentity}
-                onChange={(e) => props.onEapIdentityChange(e.target.value)}
+                onChange={(e) =>
+                  props.onUpdate({ eapIdentity: e.target.value })
+                }
                 isInvalid={!!props.eapIdentityError}
                 validationMessage={
                   !!props.eapIdentityError && props.eapIdentityError
@@ -169,7 +171,7 @@ export const WifiCard = (props) => {
               label={passwordFieldLabel()}
               placeholder={t('wifi.password.placeholder')}
               value={props.settings.password}
-              onChange={(e) => props.onPasswordChange(e.target.value)}
+              onChange={(e) => props.onUpdate({ password: e.target.value })}
               isInvalid={!!props.passwordError}
               validationMessage={!!props.passwordError && props.passwordError}
             />
