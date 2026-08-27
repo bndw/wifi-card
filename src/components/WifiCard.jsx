@@ -9,47 +9,44 @@ import {
   TextareaField,
 } from 'evergreen-ui';
 import { QRCodeSVG as QRCode } from 'qrcode.react';
-import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import logo from '../images/wifi.png';
 import './style.css';
 
+const escape = (v) => {
+  const needsEscape = ['"', ';', ',', ':', '\\'];
+
+  let escaped = '';
+  for (const c of v) {
+    if (needsEscape.includes(c)) {
+      escaped += `\\${c}`;
+    } else {
+      escaped += c;
+    }
+  }
+  return escaped;
+};
+
+const buildQrValue = (settings) => {
+  let opts = {};
+
+  opts.T = settings.encryptionMode || 'nopass';
+  if (settings.encryptionMode === 'WPA2-EAP') {
+    opts.E = settings.eapMethod;
+    opts.I = settings.eapIdentity;
+  }
+  opts.S = escape(settings.ssid);
+  opts.P = escape(settings.password);
+  opts.H = settings.hiddenSSID;
+
+  let data = '';
+  Object.entries(opts).forEach(([k, v]) => (data += `${k}:${v};`));
+  return `WIFI:${data};`;
+};
+
 export const WifiCard = (props) => {
   const { t } = useTranslation();
-  const [qrvalue, setQrvalue] = useState('');
-
-  const escape = (v) => {
-    const needsEscape = ['"', ';', ',', ':', '\\'];
-
-    let escaped = '';
-    for (const c of v) {
-      if (needsEscape.includes(c)) {
-        escaped += `\\${c}`;
-      } else {
-        escaped += c;
-      }
-    }
-    return escaped;
-  };
-
-  useEffect(() => {
-    let opts = {};
-
-    opts.T = props.settings.encryptionMode || 'nopass';
-    if (props.settings.encryptionMode === 'WPA2-EAP') {
-      opts.E = props.settings.eapMethod;
-      opts.I = props.settings.eapIdentity;
-    }
-    opts.S = escape(props.settings.ssid);
-    opts.P = escape(props.settings.password);
-    opts.H = props.settings.hiddenSSID;
-
-    let data = '';
-    Object.entries(opts).forEach(([k, v]) => (data += `${k}:${v};`));
-    const qrval = `WIFI:${data};`;
-
-    setQrvalue(qrval);
-  }, [props.settings]);
+  const qrvalue = buildQrValue(props.settings);
 
   const portraitWidth = () => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);

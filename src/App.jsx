@@ -1,5 +1,5 @@
 import { Button, Heading, Link, Pane, Paragraph } from 'evergreen-ui';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import logo from './images/wifi.png';
 import { Settings } from './components/Settings';
@@ -8,11 +8,8 @@ import './style.css';
 import { Translations } from './translations';
 
 function App() {
-  const html = document.querySelector('html');
-
   const { t, i18n } = useTranslation();
-  const firstLoad = useRef(true);
-  const [settings, setSettings] = useState({
+  const [settings, setSettings] = useState(() => ({
     ssid: '',
     password: '',
     encryptionMode: 'WPA',
@@ -20,11 +17,11 @@ function App() {
     eapIdentity: '',
     hidePassword: false,
     hiddenSSID: false,
-    portrait: false,
+    portrait: window.innerWidth < 500,
     additionalCards: 1,
     hideTip: false,
     lng: 'en-US',
-  });
+  }));
 
   const [errors, setErrors] = useState({
     ssidError: '',
@@ -59,7 +56,6 @@ function App() {
   };
 
   const onChangeLanguage = (language) => {
-    html.style.direction = htmlDirection(language);
     i18n.changeLanguage(language);
 
     update({ lng: language });
@@ -111,17 +107,9 @@ function App() {
     window.print();
   };
 
-  const onFirstLoad = () => {
-    html.style.direction = htmlDirection();
-    firstLoad.current = false;
-  };
-
   useEffect(() => {
-    // Ensure the page direction is set properly on first load
-    if (htmlDirection() === 'rtl') {
-      html.style.direction = 'rtl';
-    }
-  }, [html.style, htmlDirection]);
+    document.documentElement.dir = htmlDirection(i18n.language);
+  }, [i18n.language, htmlDirection]);
 
   return (
     <Pane>
@@ -153,8 +141,6 @@ function App() {
       </Pane>
       <Settings
         settings={settings}
-        firstLoad={firstLoad}
-        onFirstLoad={onFirstLoad}
         onLanguageChange={onChangeLanguage}
         onUpdate={update}
       />
