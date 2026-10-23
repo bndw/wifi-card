@@ -14,7 +14,7 @@
     "@vitejs/plugin-react": "^6.1.0",
     "husky": "^9.1.7",
     "prettier": "3.8.1",
-    "vite": "^8.2.2"
+    "vite": "^8.2.4"
   },
   "scripts": {
     "start": "vite",
