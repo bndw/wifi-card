@@ -20,6 +20,11 @@ export const CUSTOM_STYLE_CLASSES = [
   ['.wc-tip', 'Tip text and icons'],
 ];
 
+const CUSTOM_STYLE_SELECTORS = new Set([
+  ...CUSTOM_STYLE_CLASSES.map(([selector]) => selector),
+  '.wc-portrait .wc-qr',
+]);
+
 const CAFE = `.wc-card {
   background: #f6ecd9;
   border: 1px solid #6b4226;
@@ -135,27 +140,44 @@ export const saveCardStyle = ({ cardStyle, customCss }) => {
   }
 };
 
-const canNest = (rule) =>
-  rule instanceof CSSStyleRule ||
-  rule instanceof CSSMediaRule ||
-  rule instanceof CSSSupportsRule;
+const isConditional = (rule) =>
+  rule instanceof CSSMediaRule || rule instanceof CSSSupportsRule;
+
+const filterCustomRules = (parent, dropped) => {
+  let index = 0;
+  while (index < parent.cssRules.length) {
+    const rule = parent.cssRules[index];
+    if (isConditional(rule)) {
+      filterCustomRules(rule, dropped);
+      index++;
+      continue;
+    }
+    if (
+      rule instanceof CSSStyleRule &&
+      !rule.cssRules?.length &&
+      CUSTOM_STYLE_SELECTORS.has(rule.selectorText)
+    ) {
+      index++;
+      continue;
+    }
+    dropped.push(rule.cssText.split('{')[0].trim());
+    parent.deleteRule(index);
+  }
+};
 
 // Parse first, so unbalanced braces can't escape the scope and anything the
-// browser rejects is gone. Constructed stylesheets also ignore @import.
+// browser rejects is gone. Only flat rules with public selectors survive;
+// nesting selectors and other compounds must not reach outside the cards.
+// Constructed stylesheets also ignore @import.
 export const buildCustomStyles = (css) => {
   if (!css.trim()) {
     return { cssText: '', dropped: [] };
   }
   const sheet = new CSSStyleSheet();
   sheet.replaceSync(css);
-  const rules = [...sheet.cssRules];
-  const dropped = rules
-    .filter((rule) => !canNest(rule))
-    .map((rule) => rule.cssText.split('{')[0].trim());
-  const body = rules
-    .filter(canNest)
-    .map((rule) => rule.cssText)
-    .join('\n');
+  const dropped = [];
+  filterCustomRules(sheet, dropped);
+  const body = [...sheet.cssRules].map((rule) => rule.cssText).join('\n');
   return { cssText: `${CARD_SCOPE} {\n${body}\n}`, dropped };
 };
 
