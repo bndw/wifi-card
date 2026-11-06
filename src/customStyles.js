@@ -181,11 +181,15 @@ export const buildCustomStyles = (css) => {
   return { cssText: `${CARD_SCOPE} {\n${body}\n}`, dropped };
 };
 
+// Only rgb() values can be checked. Anything else, such as none or oklch(),
+// gets no warning rather than a wrong one.
 const toRgb = (color) =>
-  color
-    .match(/[\d.]+/g)
-    ?.slice(0, 3)
-    .map(Number);
+  /^rgba?\(/.test(color)
+    ? color
+        .match(/[\d.]+/g)
+        ?.slice(0, 3)
+        .map(Number)
+    : undefined;
 
 const luminance = (rgb) => {
   const [r, g, b] = rgb.map((v) => {
@@ -201,8 +205,13 @@ export const checkQrContrast = (qrElement) => {
   if (!background || !modules) {
     return '';
   }
-  const light = luminance(toRgb(getComputedStyle(background).fill));
-  const dark = luminance(toRgb(getComputedStyle(modules).fill));
+  const backgroundRgb = toRgb(getComputedStyle(background).fill);
+  const modulesRgb = toRgb(getComputedStyle(modules).fill);
+  if (backgroundRgb?.length !== 3 || modulesRgb?.length !== 3) {
+    return '';
+  }
+  const light = luminance(backgroundRgb);
+  const dark = luminance(modulesRgb);
   if (dark >= light) {
     return 'style.warning.inverted';
   }
