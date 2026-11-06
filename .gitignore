@@ -19,6 +19,9 @@
 !.yarn/sdks
 !.yarn/versions
 
+# demo recordings
+/.cache
+
 # misc
 .DS_Store
 .env.local
