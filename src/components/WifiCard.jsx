@@ -60,11 +60,21 @@ const MobilePhoneIcon = () => (
   </svg>
 );
 
-const TextareaField = ({ id, label, validationMessage, style, ...rest }) => (
-  <div className="input-field">
-    <label htmlFor={id}>{label}</label>
+const TextareaField = ({
+  id,
+  fieldName,
+  label,
+  validationMessage,
+  style,
+  ...rest
+}) => (
+  <div className={`input-field wc-field wc-field-${fieldName}`}>
+    <label className="wc-label" htmlFor={id}>
+      {label}
+    </label>
     <textarea
       id={id}
+      className="wc-input"
       aria-invalid={!!validationMessage || undefined}
       style={style}
       {...rest}
@@ -106,12 +116,13 @@ export const WifiCard = (props) => {
 
   return (
     <div
-      className="card-print"
+      className={`card-print wc-card ${props.settings.portrait ? 'wc-portrait' : ''}`}
       style={{ maxWidth: props.settings.portrait ? portraitWidth() : '100%' }}
     >
-      <div className="card-header">
-        <img alt="icon" src={logo} width="24" height="24" />
+      <div className="card-header wc-header">
+        <img alt="icon" className="wc-logo" src={logo} width="24" height="24" />
         <h2
+          className="wc-title"
           style={{
             textAlign: props.settings.portrait ? 'center' : 'unset',
           }}
@@ -121,19 +132,22 @@ export const WifiCard = (props) => {
       </div>
 
       <div
-        className="details"
+        className="details wc-details"
         style={{ flexDirection: props.settings.portrait ? 'column' : 'row' }}
       >
         <QRCode
-          className="qrcode"
+          className="qrcode wc-qr"
+          fgColor="var(--wc-qr-color, #000)"
+          bgColor="var(--wc-qr-background, #fff)"
           style={{ marginBottom: props.settings.portrait ? '1em' : '0' }}
           value={qrvalue}
           size={150}
         />
 
-        <div className="card-fields">
+        <div className="card-fields wc-fields">
           <TextareaField
             id={suffixKeyID('ssid')}
+            fieldName="ssid"
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="none"
@@ -149,6 +163,7 @@ export const WifiCard = (props) => {
             <>
               <TextareaField
                 id={suffixKeyID('eapmethod')}
+                fieldName="eap-method"
                 readOnly={true}
                 spellCheck={false}
                 label={eapMethodFieldLabel()}
@@ -157,6 +172,7 @@ export const WifiCard = (props) => {
 
               <TextareaField
                 id={suffixKeyID('identity')}
+                fieldName="identity"
                 autoComplete="off"
                 autoCorrect="off"
                 autoCapitalize="none"
@@ -176,6 +192,7 @@ export const WifiCard = (props) => {
           {!(props.settings.hidePassword || !props.settings.encryptionMode) && (
             <TextareaField
               id={suffixKeyID('password')}
+              fieldName="password"
               maxLength="63"
               autoComplete="off"
               autoCorrect="off"
@@ -197,8 +214,8 @@ export const WifiCard = (props) => {
       </div>
       {!props.settings.hideTip && (
         <>
-          <hr />
-          <p className="tip">
+          <hr className="wc-divider" />
+          <p className="tip wc-tip">
             <CameraIcon />
             <MobilePhoneIcon />
             <span className="tip-text">{t('wifi.tip')}</span>

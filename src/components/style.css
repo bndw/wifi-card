@@ -230,6 +230,138 @@ button {
   outline-offset: 2px;
 }
 
+.segmented-options span:has(.swatch) {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  text-align: start;
+}
+
+.swatch {
+  align-content: center;
+  border: 1px solid;
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: grid;
+  flex-shrink: 0;
+  gap: 2px;
+  grid-template-columns: 1fr;
+  height: 18px;
+  padding-inline: 4px;
+  width: 26px;
+}
+
+.swatch i {
+  display: block;
+  height: 2px;
+}
+
+.swatch i:last-child {
+  width: 60%;
+}
+
+.swatch-custom {
+  background-color: #fff;
+  border-color: #696f8c;
+  border-style: dashed;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #3366ff;
+  cursor: pointer;
+  font-size: 14px;
+  height: auto;
+  padding: 0;
+  width: auto;
+}
+
+.link-button:hover {
+  text-decoration: underline;
+}
+
+.link-button.customize {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.link-button.customize::after {
+  content: ' →';
+}
+
+.link-button.back::before {
+  content: '← ';
+}
+
+[dir='rtl'] .link-button.customize::after {
+  content: ' ←';
+}
+
+[dir='rtl'] .link-button.back::before {
+  content: '→ ';
+}
+
+.style-editor h3 {
+  color: #101840;
+  font-size: 14px;
+  margin: 16px 0 8px;
+}
+
+#custom-css {
+  direction: ltr;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  height: 260px;
+  overflow: auto;
+  resize: vertical;
+}
+
+.style-note {
+  color: #696f8c;
+  font-size: 12px;
+  margin: 0 0 8px;
+}
+
+.style-warning {
+  color: #d14343;
+  font-size: 12px;
+  margin: -6px 0 12px;
+}
+
+.style-editor .style-warning {
+  margin: 6px 0 0;
+}
+
+.style-reference {
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+.style-reference summary {
+  cursor: pointer;
+}
+
+.style-reference dl {
+  margin: 8px 0 0;
+}
+
+.style-reference div {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.style-reference dt {
+  direction: ltr;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.style-reference dd {
+  margin: 0;
+}
+
 @media print {
   body * {
     visibility: hidden;
@@ -252,9 +384,11 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    row-gap: 0em;
+    gap: 1em;
   }
   .card-print {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
     border-style: dashed;
     box-shadow: none;
     margin-bottom: 0;

@@ -1,10 +1,17 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import logo from './images/wifi.png';
 import { LanguageSelect, Settings } from './components/Settings';
 import { WifiCard } from './components/WifiCard';
 import './style.css';
 import { Translations } from './translations';
+import {
+  activeCss,
+  buildCustomStyles,
+  checkQrContrast,
+  loadCardStyle,
+  saveCardStyle,
+} from './customStyles';
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -19,7 +26,13 @@ function App() {
     portrait: window.innerWidth < 500,
     additionalCards: 1,
     hideTip: false,
+    ...loadCardStyle(),
   }));
+  const customStyles = useMemo(
+    () => buildCustomStyles(activeCss(settings)),
+    [settings.cardStyle, settings.customCss]
+  );
+  const [qrWarning, setQrWarning] = useState('');
 
   const [errors, setErrors] = useState({
     ssidError: '',
@@ -106,6 +119,14 @@ function App() {
   };
 
   useEffect(() => {
+    setQrWarning(checkQrContrast(document.querySelector('.preview .wc-qr')));
+  }, [customStyles]);
+
+  useEffect(() => {
+    saveCardStyle(settings);
+  }, [settings.cardStyle, settings.customCss]);
+
+  useEffect(() => {
     document.documentElement.dir = htmlDirection(i18n.language);
   }, [i18n.language, htmlDirection]);
 
@@ -137,8 +158,15 @@ function App() {
             onUpdate={update}
           />
         </div>
-        <Settings settings={settings} onUpdate={update} onPrint={onPrint} />
+        <Settings
+          settings={settings}
+          droppedRules={customStyles.dropped}
+          qrWarning={qrWarning}
+          onUpdate={update}
+          onPrint={onPrint}
+        />
       </main>
+      {customStyles.cssText && <style>{customStyles.cssText}</style>}
       <div id="print-area">
         {[...Array(cardCount)].map((el, idx) => (
           <WifiCard
