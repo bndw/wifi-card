@@ -1,93 +1,107 @@
-![ci](https://github.com/bndw/wifi-card/workflows/ci/badge.svg)
+# <img width="32" src="./public/images/wifi.png" alt=""> WiFi Card
 
-# <img width="32px" src="./public/images/wifi.png"> WiFi Card
+Print a card with a QR code so guests can join your WiFi. Tape it to the fridge, keep it in your wallet, or hang it on the wall.
 
-https://wificard.io
+**[wificard.io](https://wificard.io)**
 
-Print a simple card with your WiFi login details. Tape it to the fridge, keep it in your wallet, hang on the wall for guests at home or in the hotel, etc.
+[![Demo of filling in and printing a WiFi card](./docs/demo.gif)](https://wificard.io)
 
-<a href="https://wificard.io/">
-   <img alt="wificard" src="./docs/demo.gif">
-</a>
+## Features
 
-## Running locally
+- **Private:** your WiFi details are never sent to a server, with no tracking or analytics
+- **Scan to connect:** works with WPA/WPA2/WPA3, WPA2-EAP, WEP, open and hidden networks
+- **Print your way:** landscape or portrait, multiple cards, optional hidden password
+- **40+ languages,** including right-to-left, thanks to our contributors
 
-Run the official Docker image on http://localhost:8080
+## Self-host
 
+```sh
+docker run --rm -p 8080:80 bndw/wifi-card
 ```
-make run
-```
+
+Then open http://localhost:8080.
 
 ## Development
 
-1. Make sure you have `yarn` installed
-2. Run the live-reload server on http://localhost:3000
-   ```
-   make dev
-   ```
+With [Yarn](https://yarnpkg.com/) installed, start the live-reload server on http://localhost:3000:
 
-This project uses [Prettier](https://prettier.io/) formatting. All pull requests must pass the automated lint checks before merging. Prettier format is run automatically as a pre-commit hook.
+```sh
+make dev
+```
 
-## Language Contribution Guide
+[Prettier](https://prettier.io/) runs as a pre-commit hook and in CI. Use `make fmt.write` to format your changes.
 
-We would love for you to contribute to different languages and help make it even better than it is today! As a language contributor, here are some steps we would like you to follow:
+## Translating
 
-1. Add a translation to [`./src/translations.js`](./src/translations.js). Here's an example of the German translation:
+Translations are welcome, and new labels are often a good place to start: anything not yet translated falls back to English.
 
-   ```
+1. Add or update your language in [`src/translations.js`](./src/translations.js):
+
+   ```js
    {
-      id: 'de-DE',              // locale code
-      name: 'German - Deutsch', // Display name in the format 'latinName - nativeName'
-      rtl: false,               // Optional, true if this is a right-to-left language
-      translation: {
-         ...
-      }
+     id: 'de-DE', // Locale code
+     name: 'German - Deutsch', // Format: 'latinName - nativeName'
+     rtl: false, // Optional, true for right-to-left languages
+     translation: {
+       // ...
+     },
    }
    ```
 
-2. Append an entry to the [Supported Languages](#supported-languages) table below.
+2. Add a new language to the table below.
 
-## Supported Languages
+## Languages
 
-| Language                     | Author Credit                                      |
-| ---------------------------- | -------------------------------------------------- |
-| Arabic                       | [Ahmed Tokyo](https://github.com/a-tokyo)          |
-| Bangla                       | [Tarek Hasan](https://github.com/Tarek-Hasan)      |
-| Catalan                      | [aniol](https://github.com/aniol)                  |
-| Czech                        | [yukidevv](https://github.com/yukidevv)            |
-| Cantonese Simplified         | [ous50](https://github.com/ous50)                  |
-| Chinese                      | [Baoyuantop](https://github.com/Baoyuantop)        |
-| Chinese Traditional (Taiwan) | [Dxball](https://github.com/dxball)                |
-| Danish                       | [dk90103](https://github.com/dk90103)              |
-| Dutch                        | [wouterbrink](https://github.com/wouterbrink)      |
-| English                      | [bndw](https://github.com/bndw)                    |
-| Esperanto                    | [zeecho](https://github.com/zeecho)                |
-| French                       | [Divlo](https://github.com/Divlo)                  |
-| German                       | [devofthings](https://github.com/devofthings)      |
-| German (Swiss)               | [NZehnder](https://github.com/NZehnder)            |
-| Greek                        | [nautilus7](https://github.com/nautilus7)          |
-| Hebrew                       | [Ido Bronfeld](https://github.com/HelloWorldIL)    |
-| Hindi                        | [Pushpender](https://github.com/PushpenderSaini0)  |
-| Hungarian                    | [munkacsimark](https://github.com/munkacsimark)    |
-| Indonesia                    | [nyancodeid](https://github.com/nyancodeid)        |
-| Italian                      | [Domenico Pascucci](https://github.com/pasmimmo)   |
-| Japanese                     | [hatsu38](https://github.com/hatsu38)              |
-| Korean                       | [Seungbin Oh](https://github.com/sboh1214)         |
-| Malagasy                     | [mpilasy](https://github.com/mpilasy)              |
-| Malay (Malaysia)             | [hh-shiung](https://github.com/hh-shiung)          |
-| Norwegian                    | [tplive](https://github.com/tplive)                |
-| Occitan                      | [ensag-dev](https://github.com/ensag-dev)          |
-| Persian                      | [Ramin](https://github.com/raminr77)               |
-| Polish                       | [olekstomek](https://github.com/olekstomek)        |
-| Portuguese                   | [pedrorenan](https://github.com/pedrorenan)        |
-| Portuguese (Brazil)          | [ismaelpereira](https://github.com/ismaelpereira)  |
-| Punjabi                      | [phoenixgill34](https://github.com/phoenixgill34)  |
-| Russian                      | [Teraskull](https://github.com/Teraskull)          |
-| Serbian                      | [demanderbag](https://github.com/demanderbag)      |
-| Slovak                       | [matejkubinec](https://github.com/matejkubinec)    |
-| Spanish                      | [oscfdezdz](https://github.com/oscfdezdz)          |
-| Swedish                      | [ddund](https://github.com/ddund)                  |
-| Thai                         | [l2D](https://github.com/l2D)                      |
-| Turkish                      | [Riza Ergun](https://github.com/rizaergun)         |
-| Ukrainian                    | [Teraskull](https://github.com/Teraskull)          |
-| Urdu                         | [mHassan11](https://github.com/mHassan11)          |
+<details>
+<summary>42 languages, translated by our contributors</summary>
+
+| Language                         | Author Credit                                     |
+| -------------------------------- | ------------------------------------------------- |
+| Arabic                           | [Ahmed Tokyo](https://github.com/a-tokyo)         |
+| Bangla                           | [Tarek Hasan](https://github.com/Tarek-Hasan)     |
+| Cantonese (Simplified)           | [ous50](https://github.com/ous50)                 |
+| Catalan                          | [aniol](https://github.com/aniol)                 |
+| Chinese (Simplified)             | [Baoyuantop](https://github.com/Baoyuantop)       |
+| Chinese (Traditional, Hong Kong) | [YuetAu](https://github.com/YuetAu)               |
+| Chinese (Traditional, Taiwan)    | [Dxball](https://github.com/dxball)               |
+| Czech                            | [yukidevv](https://github.com/yukidevv)           |
+| Danish                           | [dk90103](https://github.com/dk90103)             |
+| Dutch                            | [wouterbrink](https://github.com/wouterbrink)     |
+| English                          | [bndw](https://github.com/bndw)                   |
+| Esperanto                        | [zeecho](https://github.com/zeecho)               |
+| French                           | [Divlo](https://github.com/Divlo)                 |
+| German                           | [devofthings](https://github.com/devofthings)     |
+| German (Swiss)                   | [NZehnder](https://github.com/NZehnder)           |
+| Greek                            | [nautilus7](https://github.com/nautilus7)         |
+| Hebrew                           | [Ido Bronfeld](https://github.com/HelloWorldIL)   |
+| Hindi                            | [Pushpender](https://github.com/PushpenderSaini0) |
+| Hungarian                        | [munkacsimark](https://github.com/munkacsimark)   |
+| Indonesian                       | [nyancodeid](https://github.com/nyancodeid)       |
+| Italian                          | [Domenico Pascucci](https://github.com/pasmimmo)  |
+| Japanese                         | [hatsu38](https://github.com/hatsu38)             |
+| Korean                           | [Seungbin Oh](https://github.com/sboh1214)        |
+| Malagasy                         | [mpilasy](https://github.com/mpilasy)             |
+| Malay (Malaysia)                 | [hh-shiung](https://github.com/hh-shiung)         |
+| Norwegian                        | [tplive](https://github.com/tplive)               |
+| Occitan                          | [ensag-dev](https://github.com/ensag-dev)         |
+| Persian                          | [Ramin](https://github.com/raminr77)              |
+| Polish                           | [olekstomek](https://github.com/olekstomek)       |
+| Portuguese                       | [pedrorenan](https://github.com/pedrorenan)       |
+| Portuguese (Brazil)              | [ismaelpereira](https://github.com/ismaelpereira) |
+| Punjabi                          | [phoenixgill34](https://github.com/phoenixgill34) |
+| Russian                          | [Teraskull](https://github.com/Teraskull)         |
+| Serbian (Cyrillic)               | [demanderbag](https://github.com/demanderbag)     |
+| Serbian (Latin)                  | [demanderbag](https://github.com/demanderbag)     |
+| Slovak                           | [matejkubinec](https://github.com/matejkubinec)   |
+| Spanish                          | [oscfdezdz](https://github.com/oscfdezdz)         |
+| Swedish                          | [ddund](https://github.com/ddund)                 |
+| Thai                             | [l2D](https://github.com/l2D)                     |
+| Turkish                          | [Riza Ergun](https://github.com/rizaergun)        |
+| Ukrainian                        | [Teraskull](https://github.com/Teraskull)         |
+| Urdu                             | [mHassan11](https://github.com/mHassan11)         |
+
+</details>
+
+## License
+
+[MIT](./LICENSE.md)
