@@ -38,6 +38,21 @@ export const Translations = [
       'settings.network': 'Network',
       'settings.card': 'Card',
       'settings.print': 'Print',
+      'style.label': 'Style',
+      'style.default': 'Default',
+      'style.cafe': 'Café',
+      'style.guestPass': 'Guest Pass',
+      'style.custom': 'Custom',
+      'style.customize': 'Customize with CSS',
+      'style.back': 'Back',
+      'style.editor': 'Custom CSS',
+      'style.reference': 'Class names',
+      'style.replaces': 'Editing here replaces your saved Custom style.',
+      'style.warning.contrast':
+        'This QR code may not scan. Use more contrast between its colors.',
+      'style.warning.inverted':
+        'This QR code may not scan. Use dark modules on a light background.',
+      'style.warning.dropped': 'These rules are not supported:',
     },
   },
   {

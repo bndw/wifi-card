@@ -1,4 +1,11 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import {
+  CUSTOM_STYLE,
+  CUSTOM_STYLE_CLASSES,
+  STYLE_PRESETS,
+  activeCss,
+} from '../customStyles';
 import i18n from '../i18n';
 import { Translations } from '../translations';
 import './style.css';
@@ -23,12 +30,75 @@ const SegmentedControl = ({ label, name, value, options, onChange }) => (
             checked={value === option.value}
             onChange={onChange}
           />
-          <span>{option.label}</span>
+          <span>
+            {option.swatch}
+            {option.label}
+          </span>
         </label>
       ))}
     </div>
   </fieldset>
 );
+
+const Swatch = ({ background, border, ink }) => (
+  <i
+    className="swatch"
+    style={{ backgroundColor: background, borderColor: border }}
+    aria-hidden="true"
+  >
+    <i style={{ backgroundColor: ink }} />
+    <i style={{ backgroundColor: ink }} />
+  </i>
+);
+
+const StyleEditor = (props) => {
+  const { t } = useTranslation();
+  const { settings } = props;
+  const replacesCustom =
+    settings.cardStyle !== CUSTOM_STYLE && settings.customCss.trim();
+
+  return (
+    <div className="style-editor">
+      <button type="button" className="link-button back" onClick={props.onBack}>
+        {t('style.back')}
+      </button>
+      <h3>{t('style.editor')}</h3>
+      {replacesCustom && <p className="style-note">{t('style.replaces')}</p>}
+      <textarea
+        id="custom-css"
+        autoFocus
+        aria-label={t('style.editor')}
+        spellCheck={false}
+        placeholder=".wc-card { border-radius: 16px; }"
+        value={activeCss(settings)}
+        onChange={(e) =>
+          props.onUpdate({ cardStyle: CUSTOM_STYLE, customCss: e.target.value })
+        }
+      />
+      {props.droppedRules.length > 0 && (
+        <p className="style-warning" role="alert">
+          {t('style.warning.dropped')} {props.droppedRules.join(', ')}
+        </p>
+      )}
+      {props.qrWarning && (
+        <p className="style-warning" role="alert">
+          {t(props.qrWarning)}
+        </p>
+      )}
+      <details className="style-reference">
+        <summary>{t('style.reference')}</summary>
+        <dl>
+          {CUSTOM_STYLE_CLASSES.map(([name, description]) => (
+            <div key={name}>
+              <dt>{name}</dt>
+              <dd>{description}</dd>
+            </div>
+          ))}
+        </dl>
+      </details>
+    </div>
+  );
+};
 
 const SettingsGroup = ({ title, children }) => (
   <section className="settings-group">
@@ -73,6 +143,36 @@ export const Settings = (props) => {
     { label: 'WEP', value: 'WEP' },
   ];
   const eapMethods = [{ label: 'PWD', value: 'PWD' }];
+  const [editing, setEditing] = useState(false);
+  const [editorVisited, setEditorVisited] = useState(false);
+  const styleOptions = STYLE_PRESETS.map((preset) => ({
+    label: t(`style.${preset.id}`),
+    value: preset.id,
+    swatch: <Swatch {...preset.swatch} />,
+  }));
+  styleOptions.push({
+    label: t('style.custom'),
+    value: CUSTOM_STYLE,
+    swatch: <i className="swatch swatch-custom" aria-hidden="true" />,
+  });
+  const openEditor = () => {
+    setEditorVisited(true);
+    setEditing(true);
+  };
+
+  if (editing) {
+    return (
+      <div id="settings">
+        <StyleEditor
+          settings={props.settings}
+          droppedRules={props.droppedRules}
+          qrWarning={props.qrWarning}
+          onUpdate={props.onUpdate}
+          onBack={() => setEditing(false)}
+        />
+      </div>
+    );
+  }
 
   return (
     <div id="settings">
@@ -103,6 +203,34 @@ export const Settings = (props) => {
       </SettingsGroup>
 
       <SettingsGroup title={t('settings.card')}>
+        <SegmentedControl
+          label={t('style.label')}
+          name="card-style"
+          value={props.settings.cardStyle}
+          options={styleOptions}
+          onChange={(e) => {
+            props.onUpdate({ cardStyle: e.target.value });
+            if (
+              e.target.value === CUSTOM_STYLE &&
+              !props.settings.customCss.trim()
+            ) {
+              openEditor();
+            }
+          }}
+        />
+        {props.qrWarning && (
+          <p className="style-warning" role="alert">
+            {t(props.qrWarning)}
+          </p>
+        )}
+        <button
+          type="button"
+          className="link-button customize"
+          autoFocus={editorVisited}
+          onClick={openEditor}
+        >
+          {t('style.customize')}
+        </button>
         <Checkbox
           label={t('button.rotate')}
           checked={props.settings.portrait}
