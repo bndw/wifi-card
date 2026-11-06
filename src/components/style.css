@@ -43,10 +43,6 @@
   padding: 1em;
 }
 
-.hidden {
-  display: none;
-}
-
 .input-field {
   display: flex;
   flex-direction: column;
@@ -54,7 +50,7 @@
 }
 
 .input-field label,
-.radio-group legend {
+.segmented legend {
   color: #101840;
   font-size: 14px;
   font-weight: 600;
@@ -129,10 +125,26 @@ button {
 
 #settings {
   margin-bottom: 1em;
-  padding: 1em;
 }
 
-#settings select,
+.settings-group {
+  margin-bottom: 24px;
+}
+
+.settings-group h3 {
+  border-bottom: 1px solid #e6e8f0;
+  color: #101840;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  text-transform: uppercase;
+}
+
+#settings .input-field {
+  margin-bottom: 16px;
+}
+
 #settings input[type='number'] {
   background-color: #fff;
   border: 1px solid #d8dae5;
@@ -140,31 +152,62 @@ button {
   box-sizing: border-box;
   font-size: 14px;
   height: 38px;
-  max-width: 100%;
   padding-inline: 8px;
-  width: 300px;
+  width: 80px;
 }
 
-#settings .input-field {
-  margin-bottom: 16px;
-}
-
-.checkbox,
-.radio {
+.checkbox {
   align-items: center;
   display: flex;
   gap: 8px;
   margin-bottom: 8px;
 }
 
-.radio-group {
+.segmented {
   border: none;
-  margin: 0 0 16px;
+  margin: 0 0 12px;
   padding: 0;
 }
 
-.radio-group legend {
+.segmented legend {
   padding: 0;
+}
+
+.segmented-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.segmented-options label {
+  cursor: pointer;
+  position: relative;
+}
+
+.segmented-options input {
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+.segmented-options span {
+  border: 1px solid #d8dae5;
+  border-radius: 4px;
+  display: block;
+  font-size: 13px;
+  padding: 6px 10px;
+}
+
+.segmented-options input:checked + span {
+  background-color: #3366ff;
+  border-color: #3366ff;
+  color: #fff;
+}
+
+.segmented-options input:focus-visible + span {
+  outline: 2px solid #3366ff;
+  outline-offset: 2px;
 }
 
 @media print {

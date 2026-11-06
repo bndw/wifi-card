@@ -10,23 +10,59 @@ const Checkbox = ({ label, checked, onChange }) => (
   </label>
 );
 
-const RadioGroup = ({ label, name, value, options, onChange, className }) => (
-  <fieldset className={`radio-group ${className || ''}`}>
+const SegmentedControl = ({ label, name, value, options, onChange }) => (
+  <fieldset className="segmented">
     <legend>{label}</legend>
-    {options.map((option) => (
-      <label key={option.value} className="radio">
-        <input
-          type="radio"
-          name={name}
-          value={option.value}
-          checked={value === option.value}
-          onChange={onChange}
-        />
-        <span>{option.label}</span>
-      </label>
-    ))}
+    <div className="segmented-options">
+      {options.map((option) => (
+        <label key={option.value}>
+          <input
+            type="radio"
+            name={name}
+            value={option.value}
+            checked={value === option.value}
+            onChange={onChange}
+          />
+          <span>{option.label}</span>
+        </label>
+      ))}
+    </div>
   </fieldset>
 );
+
+const SettingsGroup = ({ title, children }) => (
+  <section className="settings-group">
+    <h3>{title}</h3>
+    {children}
+  </section>
+);
+
+export const LanguageSelect = (props) => {
+  const { t } = useTranslation();
+
+  const langSelectDefaultValue = () => {
+    const t = Translations.filter((t) => t.id === i18n.language);
+    if (t.length !== 1) {
+      return 'en-US';
+    }
+    return t[0].id;
+  };
+
+  return (
+    <select
+      id="language"
+      aria-label={t('select')}
+      onChange={(e) => props.onChange(e.target.value)}
+      defaultValue={langSelectDefaultValue()}
+    >
+      {Translations.map((t) => (
+        <option key={t.id} value={t.id}>
+          {t.name}
+        </option>
+      ))}
+    </select>
+  );
+};
 
 export const Settings = (props) => {
   const { t } = useTranslation();
@@ -38,84 +74,73 @@ export const Settings = (props) => {
   ];
   const eapMethods = [{ label: 'PWD', value: 'PWD' }];
 
-  const langSelectDefaultValue = () => {
-    const t = Translations.filter((t) => t.id === i18n.language);
-    if (t.length !== 1) {
-      return 'en-US';
-    }
-    return t[0].id;
-  };
-
   return (
-    <div
-      id="settings"
-      style={{ maxWidth: props.settings.portrait ? '350px' : '100%' }}
-    >
-      <div className="input-field">
-        <label htmlFor="language">{t('select')}</label>
-        <select
-          id="language"
-          onChange={(e) => props.onLanguageChange(e.target.value)}
-          defaultValue={langSelectDefaultValue()}
-        >
-          {Translations.map((t) => (
-            <option key={t.id} value={t.id}>
-              {t.name}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <Checkbox
-        label={t('button.rotate')}
-        checked={props.settings.portrait}
-        onChange={() => props.onUpdate({ portrait: !props.settings.portrait })}
-      />
-      <Checkbox
-        label={t('wifi.password.hide')}
-        checked={props.settings.hidePassword}
-        onChange={() =>
-          props.onUpdate({ hidePassword: !props.settings.hidePassword })
-        }
-      />
-      <Checkbox
-        label={t('wifi.name.hiddenSSID')}
-        checked={props.settings.hiddenSSID}
-        onChange={() =>
-          props.onUpdate({ hiddenSSID: !props.settings.hiddenSSID })
-        }
-      />
-
-      <Checkbox
-        label={t('cards.tip.hide')}
-        checked={props.settings.hideTip}
-        onChange={() => props.onUpdate({ hideTip: !props.settings.hideTip })}
-      />
-      <div className="input-field">
-        <label htmlFor="additional-cards">{t('cards.additional')}</label>
-        <input
-          id="additional-cards"
-          type="number"
-          min="1"
-          value={props.settings.additionalCards}
-          onChange={(e) => props.onUpdate({ additionalCards: e.target.value })}
+    <div id="settings">
+      <SettingsGroup title={t('settings.network')}>
+        <SegmentedControl
+          label={t('wifi.password.encryption')}
+          name="encryption-mode"
+          value={props.settings.encryptionMode}
+          options={encryptionModes}
+          onChange={(e) => props.onUpdate({ encryptionMode: e.target.value })}
         />
-      </div>
-      <RadioGroup
-        label={t('wifi.password.encryption')}
-        name="encryption-mode"
-        value={props.settings.encryptionMode}
-        options={encryptionModes}
-        onChange={(e) => props.onUpdate({ encryptionMode: e.target.value })}
-      />
-      <RadioGroup
-        label={t('wifi.encryption.eapMethod')}
-        name="eap-method"
-        value={props.settings.eapMethod}
-        options={eapMethods}
-        className={props.settings.encryptionMode !== 'WPA2-EAP' ? 'hidden' : ''}
-        onChange={(e) => props.onUpdate({ eapMethod: e.target.value })}
-      />
+        {props.settings.encryptionMode === 'WPA2-EAP' && (
+          <SegmentedControl
+            label={t('wifi.encryption.eapMethod')}
+            name="eap-method"
+            value={props.settings.eapMethod}
+            options={eapMethods}
+            onChange={(e) => props.onUpdate({ eapMethod: e.target.value })}
+          />
+        )}
+        <Checkbox
+          label={t('wifi.name.hiddenSSID')}
+          checked={props.settings.hiddenSSID}
+          onChange={() =>
+            props.onUpdate({ hiddenSSID: !props.settings.hiddenSSID })
+          }
+        />
+      </SettingsGroup>
+
+      <SettingsGroup title={t('settings.card')}>
+        <Checkbox
+          label={t('button.rotate')}
+          checked={props.settings.portrait}
+          onChange={() =>
+            props.onUpdate({ portrait: !props.settings.portrait })
+          }
+        />
+        <Checkbox
+          label={t('wifi.password.hide')}
+          checked={props.settings.hidePassword}
+          onChange={() =>
+            props.onUpdate({ hidePassword: !props.settings.hidePassword })
+          }
+        />
+        <Checkbox
+          label={t('cards.tip.hide')}
+          checked={props.settings.hideTip}
+          onChange={() => props.onUpdate({ hideTip: !props.settings.hideTip })}
+        />
+      </SettingsGroup>
+
+      <SettingsGroup title={t('settings.print')}>
+        <div className="input-field">
+          <label htmlFor="additional-cards">{t('cards.additional')}</label>
+          <input
+            id="additional-cards"
+            type="number"
+            min="1"
+            value={props.settings.additionalCards}
+            onChange={(e) =>
+              props.onUpdate({ additionalCards: e.target.value })
+            }
+          />
+        </div>
+        <button id="print" type="button" onClick={props.onPrint}>
+          {t('button.print')}
+        </button>
+      </SettingsGroup>
     </div>
   );
 };

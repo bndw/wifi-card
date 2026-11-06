@@ -32,9 +32,12 @@ export const Translations = [
       'wifi.alert.password.length.8':
         'Password must be at least 8 characters, or change the encryption to "None"',
       'wifi.alert.eapIdentity': 'Identity cannot be empty',
-      'button.rotate': 'Rotate',
+      'button.rotate': 'Portrait',
       'button.print': 'Print',
       select: 'Select Language',
+      'settings.network': 'Network',
+      'settings.card': 'Card',
+      'settings.print': 'Print',
     },
   },
   {

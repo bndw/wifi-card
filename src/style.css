@@ -32,3 +32,49 @@ a {
   align-items: center;
   display: flex;
 }
+
+.app-header h1 {
+  flex-grow: 1;
+}
+
+#language {
+  background-color: #fff;
+  border: 1px solid #d8dae5;
+  border-radius: 4px;
+  color: #474d66;
+  font-size: 13px;
+  height: 32px;
+  max-width: 40%;
+  width: auto;
+  padding-inline: 6px;
+}
+
+.intro {
+  max-width: 640px;
+}
+
+.layout {
+  margin-top: 2em;
+}
+
+.preview .card-print {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    max-width: 960px;
+  }
+
+  .layout {
+    align-items: start;
+    column-gap: 3em;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+  }
+
+  .preview {
+    position: sticky;
+    top: 1em;
+  }
+}
