@@ -43,10 +43,6 @@
   padding: 1em;
 }
 
-.hidden {
-  display: none;
-}
-
 .input-field {
   display: flex;
   flex-direction: column;
@@ -54,7 +50,7 @@
 }
 
 .input-field label,
-.radio-group legend {
+.segmented legend {
   color: #101840;
   font-size: 14px;
   font-weight: 600;
@@ -114,6 +110,9 @@ button {
 }
 
 #print {
+  height: 44px;
+  margin-top: 4px;
+  width: 100%;
   background-color: #3366ff;
   border: none;
   border-radius: 4px;
@@ -128,43 +127,107 @@ button {
 }
 
 #settings {
+  background-color: #f9fafc;
+  border: 1px solid #e6e8f0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
   margin-bottom: 1em;
-  padding: 1em;
+  padding: 20px;
 }
 
-#settings select,
+.settings-group + .settings-group {
+  border-top: 1px solid #e6e8f0;
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+.settings-group h3 {
+  color: #696f8c;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+#settings .input-field {
+  margin-bottom: 12px;
+}
+
 #settings input[type='number'] {
   background-color: #fff;
   border: 1px solid #d8dae5;
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 14px;
-  height: 38px;
-  max-width: 100%;
+  height: 36px;
   padding-inline: 8px;
-  width: 300px;
+  width: 80px;
 }
 
-#settings .input-field {
-  margin-bottom: 16px;
-}
-
-.checkbox,
-.radio {
+.checkbox {
   align-items: center;
   display: flex;
   gap: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
-.radio-group {
+.checkbox input {
+  margin: 0;
+}
+
+.settings-group > :last-child {
+  margin-bottom: 0;
+}
+
+.segmented {
   border: none;
-  margin: 0 0 16px;
+  margin: 0 0 12px;
   padding: 0;
 }
 
-.radio-group legend {
+.segmented legend {
   padding: 0;
+}
+
+.segmented-options {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.segmented-options label {
+  cursor: pointer;
+  position: relative;
+}
+
+.segmented-options input {
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+.segmented-options span {
+  background-color: #fff;
+  border: 1px solid #d8dae5;
+  border-radius: 4px;
+  display: block;
+  overflow-wrap: anywhere;
+  padding: 7px 8px;
+  text-align: center;
+}
+
+.segmented-options input:checked + span {
+  background-color: #3366ff;
+  border-color: #3366ff;
+  color: #fff;
+}
+
+.segmented-options input:focus-visible + span {
+  outline: 2px solid #3366ff;
+  outline-offset: 2px;
 }
 
 @media print {

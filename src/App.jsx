@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import logo from './images/wifi.png';
-import { Settings } from './components/Settings';
+import { LanguageSelect, Settings } from './components/Settings';
 import { WifiCard } from './components/WifiCard';
 import './style.css';
 import { Translations } from './translations';
@@ -116,32 +116,29 @@ function App() {
       <header className="app-header">
         <img alt="icon" src={logo} width="32" height="32" />
         <h1>{t('title')}</h1>
+        <LanguageSelect onChange={onChangeLanguage} />
       </header>
-      <div>
-        <p>{t('desc.use')}</p>
+      <main className="layout">
+        <div className="preview">
+          <div className="intro">
+            <p>{t('desc.use')}</p>
 
-        <p>
-          {t('desc.privacy')}{' '}
-          <a href="https://github.com/bndw/wifi-card">{t('desc.source')}</a>.
-        </p>
-      </div>
-      <div>
-        <WifiCard
-          settings={settings}
-          ssidError={errors.ssidError}
-          passwordError={errors.passwordError}
-          eapIdentityError={errors.eapIdentityError}
-          onUpdate={update}
-        />
-      </div>
-      <Settings
-        settings={settings}
-        onLanguageChange={onChangeLanguage}
-        onUpdate={update}
-      />
-      <button id="print" type="button" onClick={onPrint}>
-        {t('button.print')}
-      </button>
+            <p>
+              {t('desc.privacy')}{' '}
+              <a href="https://github.com/bndw/wifi-card">{t('desc.source')}</a>
+              .
+            </p>
+          </div>
+          <WifiCard
+            settings={settings}
+            ssidError={errors.ssidError}
+            passwordError={errors.passwordError}
+            eapIdentityError={errors.eapIdentityError}
+            onUpdate={update}
+          />
+        </div>
+        <Settings settings={settings} onUpdate={update} onPrint={onPrint} />
+      </main>
       <div id="print-area">
         {[...Array(cardCount)].map((el, idx) => (
           <WifiCard

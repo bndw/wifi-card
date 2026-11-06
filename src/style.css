@@ -32,3 +32,70 @@ a {
   align-items: center;
   display: flex;
 }
+
+.app-header {
+  gap: 12px;
+  margin-bottom: 2em;
+}
+
+.app-header h1 {
+  flex-grow: 1;
+  padding-inline: 0;
+}
+
+#language {
+  background-color: #fff;
+  border: 1px solid #d8dae5;
+  border-radius: 4px;
+  color: #474d66;
+  font-size: 13px;
+  height: 32px;
+  max-width: 40%;
+  width: 180px;
+  padding-inline: 6px;
+}
+
+.intro p {
+  line-height: 1.5;
+  margin: 0 0 0.75em;
+}
+
+.preview .card-print {
+  margin-top: 1.5em;
+}
+
+@media screen {
+  body {
+    padding-top: 1.5em;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    max-width: 960px;
+    padding-top: 2.5em;
+  }
+
+  .app-header {
+    margin-bottom: 2.5em;
+  }
+
+  .layout {
+    align-items: start;
+    column-gap: 2.5em;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+  }
+
+  #settings {
+    position: sticky;
+    top: 2em;
+  }
+}
+
+@media print {
+  .app-header,
+  .layout {
+    display: none;
+  }
+}
