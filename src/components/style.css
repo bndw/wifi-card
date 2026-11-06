@@ -110,6 +110,9 @@ button {
 }
 
 #print {
+  height: 44px;
+  margin-top: 4px;
+  width: 100%;
   background-color: #3366ff;
   border: none;
   border-radius: 4px;
@@ -124,25 +127,32 @@ button {
 }
 
 #settings {
+  background-color: #f9fafc;
+  border: 1px solid #e6e8f0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
   margin-bottom: 1em;
+  padding: 20px;
 }
 
-.settings-group {
-  margin-bottom: 24px;
+.settings-group + .settings-group {
+  border-top: 1px solid #e6e8f0;
+  margin-top: 16px;
+  padding-top: 16px;
 }
 
 .settings-group h3 {
-  border-bottom: 1px solid #e6e8f0;
-  color: #101840;
+  color: #696f8c;
   font-size: 12px;
-  letter-spacing: 0.05em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   margin: 0 0 12px;
-  padding-bottom: 6px;
   text-transform: uppercase;
 }
 
 #settings .input-field {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 #settings input[type='number'] {
@@ -151,7 +161,7 @@ button {
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 14px;
-  height: 38px;
+  height: 36px;
   padding-inline: 8px;
   width: 80px;
 }
@@ -160,7 +170,15 @@ button {
   align-items: center;
   display: flex;
   gap: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.checkbox input {
+  margin: 0;
+}
+
+.settings-group > :last-child {
+  margin-bottom: 0;
 }
 
 .segmented {
@@ -174,9 +192,9 @@ button {
 }
 
 .segmented-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .segmented-options label {
@@ -192,11 +210,13 @@ button {
 }
 
 .segmented-options span {
+  background-color: #fff;
   border: 1px solid #d8dae5;
   border-radius: 4px;
   display: block;
-  font-size: 13px;
-  padding: 6px 10px;
+  overflow-wrap: anywhere;
+  padding: 7px 8px;
+  text-align: center;
 }
 
 .segmented-options input:checked + span {

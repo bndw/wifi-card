@@ -118,16 +118,17 @@ function App() {
         <h1>{t('title')}</h1>
         <LanguageSelect onChange={onChangeLanguage} />
       </header>
-      <div className="intro">
-        <p>{t('desc.use')}</p>
-
-        <p>
-          {t('desc.privacy')}{' '}
-          <a href="https://github.com/bndw/wifi-card">{t('desc.source')}</a>.
-        </p>
-      </div>
       <main className="layout">
         <div className="preview">
+          <div className="intro">
+            <p>{t('desc.use')}</p>
+
+            <p>
+              {t('desc.privacy')}{' '}
+              <a href="https://github.com/bndw/wifi-card">{t('desc.source')}</a>
+              .
+            </p>
+          </div>
           <WifiCard
             settings={settings}
             ssidError={errors.ssidError}
