@@ -1,6 +1,6 @@
 # <img width="32" src="./public/images/wifi.png" alt=""> WiFi Card
 
-Print a card with a QR code so guests can join your WiFi. Tape it to the fridge, keep it in your wallet, or hang it on the wall.
+Print a card with a QR code so guests can join your WiFi. Your details never leave your browser.
 
 **[wificard.io](https://wificard.io)**
 
