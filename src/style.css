@@ -35,7 +35,7 @@ a {
 
 .app-header {
   gap: 12px;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 .app-header h1 {
@@ -64,9 +64,20 @@ a {
   margin-top: 1.5em;
 }
 
+@media screen {
+  body {
+    padding-top: 1.5em;
+  }
+}
+
 @media screen and (min-width: 900px) {
   body {
     max-width: 960px;
+    padding-top: 2.5em;
+  }
+
+  .app-header {
+    margin-bottom: 2.5em;
   }
 
   .layout {
@@ -78,7 +89,7 @@ a {
 
   #settings {
     position: sticky;
-    top: 1em;
+    top: 2em;
   }
 }
 
